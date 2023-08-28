@@ -31,3 +31,4 @@ dTMPD=function(x,beta,alpha)  {
   }
     return(pdf)
 }
+
