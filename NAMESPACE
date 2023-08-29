@@ -3,3 +3,4 @@
 export(dTPMD)
 export(pTPMD)
 export(qTPMD)
+export(rTPMD)

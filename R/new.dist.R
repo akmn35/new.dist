@@ -6,7 +6,7 @@
 #' @param alpha a scale parameter.
 #' @description
 #' Density, distribution function, quantile function and random generation for the Power Muth distribution with parameters shape and scale.
-#' @return [dTPMD] gives the density, [pTPMD] gives the distribution function, [qTPMD] gives the quantile function and [rTPMD] generates random deviates.
+#' @return \code{dTPMD} gives the density, \code{pTPMD} gives the distribution function, \code{qTPMD} gives the quantile function and \code{rTPMD} generates random deviates.
 #' @details
 #' The Power Muth Distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
 #' \ifelse{html}{\out{"(alpha/(beta^alpha))*(x^(alpha-1))*(exp((x/beta)^alpha)-1)*exp(((x/beta)^alpha)-(exp((x/beta)^alpha)-1))"}}{{\eqn{\\ f\left( x\right) =\frac{\alpha }{\beta ^{\alpha }}x^{\alpha -1}\left\{ \exp\left( \left( \frac{x}{\beta }\right) ^{\alpha }-1\right) \right\} \left\{\exp \left( \left( \frac{x}{\beta }\right) ^{\alpha }-\left( \exp \left(\frac{x}{\beta }\right) ^{\alpha }-1\right) \right) \right\}}}}.
@@ -42,7 +42,7 @@ dTPMD=function(x,beta,alpha)  {
 #' @param alpha a scale parameter.
 #' @description
 #' Density, distribution function, quantile function and random generation for the Power Muth distribution with parameters shape and scale.
-#' @return [dTPMD] gives the density, [pTPMD] gives the distribution function, [qTPMD] gives the quantile function and [rTPMD] generates random deviates.
+#' @return \code{dTPMD} gives the density, \code{pTPMD} gives the distribution function, \code{qTPMD} gives the quantile function and \code{rTPMD} generates random deviates.
 #' @details
 #' The Power Muth Distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
 #' \ifelse{html}{\out{"(alpha/(beta^alpha))*(x^(alpha-1))*(exp((x/beta)^alpha)-1)*exp(((x/beta)^alpha)-(exp((x/beta)^alpha)-1))"}}{{\eqn{\\ f\left( x\right) =\frac{\alpha }{\beta ^{\alpha }}x^{\alpha -1}\left\{ \exp\left( \left( \frac{x}{\beta }\right) ^{\alpha }-1\right) \right\} \left\{\exp \left( \left( \frac{x}{\beta }\right) ^{\alpha }-\left( \exp \left(\frac{x}{\beta }\right) ^{\alpha }-1\right) \right) \right\}}}}.
@@ -76,7 +76,7 @@ pTPMD=function(x,beta,alpha)  {
 #' @param alpha a scale parameter.
 #' @description
 #' Density, distribution function, quantile function and random generation for the Power Muth distribution with parameters shape and scale.
-#' @return [dTPMD] gives the density, [pTPMD] gives the distribution function, [qTPMD] gives the quantile function and [rTPMD] generates random deviates.
+#' @return \code{dTPMD} gives the density, \code{pTPMD} gives the distribution function, \code{qTPMD} gives the quantile function and \code{rTPMD} generates random deviates.
 #' @details
 #' The Power Muth Distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
 #' \ifelse{html}{\out{"(alpha/(beta^alpha))*(x^(alpha-1))*(exp((x/beta)^alpha)-1)*exp(((x/beta)^alpha)-(exp((x/beta)^alpha)-1))"}}{{\eqn{\\ f\left( x\right) =\frac{\alpha }{\beta ^{\alpha }}x^{\alpha -1}\left\{ \exp\left( \left( \frac{x}{\beta }\right) ^{\alpha }-1\right) \right\} \left\{\exp \left( \left( \frac{x}{\beta }\right) ^{\alpha }-\left( \exp \left(\frac{x}{\beta }\right) ^{\alpha }-1\right) \right) \right\}}}}.
@@ -104,5 +104,28 @@ qTPMD=function(p,beta,alpha)
     return(quant)
   }
 }
-
-
+#' The Power Muth Distribution
+#' @export
+#' @rdname rTMPD
+#' @param n number of observations.If length(n) > 1, the length is taken to be the number required.
+#' @param beta a shape parameter.
+#' @param alpha a scale parameter.
+#' @description
+#' Density, distribution function, quantile function and random generation for the Power Muth distribution with parameters shape and scale.
+#' @return \code{dTPMD} gives the density, \code{pTPMD} gives the distribution function, \code{qTPMD} gives the quantile function and \code{rTPMD} generates random deviates.
+#' @details
+#' The Power Muth Distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
+#' \ifelse{html}{\out{"(alpha/(beta^alpha))*(x^(alpha-1))*(exp((x/beta)^alpha)-1)*exp(((x/beta)^alpha)-(exp((x/beta)^alpha)-1))"}}{{\eqn{\\ f\left( x\right) =\frac{\alpha }{\beta ^{\alpha }}x^{\alpha -1}\left\{ \exp\left( \left( \frac{x}{\beta }\right) ^{\alpha }-1\right) \right\} \left\{\exp \left( \left( \frac{x}{\beta }\right) ^{\alpha }-\left( \exp \left(\frac{x}{\beta }\right) ^{\alpha }-1\right) \right) \right\}}}}.
+#' @references  Jodra, P., Gomez, H. W., Jimenez-Gamero, M. D., & Alba-Fernandez, M. V. (2017).
+#' *The power Muth distribution* . Mathematical Modelling and Analysis, 22(2), 186-201.
+#' @examples
+#' rTPMD(50,1,2)
+#' rTPMD(10,2,3)
+rTPMD=function(n,beta,alpha) suppressWarnings(
+  {
+    if(any(n<0)) {stop("n must be between (0,inf")}
+    if(any(beta<0)) {stop("beta must be between (0,inf")}
+    if(any(alpha<0)) {stop("alpha must be between (0,inf")}
+    rn=qTPMD(runif(n),beta,alpha)
+    return(rn)
+  })

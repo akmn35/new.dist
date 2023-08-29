@@ -14,7 +14,7 @@ dTPMD(x, beta, alpha)
 \item{alpha}{a scale parameter.}
 }
 \value{
-\link{dTPMD} gives the density, \link{pTPMD} gives the distribution function, \link{qTPMD} gives the quantile function and \link{rTPMD} generates random deviates.
+\code{dTPMD} gives the density, \code{pTPMD} gives the distribution function, \code{qTPMD} gives the quantile function and \code{rTPMD} generates random deviates.
 }
 \description{
 Density, distribution function, quantile function and random generation for the Power Muth distribution with parameters shape and scale.
