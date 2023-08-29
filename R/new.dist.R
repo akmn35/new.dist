@@ -5,19 +5,20 @@
 #' @param beta a shape parameter.
 #' @param alpha a scale parameter.
 #' @description
-#' [dTMPD()] performs a density of The Power Muth Distribution.
-#' @return [dTMPD()] returns the density.
+#' Density, distribution function, quantile function and random generation for the Power Muth distribution with parameters shape and scale.
+#' @return [dTPMD] gives the density, [pTPMD] gives the distribution function, [qTPMD] gives the quantile function and [rTPMD] generates random deviates.
 #' @details
 #' The Power Muth Distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
+#' \ifelse{html}{\out{"(alpha/(beta^alpha))*(x^(alpha-1))*(exp((x/beta)^alpha)-1)*exp(((x/beta)^alpha)-(exp((x/beta)^alpha)-1))"}}{{\eqn{\\ f\left( x\right) =\frac{\alpha }{\beta ^{\alpha }}x^{\alpha -1}\left\{ \exp\left( \left( \frac{x}{\beta }\right) ^{\alpha }-1\right) \right\} \left\{\exp \left( \left( \frac{x}{\beta }\right) ^{\alpha }-\left( \exp \left(\frac{x}{\beta }\right) ^{\alpha }-1\right) \right) \right\}}}}.
 #' @references  Jodra, P., Gomez, H. W., Jimenez-Gamero, M. D., & Alba-Fernandez, M. V. (2017).
 #' *The power Muth distribution* . Mathematical Modelling and Analysis, 22(2), 186-201.
 #' @examples
-#' dTMPD(1,2,3)
-#' dTMPD(2,3,4)
-#' dTMPD(c(1:5),2,3)
-#' dTMPD(c(1:5),c(2:6),3)
-#' dTMPD(c(1:5),c(2:6),c(3:6))
-dTMPD=function(x,beta,alpha)  {
+#' dTPMD(1,2,3)
+#' dTPMD(2,3,4)
+#' dTPMD(c(1:5),2,3)
+#' dTPMD(c(1:5),c(2:6),3)
+#' dTPMD(c(1:5),c(2:6),c(3:6))
+dTPMD=function(x,beta,alpha)  {
   if(any(x<0)) {stop("x must be between (0,inf")}
   if(any(beta<0)) {stop("beta must be between (0,inf")}
   if(any(alpha<0)) {stop("alpha must be between (0,inf")}
@@ -31,4 +32,11 @@ dTMPD=function(x,beta,alpha)  {
   }
     return(pdf)
 }
+
+
+
+
+
+
+
 

@@ -10,10 +10,12 @@ The goal of new.dist is to …
 
 ## Installation
 
-You can install the development version of new.dist like so:
+You can install the development version of new.dist from
+[GitHub](https://github.com/) with:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+# install.packages("devtools")
+devtools::install_github("akmn35/new.dist")
 ```
 
 ## Example
