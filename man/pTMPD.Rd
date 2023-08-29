@@ -23,15 +23,12 @@ Density, distribution function, quantile function and random generation for the 
 The Power Muth Distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
 \ifelse{html}{\out{"(alpha/(beta^alpha))*(x^(alpha-1))*(exp((x/beta)^alpha)-1)*exp(((x/beta)^alpha)-(exp((x/beta)^alpha)-1))"}}{{\eqn{\\ f\left( x\right) =\frac{\alpha }{\beta ^{\alpha }}x^{\alpha -1}\left\{ \exp\left( \left( \frac{x}{\beta }\right) ^{\alpha }-1\right) \right\} \left\{\exp \left( \left( \frac{x}{\beta }\right) ^{\alpha }-\left( \exp \left(\frac{x}{\beta }\right) ^{\alpha }-1\right) \right) \right\}}}}.
 }
-\note{
-the cumulative hazart ... (a) if ...is increasing in x for any ... (b) if ... then there exist an ... so that h(x) is (strictly) decreasing when ... and... (strictly) when ...
-}
 \examples{
-dTPMD(1,2,3)
-dTPMD(2,3,4)
-dTPMD(c(1:5),2,3)
-dTPMD(c(1:5),c(2:6),3)
-dTPMD(c(1:5),c(2:6),c(3:6))
+pTPMD(1,2,3)
+pTPMD(c(1:5),2,3)
+pTPMD(c(1:5),c(2:6),3)
+pTPMD(c(1:10),c(2:6),c(3:5))
+pTPMD(-5,c(2:6),3)
 }
 \references{
 Jodra, P., Gomez, H. W., Jimenez-Gamero, M. D., & Alba-Fernandez, M. V. (2017).
