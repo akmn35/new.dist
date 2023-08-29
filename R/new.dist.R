@@ -54,7 +54,7 @@ dTPMD=function(x,beta,alpha)  {
 #' pTPMD(c(1:5),c(2:6),3)
 #' pTPMD(c(1:10),c(2:6),c(3:5))
 #' pTPMD(-5,c(2:6),3)
-dTPMD=function(x,beta,alpha)  {
+pTPMD=function(x,beta,alpha)  {
   if(any(x<0)) {stop("x must be between (0,inf")}
   if(any(beta<0)) {stop("beta must be between (0,inf")}
   if(any(alpha<0)) {stop("alpha must be between (0,inf")}
@@ -68,10 +68,41 @@ dTPMD=function(x,beta,alpha)  {
   }
   return(cdf)
 }
+#' The Power Muth Distribution
+#' @export
+#' @rdname qTMPD
+#' @param p vector of probabilities.
+#' @param beta a shape parameter.
+#' @param alpha a scale parameter.
+#' @description
+#' Density, distribution function, quantile function and random generation for the Power Muth distribution with parameters shape and scale.
+#' @return [dTPMD] gives the density, [pTPMD] gives the distribution function, [qTPMD] gives the quantile function and [rTPMD] generates random deviates.
+#' @details
+#' The Power Muth Distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
+#' \ifelse{html}{\out{"(alpha/(beta^alpha))*(x^(alpha-1))*(exp((x/beta)^alpha)-1)*exp(((x/beta)^alpha)-(exp((x/beta)^alpha)-1))"}}{{\eqn{\\ f\left( x\right) =\frac{\alpha }{\beta ^{\alpha }}x^{\alpha -1}\left\{ \exp\left( \left( \frac{x}{\beta }\right) ^{\alpha }-1\right) \right\} \left\{\exp \left( \left( \frac{x}{\beta }\right) ^{\alpha }-\left( \exp \left(\frac{x}{\beta }\right) ^{\alpha }-1\right) \right) \right\}}}}.
+#' @references  Jodra, P., Gomez, H. W., Jimenez-Gamero, M. D., & Alba-Fernandez, M. V. (2017).
+#' *The power Muth distribution* . Mathematical Modelling and Analysis, 22(2), 186-201.
+#' @examples
+#' qTPMD(.5,5,2)
+#' qTPMD(.3,2,5)
 
-
-
-
-
+qTPMD=function(p,beta,alpha)
+{
+  if(any(p<0)|any(p>1)) {stop("p must be between [0,1]")}
+  if(any(beta<0)) {stop("beta must be between (0,inf")}
+  if(any(alpha<0)) {stop("alpha must be between (0,inf")}
+  enuzun = max(length(p), length(alpha), length(beta))
+  p=rep(p,enuzun/length(p)+1)[1:enuzun]
+  alpha=rep(alpha, enuzun/length(alpha)+1)[1:enuzun]
+  beta=rep(beta,enuzun/length(beta)+1)[1:enuzun]
+  quant=NULL
+  for (i in 1:enuzun)
+  {
+    quant[i]=exp(log(-pracma::lambertWn((-1+p[i])/exp(1))-1+log(1-p[i]))/alpha[i])*beta[i]
+  }
+  {
+    return(quant)
+  }
+}
 
 
