@@ -62,9 +62,9 @@ pTPMD=function(x,beta,alpha)  {
   x=rep(x,enuzun/length(x)+1)[1:enuzun]
   alpha=rep(alpha, enuzun/length(alpha)+1)[1:enuzun]
   beta=rep(beta,enuzun/length(beta)+1)[1:enuzun]
-  pdf=NULL
+  cdf=NULL
   for (i in 1:enuzun)  {
-    cdf[i]=1-exp(((x[i]/beta[i])^alpha[i])-(exp((x[i]/beta[i])^alpha[i])-1))
+    if(x[i]>0) cdf[i]=1-exp(((x[i]/beta[i])^alpha[i])-(exp((x[i]/beta[i])^alpha[i])-1)) else cdf[i]=0
   }
   return(cdf)
 }
@@ -85,7 +85,6 @@ pTPMD=function(x,beta,alpha)  {
 #' @examples
 #' qTPMD(.5,5,2)
 #' qTPMD(.3,2,5)
-
 qTPMD=function(p,beta,alpha)
 {
   if(any(p<0)|any(p>1)) {stop("p must be between [0,1]")}
