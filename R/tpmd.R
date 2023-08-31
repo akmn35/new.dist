@@ -1,12 +1,12 @@
 #' The Power Muth Distribution
 #' @export
-#' @rdname dTMPD
+#' @rdname dtpmd
 #' @param x new numeric vector of data values.
 #' @param beta a shape parameter.
 #' @param alpha a scale parameter.
 #' @description
 #' Density, distribution function, quantile function and random generation for the Power Muth distribution with parameters shape and scale.
-#' @return \code{dTPMD} gives the density, \code{pTPMD} gives the distribution function, \code{qTPMD} gives the quantile function and \code{rTPMD} generates random deviates.
+#' @return \code{dtpmd} gives the density, \code{ptpmd} gives the distribution function, \code{qtpmd} gives the quantile function and \code{rtpmd} generates random deviates.
 #' @details
 #' The Power Muth Distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
 #' \ifelse{html}{\out{"(alpha/(beta^alpha))*(x^(alpha-1))*(exp((x/beta)^alpha)-1)*exp(((x/beta)^alpha)-(exp((x/beta)^alpha)-1))"}}{{\eqn{\\ f\left( x\right) =\frac{\alpha }{\beta ^{\alpha }}x^{\alpha -1}\left\{ \exp\left( \left( \frac{x}{\beta }\right) ^{\alpha }-1\right) \right\} \left\{\exp \left( \left( \frac{x}{\beta }\right) ^{\alpha }-\left( \exp \left(\frac{x}{\beta }\right) ^{\alpha }-1\right) \right) \right\}}}}.
@@ -15,12 +15,12 @@
 #' @note
 #' the cumulative hazart ... (a) if ...is increasing in x for any ... (b) if ... then there exist an ... so that h(x) is (strictly) decreasing when ... and... (strictly) when ...
 #' @examples
-#' dTPMD(1,2,3)
-#' dTPMD(2,3,4)
-#' dTPMD(c(1:5),2,3)
-#' dTPMD(c(1:5),c(2:6),3)
-#' dTPMD(c(1:5),c(2:6),c(3:6))
-dTPMD=function(x,beta,alpha)  {
+#' dtpmd(1,2,3)
+#' dtpmd(2,3,4)
+#' dtpmd(c(1:5),2,3)
+#' dtpmd(c(1:5),c(2:6),3)
+#' dtpmd(c(1:5),c(2:6),c(3:6))
+dtpmd=function(x,beta,alpha)  {
   if(any(x<0)) {stop("x must be between (0,inf")}
   if(any(beta<0)) {stop("beta must be between (0,inf")}
   if(any(alpha<0)) {stop("alpha must be between (0,inf")}
@@ -36,25 +36,25 @@ dTPMD=function(x,beta,alpha)  {
 }
 #' The Power Muth Distribution
 #' @export
-#' @rdname pTMPD
+#' @rdname ptpmd
 #' @param x new numeric vector of data values.
 #' @param beta a shape parameter.
 #' @param alpha a scale parameter.
 #' @description
 #' Density, distribution function, quantile function and random generation for the Power Muth distribution with parameters shape and scale.
-#' @return \code{dTPMD} gives the density, \code{pTPMD} gives the distribution function, \code{qTPMD} gives the quantile function and \code{rTPMD} generates random deviates.
+#' @return \code{dtpmd} gives the density, \code{ptpmd} gives the distribution function, \code{qtpmd} gives the quantile function and \code{rtpmd} generates random deviates.
 #' @details
 #' The Power Muth Distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
 #' \ifelse{html}{\out{"(alpha/(beta^alpha))*(x^(alpha-1))*(exp((x/beta)^alpha)-1)*exp(((x/beta)^alpha)-(exp((x/beta)^alpha)-1))"}}{{\eqn{\\ f\left( x\right) =\frac{\alpha }{\beta ^{\alpha }}x^{\alpha -1}\left\{ \exp\left( \left( \frac{x}{\beta }\right) ^{\alpha }-1\right) \right\} \left\{\exp \left( \left( \frac{x}{\beta }\right) ^{\alpha }-\left( \exp \left(\frac{x}{\beta }\right) ^{\alpha }-1\right) \right) \right\}}}}.
 #' @references  Jodra, P., Gomez, H. W., Jimenez-Gamero, M. D., & Alba-Fernandez, M. V. (2017).
 #' *The power Muth distribution* . Mathematical Modelling and Analysis, 22(2), 186-201.
 #' @examples
-#' pTPMD(1,2,3)
-#' pTPMD(c(1:5),2,3)
-#' pTPMD(c(1:5),c(2:6),3)
-#' pTPMD(c(1:10),c(2:6),c(3:5))
-#' pTPMD(-5,c(2:6),3)
-pTPMD=function(x,beta,alpha)  {
+#' ptpmd(1,2,3)
+#' ptpmd(c(1:5),2,3)
+#' ptpmd(c(1:5),c(2:6),3)
+#' ptpmd(c(1:10),c(2:6),c(3:5))
+#' ptpmd(-5,c(2:6),3)
+ptpmd=function(x,beta,alpha)  {
   if(any(x<0)) {stop("x must be between (0,inf")}
   if(any(beta<0)) {stop("beta must be between (0,inf")}
   if(any(alpha<0)) {stop("alpha must be between (0,inf")}
@@ -70,22 +70,22 @@ pTPMD=function(x,beta,alpha)  {
 }
 #' The Power Muth Distribution
 #' @export
-#' @rdname qTMPD
+#' @rdname qtpmd
 #' @param p vector of probabilities.
 #' @param beta a shape parameter.
 #' @param alpha a scale parameter.
 #' @description
 #' Density, distribution function, quantile function and random generation for the Power Muth distribution with parameters shape and scale.
-#' @return \code{dTPMD} gives the density, \code{pTPMD} gives the distribution function, \code{qTPMD} gives the quantile function and \code{rTPMD} generates random deviates.
+#' @return \code{dtpmd} gives the density, \code{ptpmd} gives the distribution function, \code{qtpmd} gives the quantile function and \code{rtpmd} generates random deviates.
 #' @details
 #' The Power Muth Distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
 #' \ifelse{html}{\out{"(alpha/(beta^alpha))*(x^(alpha-1))*(exp((x/beta)^alpha)-1)*exp(((x/beta)^alpha)-(exp((x/beta)^alpha)-1))"}}{{\eqn{\\ f\left( x\right) =\frac{\alpha }{\beta ^{\alpha }}x^{\alpha -1}\left\{ \exp\left( \left( \frac{x}{\beta }\right) ^{\alpha }-1\right) \right\} \left\{\exp \left( \left( \frac{x}{\beta }\right) ^{\alpha }-\left( \exp \left(\frac{x}{\beta }\right) ^{\alpha }-1\right) \right) \right\}}}}.
 #' @references  Jodra, P., Gomez, H. W., Jimenez-Gamero, M. D., & Alba-Fernandez, M. V. (2017).
 #' *The power Muth distribution* . Mathematical Modelling and Analysis, 22(2), 186-201.
 #' @examples
-#' qTPMD(.5,5,2)
-#' qTPMD(.3,2,5)
-qTPMD=function(p,beta,alpha)
+#' qtpmd(.5,5,2)
+#' qtpmd(.3,2,5)
+qtpmd=function(p,beta,alpha)
 {
   if(any(p<0)|any(p>1)) {stop("p must be between [0,1]")}
   if(any(beta<0)) {stop("beta must be between (0,inf")}
@@ -105,26 +105,26 @@ qTPMD=function(p,beta,alpha)
 }
 #' The Power Muth Distribution
 #' @export
-#' @rdname rTMPD
+#' @rdname rtpmd
 #' @param n number of observations.If length(n) > 1, the length is taken to be the number required.
 #' @param beta a shape parameter.
 #' @param alpha a scale parameter.
 #' @description
 #' Density, distribution function, quantile function and random generation for the Power Muth distribution with parameters shape and scale.
-#' @return \code{dTPMD} gives the density, \code{pTPMD} gives the distribution function, \code{qTPMD} gives the quantile function and \code{rTPMD} generates random deviates.
+#' @return \code{dtpmd} gives the density, \code{ptpmd} gives the distribution function, \code{qtpmd} gives the quantile function and \code{rtpmd} generates random deviates.
 #' @details
 #' The Power Muth Distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#' \ifelse{html}{\out{"(alpha/(beta^alpha))*(x^(alpha-1))*(exp((x/beta)^alpha)-1)*exp(((x/beta)^alpha)-(exp((x/beta)^alpha)-1))"}}{{\eqn{\\ f\left( x\right) =\frac{\alpha }{\beta ^{\alpha }}x^{\alpha -1}\left\{ \exp\left( \left( \frac{x}{\beta }\right) ^{\alpha }-1\right) \right\} \left\{\exp \left( \left( \frac{x}{\beta }\right) ^{\alpha }-\left( \exp \left(\frac{x}{\beta }\right) ^{\alpha }-1\right) \right) \right\}}}}.
+#' \ifelse{text}{\out{}}{{\eqn{\\ f\left( x\right) =\frac{\alpha }{\beta ^{\alpha }}x^{\alpha -1}\left\{ \exp\left( \left( \frac{x}{\beta }\right) ^{\alpha }-1\right) \right\} \left\{\exp \left( \left( \frac{x}{\beta }\right) ^{\alpha }-\left( \exp \left(\frac{x}{\beta }\right) ^{\alpha }-1\right) \right) \right\}}}}.
 #' @references  Jodra, P., Gomez, H. W., Jimenez-Gamero, M. D., & Alba-Fernandez, M. V. (2017).
 #' *The power Muth distribution* . Mathematical Modelling and Analysis, 22(2), 186-201.
 #' @examples
-#' rTPMD(50,1,2)
-#' rTPMD(10,2,3)
-rTPMD=function(n,beta,alpha) suppressWarnings(
+#' rtpmd(50,1,2)
+#' rtpmd(10,2,3)
+rtpmd=function(n,beta,alpha) suppressWarnings(
   {
     if(any(n<0)) {stop("n must be between (0,inf")}
     if(any(beta<0)) {stop("beta must be between (0,inf")}
     if(any(alpha<0)) {stop("alpha must be between (0,inf")}
-    rn=qTPMD(runif(n),beta,alpha)
+    rn=qtpmd(runif(n),beta,alpha)
     return(rn)
   })
