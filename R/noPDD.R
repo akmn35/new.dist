@@ -1,6 +1,6 @@
 #' A new one parameter discrete distribution and its applications
 #' @export
-#' @rdname dnoPDD
+#' @rdname noPDD
 #' @param x new numeric vector of data values.
 #' @param theta a shape parameter.
 #' @description
@@ -9,8 +9,8 @@
 #' @details
 #' A new one parameter discrete distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
 #'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
+#' @references  Shukla, K. K., Shanker, R. ve Tiwari, M. K., 2022,
+#' *A new one parameter discrete distribution and its applications*, Journal of Statistics and Management Systems, 25 (1), 269-283.
 #' @examples
 #' dnoPDD(c(1:5),2)
 #' dnoPDD(2,c(2:4))
@@ -33,17 +33,9 @@ dnoPDD=function(x,theta) #x,theta > 0
 }
 #' A new one parameter discrete distribution and its applications
 #' @export
-#' @rdname pnoPDD
+#' @rdname noPDD
 #' @param x new numeric vector of data values.
 #' @param theta a shape parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for a new one parameter discrete distribution with parameters shape and scale.
-#' @return \code{dnoPDD} gives the density, \code{pnoPDD} gives the distribution function, \code{qnoPDD} gives the quantile function and \code{rnoPDD} generates random deviates.
-#' @details
-#' A new one parameter discrete distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' pnoPDD(c(1:5),2)
 #' pnoPDD(2,c(2:4))
@@ -66,17 +58,9 @@ pnoPDD=function(x,theta) #x,theta > 0
 }
 #' A new one parameter discrete distribution and its applications
 #' @export
-#' @rdname qnoPDD
+#' @rdname noPDD
 #' @param p new numeric vector of data values.
 #' @param theta a shape parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for a new one parameter discrete distribution with parameters shape and scale.
-#' @return \code{dnoPDD} gives the density, \code{pnoPDD} gives the distribution function, \code{qnoPDD} gives the quantile function and \code{rnoPDD} generates random deviates.
-#' @details
-#' A new one parameter discrete distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' qnoPDD(.1,1)
 qnoPDD=function(p,theta) # 0<p<1, theta > 0
@@ -99,17 +83,9 @@ qnoPDD=function(p,theta) # 0<p<1, theta > 0
 }
 #' A new one parameter discrete distribution and its applications
 #' @export
-#' @rdname rnoPDD
+#' @rdname noPDD
 #' @param n new numeric vector of data values.
 #' @param theta a shape parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for a new one parameter discrete distribution with parameters shape and scale.
-#' @return \code{dnoPDD} gives the density, \code{pnoPDD} gives the distribution function, \code{qnoPDD} gives the quantile function and \code{rnoPDD} generates random deviates.
-#' @details
-#' A new one parameter discrete distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' rnoPDD(10,1)
 rnoPDD=function(n,theta)

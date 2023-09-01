@@ -1,6 +1,6 @@
 #' Estimation procedures for kumaraswamy distribution parameters under adaptive type-II hybrid progressive censoring
 #' @export
-#' @rdname depkd
+#' @rdname epkd
 #' @param x new numeric vector of data values.
 #' @param lambda a shape1 parameter.
 #' @param alpha a shape parameter.
@@ -10,8 +10,8 @@
 #' @details
 #' ...Estimation procedures for kumaraswamy distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
 #'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
+#' @references  Kohansal, A. ve Bakouch, H. S., 2021,
+#' *Estimation procedures for Kumaraswamy distribution parameters under adaptive type-II hybrid progressive censoring*, Communications in Statistics-Simulation and Computation, 50 (12), 4059-4078.
 #' @examples
 #' depkd(0.1,2,3)
 #' depkd(c(0.1,0.5),2,3)
@@ -35,18 +35,10 @@ depkd=function(x,lambda,alpha)
 }
 #' Estimation procedures for kumaraswamy distribution parameters under adaptive type-II hybrid progressive censoring
 #' @export
-#' @rdname pepkd
+#' @rdname epkd
 #' @param p new numeric vector of data values.
 #' @param lambda a shape1 parameter.
 #' @param alpha a shape parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for Estimation procedures for kumaraswamy distribution with parameters shape and scale.
-#' @return \code{depkd} gives the density, \code{pepkd} gives the distribution function, \code{qepkd} gives the quantile function and \code{repkd} generates random deviates.
-#' @details
-#' ...Estimation procedures for kumaraswamy distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' pepkd(0.5,2,3)
 #' pepkd(c(0.1,0.5),2,3)
@@ -71,18 +63,10 @@ pepkd=function(x,lambda,alpha) suppressWarnings(
   })
 #' Estimation procedures for kumaraswamy distribution parameters under adaptive type-II hybrid progressive censoring
 #' @export
-#' @rdname qepkd
+#' @rdname epkd
 #' @param p new numeric vector of data values.
 #' @param lambda a shape1 parameter.
 #' @param alpha a shape parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for Estimation procedures for kumaraswamy distribution with parameters shape and scale.
-#' @return \code{depkd} gives the density, \code{pepkd} gives the distribution function, \code{qepkd} gives the quantile function and \code{repkd} generates random deviates.
-#' @details
-#' ...Estimation procedures for kumaraswamy distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' qepkd(.8,1,2)
 #' qepkd(.4,2,5)
@@ -104,18 +88,10 @@ qepkd=function(p,lambda,alpha)
 }
 #' Estimation procedures for kumaraswamy distribution parameters under adaptive type-II hybrid progressive censoring
 #' @export
-#' @rdname repkd
+#' @rdname epkd
 #' @param n new numeric vector of data values.
 #' @param lambda a shape1 parameter.
 #' @param alpha a shape parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for Estimation procedures for kumaraswamy distribution with parameters shape and scale.
-#' @return \code{depkd} gives the density, \code{pepkd} gives the distribution function, \code{qepkd} gives the quantile function and \code{repkd} generates random deviates.
-#' @details
-#' ...Estimation procedures for kumaraswamy distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' repkd(10,1,2)
 repkd=function(n,lambda,alpha) suppressWarnings(

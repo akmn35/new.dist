@@ -1,6 +1,6 @@
 #' on the muth distribution
 #' @export
-#' @rdname domd
+#' @rdname omd
 #' @param x new numeric vector of data values.
 #' @param alpha a shape parameter.
 #' @description
@@ -9,8 +9,8 @@
 #' @details
 #' On the muth distribution distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
 #'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
+#' @references  Jodrá, P., Jiménez-Gamero, M. D. ve Alba-Fernández, M. V., 2015,
+#' *On the Muth distribution, Mathematical Modelling and Analysis*, 20 (3), 291-310.
 #' @examples
 #' domd(c(1:5),.2)
 #' domd(2,c(.2,.3,.4))
@@ -31,17 +31,9 @@ domd=function(x,alpha) # x>0, (0,alpha,1]
 }
 #' on the muth distribution
 #' @export
-#' @rdname pomd
+#' @rdname omd
 #' @param x new numeric vector of data values.
 #' @param alpha a shape parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for on the muth distribution distribution with parameters shape and scale.
-#' @return \code{domd} gives the density, \code{pomd} gives the distribution function, \code{qomd} gives the quantile function and \code{romd} generates random deviates.
-#' @details
-#' On the muth distribution distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' pomd(c(1:5),.2)
 #' pomd(c(-1,-2,-3),.2)
@@ -65,17 +57,9 @@ pomd=function(x,alpha)# x>0, alpha=(0,1]
 }
 #' on the muth distribution
 #' @export
-#' @rdname qomd
+#' @rdname omd
 #' @param p new numeric vector of data values.
 #' @param alpha a shape parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for on the muth distribution distribution with parameters shape and scale.
-#' @return \code{domd} gives the density, \code{pomd} gives the distribution function, \code{qomd} gives the quantile function and \code{romd} generates random deviates.
-#' @details
-#' On the muth distribution distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' qomd(.8,1)
 #' qomd(.9,5)
@@ -95,17 +79,9 @@ qomd=function(p,alpha) # 0<p<1, theta > 0
 }
 #' on the muth distribution
 #' @export
-#' @rdname romd
+#' @rdname omd
 #' @param n new numeric vector of data values.
 #' @param alpha a shape parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for on the muth distribution distribution with parameters shape and scale.
-#' @return \code{domd} gives the density, \code{pomd} gives the distribution function, \code{qomd} gives the quantile function and \code{romd} generates random deviates.
-#' @details
-#' On the muth distribution distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' romd(10,1)
 romd=function(n,alpha)

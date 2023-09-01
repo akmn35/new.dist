@@ -1,6 +1,6 @@
 #' A Power Log Dagum Distribution
 #' @export
-#' @rdname dpldd
+#' @rdname pldd
 #' @param x new numeric vector of data values.
 #' @param alpha a shape parameter.
 #' @param beta shape2
@@ -11,8 +11,8 @@
 #' @details
 #' A Power Log Dagum Distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
 #'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
+#' @references  Bakouch, H. S., Khan, M. N., Hussain, T. ve Chesneau, C., 2019,
+#' *A power log-Dagum distribution: estimation and applications*, Journal of Applied Statistics, 46 (5), 874-892.
 #' @examples
 #' dpldd(1,2,3,4)
 #' dpldd(c(1:5),2,3,4)
@@ -39,19 +39,11 @@ dpldd=function(x,alpha,beta,theta) suppressWarnings(
   })
 #' A Power Log Dagum Distribution
 #' @export
-#' @rdname ppldd
+#' @rdname pldd
 #' @param x new numeric vector of data values.
 #' @param alpha a shape parameter.
 #' @param beta shape2
 #' @param theta shape3
-#' @description
-#' Density, distribution function, quantile function and random generation for a Power Log Dagum distribution with parameters shape and scale.
-#' @return \code{dpldd} gives the density, \code{ppldd} gives the distribution function, \code{qpldd} gives the quantile function and \code{rpldd} generates random deviates.
-#' @details
-#' A Power Log Dagum Distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' ppldd(-1,2,3,4)
 #' ppldd(c(1:3),2,3,4)
@@ -80,19 +72,11 @@ ppldd=function(x,alpha,beta,theta) suppressWarnings(
   })
 #' A Power Log Dagum Distribution
 #' @export
-#' @rdname qpldd
+#' @rdname pldd
 #' @param p new numeric vector of data values.
 #' @param alpha a shape parameter.
 #' @param beta shape2
 #' @param theta shape3
-#' @description
-#' Density, distribution function, quantile function and random generation for a Power Log Dagum distribution with parameters shape and scale.
-#' @return \code{dpldd} gives the density, \code{ppldd} gives the distribution function, \code{qpldd} gives the quantile function and \code{rpldd} generates random deviates.
-#' @details
-#' A Power Log Dagum Distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' qpldd(c(.7,.8),1,2,3)
 #' qpldd(c(.7,.8),c(1,2),2,3)
@@ -122,19 +106,11 @@ qpldd=function(p,alpha,beta,theta) suppressWarnings(
   })
 #' A Power Log Dagum Distribution
 #' @export
-#' @rdname rpldd
+#' @rdname pldd
 #' @param n new numeric vector of data values.
 #' @param alpha a shape parameter.
 #' @param beta shape2
 #' @param theta shape3
-#' @description
-#' Density, distribution function, quantile function and random generation for a Power Log Dagum distribution with parameters shape and scale.
-#' @return \code{dpldd} gives the density, \code{ppldd} gives the distribution function, \code{qpldd} gives the quantile function and \code{rpldd} generates random deviates.
-#' @details
-#' A Power Log Dagum Distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' rpldd(100,1,2,1)
 rpldd=function(n,alpha,beta,theta) suppressWarnings(

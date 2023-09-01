@@ -1,6 +1,6 @@
 #' The gamma-Lomax distribution
 #' @export
-#' @rdname dgld
+#' @rdname gld
 #' @param x new numeric vector of data values.
 #' @param a a shape parameter.
 #' @param alpha a shape1 parameter.
@@ -11,8 +11,8 @@
 #' @details
 #' The gamma-Lomax distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
 #'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
+#' @references  Cordeiro, G. M., Ortega, E. M. ve Popović, B. V., 2015,
+#' *The gamma-Lomax distribution*, Journal of statistical computation and simulation, 85 (2), 305-319.
 #' @examples
 #' dgld(1,2,3,4)
 #' dgld(c(1:5),2,3,4)
@@ -38,19 +38,11 @@ dgld=function(x,a,alpha,beta)
 }
 #' The gamma-Lomax distribution
 #' @export
-#' @rdname pgld
+#' @rdname gld
 #' @param x new numeric vector of data values.
 #' @param a a shape parameter.
 #' @param alpha a shape1 parameter.
 #' @param beta a shape2 parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for the gamma-Lomax distribution with parameters shape and scale.
-#' @return \code{dgld} gives the density, \code{pgld} gives the distribution function, \code{qgld} gives the quantile function and \code{rgld} generates random deviates.
-#' @details
-#' The gamma-Lomax distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' pgld(1,2,3,4)
 #' pgld(c(1:5),2,3,4)
@@ -75,19 +67,11 @@ pgld=function(x,a,alpha,beta)
 }
 #' The gamma-Lomax distribution
 #' @export
-#' @rdname qgld
+#' @rdname gld
 #' @param x new numeric vector of data values.
 #' @param a a shape parameter.
 #' @param alpha a shape1 parameter.
 #' @param beta a shape2 parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for the gamma-Lomax distribution with parameters shape and scale.
-#' @return \code{dgld} gives the density, \code{pgld} gives the distribution function, \code{qgld} gives the quantile function and \code{rgld} generates random deviates.
-#' @details
-#' The gamma-Lomax distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' qgld(c(.7,.8),1,2,3)
 #' qgld(c(.7,.8),c(1,2),2,3)
@@ -112,19 +96,11 @@ qgld=function(p,a,alpha,beta)
 }
 #' The gamma-Lomax distribution
 #' @export
-#' @rdname rgld
+#' @rdname gld
 #' @param x new numeric vector of data values.
 #' @param a a shape parameter.
 #' @param alpha a shape1 parameter.
 #' @param beta a shape2 parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for the gamma-Lomax distribution with parameters shape and scale.
-#' @return \code{dgld} gives the density, \code{pgld} gives the distribution function, \code{qgld} gives the quantile function and \code{rgld} generates random deviates.
-#' @details
-#' The gamma-Lomax distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' rgld(100,1,2,1)
 rgld=function(n,a,alpha,beta) suppressWarnings(

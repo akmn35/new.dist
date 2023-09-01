@@ -1,6 +1,6 @@
 #' A new discrete distribution
 #' @export
-#' @rdname dndd
+#' @rdname ndd
 #' @param x new numeric vector of data values.
 #' @param theta a shape parameter.
 #' @description
@@ -9,8 +9,8 @@
 #' @details
 #' A new discrete distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
 #'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
+#' @references  Bakouch, H. S., Jazi, M. A. ve Nadarajah, S., 2014,
+#' *A new discrete distribution, Statistics*, 48 (1), 200-240.
 #' @examples
 #' dndd(c(1:5),2)
 #' dndd(-2,c(2:4))
@@ -35,17 +35,9 @@ dndd=function(x,theta)  #x=1,2,..., theta > 0
 }
 #' A new discrete distribution
 #' @export
-#' @rdname pndd
+#' @rdname ndd
 #' @param x new numeric vector of data values.
 #' @param theta a shape parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for a new discrete distribution with parameters shape and scale.
-#' @return \code{dndd} gives the density, \code{pndd} gives the distribution function, \code{qndd} gives the quantile function and \code{rndd} generates random deviates.
-#' @details
-#' A new discrete distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' pndd(c(1:5),2)
 #' pndd(2,c(2:4))
@@ -70,17 +62,9 @@ pndd=function(x,theta)
 }
 #' A new discrete distribution
 #' @export
-#' @rdname qndd
+#' @rdname ndd
 #' @param p new numeric vector of data values.
 #' @param theta a shape parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for a new discrete distribution with parameters shape and scale.
-#' @return \code{dndd} gives the density, \code{pndd} gives the distribution function, \code{qndd} gives the quantile function and \code{rndd} generates random deviates.
-#' @details
-#' A new discrete distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' qndd(.5,.2)
 #' qndd(.8,1)
@@ -106,17 +90,9 @@ qndd=function(p,theta)
 }
 #' A new discrete distribution
 #' @export
-#' @rdname rndd
+#' @rdname ndd
 #' @param n new numeric vector of data values.
 #' @param theta a shape parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for a new discrete distribution with parameters shape and scale.
-#' @return \code{dndd} gives the density, \code{pndd} gives the distribution function, \code{qndd} gives the quantile function and \code{rndd} generates random deviates.
-#' @details
-#' A new discrete distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' rndd(10,.1)
 rndd=function(n,theta) suppressWarnings(

@@ -28,32 +28,11 @@ rsod(n, alpha, beta)
 }
 \value{
 \code{dsod} gives the density, \code{psod} gives the distribution function, \code{qsod} gives the quantile function and \code{rsod} generates random deviates.
-
-\code{dsod} gives the density, \code{psod} gives the distribution function, \code{qsod} gives the quantile function and \code{rsod} generates random deviates.
-
-\code{dsod} gives the density, \code{psod} gives the distribution function, \code{qsod} gives the quantile function and \code{rsod} generates random deviates.
-
-\code{dsod} gives the density, \code{psod} gives the distribution function, \code{qsod} gives the quantile function and \code{rsod} generates random deviates.
 }
 \description{
 Density, distribution function, quantile function and random generation for On parameter estimation of the standard omega distribution with parameters shape and scale.
-
-Density, distribution function, quantile function and random generation for On parameter estimation of the standard omega distribution with parameters shape and scale.
-
-Density, distribution function, quantile function and random generation for On parameter estimation of the standard omega distribution with parameters shape and scale.
-
-Density, distribution function, quantile function and random generation for On parameter estimation of the standard omega distribution with parameters shape and scale.
 }
 \details{
-On parameter estimation of the standard omega distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-\ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-
-On parameter estimation of the standard omega distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-\ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-
-On parameter estimation of the standard omega distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-\ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-
 On parameter estimation of the standard omega distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
 \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
 }
@@ -71,13 +50,4 @@ rsod(10,1,2)
 \references{
 Birbiçer, İ. ve Genç, A. İ., 2022,
 \emph{On parameter estimation of the standard omega distribution}. Journal of Applied Statistics, 1-17.
-
-Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-\emph{The discrete Lindley distribution: properties and applications}.Journal of statistical computation and simulation, 81 (11), 1405-1416.
-
-Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-\emph{The discrete Lindley distribution: properties and applications}.Journal of statistical computation and simulation, 81 (11), 1405-1416.
-
-Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-\emph{The discrete Lindley distribution: properties and applications}.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 }

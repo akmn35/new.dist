@@ -1,6 +1,6 @@
 #' Two-Parameter Rayleigh Distribution
 #' @export
-#' @rdname dtprd
+#' @rdname tprd
 #' @param x new numeric vector of data values.
 #' @param lambda a shape1 parameter.
 #' @param mu a shape parameter.
@@ -10,8 +10,8 @@
 #' @details
 #' The Two-Parameter Rayleigh distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
 #'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
+#' @references  Dey, S., Dey, T. ve Kundu, D., 2014,
+#' *Two-parameter Rayleigh distribution: different methods of estimation*, American Journal of Mathematical and Management Sciences, 33 (1), 55-74.
 #' @examples
 #' dtprd(c(5),c(4),5)
 #' dtprd(c(9),c(4:8),5)
@@ -36,18 +36,10 @@ dtprd=function(x,lambda,mu) #x>mu,  mu,lambda>0
 }
 #' Two-Parameter Rayleigh Distribution
 #' @export
-#' @rdname ptprd
+#' @rdname tprd
 #' @param p new numeric vector of data values.
 #' @param lambda a shape1 parameter.
 #' @param mu a shape parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for the Two-Parameter Rayleigh  distribution with parameters shape and scale.
-#' @return \code{dtprd} gives the density, \code{ptprd} gives the distribution function, \code{qtprd} gives the quantile function and \code{rtprd} generates random deviates.
-#' @details
-#' The Two-Parameter Rayleigh distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' ptprd(c(4:5),c(4),3)
 #' ptprd(c(6),c(4:5),4)
@@ -73,18 +65,10 @@ ptprd=function(x,lambda,mu) #x>mu,  mu,lambda>0
 }
 #' Two-Parameter Rayleigh Distribution
 #' @export
-#' @rdname qtprd
+#' @rdname tprd
 #' @param p new numeric vector of data values.
 #' @param lambda a shape1 parameter.
 #' @param mu a shape parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for the Two-Parameter Rayleigh  distribution with parameters shape and scale.
-#' @return \code{dtprd} gives the density, \code{ptprd} gives the distribution function, \code{qtprd} gives the quantile function and \code{rtprd} generates random deviates.
-#' @details
-#' The Two-Parameter Rayleigh distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' qtprd(.5,1,2)
 #' qtprd(.3,4,2)
@@ -103,18 +87,10 @@ qtprd=function(p,lambda,mu)
 }
 #' Two-Parameter Rayleigh Distribution
 #' @export
-#' @rdname rtprd
+#' @rdname tprd
 #' @param n new numeric vector of data values.
 #' @param lambda a shape1 parameter.
 #' @param mu a shape parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for the Two-Parameter Rayleigh  distribution with parameters shape and scale.
-#' @return \code{dtprd} gives the density, \code{ptprd} gives the distribution function, \code{qtprd} gives the quantile function and \code{rtprd} generates random deviates.
-#' @details
-#' The Two-Parameter Rayleigh distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' rtprd(100,1,2)
 rtprd=function(n,lambda,mu)

@@ -1,6 +1,6 @@
 #' A new lifetime distribution
 #' @export
-#' @rdname dnld
+#' @rdname nld
 #' @param x new numeric vector of data values.
 #' @param lambda a shape parameter.
 #' @param beta a shape1 parameter.
@@ -10,8 +10,8 @@
 #' @details
 #' A new lifetime distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
 #'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
+#' @references  Kuş, C., 2007,
+#' *A new lifetime distribution*, Computational Statistics & Data Analysis, 51 (9), 4497-4509.
 #' @examples
 #' dnld(1,2,3)
 #' dnld(c(1:5),2,3)
@@ -35,18 +35,10 @@ dnld=function(x,lambda,beta)  #x,lambda,beta > 0
 }
 #' A new lifetime distribution
 #' @export
-#' @rdname pnld
+#' @rdname nld
 #' @param x new numeric vector of data values.
 #' @param lambda a shape parameter.
 #' @param beta a shape1 parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for a new lifetime distribution with parameters shape and scale.
-#' @return \code{dnld} gives the density, \code{pnld} gives the distribution function, \code{qnld} gives the quantile function and \code{rnld} generates random deviates.
-#' @details
-#' A new lifetime distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' pnld(1,2,3)
 #' pnld(c(1:5),2,3)
@@ -71,18 +63,10 @@ pnld=function(x,lambda,beta) #x,lambda,beta > 0
 }
 #' A new lifetime distribution
 #' @export
-#' @rdname qnld
+#' @rdname nld
 #' @param p new numeric vector of data values.
 #' @param lambda a shape parameter.
 #' @param beta a shape1 parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for a new lifetime distribution with parameters shape and scale.
-#' @return \code{dnld} gives the density, \code{pnld} gives the distribution function, \code{qnld} gives the quantile function and \code{rnld} generates random deviates.
-#' @details
-#' A new lifetime distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' qnld(.8,2,3)
 qnld=function(p,lambda,beta) # 0<p<1, theta > 0
@@ -103,18 +87,10 @@ qnld=function(p,lambda,beta) # 0<p<1, theta > 0
 }
 #' A new lifetime distribution
 #' @export
-#' @rdname rnld
+#' @rdname nld
 #' @param n new numeric vector of data values.
 #' @param lambda a shape parameter.
 #' @param beta a shape1 parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for a new lifetime distribution with parameters shape and scale.
-#' @return \code{dnld} gives the density, \code{pnld} gives the distribution function, \code{qnld} gives the quantile function and \code{rnld} generates random deviates.
-#' @details
-#' A new lifetime distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' rnld(10,1,2)
 rnld=function(n,lambda,beta)

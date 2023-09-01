@@ -1,6 +1,6 @@
 #' Estimation in Maxwell distribution with randomly censored data
 #' @export
-#' @rdname demd
+#' @rdname emd
 #' @param x new numeric vector of data values.
 #' @param theta a shape parameter.
 #' @description
@@ -8,9 +8,9 @@
 #' @return \code{demd} gives the density, \code{pemd} gives the distribution function, \code{qemd} gives the quantile function and \code{remd} generates random deviates.
 #' @details
 #' Estimation in Maxwell distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
+#'  \ifelse{html}{\out{1t<sub>n</sub><sup>(&#952)</sup>}}{\eqn{}}.
+#' @references  Krishna, H., Vivekanand ve Kumar, K., 2015,
+#' *Estimation in Maxwell distribution with randomly censored data*, Journal of statistical computation and simulation, 85 (17), 3560-3578.
 #' @examples
 #' demd(c(1:5),2)
 #' demd(2,c(2:4))
@@ -33,17 +33,9 @@ demd=function(x,theta)
 }
 #' Estimation in Maxwell distribution with randomly censored data
 #' @export
-#' @rdname pemd
+#' @rdname emd
 #' @param x new numeric vector of data values.
 #' @param theta a shape parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for Estimation in Maxwell distribution with parameters shape and scale.
-#' @return \code{demd} gives the density, \code{pemd} gives the distribution function, \code{qemd} gives the quantile function and \code{remd} generates random deviates.
-#' @details
-#' Estimation in Maxwell distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' pemd(c(1:5),2)
 pemd=function(x,theta) #x,theta > 0
@@ -62,17 +54,9 @@ pemd=function(x,theta) #x,theta > 0
 }
 #' Estimation in Maxwell distribution with randomly censored data
 #' @export
-#' @rdname qemd
+#' @rdname emd
 #' @param p new numeric vector of data values.
 #' @param theta a shape parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for Estimation in Maxwell distribution with parameters shape and scale.
-#' @return \code{demd} gives the density, \code{pemd} gives the distribution function, \code{qemd} gives the quantile function and \code{remd} generates random deviates.
-#' @details
-#' Estimation in Maxwell distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' qemd(c(.7,.8),2)
 #' qemd(.4,5)
@@ -96,17 +80,9 @@ qemd=function(p,theta) suppressWarnings(
   })
 #' Estimation in Maxwell distribution with randomly censored data
 #' @export
-#' @rdname remd
+#' @rdname emd
 #' @param n new numeric vector of data values.
 #' @param theta a shape parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for Estimation in Maxwell distribution with parameters shape and scale.
-#' @return \code{demd} gives the density, \code{pemd} gives the distribution function, \code{qemd} gives the quantile function and \code{remd} generates random deviates.
-#' @details
-#' Estimation in Maxwell distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' remd(100,1)
 remd=function(n,theta) suppressWarnings(

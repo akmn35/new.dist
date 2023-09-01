@@ -1,6 +1,6 @@
 #' Uniform-Geometric distribution
 #' @export
-#' @rdname dugd
+#' @rdname ugd
 #' @param x new numeric vector of data values.
 #' @param theta a shape parameter.
 #' @description
@@ -9,8 +9,8 @@
 #' @details
 #' The Uniform-Geometric distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
 #'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
+#' @references Akdoğan, Y., Kuş, C., Asgharzadeh, A., Kınacı, İ., & Sharafi, F. (2016).
+#' *Uniform-geometric distribution*. Journal of Statistical Computation and Simulation, 86(9), 1754-1770.
 #' @examples
 #' dugd(c(1:5),.2)
 #' dugd(2,c(.2,.4))
@@ -32,17 +32,9 @@ dugd=function(x,theta)    #x=1,2,...  , 0<theta<1
 }
 #' Uniform-Geometric distribution
 #' @export
-#' @rdname pugd
+#' @rdname ugd
 #' @param x new numeric vector of data values.
 #' @param theta a shape parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for the Uniform-Geometric distribution with parameters shape and scale.
-#' @return \code{dugd} gives the density, \code{pugd} gives the distribution function, \code{qugd} gives the quantile function and \code{rugd} generates random deviates.
-#' @details
-#' The Uniform-Geometric distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' pugd(c(1:5),.2)
 #' pugd(2,c(.2,.3,.4))
@@ -65,17 +57,9 @@ pugd=function(x,theta)
 }
 #' Uniform-Geometric distribution
 #' @export
-#' @rdname qugd
+#' @rdname ugd
 #' @param p new numeric vector of data values.
 #' @param theta a shape parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for the Uniform-Geometric distribution with parameters shape and scale.
-#' @return \code{dugd} gives the density, \code{pugd} gives the distribution function, \code{qugd} gives the quantile function and \code{rugd} generates random deviates.
-#' @details
-#' The Uniform-Geometric distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' qugd(0.6,.1)
 qugd=function(p,theta)
@@ -102,17 +86,9 @@ qugd=function(p,theta)
 }
 #' Uniform-Geometric distribution
 #' @export
-#' @rdname rugd
+#' @rdname ugd
 #' @param n new numeric vector of data values.
 #' @param theta a shape parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for the Uniform-Geometric distribution with parameters shape and scale.
-#' @return \code{dugd} gives the density, \code{pugd} gives the distribution function, \code{qugd} gives the quantile function and \code{rugd} generates random deviates.
-#' @details
-#' The Uniform-Geometric distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' rugd(100,.1)
 rugd=function(n,theta) suppressWarnings(

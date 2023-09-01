@@ -1,6 +1,6 @@
 #' Slashed generalized Rayleigh distribution
 #' @export
-#' @rdname dsgrd
+#' @rdname sgrd
 #' @param x new numeric vector of data values.
 #' @param theta a shape parameter.
 #' @param alpha a shape1 parameter.
@@ -10,8 +10,8 @@
 #' @details
 #' The Slashed generalized Rayleigh distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
 #'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
+#' @references  Iriarte, Y. A., Vilca, F., Varela, H. ve Gómez, H. W., 2017,
+#' *Slashed generalized Rayleigh distribution*, Communications in Statistics-Theory and Methods, 46 (10), 4686-4699.
 #' @examples
 #' dsgrd(1,2,3)
 #' dsgrd(c(1:5),2,3)
@@ -35,18 +35,10 @@ dsgrd=function(x,theta,alpha) #x,theta > 0 ,alpha > -1
 }
 #' Slashed generalized Rayleigh distribution
 #' @export
-#' @rdname psgrd
+#' @rdname sgrd
 #' @param x new numeric vector of data values.
 #' @param theta a shape parameter.
 #' @param alpha a shape1 parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for the Slashed generalized Rayleigh distribution with parameters shape and scale.
-#' @return \code{dsgrd} gives the density, \code{psgrd} gives the distribution function, \code{qsgrd} gives the quantile function and \code{rsgrd} generates random deviates.
-#' @details
-#' The Slashed generalized Rayleigh distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' psgrd(1,2,3)
 #' psgrd(c(1:5),2,3)
@@ -72,18 +64,10 @@ psgrd=function(x,theta,alpha)
 }
 #' Slashed generalized Rayleigh distribution
 #' @export
-#' @rdname qsgrd
+#' @rdname sgrd
 #' @param p new numeric vector of data values.
 #' @param theta a shape parameter.
 #' @param alpha a shape1 parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for the Slashed generalized Rayleigh distribution with parameters shape and scale.
-#' @return \code{dsgrd} gives the density, \code{psgrd} gives the distribution function, \code{qsgrd} gives the quantile function and \code{rsgrd} generates random deviates.
-#' @details
-#' The Slashed generalized Rayleigh distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' qsgrd(c(.7,.8),2,3)
 #' qsgrd(c(.7,.8),c(1,2),2)
@@ -106,18 +90,10 @@ qsgrd=function(p,theta,alpha)
 }
 #' Slashed generalized Rayleigh distribution
 #' @export
-#' @rdname rsgrd
+#' @rdname sgrd
 #' @param n new numeric vector of data values.
 #' @param theta a shape parameter.
 #' @param alpha a shape1 parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for the Slashed generalized Rayleigh distribution with parameters shape and scale.
-#' @return \code{dsgrd} gives the density, \code{psgrd} gives the distribution function, \code{qsgrd} gives the quantile function and \code{rsgrd} generates random deviates.
-#' @details
-#' The Slashed generalized Rayleigh distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' rsgrd(10,1,2)
 rsgrd=function(n,theta,alpha) suppressWarnings(

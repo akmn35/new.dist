@@ -1,6 +1,6 @@
 #' Weighted Bivariate Geometric Distribution
 #' @export
-#' @rdname dwbgd
+#' @rdname wbgd
 #' @param x new numeric vector of data values.
 #' @param alpha a shape parameter.
 #' @param lambda a shape parameter.
@@ -10,8 +10,8 @@
 #' @details
 #' The Weighted Bivariate Geometric distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
 #'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
+#' @references  Najarzadegan, H., Alamatsaz, M. H., Kazemi, I. ve Kundu, D., 2020,
+#' *Weighted bivariate geometric distribution: Simulation and estimation*, Communications in Statistics-Simulation and Computation, 49 (9), 2419-2443.
 #' @examples
 #' dwbgd(1,.2,3)
 #' dwbgd(c(1:5),.2,3)
@@ -36,18 +36,10 @@ dwbgd=function(x,alpha,lambda)
 }
 #' Weighted Bivariate Geometric Distribution
 #' @export
-#' @rdname pwbgd
+#' @rdname wbgd
 #' @param x new numeric vector of data values.
 #' @param alpha a shape parameter.
 #' @param lambda a shape parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for the Weighted Bivariate Geometric distribution with parameters shape and scale.
-#' @return \code{dwbgd} gives the density, \code{pwbgd} gives the distribution function, \code{qwbgd} gives the quantile function and \code{rwbgd} generates random deviates.
-#' @details
-#' The Weighted Bivariate Geometric distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' pwbgd(1,.2,3)
 #' pwbgd(c(1:5),.2,3)
@@ -74,18 +66,10 @@ pwbgd=function(x,alpha,lambda) # x=1,2,..., 0<alpha<1, lambda > 0
 }
 #' Weighted Bivariate Geometric Distribution
 #' @export
-#' @rdname qwbgd
+#' @rdname wbgd
 #' @param p new numeric vector of data values.
 #' @param alpha a shape parameter.
 #' @param lambda a shape parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for the Weighted Bivariate Geometric distribution with parameters shape and scale.
-#' @return \code{dwbgd} gives the density, \code{pwbgd} gives the distribution function, \code{qwbgd} gives the quantile function and \code{rwbgd} generates random deviates.
-#' @details
-#' The Weighted Bivariate Geometric distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' qwbgd(c(.657),.5,1)
 #' qwbgd(.98,.2,2)
@@ -115,18 +99,10 @@ qwbgd=function(p,alpha,lambda)
 }
 #' Weighted Bivariate Geometric Distribution
 #' @export
-#' @rdname rwbgd
+#' @rdname wbgd
 #' @param n new numeric vector of data values.
 #' @param alpha a shape parameter.
 #' @param lambda a shape parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for the Weighted Bivariate Geometric distribution with parameters shape and scale.
-#' @return \code{dwbgd} gives the density, \code{pwbgd} gives the distribution function, \code{qwbgd} gives the quantile function and \code{rwbgd} generates random deviates.
-#' @details
-#' The Weighted Bivariate Geometric distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' qwbgd(c(.657),.5,1)
 #' qwbgd(.98,.2,2)

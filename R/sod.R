@@ -39,14 +39,6 @@ dsod=function(x,alpha,beta) suppressWarnings(
 #' @param x new numeric vector of data values.
 #' @param alpha a shape parameter.
 #' @param beta a shape1 parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for On parameter estimation of the standard omega distribution with parameters shape and scale.
-#' @return \code{dsod} gives the density, \code{psod} gives the distribution function, \code{qsod} gives the quantile function and \code{rsod} generates random deviates.
-#' @details
-#' On parameter estimation of the standard omega distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' psod(c(0.4),c(4),5)
 #' psod(c(0.3,0.4),c(3,4),c(4,5))
@@ -73,14 +65,6 @@ psod=function(x,alpha,beta) #  0<x<1, alpha,beta > 0
 #' @param p new numeric vector of data values.
 #' @param alpha a shape parameter.
 #' @param beta a shape1 parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for On parameter estimation of the standard omega distribution with parameters shape and scale.
-#' @return \code{dsod} gives the density, \code{psod} gives the distribution function, \code{qsod} gives the quantile function and \code{rsod} generates random deviates.
-#' @details
-#' On parameter estimation of the standard omega distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' qsod(.8,2,3)
 qsod=function(p,alpha,beta) # 0<p<1, theta > 0
@@ -105,14 +89,6 @@ qsod=function(p,alpha,beta) # 0<p<1, theta > 0
 #' @param n new numeric vector of data values.
 #' @param alpha a shape parameter.
 #' @param beta a shape1 parameter.
-#' @description
-#' Density, distribution function, quantile function and random generation for On parameter estimation of the standard omega distribution with parameters shape and scale.
-#' @return \code{dsod} gives the density, \code{psod} gives the distribution function, \code{qsod} gives the quantile function and \code{rsod} generates random deviates.
-#' @details
-#' On parameter estimation of the standard omega distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' rsod(10,1,2)
 rsod=function(n,alpha,beta) suppressWarnings(

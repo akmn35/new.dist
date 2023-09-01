@@ -1,6 +1,6 @@
 #' The unit inverse Gaussian distribution A new alternative to two parameter distributions on the unit interval
 #' @export
-#' @rdname duigd
+#' @rdname uigd
 #' @param x new numeric vector of data values.
 #' @param mu a shape parameter.
 #' @param lambda shape2
@@ -10,8 +10,8 @@
 #' @details
 #' The unit inverse Gaussian distribution A new alternative to two parameter distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
 #'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
+#' @references  Ghitany, M., Mazucheli, J., Menezes, A. ve Alqallaf, F., 2019,
+#' *The unit-inverse Gaussian distribution: A new alternative to two-parameter distributions on the unit interval*, Communications in Statistics-Theory and Methods, 48 (14), 3423-3438.
 #' @examples
 #' duigd(1,2,3)
 #' duigd(c(1:5),2,3)
@@ -35,18 +35,10 @@ duigd=function(x,mu,lambda) #x,mu,lambda > 0
 }
 #' The unit inverse Gaussian distribution A new alternative to two parameter distributions on the unit interval
 #' @export
-#' @rdname puigd
+#' @rdname uigd
 #' @param x new numeric vector of data values.
 #' @param mu a shape parameter.
 #' @param lambda shape2
-#' @description
-#' Density, distribution function, quantile function and random generation for the unit inverse Gaussian distribution A new alternative to two parameter distribution with parameters shape and scale.
-#' @return \code{duigd} gives the density, \code{puigd} gives the distribution function, \code{quigd} gives the quantile function and \code{ruigd} generates random deviates.
-#' @details
-#' The unit inverse Gaussian distribution A new alternative to two parameter distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' puigd(-1,2,3)
 #' puigd(c(1:5),2,3)
@@ -71,18 +63,10 @@ puigd=function(x,mu,lambda)  #x,mu,lambda > 0
 }
 #' The unit inverse Gaussian distribution A new alternative to two parameter distributions on the unit interval
 #' @export
-#' @rdname quigd
+#' @rdname uigd
 #' @param p new numeric vector of data values.
 #' @param mu a shape parameter.
 #' @param lambda shape2
-#' @description
-#' Density, distribution function, quantile function and random generation for the unit inverse Gaussian distribution A new alternative to two parameter distribution with parameters shape and scale.
-#' @return \code{duigd} gives the density, \code{puigd} gives the distribution function, \code{quigd} gives the quantile function and \code{ruigd} generates random deviates.
-#' @details
-#' The unit inverse Gaussian distribution A new alternative to two parameter distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' quigd(.1,1,1)
 quigd=function(p,mu,lambda) # 0<p<1, mu,lambda > 0
@@ -107,18 +91,10 @@ quigd=function(p,mu,lambda) # 0<p<1, mu,lambda > 0
 }
 #' The unit inverse Gaussian distribution A new alternative to two parameter distributions on the unit interval
 #' @export
-#' @rdname ruigd
+#' @rdname uigd
 #' @param n new numeric vector of data values.
 #' @param mu a shape parameter.
 #' @param lambda shape2
-#' @description
-#' Density, distribution function, quantile function and random generation for the unit inverse Gaussian distribution A new alternative to two parameter distribution with parameters shape and scale.
-#' @return \code{duigd} gives the density, \code{puigd} gives the distribution function, \code{quigd} gives the quantile function and \code{ruigd} generates random deviates.
-#' @details
-#' The unit inverse Gaussian distribution A new alternative to two parameter distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
-#' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
 #' ruigd(100,1,1)
 ruigd=function(n,mu,lambda)
