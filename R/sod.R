@@ -1,6 +1,6 @@
 #' On parameter estimation of the standard omega distribution
 #' @export
-#' @rdname sod
+#' @name sod
 #' @param x new numeric vector of data values.
 #' @param alpha a shape parameter.
 #' @param beta a shape1 parameter.

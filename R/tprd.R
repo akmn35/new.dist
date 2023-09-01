@@ -1,6 +1,6 @@
 #' Two-Parameter Rayleigh Distribution
 #' @export
-#' @rdname tprd
+#' @name tprd
 #' @param x new numeric vector of data values.
 #' @param lambda a shape1 parameter.
 #' @param mu a shape parameter.

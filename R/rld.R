@@ -1,6 +1,6 @@
 #' Inferences on stress–strength reliability based on ranked set sampling data incase of Lindley distribution
 #' @export
-#' @rdname rld
+#' @name rld
 #' @param x new numeric vector of data values.
 #' @param theta a shape parameter.
 #' @description

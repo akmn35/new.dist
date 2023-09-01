@@ -1,6 +1,6 @@
 #' A Power Log Dagum Distribution
 #' @export
-#' @rdname pldd
+#' @name pldd
 #' @param x new numeric vector of data values.
 #' @param alpha a shape parameter.
 #' @param beta shape2

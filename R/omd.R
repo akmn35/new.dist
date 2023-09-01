@@ -1,6 +1,6 @@
 #' on the muth distribution
 #' @export
-#' @rdname omd
+#' @name omd
 #' @param x new numeric vector of data values.
 #' @param alpha a shape parameter.
 #' @description

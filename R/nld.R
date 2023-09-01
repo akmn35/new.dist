@@ -1,6 +1,6 @@
 #' A new lifetime distribution
 #' @export
-#' @rdname nld
+#' @name nld
 #' @param x new numeric vector of data values.
 #' @param lambda a shape parameter.
 #' @param beta a shape1 parameter.

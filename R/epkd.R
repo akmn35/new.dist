@@ -1,6 +1,6 @@
 #' Estimation procedures for kumaraswamy distribution parameters under adaptive type-II hybrid progressive censoring
 #' @export
-#' @rdname epkd
+#' @name epkd
 #' @param x new numeric vector of data values.
 #' @param lambda a shape1 parameter.
 #' @param alpha a shape parameter.

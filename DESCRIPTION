@@ -16,7 +16,11 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.2.3
 Roxygen: list(markdown = TRUE)
-Suggests: 
+Suggests:
+    expint,
+    pracma,
+    stats,
+    VGAM,
     knitr,
     rmarkdown,
     testthat (>= 3.0.0)

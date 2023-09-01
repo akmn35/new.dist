@@ -1,6 +1,6 @@
 #' Estimation in Maxwell distribution with randomly censored data
 #' @export
-#' @rdname emd
+#' @name emd
 #' @param x new numeric vector of data values.
 #' @param theta a shape parameter.
 #' @description
@@ -31,11 +31,9 @@ demd=function(x,theta)
   }
   return(pdf)
 }
-#' Estimation in Maxwell distribution with randomly censored data
+
 #' @export
 #' @rdname emd
-#' @param x new numeric vector of data values.
-#' @param theta a shape parameter.
 #' @examples
 #' pemd(c(1:5),2)
 pemd=function(x,theta) #x,theta > 0
@@ -52,11 +50,10 @@ pemd=function(x,theta) #x,theta > 0
   }
   return(cdf)
 }
-#' Estimation in Maxwell distribution with randomly censored data
+
 #' @export
 #' @rdname emd
 #' @param p new numeric vector of data values.
-#' @param theta a shape parameter.
 #' @examples
 #' qemd(c(.7,.8),2)
 #' qemd(.4,5)
@@ -78,11 +75,10 @@ qemd=function(p,theta) suppressWarnings(
     }
     return(kok)
   })
-#' Estimation in Maxwell distribution with randomly censored data
+
 #' @export
 #' @rdname emd
 #' @param n new numeric vector of data values.
-#' @param theta a shape parameter.
 #' @examples
 #' remd(100,1)
 remd=function(n,theta) suppressWarnings(

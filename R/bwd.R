@@ -1,6 +1,6 @@
 #' A Bimodal Weibull Distribution
 #' @export
-#' @rdname bwd
+#' @name bwd
 #' @param x new numeric vector of data values.
 #' @param alpha a shape parameter.
 #' @param beta shape2

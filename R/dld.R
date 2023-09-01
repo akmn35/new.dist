@@ -1,6 +1,6 @@
 #' The discrete Lindley distribution
 #' @export
-#' @rdname dld
+#' @name dld
 #' @param x new numeric vector of data values.
 #' @param theta a shape parameter.
 #' @description

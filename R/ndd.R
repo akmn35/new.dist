@@ -1,6 +1,6 @@
 #' A new discrete distribution
 #' @export
-#' @rdname ndd
+#' @name ndd
 #' @param x new numeric vector of data values.
 #' @param theta a shape parameter.
 #' @description

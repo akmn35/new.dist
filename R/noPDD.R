@@ -1,6 +1,6 @@
 #' A new one parameter discrete distribution and its applications
 #' @export
-#' @rdname noPDD
+#' @name noPDD
 #' @param x new numeric vector of data values.
 #' @param theta a shape parameter.
 #' @description

@@ -1,6 +1,6 @@
 #' Weighted Bivariate Geometric Distribution
 #' @export
-#' @rdname wbgd
+#' @name wbgd
 #' @param x new numeric vector of data values.
 #' @param alpha a shape parameter.
 #' @param lambda a shape parameter.

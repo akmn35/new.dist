@@ -1,6 +1,6 @@
 #' The gamma-Lomax distribution
 #' @export
-#' @rdname gld
+#' @name gld
 #' @param x new numeric vector of data values.
 #' @param a a shape parameter.
 #' @param alpha a shape1 parameter.

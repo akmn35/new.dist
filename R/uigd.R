@@ -1,6 +1,6 @@
 #' The unit inverse Gaussian distribution A new alternative to two parameter distributions on the unit interval
 #' @export
-#' @rdname uigd
+#' @name uigd
 #' @param x new numeric vector of data values.
 #' @param mu a shape parameter.
 #' @param lambda shape2

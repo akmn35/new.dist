@@ -1,6 +1,6 @@
 #' Uniform-Geometric distribution
 #' @export
-#' @rdname ugd
+#' @name ugd
 #' @param x new numeric vector of data values.
 #' @param theta a shape parameter.
 #' @description

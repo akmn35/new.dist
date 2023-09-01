@@ -1,6 +1,6 @@
 #' Slashed generalized Rayleigh distribution
 #' @export
-#' @rdname sgrd
+#' @name sgrd
 #' @param x new numeric vector of data values.
 #' @param theta a shape parameter.
 #' @param alpha a shape1 parameter.
