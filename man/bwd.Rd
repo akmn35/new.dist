@@ -32,7 +32,7 @@ rbwd(n, alpha, beta, sigma)
 Density, distribution function, quantile function and random generation for a Bimodal Weibull Distribution with parameters shape and scale.
 }
 \details{
-A Bimodal Weibull distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
+A Bimodal Weibull distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}}, shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}, scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} and scale1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
 \ifelse{html}{\out{\alpha \ast \beta &lt;sup&#62;3&lt;/sup&#62;+\frac13/\alpha}}{\eqn{T_n^{(\ell)}}}.
 }
 \examples{

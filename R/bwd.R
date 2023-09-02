@@ -9,7 +9,7 @@
 #' Density, distribution function, quantile function and random generation for a Bimodal Weibull Distribution with parameters shape and scale.
 #' @return \code{dbwd} gives the density, \code{pbwd} gives the distribution function, \code{qbwd} gives the quantile function and \code{rbwd} generates random deviates.
 #' @details
-#' A Bimodal Weibull distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
+#' A Bimodal Weibull distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}}, shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}, scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} and scale1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
 #'  \ifelse{html}{\out{\alpha \ast \beta &lt;sup&#62;3&lt;/sup&#62;+\frac13/\alpha}}{\eqn{T_n^{(\ell)}}}.
 #' @references  Vila, R. ve Niyazi Çankaya, M., 2022,
 #' *A bimodal Weibull distribution: properties and inference*,Journal of Applied Statistics, 49 (12), 3044-3062.
