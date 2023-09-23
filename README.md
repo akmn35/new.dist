@@ -66,9 +66,9 @@ parameters shape and scale.
 
 ``` r
 library(new.dist)
-rbwd(10,alpha=2,beta=3,sigma=4)
-#>  [1] 4.653388 3.881313 3.289873 2.981877 6.104698 1.375741 4.559537 5.010804
-#>  [9] 3.141568 3.780320
+  rbwd(10,alpha=2,beta=3,sigma=4)
+#>  [1] 3.684013 5.019605 6.869678 2.040695 4.303355 2.978730 3.038569 1.617064
+#>  [9] 4.418811 3.347773
 ```
 
 `dsgrd` Density function for a Slashed generalized Rayleigh distribution
@@ -103,9 +103,9 @@ distribution with parameters shape, scale and kurtosis.
 
 ``` r
 library(new.dist)
-rsgrd(10,theta=3,alpha=1,q=4)
-#>  [1] 0.6164705 0.6418423 2.6661576 0.4473021 1.5617503 0.8798328 1.3620381
-#>  [8] 0.3820371 1.0187997 1.1504822
+  rsgrd(10,theta=3,alpha=1,q=4)
+#>  [1] 1.3838703 0.5591586 0.7872729 2.0804579 1.1706934 1.7319485 0.7705484
+#>  [8] 1.8825320 0.8522628 1.3783922
 ```
 
 `dsod` Density function for a the standard omega distribution with alpha
@@ -140,9 +140,9 @@ alpha and beta parameters.
 
 ``` r
 library(new.dist)
-rsod(10, alpha=1, beta=2)
-#>  [1] 0.6034772 0.9739799 0.7145625 0.2959310 0.9998763 0.2275438 0.7449968
-#>  [8] 0.9823279 0.5115580 0.9696778
+  rsod(10, alpha=1, beta=2)
+#>  [1] 0.9855191 0.6863792 0.7591962 0.9168402 0.2500233 0.4733888 0.7741440
+#>  [8] 0.4719704 0.9832972 0.6623088
 ```
 
 `dugd` Density function for the Uniform-Geometric distribution with
@@ -177,8 +177,8 @@ theta parameters.
 
 ``` r
 library(new.dist)
-rugd(10,theta=.1)
-#>  [1] 1 2 6 8 6 2 1 3 4 1
+  rugd(10,theta=.1)
+#>  [1]  1  3  4 15  1  3  7  3  1  2
 ```
 
 `dtpmd` Density function for the Power Muth distribution with parameters
@@ -213,9 +213,9 @@ parameters shape and scale.
 
 ``` r
 library(new.dist)
-rtpmd(10,beta=2,alpha=3)
-#>  [1] 1.6860444 2.2855633 1.5324437 2.4056539 2.0288727 2.2756597 2.4683097
-#>  [8] 0.9959695 2.1578540 2.0586066
+  rtpmd(10,beta=2,alpha=3)
+#>  [1] 2.483482 1.424005 1.462875 1.792980 1.933239 1.759287 1.841671 2.057533
+#>  [9] 2.052466 1.103022
 ```
 
 `dtprd` Density function for the Two-Parameter Rayleigh distribution
@@ -250,9 +250,9 @@ parameters location and scale.
 
 ``` r
 library(new.dist)
-rtprd(10,lambda=2,mu=1)
-#>  [1]  0.26744899  0.77117320  0.26741555  0.90003307 -0.41493253  0.86220218
-#>  [7]  0.46745077  0.01034139  0.08603320  0.75680357
+  rtprd(10,lambda=2,mu=1)
+#>  [1]  0.19133593  0.56314503  0.02086814  0.81641312  0.22966305 -0.13259365
+#>  [7]  0.81568758  0.33935038 -0.23367838  0.79124051
 ```
 
 `duigd` Density function for the unit inverse Gaussian distribution with
@@ -287,9 +287,9 @@ with parameters mean and scale.
 
 ``` r
 library(new.dist)
-ruigd(10,mu=2,lambda=3)
-#>  [1] 12.7214363  0.5945712  1.1740251  2.1283198  1.6499318  0.6715343
-#>  [7]  0.7871858  1.9339422  0.9058734  0.9048798
+  ruigd(10,mu=2,lambda=3)
+#>  [1] 1.642341 1.414783 2.297419 3.503333 2.025741 3.439091 1.192895 4.059060
+#>  [9] 1.708921 2.441054
 ```
 
 `dwbgd` Density function for the Weighted Bivariate Geometric
@@ -324,8 +324,8 @@ distribution with alpha and lambda parameters.
 
 ``` r
 library(new.dist)
-rwbgd(10,alpha=.2,lambda=3)
-#>  [1] 1 1 1 1 1 1 2 1 1 1
+  rwbgd(10,alpha=.2,lambda=3)
+#>  [1] 2 1 1 1 1 1 1 1 3 1
 ```
 
 `ddld` Density function for the discrete Lindley distribution with theta
@@ -360,8 +360,8 @@ theta parameters.
 
 ``` r
 library(new.dist)
-rdld(10,theta=1)
-#>  [1] 0 0 0 2 2 1 2 2 4 0
+  rdld(10,theta=1)
+#>  [1] 1 1 4 0 2 0 0 0 0 1
 ```
 
 `demd` Density function for a Maxwell distribution with theta
@@ -396,9 +396,9 @@ parameters.
 
 ``` r
 library(new.dist)
-remd(10,theta=1)
-#>  [1] 1.0863622 0.8084618 1.9066880 0.9387388 1.3346523 1.3126646 1.2679819
-#>  [8] 0.7410911 1.1525105 0.5841748
+  remd(10,theta=1)
+#>  [1]  2.1988283  0.7404783  1.3720388 -0.2976837  1.2033490  1.7857045
+#>  [7]  0.5492494  0.5437053  1.6248781  1.9475629
 ```
 
 `depkd` Density function for kumaraswamy distribution with parameters
@@ -433,8 +433,9 @@ shapes.
 
 ``` r
 library(new.dist)
-pepkd(10,lambda=2,alpha=3)
-#> [1] 0
+  repkd(10,lambda=2,alpha=3)
+#>  [1] 0.51465583 0.62150875 0.78725967 0.84553938 0.46332912 0.07534555
+#>  [7] 0.49027008 0.55913722 0.53852101 0.20954724
 ```
 
 What is special about using `README.Rmd` instead of just `README.md`?
