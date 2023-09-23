@@ -8,47 +8,46 @@
 \alias{rtprd}
 \title{Two-Parameter Rayleigh Distribution}
 \usage{
-dtprd(x, lambda, mu)
+dtprd(x, lambda = 1, mu, log = FALSE)
 
-ptprd(x, lambda, mu)
+ptprd(x, lambda = 1, mu, lower.tail = TRUE, log.p = FALSE)
 
-qtprd(p, lambda, mu)
+qtprd(p, lambda = 1, mu, lower.tail = TRUE)
 
-rtprd(n, lambda, mu)
+rtprd(n, lambda = 1, mu)
 }
 \arguments{
-\item{x}{new numeric vector of data values.}
+\item{x}{vector of quantiles.}
 
-\item{lambda}{a shape1 parameter.}
+\item{lambda}{a scale parameter.}
 
-\item{mu}{a shape parameter.}
+\item{mu}{a location parameter.}
 
-\item{p}{new numeric vector of data values.}
+\item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
-\item{n}{new numeric vector of data values.}
+\item{lower.tail}{logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
+
+\item{p}{vector of probabilities.}
+
+\item{n}{number of observations. If \code{length(n) > 1}, the length is taken to be the number required.}
 }
 \value{
 \code{dtprd} gives the density, \code{ptprd} gives the distribution function, \code{qtprd} gives the quantile function and \code{rtprd} generates random deviates.
 }
 \description{
-Density, distribution function, quantile function and random generation for the Two-Parameter Rayleigh  distribution with parameters shape and scale.
+Density, distribution function, quantile function and random generation for the Two-Parameter Rayleigh  distribution with parameters \code{location} and \code{scale}.
 }
 \details{
-The Two-Parameter Rayleigh distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-\ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
+The Two-Parameter Rayleigh distribution with \code{scale} parameter \eqn{\lambda} and \code{location} parameter \eqn{\mu}, has density given by
+\deqn{f\left( x\right) =2\lambda \left( x-\mu \right) e^{-\lambda \left( x-\mu\right) ^{2}},}
+where
+\deqn{x>\mu ,~\lambda >0.}
 }
 \examples{
-dtprd(c(5),c(4),5)
-dtprd(c(9),c(4:8),5)
-dtprd(c(5),c(3,4),c(4:9))
-dtprd(c(5),c(4),-5)
-ptprd(c(4:5),c(4),3)
-ptprd(c(6),c(4:5),4)
-ptprd(4,1,c(1:3))
-ptprd(-5,c(4:8),4)
-qtprd(.5,1,2)
-qtprd(.3,4,2)
-rtprd(100,1,2)
+dtprd(5, lambda=4, mu=4)
+ptprd(2,lambda=2,mu=1)
+qtprd(.5,lambda=2,mu=1)
+rtprd(10,lambda=2,mu=1)
 }
 \references{
 Dey, S., Dey, T. ve Kundu, D., 2014,

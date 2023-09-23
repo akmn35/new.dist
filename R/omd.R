@@ -1,93 +1,92 @@
 #' on the muth distribution
 #' @export
 #' @name omd
-#' @param x new numeric vector of data values.
-#' @param alpha a shape parameter.
+#' @param x vector of quantiles.
+#' @param alpha a parameter.
+#' @param p vector of probabilities.
+#' @param n number of observations. If \code{length(n) > 1}, the length is taken to be the number required.
+#' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
+#' @param lower.tail logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
 #' @description
-#' Density, distribution function, quantile function and random generation for on the muth distribution distribution with parameters shape and scale.
+#' Density, distribution function, quantile function and random generation for on the muth distribution distribution parameter.
 #' @return \code{domd} gives the density, \code{pomd} gives the distribution function, \code{qomd} gives the quantile function and \code{romd} generates random deviates.
 #' @details
-#' On the muth distribution distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
+#' On the muth distribution distribution with a parameter \eqn{\alpha}, has density given by
+#' \deqn{f\left( x\right) =\left( e^{\alpha x}-\alpha \right) e^{\alpha x-\left(1/\alpha \right) \left( e^{\alpha x}-1\right) },}
+#' where
+#' \deqn{x>0,~\alpha \in \left( 0,1\right]. }
 #' @references  Jodrá, P., Jiménez-Gamero, M. D. ve Alba-Fernández, M. V., 2015,
 #' *On the Muth distribution, Mathematical Modelling and Analysis*, 20 (3), 291-310.
 #' @examples
-#' domd(c(1:5),.2)
-#' domd(2,c(.2,.3,.4))
-#' domd(c(1:5),c(.2,.3,.4))
-domd=function(x,alpha) # x>0, (0,alpha,1]
+#' domd(1,alpha=.2)
+domd<-function(x,alpha,log=FALSE)
 {
-  if(any(x<0)) {stop("x must be (0,inf)")}
-  if(any(alpha<=0)|any(alpha>1)) {stop("alpha must be (0,1]")}
-  enuzun = max(length(x),length(alpha))
-  x=rep(x,enuzun/length(x)+1)[1:enuzun]
-  alpha=rep(alpha,enuzun/length(alpha)+1)[1:enuzun]
-  pdf=NULL
+  if(any(alpha<=0)|any(alpha>1)) {stop("alpha must be > 0 and <= 1")}
+  enuzun <- max(length(x),length(alpha))
+  x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+  alpha<-rep(alpha,enuzun/length(alpha)+1)[1:enuzun]
+  pdf<-NULL
   for (i in 1:enuzun)
   {
-    pdf[i]=(exp(alpha[i]*x[i])-alpha[i])*exp(alpha[i]*x[i]-(1/alpha[i])*(exp(alpha[i]*x[i])-1))
+    if(x[i]<=0) {pdf[i]<-0} else
+    {pdf[i]<-(exp(alpha[i]*x[i])-alpha[i])*exp(alpha[i]*x[i]-(1/alpha[i])*(exp(alpha[i]*x[i])-1))}
   }
+  if(log==TRUE) pdf<-log(pdf)
   return(pdf)
 }
 #' on the muth distribution
 #' @export
 #' @rdname omd
-#' @param x new numeric vector of data values.
-#' @param alpha a shape parameter.
 #' @examples
-#' pomd(c(1:5),.2)
-#' pomd(c(-1,-2,-3),.2)
-#' pomd(2,c(.2,.3,.4))
-#' pomd(c(1:5),c(.2,.3,.4))
-#' pomd(-4,c(.2,.3,.4))
-#' pomd(.4,c(.2,.3,.4))
-pomd=function(x,alpha)# x>0, alpha=(0,1]
+#' pomd(1,alpha=.2)
+pomd<-function(x,alpha,lower.tail=TRUE,log.p=FALSE)
 {
-  if(any(x<0)) {stop("x must be (0,inf)")}
-  if(any(alpha<=0)|any(alpha>1)) {stop("alpha must be (0,1]")}
-  enuzun = max(length(x),length(alpha))
-  x=rep(x,enuzun/length(x)+1)[1:enuzun]
-  alpha=rep(alpha,enuzun/length(alpha)+1)[1:enuzun]
-  cdf=NULL
+  if(any(alpha<=0)|any(alpha>1)) {stop("alpha must be > 0 and <= 1")}
+  enuzun <- max(length(x),length(alpha))
+  x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+  alpha<-rep(alpha,enuzun/length(alpha)+1)[1:enuzun]
+  cdf<-NULL
   for (i in 1:enuzun)
   {
-    if(x[i]>0) cdf[i]=1-exp(alpha[i]*x[i]-(1/alpha[i])*(exp(alpha[i]*x[i])-1)) else cdf[i]=0
+    if(x[i]>0) cdf[i]<-1-exp(alpha[i]*x[i]-(1/alpha[i])*(exp(alpha[i]*x[i])-1)) else cdf[i]=0
   }
+  if(lower.tail==FALSE) cdf<-1-cdf
+  if(log.p==TRUE) cdf<-log(cdf)
   return(cdf)
 }
 #' on the muth distribution
 #' @export
 #' @rdname omd
-#' @param p new numeric vector of data values.
-#' @param alpha a shape parameter.
 #' @examples
-#' qomd(.8,1)
-#' qomd(.9,5)
-qomd=function(p,alpha) # 0<p<1, theta > 0
+#' qomd(.8,alpha=.1)
+qomd<-function(p,alpha,lower.tail=TRUE)
 {
-  if(any(p<0)|any(p>1)) {stop("p must be between [0,1]")}
-  if(any(alpha<=0)|any(alpha>1)) {stop("alpha must be (0,1]")}
-  enuzun=max(length(p),length(alpha))
-  p=rep(p,enuzun/length(p)+1)[1:enuzun]
-  alpha=rep(alpha,enuzun/length(alpha)+1)[1:enuzun]
-  qfonk=NULL
+  if(any(p<0)|any(p>1)) {stop("p must be between >= 0 and <= 1")}
+  if(any(alpha<=0)|any(alpha>1)) {stop("alpha must be > 0 and <= 1")}
+  enuzun<-max(length(p),length(alpha))
+  p<-rep(p,enuzun/length(p)+1)[1:enuzun]
+  alpha<-rep(alpha,enuzun/length(alpha)+1)[1:enuzun]
+  qfonk<-NULL
   for (i in 1:enuzun)
   {
-    qfonk[i]=(-pracma::lambertWn(-(exp((-1+log(1-p[i])*alpha[i])/alpha[i])/alpha[i]))*alpha[i]-1+log(1-p[i])*alpha[i])/alpha[i]^2
+    qfonk[i]<-(-pracma::lambertWn(-(exp((-1+log(1-p[i])*alpha[i])/alpha[i])/alpha[i]))*alpha[i]-1+log(1-p[i])*alpha[i])/alpha[i]^2
+  }
+  if(lower.tail==FALSE)
+  {
+    qfonk[i]<-(-pracma::lambertWn(-(exp((-1+log(1-(1-p[i]))*alpha[i])/alpha[i])/alpha[i]))*alpha[i]-1+log(1-(1-p[i]))*alpha[i])/alpha[i]^2
   }
   return(qfonk)
 }
 #' on the muth distribution
 #' @export
 #' @rdname omd
-#' @param n new numeric vector of data values.
-#' @param alpha a shape parameter.
 #' @examples
-#' romd(10,1)
-romd=function(n,alpha)
+#' romd(10,alpha=1)
+romd<-function(n,alpha)
 {
-  if(any(n<0)) {stop("n must be (0,inf)")}
-  if(any(alpha<0)) {stop("alpha must be (0,inf)")}
-  rn=qomd(runif(n),alpha)
+  n<-floor(n)
+  if(any(n<1)) {stop("n must be >= 1")}
+  if(any(alpha<=0)|any(alpha>1)) {stop("alpha must be > 0 and <= 1")}
+  rn<-qomd(stats::runif(n),alpha)
   return(rn)
 }

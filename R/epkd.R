@@ -1,104 +1,101 @@
 #' Estimation procedures for kumaraswamy distribution parameters under adaptive type-II hybrid progressive censoring
 #' @export
 #' @name epkd
-#' @param x new numeric vector of data values.
-#' @param lambda a shape1 parameter.
-#' @param alpha a shape parameter.
+#' @param x vector of quantiles.
+#' @param p vector of probabilities.
+#' @param n number of observations. If \code{length(n) > 1}, the length is taken to be the number required.
+#' @param alpha,lambda are non-negative shape parameters.
+#' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
+#' @param lower.tail logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
 #' @description
-#' Density, distribution function, quantile function and random generation for Estimation procedures for kumaraswamy distribution with parameters shape and scale.
+#' Density, distribution function, quantile function and random generation for Estimation procedures for kumaraswamy distribution with parameters \code{shapes}.
 #' @return \code{depkd} gives the density, \code{pepkd} gives the distribution function, \code{qepkd} gives the quantile function and \code{repkd} generates random deviates.
 #' @details
-#' ...Estimation procedures for kumaraswamy distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
+#' Estimation procedures for kumaraswamy distribution with non-negative shape parameters \eqn{\alpha}, \eqn{\lambda} has density given by
+#' \deqn{f\left( x\right) =\alpha \lambda x^{\lambda -1}\left( 1-x^{\lambda }\right)^{\alpha -1},}
+#' where
+#' \deqn{0<x<1,~~\alpha ,\lambda >0.}
 #' @references  Kohansal, A. ve Bakouch, H. S., 2021,
 #' *Estimation procedures for Kumaraswamy distribution parameters under adaptive type-II hybrid progressive censoring*, Communications in Statistics-Simulation and Computation, 50 (12), 4059-4078.
 #' @examples
-#' depkd(0.1,2,3)
-#' depkd(c(0.1,0.5),2,3)
-#' depkd(c(0.1,0.5),c(2:6),3)
-#' depkd(c(0.1,0.5),c(2:6),c(3:6))
-depkd=function(x,lambda,alpha)
+#' library("new.dist")
+#' depkd(0.1,lambda=2,alpha=3)
+depkd<-function(x,lambda,alpha,log=FALSE)
 {
-  if(any(x<0)|any(x>1)) {stop("x must be between [0,1]")}
-  if(any(lambda<0)) {stop("alpha must be between (0,inf")}
-  if(any(alpha<0)) {stop("beta must be between (0,inf")}
-  enuzun = max(length(x),length(lambda),length(alpha))
-  x=rep(x,enuzun/length(x)+1)[1:enuzun]
-  lambda=rep(lambda, enuzun/length(lambda)+1)[1:enuzun]
-  alpha=rep(alpha,enuzun/length(alpha)+1)[1:enuzun]
-  pdf=NULL
+  if(any(lambda<=0)) {stop("lambda must be > 0")}
+  if(any(alpha<=0)) {stop("alpha must be > 0")}
+  enuzun <- max(length(x),length(lambda),length(alpha))
+  x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+  lambda<-rep(lambda, enuzun/length(lambda)+1)[1:enuzun]
+  alpha<-rep(alpha,enuzun/length(alpha)+1)[1:enuzun]
+  pdf<-NULL
   for (i in 1:enuzun)
   {
-    pdf[i]=alpha[i]*lambda[i]*(x[i]^(lambda[i]-1))*(1-x[i]^lambda[i])^(alpha[i]-1)
+    if(x[i]<=0 || x[i]>=1) {pdf[i]<-0} else
+    pdf[i]<-alpha[i]*lambda[i]*(x[i]^(lambda[i]-1))*(1-x[i]^lambda[i])^(alpha[i]-1)
   }
+  if(log==TRUE) pdf<-log(pdf)
   return(pdf)
 }
 #' Estimation procedures for kumaraswamy distribution parameters under adaptive type-II hybrid progressive censoring
 #' @export
 #' @rdname epkd
-#' @param p new numeric vector of data values.
-#' @param lambda a shape1 parameter.
-#' @param alpha a shape parameter.
 #' @examples
-#' pepkd(0.5,2,3)
-#' pepkd(c(0.1,0.5),2,3)
-#' pepkd(c(0.1,0.5),c(2:6),3)
-#' pepkd(c(0.1,0.5),c(2:6),c(3:6))
-#' pepkd(-1,c(2:6),c(3:6))
-pepkd=function(x,lambda,alpha) suppressWarnings(
+#' pepkd(0.5,lambda=2,alpha=3)
+pepkd<-function(x,lambda,alpha,lower.tail=TRUE,log.p=FALSE)
   {
-    if(any(x<0)|any(x>1)) {stop("x must be between [0,1]")}
-    if(any(lambda<0)) {stop("alpha must be between (0,inf")}
-    if(any(alpha<0)) {stop("beta must be between (0,inf")}
-    enuzun = max(length(x),length(lambda),length(alpha))
-    x=rep(x,enuzun/length(x)+1)[1:enuzun]
-    lambda=rep(lambda, enuzun/length(lambda)+1)[1:enuzun]
-    alpha=rep(alpha,enuzun/length(alpha)+1)[1:enuzun]
-    cdf=NULL
-    for (i in 1:enuzun)
+  if(any(lambda<=0)) {stop("lambda must be > 0")}
+  if(any(alpha<=0)) {stop("alpha must be > 0")}
+    enuzun <- max(length(x),length(lambda),length(alpha))
+    x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+    lambda<-rep(lambda, enuzun/length(lambda)+1)[1:enuzun]
+    alpha<-rep(alpha,enuzun/length(alpha)+1)[1:enuzun]
+    cdf<-NULL
+    for (i in 1:enuzun)suppressWarnings(
     {
-      if (x[i]>0) cdf[i]=1-(1-x[i]^lambda[i])^alpha[i] else cdf[i]=0
-    }
+      if (x[i]>0 && x[i]<1) cdf[i]<-1-(1-x[i]^lambda[i])^alpha[i] else cdf[i]=0
+    })
+    if(lower.tail==FALSE) cdf<-1-cdf
+    if(log.p==TRUE) cdf<-log(cdf)
     return(cdf)
-  })
+  }
 #' Estimation procedures for kumaraswamy distribution parameters under adaptive type-II hybrid progressive censoring
 #' @export
 #' @rdname epkd
-#' @param p new numeric vector of data values.
-#' @param lambda a shape1 parameter.
-#' @param alpha a shape parameter.
 #' @examples
-#' qepkd(.8,1,2)
-#' qepkd(.4,2,5)
-qepkd=function(p,lambda,alpha)
+#' qepkd(.8,lambda=2,alpha=3)
+qepkd<-function(p,lambda,alpha,lower.tail=TRUE) # 0<p<1, lambda,alpha>0
 {
-  if(any(p<0)|any(p>1)) {stop("p must be between [0,1]")}
-  if(any(lambda<0)) {stop("lambda must be between (0,inf")}
-  if(any(alpha<0)) {stop("alpha must be between (0,inf")}
-  enuzun = max(length(p),length(lambda),length(alpha))
-  p=rep(p,enuzun/length(p)+1)[1:enuzun]
-  lambda=rep(lambda, enuzun/length(lambda)+1)[1:enuzun]
-  alpha=rep(alpha,enuzun/length(alpha)+1)[1:enuzun]
-  qfonk=NULL
+  if(any(p<0)|any(p>1)) {stop("p must be between >= 0 and <= 1")}
+  if(any(lambda<=0)) {stop("lambda must be > 0")}
+  if(any(alpha<=0)) {stop("alpha must be > 0")}
+  enuzun <- max(length(p),length(lambda),length(alpha))
+  p<-rep(p,enuzun/length(p)+1)[1:enuzun]
+  lambda<-rep(lambda, enuzun/length(lambda)+1)[1:enuzun]
+  alpha<-rep(alpha,enuzun/length(alpha)+1)[1:enuzun]
+  qfonk<-NULL
   for (i in 1:enuzun)
   {
-    qfonk[i]=exp(log(-exp(log(1-p[i])/alpha[i])+1)/lambda[i])
+    qfonk[i]<-exp(log(-exp(log(1-p[i])/alpha[i])+1)/lambda[i])
+  }
+  if(lower.tail==FALSE)
+  {
+    qfonk[i]<-exp(log(-exp(log(1-(1-p[i]))/alpha[i])+1)/lambda[i])
   }
   return(qfonk)
 }
 #' Estimation procedures for kumaraswamy distribution parameters under adaptive type-II hybrid progressive censoring
 #' @export
 #' @rdname epkd
-#' @param n new numeric vector of data values.
-#' @param lambda a shape1 parameter.
-#' @param alpha a shape parameter.
 #' @examples
-#' repkd(10,1,2)
-repkd=function(n,lambda,alpha) suppressWarnings(
+#' repkd(10,lambda=2,alpha=3)
+repkd<-function(n,lambda,alpha)
   {
-    if(any(n<0)) {stop("n must be (0,inf)")}
-    if(any(lambda<0)) {stop("lambda must be between (0,inf")}
-    if(any(alpha<0)) {stop("alpha must be between (0,inf")}
-    rn=qepkd(runif(n),lambda,alpha)
+    n<-floor(n)
+    if(any(n<1)) {stop("n must be >= 1")}
+    if(any(lambda<=0)) {stop("lambda must be > 0")}
+    if(any(alpha<=0)) {stop("alpha must be > 0")}
+    suppressWarnings({
+    rn<-qepkd(stats::runif(n),lambda,alpha)})
     return(rn)
-  })
+  }

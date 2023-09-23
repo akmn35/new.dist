@@ -8,40 +8,45 @@
 \alias{rdld}
 \title{The discrete Lindley distribution}
 \usage{
-ddld(x, theta)
+ddld(x, theta, log = FALSE)
 
-pdld(x, theta)
+pdld(x, theta, lower.tail = TRUE, log.p = FALSE)
 
-qdld(p, theta)
+qdld(p, theta, lower.tail = TRUE)
 
 rdld(n, theta)
 }
 \arguments{
-\item{x}{new numeric vector of data values.}
+\item{x}{vector of quantiles.}
 
-\item{theta}{a shape parameter.}
+\item{theta}{a parameter.}
+
+\item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
+
+\item{lower.tail}{logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
+
+\item{p}{vector of probabilities.}
+
+\item{n}{number of observations. If \code{length(n) > 1}, the length is taken to be the number required.}
 }
 \value{
 \code{ddld} gives the density, \code{pdld} gives the distribution function, \code{qdld} gives the quantile function and \code{rdld} generates random deviates.
 }
 \description{
-Density, distribution function, quantile function and random generation for the discrete Lindley distribution with parameters shape and scale.
+Density, distribution function, quantile function and random generation for the discrete Lindley distribution parameter.
 }
 \details{
-The discrete Lindley distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-\ifelse{html}{><em>λ</em><sup><em>x</em></sup>/(1−log(<em>λ</em>))</span></p>}{\eqn{T_n^{(\ell)}}}.
+The discrete Lindley distribution with a parameter \eqn{\theta}, has density given by
+\deqn{f\left( x\right) =\frac{\lambda ^{x}}{1-\log \lambda }\left( \lambda \log\lambda +\left( 1-\lambda \right) \left( 1-\log \lambda ^{x+1}\right)\right), }
+where
+\deqn{x=0,1,...,~\theta >0,~\lambda =e^{-\theta }.}
 }
 \examples{
-ddld(c(1:5),2)
-ddld(c(1:5),-2)
-ddld(-1,2)
-ddld(2,c(2:4))
-ddld(c(1:5),c(2:5))
-pdld(2,1)
-pdld(1,c(2:4))
-qdld(c(.685,.67),.5)
-qdld(.993,2)
-rdld(10,1)
+library(new.dist)
+ddld(1,theta=2)
+pdld(2,theta=1)
+qdld(.993,theta=2)
+rdld(10,theta=1)
 }
 \references{
 Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,

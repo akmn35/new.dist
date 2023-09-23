@@ -1,88 +1,100 @@
 #' The discrete Lindley distribution
 #' @export
 #' @name dld
-#' @param x new numeric vector of data values.
-#' @param theta a shape parameter.
+#' @param x vector of quantiles.
+#' @param theta a parameter.
+#' @param p vector of probabilities.
+#' @param n number of observations. If \code{length(n) > 1}, the length is taken to be the number required.
+#' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
+#' @param lower.tail logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
 #' @description
-#' Density, distribution function, quantile function and random generation for the discrete Lindley distribution with parameters shape and scale.
+#' Density, distribution function, quantile function and random generation for the discrete Lindley distribution parameter.
 #' @return \code{ddld} gives the density, \code{pdld} gives the distribution function, \code{qdld} gives the quantile function and \code{rdld} generates random deviates.
 #' @details
-#' The discrete Lindley distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{><em>λ</em><sup><em>x</em></sup>/(1−log(<em>λ</em>))</span></p>}{\eqn{T_n^{(\ell)}}}.
+#' The discrete Lindley distribution with a parameter \eqn{\theta}, has density given by
+#' \deqn{f\left( x\right) =\frac{\lambda ^{x}}{1-\log \lambda }\left( \lambda \log\lambda +\left( 1-\lambda \right) \left( 1-\log \lambda ^{x+1}\right)\right), }
+#' where
+#' \deqn{x=0,1,...,~\theta >0,~\lambda =e^{-\theta }.}
 #' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
 #' *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples
-#' ddld(c(1:5),2)
-#' ddld(c(1:5),-2)
-#' ddld(-1,2)
-#' ddld(2,c(2:4))
-#' ddld(c(1:5),c(2:5))
-ddld=function(x,theta)
+#' library(new.dist)
+#' ddld(1,theta=2)
+ddld<-function(x,theta,log=FALSE)
 {
-  x=floor(x)
-  if(any(x<0)) {stop("x must be (0,inf)")}
-  #if(any(x!=floor(x))) {stop("x must be (0,1,2,...)")}
-  if(any(theta<0)) {stop("theta must be (0,inf)")}
-  enuzun = max(length(x),length(theta))
-  x=rep(x,enuzun/length(x)+1)[1:enuzun]
-  theta=rep(theta,enuzun/length(theta)+1)[1:enuzun]
-  pdf=NULL
-  lambda=exp(-theta)
+  x<-floor(x)
+  if(any(theta<=0)) {stop("theta must be > 0")}
+  enuzun <- max(length(x),length(theta))
+  x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+  theta<-rep(theta,enuzun/length(theta)+1)[1:enuzun]
+  pdf<-NULL
+  lambda<-exp(-theta)
   for (i in 1:enuzun)
   {
-    pdf[i]=(lambda[i]^x[i]/(1-log(lambda[i])))*(lambda[i]*log(lambda[i])+(1-lambda[i])*(1-log(lambda[i]^(x[i]+1))))
-  }
+    if(x[i]<0) {pdf[i]<-0} else
+      {pdf[i]<-(lambda[i]^x[i]/(1-log(lambda[i])))*(lambda[i]*log(lambda[i])+(1-lambda[i])*(1-log(lambda[i]^(x[i]+1))))}
+    }
+  if(log==TRUE) pdf<-log(pdf)
   return(pdf)
 }
 #' The discrete Lindley distribution
 #' @export
 #' @rdname dld
-#' @param x new numeric vector of data values.
-#' @param theta a shape parameter.
 #' @examples
-#' pdld(2,1)
-#' pdld(1,c(2:4))
-pdld=function(x,theta)
+#' pdld(2,theta=1)
+pdld<-function(x,theta,lower.tail=TRUE,log.p=FALSE)
 {
-  x=floor(x)
-  if(any(theta<0)) {stop("theta must be (0,inf)")}
-  enuzun = max(length(x),length(theta))
-  x=rep(x,enuzun/length(x)+1)[1:enuzun]
-  theta=rep(theta,enuzun/length(theta)+1)[1:enuzun]
-  cdf=NULL
-  lambda=exp(-theta)
+  x<-floor(x)
+  if(any(theta<=0)) {stop("theta must be > 0")}
+  enuzun <- max(length(x),length(theta))
+  x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+  theta<-rep(theta,enuzun/length(theta)+1)[1:enuzun]
+  cdf<-NULL
+  lambda<-exp(-theta)
   for (i in 1:enuzun)
   {
-    if (x[i]>=0) cdf[i]=(1-(lambda[i]^(x[i]+1))+(((2+x[i])*lambda[i]^(x[i]+1))-1)*log(lambda[i]))/(1-log(lambda[i])) else cdf[i]=0
+    if (x[i]>=0) cdf[i]<-(1-(lambda[i]^(x[i]+1))+(((2+x[i])*lambda[i]^(x[i]+1))-1)*log(lambda[i]))/(1-log(lambda[i])) else cdf[i]<-0
   }
+  if(lower.tail==FALSE) cdf<-1-cdf
+  if(log.p==TRUE) cdf<-log(cdf)
   return(cdf)
 }
 #' The discrete Lindley distribution
 #' @export
 #' @rdname dld
-#' @param x new numeric vector of data values.
-#' @param theta a shape parameter.
 #' @examples
-#' qdld(c(.685,.67),.5)
-#' qdld(.993,2)
-qdld=function(p,theta)
+#' qdld(.993,theta=2)
+qdld<-function(p,theta,lower.tail=TRUE)
 {
-  if(any(p<0)|any(p>1)) {stop("p must be between [0,1]")}
-  if(any(theta<0)) {stop("theta must be (0,inf)")}
-  enuzun = max(length(p),length(theta))
-  p=rep(p,enuzun/length(p)+1)[1:enuzun]
-  theta=rep(theta, enuzun/length(theta)+1)[1:enuzun]
-  quant=NULL
-  lambda=exp(-theta)
+  if(any(p<0)|any(p>1)) {stop("p must be between >= 0 and <= 1")}
+  if(any(theta<=0)) {stop("theta must be > 0")}
+  enuzun <- max(length(p),length(theta))
+  p<-rep(p,enuzun/length(p)+1)[1:enuzun]
+  theta<-rep(theta, enuzun/length(theta)+1)[1:enuzun]
+  quant<-NULL
+  lambda<-exp(-theta)
   for (i in 1:enuzun)
   {
-    x=0
-    t=0
+    x<-0
+    t<-0
     while(t<p[i]){
-      t=pdld(x,theta[i])
-      x=x+1
+      t<-pdld(x,theta[i])
+      x<-x+1
     }
-    quant[i]=x-1
+    quant[i]<-x-1
+  }
+  if(lower.tail==FALSE)
+  {
+    for (i in 1:enuzun)
+    {
+      x<-0
+      t<-0
+      while(t<(1-p[i])){
+        t<-pdld(x,theta[i])
+        x<-x+1
+      }
+      quant[i]<-x-1
+    }
   }
   {
     return(quant)
@@ -91,14 +103,13 @@ qdld=function(p,theta)
 #' The discrete Lindley distribution
 #' @export
 #' @rdname dld
-#' @param x new numeric vector of data values.
-#' @param theta a shape parameter.
 #' @examples
-#' rdld(10,1)
-rdld=function(n,theta) suppressWarnings(
+#' rdld(10,theta=1)
+rdld<-function(n,theta) suppressWarnings(
   {
-    if(any(n<0)) {stop("n must be (0,inf)")}
-    if(any(theta<0)) {stop("lambda must be between (0,inf")}
-    rn=qdld(runif(n),theta)
+    n=floor(n)
+    if(any(n<1)) {stop("n must be >= 1")}
+    if(any(theta<=0)) {stop("theta must be > 0")}
+    rn<-qdld(stats::runif(n),theta)
     return(rn)
   })

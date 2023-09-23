@@ -1,97 +1,100 @@
 #' A new one parameter discrete distribution and its applications
 #' @export
 #' @name noPDD
-#' @param x new numeric vector of data values.
-#' @param theta a shape parameter.
+#' @param x vector of quantiles.
+#' @param theta a scale parameter.
+#' @param p vector of probabilities.
+#' @param n number of observations. If \code{length(n) > 1}, the length is taken to be the number required.
+#' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
+#' @param lower.tail logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
 #' @description
-#' Density, distribution function, quantile function and random generation for a new one parameter discrete distribution with parameters shape and scale.
+#' Density, distribution function, quantile function and random generation for a new one parameter discrete distribution with parameter \code{scale}.
 #' @return \code{dnoPDD} gives the density, \code{pnoPDD} gives the distribution function, \code{qnoPDD} gives the quantile function and \code{rnoPDD} generates random deviates.
 #' @details
-#' A new one parameter discrete distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
+#' A new one parameter discrete distribution with \code{scale} parameter \eqn{\theta}, has density given by
+#'  \deqn{f\left( x\right) =\frac{\theta ^{6}}{\theta ^{6}+120}\left( \theta+x^{5}\right) e^{-\theta x},}
+#' where
+#'  \deqn{x>0,~\theta >0.}
 #' @references  Shukla, K. K., Shanker, R. ve Tiwari, M. K., 2022,
 #' *A new one parameter discrete distribution and its applications*, Journal of Statistics and Management Systems, 25 (1), 269-283.
 #' @examples
-#' dnoPDD(c(1:5),2)
-#' dnoPDD(2,c(2:4))
-#' dnoPDD(c(1:5),c(2:5))
-#' dnoPDD(c(1:5),-2)
-#' dnoPDD(-2,c(2:4))
-dnoPDD=function(x,theta) #x,theta > 0
+#' dnoPDD(1,theta=2)
+dnoPDD<-function(x,theta=1,log=FALSE)
 {
-  if(any(x<0)) {stop("x must be (0,inf)")}
-  if(any(theta<0)) {stop("theta must be (0,inf)")}
-  enuzun = max(length(x),length(theta))
-  x=rep(x,enuzun/length(x)+1)[1:enuzun]
-  theta=rep(theta,enuzun/length(theta)+1)[1:enuzun]
-  pdf=NULL
+  if(any(theta<=0)) {stop("theta must be > 0")}
+  enuzun <- max(length(x),length(theta))
+  x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+  theta<-rep(theta,enuzun/length(theta)+1)[1:enuzun]
+  pdf<-NULL
   for (i in 1:enuzun)
   {
-    pdf[i]=(theta[i]^6/(theta[i]^6+120))*(theta[i]+x[i]^5)*exp(-theta[i]*x[i])
+    if(x[i]<=0) {pdf[i]<-0} else
+    {pdf[i]<-(theta[i]^6/(theta[i]^6+120))*(theta[i]+x[i]^5)*exp(-theta[i]*x[i])}
   }
+  if(log==TRUE) pdf<-log(pdf)
   return(pdf)
 }
 #' A new one parameter discrete distribution and its applications
 #' @export
 #' @rdname noPDD
-#' @param x new numeric vector of data values.
-#' @param theta a shape parameter.
 #' @examples
-#' pnoPDD(c(1:5),2)
-#' pnoPDD(2,c(2:4))
-#' pnoPDD(c(1:5),c(2:5))
-#' pnoPDD(-2,c(2:4))
-#' pnoPDD(.2,c(2:4))
-pnoPDD=function(x,theta) #x,theta > 0
+#' pnoPDD(1,theta=2)
+pnoPDD<-function(x,theta=1,lower.tail=TRUE,log.p=FALSE)
 {
-  if(any(x<0)) {stop("x must be (0,inf)")}
-  if(any(theta<0)) {stop("theta must be (0,inf)")}
-  enuzun=max(length(x),length(theta))
-  x=rep(x,enuzun/length(x)+1)[1:enuzun]
-  theta=rep(theta,enuzun/length(theta)+1)[1:enuzun]
-  cdf=NULL
+  if(any(theta<=0)) {stop("theta must be > 0")}
+  enuzun<-max(length(x),length(theta))
+  x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+  theta<-rep(theta,enuzun/length(theta)+1)[1:enuzun]
+  cdf<-NULL
   for (i in 1:enuzun)
   {
-    if(x[i]>0) cdf[i]=1-(1+((theta[i]*x[i]*(theta[i]^4*x[i]^4+5*theta[i]^3*x[i]^3+20*theta[i]^2*x[i]^2+60*theta[i]*x[i]+120)/(theta[i]^6+120))))*exp(-theta[i]*x[i]) else cdf[i]=0
+    if(x[i]>0) cdf[i]<-1-(1+((theta[i]*x[i]*(theta[i]^4*x[i]^4+5*theta[i]^3*x[i]^3+20*theta[i]^2*x[i]^2+60*theta[i]*x[i]+120)/(theta[i]^6+120))))*exp(-theta[i]*x[i]) else cdf[i]=0
   }
+  if(lower.tail==FALSE) cdf<-1-cdf
+  if(log.p==TRUE) cdf<-log(cdf)
   return(cdf)
 }
 #' A new one parameter discrete distribution and its applications
 #' @export
 #' @rdname noPDD
-#' @param p new numeric vector of data values.
-#' @param theta a shape parameter.
 #' @examples
-#' qnoPDD(.1,1)
-qnoPDD=function(p,theta) # 0<p<1, theta > 0
+#' qnoPDD(.1,theta=1)
+qnoPDD<-function(p,theta=1,lower.tail=TRUE)
 {
-  if(any(p<0)) {stop("x must be (0,inf)")}
-  if(any(theta<0)) {stop("theta must be (0,inf)")}
-  enuzun=max(length(p),length(theta))
-  p=rep(p,enuzun/length(p)+1)[1:enuzun]
-  theta=rep(theta,enuzun/length(theta)+1)[1:enuzun]
-  kok=NULL
-  for (i in 1:enuzun)
+  if(any(p<0)|any(p>1)) {stop("p must be between >= 0 and <= 1")}
+  if(any(theta<=0)) {stop("theta must be > 0")}
+  enuzun<-max(length(p),length(theta))
+  p<-rep(p,enuzun/length(p)+1)[1:enuzun]
+  theta<-rep(theta,enuzun/length(theta)+1)[1:enuzun]
+  kok<-NULL
+  for (i in 1:enuzun)suppressWarnings(
   {
-    F=function(x)
+    Ex<-(theta[i]^6+2*3*4*5*6)/(theta[i]*(theta[i]^6+120))
+    F<-function(x)
     {
-      (1-(1+((theta[i]*x*(theta[i]^4*x^4+5*theta[i]^3*x^3+20*theta[i]^2*x^2+60*theta[i]*x+120)/(theta[i]^6+120))))*exp(-theta[i]*x))-p[i]
+      abs((1-(1+((theta[i]*x*(theta[i]^4*x^4+5*theta[i]^3*x^3+20*theta[i]^2*x^2+60*theta[i]*x+120)/(theta[i]^6+120))))*exp(-theta[i]*x))-p[i])
     }
-    kok[i]=(uniroot(F,c(0,100000000)))$root
-  }
+    if(lower.tail==FALSE)
+    {
+      F<-function(x)
+      {
+        abs((1-(1+((theta[i]*x*(theta[i]^4*x^4+5*theta[i]^3*x^3+20*theta[i]^2*x^2+60*theta[i]*x+120)/(theta[i]^6+120))))*exp(-theta[i]*x))-(1-p[i]))
+      }
+    }
+    kok[i]<-stats::optim(Ex,F)$par
+  })
   return(kok)
 }
 #' A new one parameter discrete distribution and its applications
 #' @export
 #' @rdname noPDD
-#' @param n new numeric vector of data values.
-#' @param theta a shape parameter.
 #' @examples
-#' rnoPDD(10,1)
-rnoPDD=function(n,theta)
+#' rnoPDD(10,theta=1)
+rnoPDD<-function(n,theta=1)
 {
-  if(any(n<0)) {stop("n must be (0,inf)")}
-  if(any(theta<0)) {stop("theta must be (0,inf)")}
-  rn=qnoPDD(runif(n),theta)
+  n<-floor(n)
+  if(any(n<1)) {stop("n must be >= 1")}
+  if(any(theta<=0)) {stop("theta must be > 0")}
+  rn<-qnoPDD(stats::runif(n),theta)
   return(rn)
 }

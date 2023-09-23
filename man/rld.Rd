@@ -8,49 +8,44 @@
 \alias{rrld}
 \title{Inferences on stress–strength reliability based on ranked set sampling data incase of Lindley distribution}
 \usage{
-drld(x, theta)
+drld(x, theta, log = FALSE)
 
-prld(x, theta)
+prld(x, theta, lower.tail = TRUE, log.p = FALSE)
 
-qrld(p, theta)
+qrld(p, theta, lower.tail = TRUE)
 
 rrld(n, theta)
 }
 \arguments{
-\item{x}{new numeric vector of data values.}
+\item{x}{vector of quantiles.}
 
-\item{theta}{a shape parameter.}
+\item{theta}{a parameter.}
 
-\item{p}{new numeric vector of data values.}
+\item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
-\item{n}{new numeric vector of data values.}
+\item{lower.tail}{logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
+
+\item{p}{vector of probabilities.}
+
+\item{n}{number of observations. If \code{length(n) > 1}, the length is taken to be the number required.}
 }
 \value{
 \code{drld} gives the density, \code{prld} gives the distribution function, \code{qrld} gives the quantile function and \code{rrld} generates random deviates.
 }
 \description{
-Density, distribution function, quantile function and random generation for Inferences on stress–strength reliability based on ranked set sampling data incase of Lindley distribution with parameters shape and scale.
+Density, distribution function, quantile function and random generation for Inferences on stress–strength reliability based on ranked set sampling data incase of Lindley distributions parameter.
 }
 \details{
-Inferences on stress–strength reliability based on ranked set sampling data incase of Lindley distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-\ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
+Inferences on stress–strength reliability based on ranked set sampling data incase of Lindley distribution with a parameter \eqn{\theta}, has density given by
+\deqn{f\left( x\right) =\frac{\theta ^{2}}{1+\theta }\left( 1+x\right) e^{-\theta~x},}
+where
+\deqn{x>0,~\theta >0.}
 }
 \examples{
-drld(c(1:5),2)
-drld(2,c(2:4))
-drld(c(1:5),c(2:5))
-drld(c(1:5),-2)
-drld(-2,c(2:4))
-prld(c(1:5),2)
-prld(2,c(2:4))
-prld(c(1:5),c(2:5))
-prld(-1,c(2:4))
-prld(c(-1,-2),c(2:5))
-prld(c(1:5),-2)
-prld(-2,c(2:4))
-qrld(.8,1)
-qrld(.9,5)
-rrld(10,1)
+drld(1,theta=2)
+prld(1,theta=2)
+qrld(.8,theta=1)
+rrld(10,theta=1)
 }
 \references{
 Akgül, F. G., Acıtaş, Ş. ve Şenoğlu, B., 2018,

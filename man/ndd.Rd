@@ -8,46 +8,44 @@
 \alias{rndd}
 \title{A new discrete distribution}
 \usage{
-dndd(x, theta)
+dndd(x, theta, log = FALSE)
 
-pndd(x, theta)
+pndd(x, theta, lower.tail = TRUE, log.p = FALSE)
 
-qndd(p, theta)
+qndd(p, theta, lower.tail = TRUE)
 
 rndd(n, theta)
 }
 \arguments{
-\item{x}{new numeric vector of data values.}
+\item{x}{vector of quantiles.}
 
-\item{theta}{a shape parameter.}
+\item{theta}{a parameter.}
 
-\item{p}{new numeric vector of data values.}
+\item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
-\item{n}{new numeric vector of data values.}
+\item{lower.tail}{logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
+
+\item{p}{vector of probabilities.}
+
+\item{n}{number of observations. If \code{length(n) > 1}, the length is taken to be the number required.}
 }
 \value{
 \code{dndd} gives the density, \code{pndd} gives the distribution function, \code{qndd} gives the quantile function and \code{rndd} generates random deviates.
 }
 \description{
-Density, distribution function, quantile function and random generation for a new discrete distribution with parameters shape and scale.
+Density, distribution function, quantile function and random generation for a new discrete distribution parameter.
 }
 \details{
-A new discrete distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-\ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
+A new discrete distribution with a parameter \eqn{\theta}, has density given by
+\deqn{f\left( x\right) =\frac{\lambda ^{x}}{1+\theta }\left( \theta \left(1-2\lambda \right) +\left( 1-\lambda \right) \left( 1+\theta x\right)\right), }
+where
+\deqn{x=0,1,2,...~,\lambda =\exp \left( -\theta \right) ,~\theta >0.}
 }
 \examples{
-dndd(c(1:5),2)
-dndd(-2,c(2:4))
-dndd(c(1:5),c(2:5))
-dndd(1.1,2)
-pndd(c(1:5),2)
-pndd(2,c(2:4))
-pndd(c(1:5),c(2:5))
-pndd(-2,c(2:4))
-pndd(.2,c(2:4))
-qndd(.5,.2)
-qndd(.8,1)
-rndd(10,.1)
+dndd(2,theta=2)
+pndd(1,theta=2)
+qndd(.5,theta=2)
+rndd(10,theta=1)
 }
 \references{
 Bakouch, H. S., Jazi, M. A. ve Nadarajah, S., 2014,

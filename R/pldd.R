@@ -1,123 +1,113 @@
 #' A Power Log Dagum Distribution
 #' @export
 #' @name pldd
-#' @param x new numeric vector of data values.
-#' @param alpha a shape parameter.
-#' @param beta shape2
-#' @param theta shape3
+#' @param x vector of quantiles.
+#' @param alpha,beta,theta are parameters.
+#' @param p vector of probabilities.
+#' @param n number of observations. If \code{length(n) > 1}, the length is taken to be the number required.
+#' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
+#' @param lower.tail logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
 #' @description
-#' Density, distribution function, quantile function and random generation for a Power Log Dagum distribution with parameters shape and scale.
+#' Density, distribution function, quantile function and random generation for a Power Log Dagum distribution parameters.
 #' @return \code{dpldd} gives the density, \code{ppldd} gives the distribution function, \code{qpldd} gives the quantile function and \code{rpldd} generates random deviates.
 #' @details
-#' A Power Log Dagum Distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
+#' A Power Log Dagum Distribution with parameters \eqn{\alpha}, \eqn{\beta}, \eqn{\theta}, has density given by
+#'  \deqn{f\left( x\right) =\alpha \left( \beta +\theta \left\vert x\right\vert^{\beta -1}\right) e^{-\left( \beta x+sign\left( x\right) \left( \theta                                                                                                                                /\beta \right) \left\vert x\right\vert ^{\beta }\right) ~}~\left(                                                                   1+e^{-\left( \beta x+sign\left( x\right) \left( \theta /\beta \right)                                                                                \left\vert x\right\vert ^{\beta }\right) }\right) ^{-\left( \alpha +1\right)                                                                                },}
+#' where
+#' \deqn{x\in \mathbb{R},~\beta \in \mathbb{R},~\alpha >0,~\theta \geq 0}
+#' @note
+#' The distributions hazard function
+#' \deqn{h\left( x\right) =\frac{\alpha \left( \beta +\theta \left\vert x\right\vert^{\beta -1}\right) e^{-\left( \beta x+sign\left( x\right) \left( \theta                                                                 /\beta \right) \left\vert x\right\vert ^{\beta }\right) }\left( 1+e^{-\left(                                                                   \beta x+sign\left( x\right) \left( \theta /\beta \right) \left\vert                                                                   x\right\vert ^{\beta }\right) }\right) ^{-\left( \alpha +1\right) }}{                                                                     1-\left( 1+e^{-\left( \beta x+sign\left( x\right) \left( \theta /\beta                                                                                                                              \right) \left\vert x\right\vert ^{\beta }\right) }\right) ^{-\alpha }} .}
 #' @references  Bakouch, H. S., Khan, M. N., Hussain, T. ve Chesneau, C., 2019,
 #' *A power log-Dagum distribution: estimation and applications*, Journal of Applied Statistics, 46 (5), 874-892.
 #' @examples
-#' dpldd(1,2,3,4)
-#' dpldd(c(1:5),2,3,4)
-#' dpldd(c(1:5),c(2:6),3,4)
-#' dpldd(c(1:5),c(2:6),c(3:5),4)
-#' dpldd(c(1:5),c(2:6),c(3:5),c(4:6))
-#' dpldd(1,2,3,c(4:6))
-dpldd=function(x,alpha,beta,theta) suppressWarnings(
-  {  #abs=mutlak değer
-    if(any(alpha<=0)) {stop("alpha must be between (0,inf")}
-    if(any(theta<0)) {stop("theta must be between [0,inf")}
-    enuzun=max(length(x),length(alpha),length(beta),length(theta))
-    x=rep(x,enuzun/length(x)+1)[1:enuzun]
-    alpha=rep(alpha,enuzun/length(alpha)+1)[1:enuzun]
-    beta=rep(beta,enuzun/length(beta)+1)[1:enuzun]
-    theta=rep(theta,enuzun/length(theta)+1)[1:enuzun]
-    pdf=NULL
+#' dpldd(1, alpha=2, beta=3, theta=4)
+dpldd<-function(x,alpha,beta,theta,log=FALSE)
+{
+    if(any(alpha<=0)) {stop("alpha must be > 0")}
+    if(any(theta<0)) {stop("theta must be >= 0")}
+    enuzun<-max(length(x),length(alpha),length(beta),length(theta))
+    x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+    alpha<-rep(alpha,enuzun/length(alpha)+1)[1:enuzun]
+    beta<-rep(beta,enuzun/length(beta)+1)[1:enuzun]
+    theta<-rep(theta,enuzun/length(theta)+1)[1:enuzun]
+    pdf<-NULL
     for (i in 1:enuzun)
-    {
-      pdf[i]=alpha[i]*(beta[i]+theta[i]*abs(x[i])^(beta[i]-1))*(exp(-(beta[i]*x[i]+(sign(x[i]))*(theta[i]/beta[i])*abs(x[i])^beta[i])))*
-        (1+exp(-(beta[i]*x[i]+(sign(x[i]))*(theta[i]/beta[i])*abs(x[i])^beta[i])))^(-(alpha[i]+1))
+    {suppressWarnings({
+      pdf[i]<-alpha[i]*(beta[i]+theta[i]*abs(x[i])^(beta[i]-1))*(exp(-(beta[i]*x[i]+(sign(x[i]))*(theta[i]/beta[i])*abs(x[i])^beta[i])))*
+        (1+exp(-(beta[i]*x[i]+(sign(x[i]))*(theta[i]/beta[i])*abs(x[i])^beta[i])))^(-(alpha[i]+1))})
     }
+    if(log==TRUE) pdf<-log(pdf)
     return(pdf)
-  })
+  }
 #' A Power Log Dagum Distribution
 #' @export
 #' @rdname pldd
-#' @param x new numeric vector of data values.
-#' @param alpha a shape parameter.
-#' @param beta shape2
-#' @param theta shape3
 #' @examples
-#' ppldd(-1,2,3,4)
-#' ppldd(c(1:3),2,3,4)
-#' ppldd(1,c(1:3),3,4)
-#' ppldd(1,2,c(1:4),4)
-#' ppldd(1,2,3,c(1:4))
-#' ppldd(c(-1:3),c(1:3),3,4)
-#' ppldd(c(1:5),c(2:6),3,4)
-#' ppldd(c(1:5),c(2:6),c(3:6),1)
-#' ppldd(c(1:5),c(2:6),c(3:6),c(1:4))
-ppldd=function(x,alpha,beta,theta) suppressWarnings(
+#' ppldd(1,alpha=2,beta=3,theta=4)
+ppldd<-function(x,alpha,beta,theta,lower.tail=TRUE,log.p=FALSE)
   {
-    if(any(alpha<=0)) {stop("alpha must be between (0,inf")}
-    if(any(theta<0)) {stop("theta must be between [0,inf")}
-    enuzun=max(length(x),length(alpha),length(beta),length(theta))
-    x=rep(x,enuzun/length(x)+1)[1:enuzun]
-    alpha=rep(alpha,enuzun/length(alpha)+1)[1:enuzun]
-    beta=rep(beta,enuzun/length(beta)+1)[1:enuzun]
-    theta=rep(theta,enuzun/length(theta)+1)[1:enuzun]
-    cdf=NULL
-    for (i in 1:enuzun)
+  if(any(alpha<=0)) {stop("alpha must be > 0")}
+  if(any(theta<0)) {stop("theta must be >= 0")}
+    enuzun<-max(length(x),length(alpha),length(beta),length(theta))
+    x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+    alpha<-rep(alpha,enuzun/length(alpha)+1)[1:enuzun]
+    beta<-rep(beta,enuzun/length(beta)+1)[1:enuzun]
+    theta<-rep(theta,enuzun/length(theta)+1)[1:enuzun]
+    cdf<-NULL
+    for (i in 1:enuzun) suppressWarnings(
     {
-      if(x[i]>0) {cdf[i]=(1+exp(-(beta[i]*x[i]+(sign(x[i]))*(theta[i]/beta[i])*abs(x[i])^beta[i])))^(-alpha[i])} else cdf[i]=0
-    }
+      cdf[i]<-(1+exp(-(beta[i]*x[i]+(sign(x[i]))*(theta[i]/beta[i])*abs(x[i])^beta[i])))^(-alpha[i])
+    })
+    if(lower.tail==FALSE) cdf<-1-cdf
+    if(log.p==TRUE) cdf<-log(cdf)
     return(cdf)
-  })
+}
 #' A Power Log Dagum Distribution
 #' @export
 #' @rdname pldd
-#' @param p new numeric vector of data values.
-#' @param alpha a shape parameter.
-#' @param beta shape2
-#' @param theta shape3
 #' @examples
-#' qpldd(c(.7,.8),1,2,3)
-#' qpldd(c(.7,.8),c(1,2),2,3)
-#' qpldd(.8,1,2,3)
-#' qpldd(c(.7,.8),c(1,2),c(2:4),3)
-#' qpldd(.7,1,4,3)
-qpldd=function(p,alpha,beta,theta) suppressWarnings(
+#' qpldd(.8,alpha=2,beta=3,theta=4)
+qpldd<-function(p,alpha,beta,theta,lower.tail=TRUE)
   {
-    if(any(p<0 && 1>p)) {stop("p must be between (0,1")}
-    if(any(alpha<0)) {stop("alpha must be between (0,inf")}
-    if(any(beta<0)) {stop("beta must be between (0,inf")}
-    enuzun=max(length(p),length(alpha),length(beta),length(theta))
-    p=rep(p,enuzun/length(p)+1)[1:enuzun]
-    alpha=rep(alpha,enuzun/length(alpha)+1)[1:enuzun]
-    beta=rep(beta,enuzun/length(beta)+1)[1:enuzun]
-    theta=rep(theta,enuzun/length(theta)+1)[1:enuzun]
+  if(any(p<0)|any(p>1)) {stop("p must be between >= 0 and <= 1")}
+  if(any(alpha<=0)) {stop("alpha must be > 0")}
+  if(any(theta<0)) {stop("theta must be >= 0")}
+    enuzun<-max(length(p),length(alpha),length(beta),length(theta))
+    p<-rep(p,enuzun/length(p)+1)[1:enuzun]
+    alpha<-rep(alpha,enuzun/length(alpha)+1)[1:enuzun]
+    beta<-rep(beta,enuzun/length(beta)+1)[1:enuzun]
+    theta<-rep(theta,enuzun/length(theta)+1)[1:enuzun]
     kok=NULL
-    for (i in 1:enuzun)
+    for (i in 1:enuzun) suppressWarnings(
     {
-      F=function(x)
+      F<-function(x)
       {
         (1+exp(-(beta[i]*x+(sign(x))*(theta[i]/beta[i])*abs(x)^beta[i])))^(-alpha[i])-p[i]
       }
-      kok[i]=(uniroot(F,c(-10,100)))$root
-    }
+      if(lower.tail==FALSE)
+      {
+        F<-function(x)
+        {
+          (1+exp(-(beta[i]*x+(sign(x))*(theta[i]/beta[i])*abs(x)^beta[i])))^(-alpha[i])-(1-p[i])
+        }
+      }
+      kok[i]<-(stats::uniroot(F,c(-10,10)))$root
+    })
     return(kok)
-  })
+  }
 #' A Power Log Dagum Distribution
 #' @export
 #' @rdname pldd
-#' @param n new numeric vector of data values.
-#' @param alpha a shape parameter.
-#' @param beta shape2
-#' @param theta shape3
 #' @examples
-#' rpldd(100,1,2,1)
-rpldd=function(n,alpha,beta,theta) suppressWarnings(
+#' rpldd(10,alpha=2,beta=3,theta=4)
+rpldd<-function(n,alpha,beta,theta)
   {
-    if(any(n<0)) {stop("n must be between (0,inf")}
-    if(any(alpha<0)) {stop("alpha must be between (0,inf")}
-    if(any(beta<0)) {stop("beta must be between (0,inf")}
-    rn=qpldd(runif(n),alpha,beta,theta)
+    n<-floor(n)
+    if(any(n<1)) {stop("n must be >= 1")}
+    if(any(alpha<=0)) {stop("alpha must be > 0")}
+    if(any(theta<0)) {stop("theta must be >= 0")}
+    suppressWarnings({
+    rn<-qpldd(stats::runif(n),alpha,beta,theta)})
     return(rn)
-  })
+  }

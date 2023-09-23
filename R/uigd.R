@@ -1,107 +1,107 @@
 #' The unit inverse Gaussian distribution A new alternative to two parameter distributions on the unit interval
 #' @export
 #' @name uigd
-#' @param x new numeric vector of data values.
-#' @param mu a shape parameter.
-#' @param lambda shape2
+#' @param x vector of quantiles.
+#' @param mu a mean parameter.
+#' @param p vector of probabilities.
+#' @param n number of observations. If \code{length(n) > 1}, the length is taken to be the number required.
+#' @param lambda a scale parameter.
+#' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
+#' @param lower.tail logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
 #' @description
-#' Density, distribution function, quantile function and random generation for the unit inverse Gaussian distribution A new alternative to two parameter distribution with parameters shape and scale.
+#' Density, distribution function, quantile function and random generation for the unit inverse Gaussian distribution A new alternative to two parameter distribution with parameters \code{mean} and \code{scale}.
 #' @return \code{duigd} gives the density, \code{puigd} gives the distribution function, \code{quigd} gives the quantile function and \code{ruigd} generates random deviates.
 #' @details
-#' The unit inverse Gaussian distribution A new alternative to two parameter distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
+#' The unit inverse Gaussian distribution A new alternative to two parameter distribution with \code{scale} parameter \eqn{\lambda} and \code{mean} parameter \eqn{\mu}, has density given by
+#' \deqn{f\left( x\right) =\sqrt{\frac{\lambda }{2\pi }}\frac{1}{x^{3/2}}e^{-\frac{ \lambda }{2\mu ^{2}x}\left( x-\mu \right) ^{2}},}
+#' where
+#' \deqn{x>0,~\mu ,\lambda >0.}
 #' @references  Ghitany, M., Mazucheli, J., Menezes, A. ve Alqallaf, F., 2019,
 #' *The unit-inverse Gaussian distribution: A new alternative to two-parameter distributions on the unit interval*, Communications in Statistics-Theory and Methods, 48 (14), 3423-3438.
 #' @examples
-#' duigd(1,2,3)
-#' duigd(c(1:5),2,3)
-#' duigd(c(1:5),c(2:6),3)
-#' duigd(c(1:5),c(2:6),c(3:6))
-duigd=function(x,mu,lambda) #x,mu,lambda > 0
+#' duigd(1, mu=2, lambda=3)
+duigd<-function(x,mu,lambda=1,log=FALSE)
 {
-  if(any(x<0)) {stop("x must be between [0,1]")}
-  if(any(mu<0)) {stop("mu must be between (0,inf")}
-  if(any(lambda<0)) {stop("lambda must be between (0,inf")}
-  enuzun = max(length(x),length(mu),length(lambda))
-  x=rep(x,enuzun/length(x)+1)[1:enuzun]
-  mu=rep(mu, enuzun/length(mu)+1)[1:enuzun]
-  lambda=rep(lambda,enuzun/length(lambda)+1)[1:enuzun]
-  pdf=NULL
+  if(any(mu<=0)) {stop("mu must be > 0")}
+  if(any(lambda<=0)) {stop("lambda must be > 0")}
+  enuzun <- max(length(x),length(mu),length(lambda))
+  x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+  mu<-rep(mu, enuzun/length(mu)+1)[1:enuzun]
+  lambda<-rep(lambda,enuzun/length(lambda)+1)[1:enuzun]
+  pdf<-NULL
   for (i in 1:enuzun)
   {
-    pdf[i]=((lambda[i]/(2*pi))^(1/2))*(1/(x[i]^(3/2)))*exp(-(lambda[i]/(2*mu[i]^2*x[i]))*(x[i]-mu[i])^2)
+    if(x[i]<=0) {pdf[i]<-0} else
+    pdf[i]<-((lambda[i]/(2*pi))^(1/2))*(1/(x[i]^(3/2)))*exp(-(lambda[i]/(2*mu[i]^2*x[i]))*(x[i]-mu[i])^2)
   }
+  if(log==TRUE) pdf<-log(pdf)
   return(pdf)
 }
 #' The unit inverse Gaussian distribution A new alternative to two parameter distributions on the unit interval
 #' @export
 #' @rdname uigd
-#' @param x new numeric vector of data values.
-#' @param mu a shape parameter.
-#' @param lambda shape2
 #' @examples
-#' puigd(-1,2,3)
-#' puigd(c(1:5),2,3)
-#' puigd(c(1:5),c(2:6),3)
-#' puigd(c(-7),c(2:6),3)
-#' puigd(c(1:5),c(2:6),c(3:6))
-puigd=function(x,mu,lambda)  #x,mu,lambda > 0
+#' puigd(1,mu=2,lambda=3)
+puigd<-function(x,mu,lambda=1,lower.tail=TRUE,log.p=FALSE)
 {
-  if(any(x<0)) {stop("x must be between [0,1]")}
-  if(any(mu<0)) {stop("mu must be between (0,inf")}
-  if(any(lambda<0)) {stop("lambda must be between (0,inf")}
-  enuzun = max(length(x),length(mu),length(lambda))
-  x=rep(x,enuzun/length(x)+1)[1:enuzun]
-  mu=rep(mu, enuzun/length(mu)+1)[1:enuzun]
-  lambda=rep(lambda,enuzun/length(lambda)+1)[1:enuzun]
-  cdf=NULL
+  if(any(mu<=0)) {stop("mu must be > 0")}
+  if(any(lambda<=0)) {stop("lambda must be > 0")}
+  enuzun <- max(length(x),length(mu),length(lambda))
+  x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+  mu<-rep(mu, enuzun/length(mu)+1)[1:enuzun]
+  lambda<-rep(lambda,enuzun/length(lambda)+1)[1:enuzun]
+  cdf<-NULL
   for (i in 1:enuzun)
   {
-    if (x[i]>0) cdf[i]=pnorm((lambda[i]/x[i])^(1/2)*(x[i]/mu[i]-1))+exp(2*lambda[i]/mu[i])*pnorm(-(lambda[i]/x[i])^(1/2)*(x[i]/mu[i]+1)) else cdf[i]=0
+    if (x[i]>0) cdf[i]<-stats::pnorm((lambda[i]/x[i])^(1/2)*(x[i]/mu[i]-1))+exp(2*lambda[i]/mu[i])*stats::pnorm(-(lambda[i]/x[i])^(1/2)*(x[i]/mu[i]+1)) else cdf[i]=0
   }
+  if(lower.tail==FALSE) cdf<-1-cdf
+  if(log.p==TRUE) cdf<-log(cdf)
   return(cdf)
 }
 #' The unit inverse Gaussian distribution A new alternative to two parameter distributions on the unit interval
 #' @export
 #' @rdname uigd
-#' @param p new numeric vector of data values.
-#' @param mu a shape parameter.
-#' @param lambda shape2
 #' @examples
-#' quigd(.1,1,1)
-quigd=function(p,mu,lambda) # 0<p<1, mu,lambda > 0
+#' quigd(.1,mu=2,lambda=3)
+quigd<-function(p,mu,lambda=1,lower.tail=TRUE)
 {
-  if(any(p<0)|any(p>1)) {stop("p must be between [0,1]")}
-  if(any(mu<0)) {stop("mu must be between (0,inf")}
-  if(any(lambda<0)) {stop("lambda must be between (0,inf")}
-  enuzun = max(length(p),length(mu),length(lambda))
-  p=rep(p,enuzun/length(p)+1)[1:enuzun]
-  mu=rep(mu, enuzun/length(mu)+1)[1:enuzun]
-  lambda=rep(lambda,enuzun/length(lambda)+1)[1:enuzun]
-  kok=NULL
+  if(any(p<0)|any(p>1)) {stop("p must be between >= 0 and <= 1")}
+  if(any(mu<=0)) {stop("mu must be > 0")}
+  if(any(lambda<=0)) {stop("lambda must be > 0")}
+  enuzun <- max(length(p),length(mu),length(lambda))
+  p<-rep(p,enuzun/length(p)+1)[1:enuzun]
+  mu<-rep(mu, enuzun/length(mu)+1)[1:enuzun]
+  lambda<-rep(lambda,enuzun/length(lambda)+1)[1:enuzun]
+  kok<-NULL
   for (i in 1:enuzun)
   {
-    F=function(x)
+    F<-function(x)
     {
-      pnorm((lambda[i]/x)^(1/2)*(x/mu[i]-1))+exp(2*lambda[i]/mu[i])*pnorm(-(lambda[i]/x)^(1/2)*(x/mu[i]+1))-p[i]
+      stats::pnorm((lambda[i]/x)^(1/2)*(x/mu[i]-1))+exp(2*lambda[i]/mu[i])*stats::pnorm(-(lambda[i]/x)^(1/2)*(x/mu[i]+1))-p[i]
     }
-    kok[i]=(uniroot(F,c(0,100000)))$root
+    if(lower.tail==FALSE)
+    {
+      F<-function(x)
+      {
+        stats::pnorm((lambda[i]/x)^(1/2)*(x/mu[i]-1))+exp(2*lambda[i]/mu[i])*stats::pnorm(-(lambda[i]/x)^(1/2)*(x/mu[i]+1))-(1-p[i])
+      }
+    }
+    kok[i]<-(stats::uniroot(F,c(0,100000)))$root
   }
   return(kok)
 }
 #' The unit inverse Gaussian distribution A new alternative to two parameter distributions on the unit interval
 #' @export
 #' @rdname uigd
-#' @param n new numeric vector of data values.
-#' @param mu a shape parameter.
-#' @param lambda shape2
 #' @examples
-#' ruigd(100,1,1)
-ruigd=function(n,mu,lambda)
+#' ruigd(10,mu=2,lambda=3)
+ruigd<-function(n,mu,lambda=1)
 {
-  if(any(n<0)) {stop("n must be (0,inf)")}
-  if(any(mu<0)) {stop("mu must be between (0,inf")}
-  if(any(lambda<0)) {stop("lambda must be between (0,inf")}
-  rn=quigd(runif(n),mu,lambda)
+  n<-floor(n)
+  if(any(n<1)) {stop("n must be >= 1")}
+  if(any(mu<=0)) {stop("mu must be > 0")}
+  if(any(lambda<=0)) {stop("lambda must be > 0")}
+  rn<-quigd(stats::runif(n),mu,lambda)
   return(rn)
 }

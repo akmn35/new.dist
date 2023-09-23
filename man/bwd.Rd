@@ -8,47 +8,51 @@
 \alias{rbwd}
 \title{A Bimodal Weibull Distribution}
 \usage{
-dbwd(x, alpha, beta, sigma)
+dbwd(x, alpha, beta = 1, sigma, log = FALSE)
 
-pbwd(x, alpha, beta, sigma)
+pbwd(x, alpha, beta = 1, sigma, lower.tail = TRUE, log.p = FALSE)
 
-qbwd(p, alpha, beta, sigma)
+qbwd(p, alpha, beta = 1, sigma, lower.tail = TRUE)
 
-rbwd(n, alpha, beta, sigma)
+rbwd(n, alpha, beta = 1, sigma)
 }
 \arguments{
-\item{x}{new numeric vector of data values.}
+\item{x}{vector of quantiles.}
 
 \item{alpha}{a shape parameter.}
 
-\item{beta}{shape2}
+\item{beta}{a scale parameter.}
 
-\item{sigma}{shape3}
+\item{sigma}{the parameter that controls the uni- or bimodality of the distribution.}
+
+\item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
+
+\item{lower.tail}{logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
+
+\item{p}{vector of probabilities.}
+
+\item{n}{number of observations. If \code{length(n) > 1}, the length is taken to be the number required.}
 }
 \value{
 \code{dbwd} gives the density, \code{pbwd} gives the distribution function, \code{qbwd} gives the quantile function and \code{rbwd} generates random deviates.
 }
 \description{
-Density, distribution function, quantile function and random generation for a Bimodal Weibull Distribution with parameters shape and scale.
+Density, distribution function, quantile function and random generation for a Bimodal Weibull Distribution with parameters \code{shape} and \code{scale}.
 }
 \details{
-A Bimodal Weibull distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}}, shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}, scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} and scale1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-\ifelse{html}{\out{\alpha \ast \beta &lt;sup&#62;3&lt;/sup&#62;+\frac13/\alpha}}{\eqn{T_n^{(\ell)}}}.
+A Bimodal Weibull distribution with \code{shape} parameter \eqn{\alpha}, \code{scale} parameter \eqn{\beta} and the parameter that \code{controls} the uni- or bimodality of the distribution \eqn{\sigma}, has density given by
+\deqn{f\left( x\right) =\frac{\alpha }{\beta Z_{\theta }}\left[ 1+\left( 1-\sigma~x\right) ^{2}\right] \left( \frac{x}{\beta }\right) ^{\alpha -1}\exp \left( -\left( \frac{x}{\beta }\right) ^{\alpha }\right), }
+where
+\deqn{Z_{\theta }=2+\sigma ^{2}\beta ^{2}\Gamma \left( 1+\left( 2/\alpha \right)\right) -2\sigma \beta \Gamma \left( 1+\left( 1/\alpha \right) \right) }
+and
+\deqn{x\geq 0,~\alpha ,\beta >0,~\sigma \in\mathbb{R}.}
 }
 \examples{
-dbwd(1,2,3,4)
-dbwd(c(1:3),2,3,4)
-dbwd(1,c(1:3),3,4)
-dbwd(1,2,c(1:4),4)
-dbwd(1,2,3,c(1:4))
-dbwd(c(1:3),c(1:3),3,4)
-pbwd(c(1:3),2,3,4)
-pbwd(1,c(1:3),3,4)
-pbwd(1,2,c(1:4),4)
-pbwd(1,2,3,c(1:4))
-qbwd(c(.7),1,2,3)
-qbwd(c(.7),2,2,c(3:5))
-rbwd(10,1,3,2)
+library(new.dist)
+dbwd(1,alpha=2,beta=3,sigma=4)
+pbwd(1,alpha=2,beta=3,sigma=4)
+qbwd(.7,alpha=2,beta=3,sigma=4)
+rbwd(10,alpha=2,beta=3,sigma=4)
 }
 \references{
 Vila, R. ve Niyazi Çankaya, M., 2022,

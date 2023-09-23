@@ -8,45 +8,45 @@
 \alias{rsod}
 \title{On parameter estimation of the standard omega distribution}
 \usage{
-dsod(x, alpha, beta)
+dsod(x, alpha, beta, log = FALSE)
 
-psod(x, alpha, beta)
+psod(x, alpha, beta, lower.tail = TRUE, log.p = FALSE)
 
-qsod(p, alpha, beta)
+qsod(p, alpha, beta, lower.tail = TRUE)
 
 rsod(n, alpha, beta)
 }
 \arguments{
-\item{x}{new numeric vector of data values.}
+\item{x}{vector of quantiles.}
 
-\item{alpha}{a shape parameter.}
+\item{alpha, beta}{are parameters.}
 
-\item{beta}{a shape1 parameter.}
+\item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
-\item{p}{new numeric vector of data values.}
+\item{lower.tail}{logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
 
-\item{n}{new numeric vector of data values.}
+\item{p}{vector of probabilities.}
+
+\item{n}{number of observations. If \code{length(n) > 1}, the length is taken to be the number required.}
 }
 \value{
 \code{dsod} gives the density, \code{psod} gives the distribution function, \code{qsod} gives the quantile function and \code{rsod} generates random deviates.
 }
 \description{
-Density, distribution function, quantile function and random generation for On parameter estimation of the standard omega distribution with parameters shape and scale.
+Density, distribution function, quantile function and random generation for On parameter estimation of the standard omega distributions parameters.
 }
 \details{
-On parameter estimation of the standard omega distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-\ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
+On parameter estimation of the standard omega distribution with parameters \eqn{\alpha}, \eqn{\beta}, has density given by
+\deqn{f\left( x\right) =\alpha \beta x^{\beta -1}\frac{1}{1-x^{2\beta }}\left( \frac{1+x^{\beta }}{1-x^{\beta }}\right) ^{-\alpha /2},}
+where
+\deqn{0<x<1,~\alpha ,\beta >0.}
 }
 \examples{
 library(new.dist)
-dsod(c(0.4),c(4),5)
-dsod(c(0.4),c(4:8),5)
-dsod(c(0.3,0.4),c(3,4),c(4:9))
-psod(c(0.4),c(4),5)
-psod(c(0.3,0.4),c(3,4),c(4,5))
-psod(c(-2),c(3,4),c(4,5))
-qsod(.8,2,3)
-rsod(10,1,2)
+dsod(0.4, alpha=1, beta=2)
+psod(0.4, alpha=1, beta=2)
+qsod(.8, alpha=1, beta=2)
+rsod(10, alpha=1, beta=2)
 }
 \references{
 Birbiçer, İ. ve Genç, A. İ., 2022,

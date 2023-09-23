@@ -8,47 +8,46 @@
 \alias{ruigd}
 \title{The unit inverse Gaussian distribution A new alternative to two parameter distributions on the unit interval}
 \usage{
-duigd(x, mu, lambda)
+duigd(x, mu, lambda = 1, log = FALSE)
 
-puigd(x, mu, lambda)
+puigd(x, mu, lambda = 1, lower.tail = TRUE, log.p = FALSE)
 
-quigd(p, mu, lambda)
+quigd(p, mu, lambda = 1, lower.tail = TRUE)
 
-ruigd(n, mu, lambda)
+ruigd(n, mu, lambda = 1)
 }
 \arguments{
-\item{x}{new numeric vector of data values.}
+\item{x}{vector of quantiles.}
 
-\item{mu}{a shape parameter.}
+\item{mu}{a mean parameter.}
 
-\item{lambda}{shape2}
+\item{lambda}{a scale parameter.}
 
-\item{p}{new numeric vector of data values.}
+\item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
-\item{n}{new numeric vector of data values.}
+\item{lower.tail}{logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
+
+\item{p}{vector of probabilities.}
+
+\item{n}{number of observations. If \code{length(n) > 1}, the length is taken to be the number required.}
 }
 \value{
 \code{duigd} gives the density, \code{puigd} gives the distribution function, \code{quigd} gives the quantile function and \code{ruigd} generates random deviates.
 }
 \description{
-Density, distribution function, quantile function and random generation for the unit inverse Gaussian distribution A new alternative to two parameter distribution with parameters shape and scale.
+Density, distribution function, quantile function and random generation for the unit inverse Gaussian distribution A new alternative to two parameter distribution with parameters \code{mean} and \code{scale}.
 }
 \details{
-The unit inverse Gaussian distribution A new alternative to two parameter distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-\ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
+The unit inverse Gaussian distribution A new alternative to two parameter distribution with \code{scale} parameter \eqn{\lambda} and \code{mean} parameter \eqn{\mu}, has density given by
+\deqn{f\left( x\right) =\sqrt{\frac{\lambda }{2\pi }}\frac{1}{x^{3/2}}e^{-\frac{ \lambda }{2\mu ^{2}x}\left( x-\mu \right) ^{2}},}
+where
+\deqn{x>0,~\mu ,\lambda >0.}
 }
 \examples{
-duigd(1,2,3)
-duigd(c(1:5),2,3)
-duigd(c(1:5),c(2:6),3)
-duigd(c(1:5),c(2:6),c(3:6))
-puigd(-1,2,3)
-puigd(c(1:5),2,3)
-puigd(c(1:5),c(2:6),3)
-puigd(c(-7),c(2:6),3)
-puigd(c(1:5),c(2:6),c(3:6))
-quigd(.1,1,1)
-ruigd(100,1,1)
+duigd(1, mu=2, lambda=3)
+puigd(1,mu=2,lambda=3)
+quigd(.1,mu=2,lambda=3)
+ruigd(10,mu=2,lambda=3)
 }
 \references{
 Ghitany, M., Mazucheli, J., Menezes, A. ve Alqallaf, F., 2019,

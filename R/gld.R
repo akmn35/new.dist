@@ -1,110 +1,116 @@
 #' The gamma-Lomax distribution
 #' @export
 #' @name gld
-#' @param x new numeric vector of data values.
-#' @param a a shape parameter.
-#' @param alpha a shape1 parameter.
-#' @param beta a shape2 parameter.
+#' @param x vector of quantiles.
+#' @param a,alpha are shape parameters.
+#' @param p vector of probabilities.
+#' @param n number of observations. If \code{length(n) > 1}, the length is taken to be the number required.
+#' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
+#' @param lower.tail logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
+#' @param beta a scale parameter.
 #' @description
-#' Density, distribution function, quantile function and random generation for the gamma-Lomax distribution with parameters shape and scale.
+#' Density, distribution function, quantile function and random generation for the gamma-Lomax distribution with parameters \code{shapes}.
 #' @return \code{dgld} gives the density, \code{pgld} gives the distribution function, \code{qgld} gives the quantile function and \code{rgld} generates random deviates.
 #' @details
-#' The gamma-Lomax distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
+#' The gamma-Lomax distribution \code{shape} parameters are  \eqn{a},\eqn{\alpha} and \code{scale} parameter is \eqn{\beta}, has density given by
+#' \deqn{f\left( x\right) =\frac{\alpha \beta ^{\alpha }}{\Gamma \left( a\right)\left( \beta +x\right) ^{\alpha +1}}\left\{ -\alpha \log \left( \frac{\beta }{\beta +x}\right) \right\} ^{a-1},}
+#' where
+#' \deqn{x>0,~a,\alpha ,\beta >0.}
 #' @references  Cordeiro, G. M., Ortega, E. M. ve Popović, B. V., 2015,
 #' *The gamma-Lomax distribution*, Journal of statistical computation and simulation, 85 (2), 305-319.
 #' @examples
-#' dgld(1,2,3,4)
-#' dgld(c(1:5),2,3,4)
-#' dgld(c(1:5),c(2:6),3,4)
-#' dgld(c(1:5),c(2:6),c(3:6),4)
-dgld=function(x,a,alpha,beta)
+#' dgld(1,a=2,alpha=3,beta=4)
+dgld<-function(x,a,alpha,beta=1,log=FALSE)
 {
-  if(any(x<0)) {stop("x must be between (0,inf")}
-  if(any(a<0)) {stop("a must be between (0,inf")}
-  if(any(alpha<0)) {stop("alpha must be between (0,inf")}
-  if(any(beta<0)) {stop("beta must be between (0,inf")}
-  enuzun = max(length(x),length(a),length(alpha),length(beta))
-  x=rep(x,enuzun/length(x)+1)[1:enuzun]
-  a=rep(a,enuzun/length(a)+1)[1:enuzun]
-  alpha=rep(alpha, enuzun/length(alpha)+1)[1:enuzun]
-  beta=rep(beta,enuzun/length(beta)+1)[1:enuzun]
-  pdf=NULL
+  if(any(a<=0)) {stop("a must be > 0")}
+  if(any(alpha<=0)) {stop("alpha must be > 0")}
+  if(any(beta<=0)) {stop("beta must be > 0")}
+  enuzun <- max(length(x),length(a),length(alpha),length(beta))
+  x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+  a<-rep(a,enuzun/length(a)+1)[1:enuzun]
+  alpha<-rep(alpha, enuzun/length(alpha)+1)[1:enuzun]
+  beta<-rep(beta,enuzun/length(beta)+1)[1:enuzun]
+  pdf<-NULL
   for (i in 1:enuzun)
   {
-    pdf[i]=(alpha[i]*beta[i]^alpha[i])/(gamma(a[i])*(beta[i]+x[i])^(alpha[i]+1))*(-alpha[i]*log(beta[i]/(beta[i]+x[i])))^(a[i]-1)
+    suppressWarnings({
+    if(x[i]<=0) {pdf[i]<-0} else
+    {pdf[i]<-(alpha[i]*beta[i]^alpha[i])/(gamma(a[i])*(beta[i]+x[i])^(alpha[i]+1))*(-alpha[i]*log(beta[i]/(beta[i]+x[i])))^(a[i]-1)}})
   }
+  if(log==TRUE) pdf<-log(pdf)
   return(pdf)
 }
 #' The gamma-Lomax distribution
 #' @export
 #' @rdname gld
-#' @param x new numeric vector of data values.
-#' @param a a shape parameter.
-#' @param alpha a shape1 parameter.
-#' @param beta a shape2 parameter.
 #' @examples
-#' pgld(1,2,3,4)
-#' pgld(c(1:5),2,3,4)
-#' pgld(c(1:5),c(2:6),3,4)
-pgld=function(x,a,alpha,beta)
+#' pgld(1,a=2,alpha=3,beta=4)
+pgld<-function(x,a,alpha,beta=1,lower.tail=TRUE,log.p=FALSE)
 {
-  if(any(x<0)) {stop("x must be between (0,inf")}
-  if(any(a<0)) {stop("a must be between (0,inf")}
-  if(any(alpha<0)) {stop("alpha must be between (0,inf")}
-  if(any(beta<0)) {stop("beta must be between (0,inf")}
-  enuzun = max(length(x),length(a),length(alpha),length(beta))
-  x=rep(x,enuzun/length(x)+1)[1:enuzun]
-  a=rep(a,enuzun/length(a)+1)[1:enuzun]
-  alpha=rep(alpha, enuzun/length(alpha)+1)[1:enuzun]
-  beta=rep(beta,enuzun/length(beta)+1)[1:enuzun]
-  cdf=NULL
+  if(any(a<=0)) {stop("a must be > 0")}
+  if(any(alpha<=0)) {stop("alpha must be > 0")}
+  if(any(beta<=0)) {stop("beta must be > 0")}
+  enuzun <- max(length(x),length(a),length(alpha),length(beta))
+  x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+  a<-rep(a,enuzun/length(a)+1)[1:enuzun]
+  alpha<-rep(alpha, enuzun/length(alpha)+1)[1:enuzun]
+  beta<-rep(beta,enuzun/length(beta)+1)[1:enuzun]
+  cdf<-NULL
   for (i in 1:enuzun)
   {
-    if (x[i]>0) cdf[i]=(gamma(a[i])-(expint::gammainc(a[i],(-alpha[i]*log(beta[i]/(beta[i]+x[i]))))))/gamma(a[i]) else cdf[i]=0
+    if (x[i]>0) cdf[i]<-(gamma(a[i])-(expint::gammainc(a[i],(-alpha[i]*log(beta[i]/(beta[i]+x[i]))))))/gamma(a[i]) else cdf[i]=0
   }
+  if(lower.tail==FALSE) cdf<-1-cdf
+  if(log.p==TRUE) cdf<-log(cdf)
   return(cdf)
 }
 #' The gamma-Lomax distribution
 #' @export
 #' @rdname gld
-#' @param x new numeric vector of data values.
-#' @param a a shape parameter.
-#' @param alpha a shape1 parameter.
-#' @param beta a shape2 parameter.
 #' @examples
-#' qgld(c(.7,.8),1,2,3)
-#' qgld(c(.7,.8),c(1,2),2,3)
-#' qgld(.8,2,2,3)
-qgld=function(p,a,alpha,beta)
+#' qgld(.8,a=2,alpha=3,beta=4)
+qgld<-function(p,a,alpha,beta=1,lower.tail=TRUE)
 {
-  enuzun = max(length(p),length(a),length(alpha),length(beta))
-  p=rep(p,enuzun/length(p)+1)[1:enuzun]
-  a=rep(a,enuzun/length(a)+1)[1:enuzun]
-  alpha=rep(alpha,enuzun/length(alpha)+1)[1:enuzun]
-  beta=rep(beta,enuzun/length(beta)+1)[1:enuzun]
-  kok=NULL
+  if(any(p<0)|any(p>1)) {stop("p must be between >= 0 and <= 1")}
+  if(any(a<=0)) {stop("a must be > 0")}
+  if(any(alpha<=0)) {stop("alpha must be > 0")}
+  if(any(beta<=0)) {stop("beta must be > 0")}
+  enuzun <- max(length(p),length(a),length(alpha),length(beta))
+  p<-rep(p,enuzun/length(p)+1)[1:enuzun]
+  a<-rep(a,enuzun/length(a)+1)[1:enuzun]
+  alpha<-rep(alpha,enuzun/length(alpha)+1)[1:enuzun]
+  beta<-rep(beta,enuzun/length(beta)+1)[1:enuzun]
+  kok<-NULL
   for (i in 1:enuzun)
   {
-    F=function(x)
+    F<-function(x)
     {
       (gamma(a[i])-(expint::gammainc(a[i],(-alpha[i]*log(beta[i]/(beta[i]+x)))))/gamma(a[i]))-p[i]
     }
-    kok[i]=(uniroot(F, c(0, 1000000)))$root
+    if(lower.tail==FALSE)
+    {
+      F<-function(x)
+      {
+        (gamma(a[i])-(expint::gammainc(a[i],(-alpha[i]*log(beta[i]/(beta[i]+x)))))/gamma(a[i]))-(1-p[i])
+      }
+    }
+    kok[i]<-(stats::uniroot(F, c(0, 1000000)))$root
   }
   return(kok)
 }
 #' The gamma-Lomax distribution
 #' @export
 #' @rdname gld
-#' @param x new numeric vector of data values.
-#' @param a a shape parameter.
-#' @param alpha a shape1 parameter.
-#' @param beta a shape2 parameter.
 #' @examples
-#' rgld(100,1,2,1)
-rgld=function(n,a,alpha,beta) suppressWarnings(
+#' rgld(10,a=2,alpha=3,beta=4)
+rgld<-function(n,a,alpha,beta=1)
   {
-    rn=qgld(runif(n),a,alpha,beta)
+    n<-floor(n)
+    if(any(n<1)) {stop("n must be >= 1")}
+    if(any(a<=0)) {stop("a must be > 0")}
+    if(any(alpha<=0)) {stop("alpha must be > 0")}
+    if(any(beta<=0)) {stop("beta must be > 0")}
+    suppressWarnings({
+    rn<-qgld(stats::runif(n),a,alpha,beta)})
     return(rn)
-  })
+  }

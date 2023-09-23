@@ -8,49 +8,44 @@
 \alias{rwbgd}
 \title{Weighted Bivariate Geometric Distribution}
 \usage{
-dwbgd(x, alpha, lambda)
+dwbgd(x, alpha, lambda, log = FALSE)
 
-pwbgd(x, alpha, lambda)
+pwbgd(x, alpha, lambda, lower.tail = TRUE, log.p = FALSE)
 
-qwbgd(p, alpha, lambda)
+qwbgd(p, alpha, lambda, lower.tail = TRUE)
 
 rwbgd(n, alpha, lambda)
 }
 \arguments{
-\item{x}{new numeric vector of data values.}
+\item{x}{vector of quantiles.}
 
-\item{alpha}{a shape parameter.}
+\item{alpha, lambda}{are parameters.}
 
-\item{lambda}{a shape parameter.}
+\item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
-\item{p}{new numeric vector of data values.}
+\item{lower.tail}{logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
 
-\item{n}{new numeric vector of data values.}
+\item{p}{vector of probabilities.}
+
+\item{n}{number of observations. If \code{length(n) > 1}, the length is taken to be the number required.}
 }
 \value{
 \code{dwbgd} gives the density, \code{pwbgd} gives the distribution function, \code{qwbgd} gives the quantile function and \code{rwbgd} generates random deviates.
 }
 \description{
-Density, distribution function, quantile function and random generation for the Weighted Bivariate Geometric distribution with parameters shape and scale.
+Density, distribution function, quantile function and random generation for the Weighted Bivariate Geometric distributions parameters.
 }
 \details{
-The Weighted Bivariate Geometric distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-\ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
+The Weighted Bivariate Geometric distribution with parameters \eqn{\alpha} and \eqn{\lambda}, has density given by
+\deqn{f\left( x\right) =\frac{\left( 1-\alpha \right) \left( 1-\alpha ^{\lambda+1}\right) }{1-\alpha ^{\lambda }}\alpha ^{x-1}\left( 1-\alpha ^{\lambda x}\right),}
+where
+\deqn{x\in \mathbb {N} =1,2,...~,~\lambda >0,~0<\alpha <1.}
 }
 \examples{
-dwbgd(1,.2,3)
-dwbgd(c(1:5),.2,3)
-dwbgd(c(1:5),c(.2,.3,.4),3)
-dwbgd(c(1:5),c(.2,.3,.4),c(3:5))
-pwbgd(1,.2,3)
-pwbgd(c(1:5),.2,3)
-pwbgd(c(1:5),c(.2,.6),3)
-pwbgd(c(1:5),c(.2,.6),c(3:5))
-pwbgd(-5,c(.2,.6),c(3:5))
-qwbgd(c(.657),.5,1)
-qwbgd(.98,.2,2)
-qwbgd(c(.657),.5,1)
-qwbgd(.98,.2,2)
+dwbgd(1,alpha=.2,lambda=3)
+pwbgd(1,alpha=.2,lambda=3)
+qwbgd(.98,alpha=.2,lambda=3)
+rwbgd(10,alpha=.2,lambda=3)
 }
 \references{
 Najarzadegan, H., Alamatsaz, M. H., Kazemi, I. ve Kundu, D., 2020,

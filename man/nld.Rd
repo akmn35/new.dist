@@ -8,47 +8,44 @@
 \alias{rnld}
 \title{A new lifetime distribution}
 \usage{
-dnld(x, lambda, beta)
+dnld(x, lambda, beta, log = FALSE)
 
-pnld(x, lambda, beta)
+pnld(x, lambda, beta, lower.tail = TRUE, log.p = FALSE)
 
-qnld(p, lambda, beta)
+qnld(p, lambda, beta, lower.tail = TRUE)
 
 rnld(n, lambda, beta)
 }
 \arguments{
-\item{x}{new numeric vector of data values.}
+\item{x}{vector of quantiles.}
 
-\item{lambda}{a shape parameter.}
+\item{lambda, beta}{are parameters.}
 
-\item{beta}{a shape1 parameter.}
+\item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
-\item{p}{new numeric vector of data values.}
+\item{lower.tail}{logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
 
-\item{n}{new numeric vector of data values.}
+\item{p}{vector of probabilities.}
+
+\item{n}{number of observations. If \code{length(n) > 1}, the length is taken to be the number required.}
 }
 \value{
 \code{dnld} gives the density, \code{pnld} gives the distribution function, \code{qnld} gives the quantile function and \code{rnld} generates random deviates.
 }
 \description{
-Density, distribution function, quantile function and random generation for a new lifetime distribution with parameters shape and scale.
+Density, distribution function, quantile function and random generation for a new lifetime distribution parameters.
 }
 \details{
-A new lifetime distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-\ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
+A new lifetime distribution with parameters are \eqn{\lambda}, \eqn{\beta}, has density given by
+\deqn{f\left( x\right) =\frac{\lambda \beta }{\left( 1-e^{-\lambda }\right) } e^{-\lambda -\beta x+\lambda e^{-\beta x}},}
+where
+\deqn{x>\mathbb{R}_{+},~\beta ,\lambda \in \mathbb{R}_{+}.}
 }
 \examples{
-dnld(1,2,3)
-dnld(c(1:5),2,3)
-dnld(c(1:5),c(2:6),3)
-dnld(c(1:5),c(2:6),c(3:6))
-pnld(1,2,3)
-pnld(c(1:5),2,3)
-pnld(c(1:5),c(2:6),3)
-pnld(c(1:5),c(2:6),c(3:5))
-pnld(-5,c(2:6),3)
-qnld(.8,2,3)
-rnld(10,1,2)
+dnld(1, lambda=2, beta=3)
+pnld(1,lambda=2,beta=3)
+qnld(.8,lambda=2,beta=3)
+rnld(10,lambda=2,beta=3)
 }
 \references{
 Kuş, C., 2007,

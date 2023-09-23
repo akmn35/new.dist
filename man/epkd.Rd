@@ -8,48 +8,45 @@
 \alias{repkd}
 \title{Estimation procedures for kumaraswamy distribution parameters under adaptive type-II hybrid progressive censoring}
 \usage{
-depkd(x, lambda, alpha)
+depkd(x, lambda, alpha, log = FALSE)
 
-pepkd(x, lambda, alpha)
+pepkd(x, lambda, alpha, lower.tail = TRUE, log.p = FALSE)
 
-qepkd(p, lambda, alpha)
+qepkd(p, lambda, alpha, lower.tail = TRUE)
 
 repkd(n, lambda, alpha)
 }
 \arguments{
-\item{x}{new numeric vector of data values.}
+\item{x}{vector of quantiles.}
 
-\item{lambda}{a shape1 parameter.}
+\item{alpha, lambda}{are non-negative shape parameters.}
 
-\item{alpha}{a shape parameter.}
+\item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
-\item{p}{new numeric vector of data values.}
+\item{lower.tail}{logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
 
-\item{n}{new numeric vector of data values.}
+\item{p}{vector of probabilities.}
+
+\item{n}{number of observations. If \code{length(n) > 1}, the length is taken to be the number required.}
 }
 \value{
 \code{depkd} gives the density, \code{pepkd} gives the distribution function, \code{qepkd} gives the quantile function and \code{repkd} generates random deviates.
 }
 \description{
-Density, distribution function, quantile function and random generation for Estimation procedures for kumaraswamy distribution with parameters shape and scale.
+Density, distribution function, quantile function and random generation for Estimation procedures for kumaraswamy distribution with parameters \code{shapes}.
 }
 \details{
-...Estimation procedures for kumaraswamy distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-\ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
+Estimation procedures for kumaraswamy distribution with non-negative shape parameters \eqn{\alpha}, \eqn{\lambda} has density given by
+\deqn{f\left( x\right) =\alpha \lambda x^{\lambda -1}\left( 1-x^{\lambda }\right)^{\alpha -1},}
+where
+\deqn{0<x<1,~~\alpha ,\lambda >0.}
 }
 \examples{
-depkd(0.1,2,3)
-depkd(c(0.1,0.5),2,3)
-depkd(c(0.1,0.5),c(2:6),3)
-depkd(c(0.1,0.5),c(2:6),c(3:6))
-pepkd(0.5,2,3)
-pepkd(c(0.1,0.5),2,3)
-pepkd(c(0.1,0.5),c(2:6),3)
-pepkd(c(0.1,0.5),c(2:6),c(3:6))
-pepkd(-1,c(2:6),c(3:6))
-qepkd(.8,1,2)
-qepkd(.4,2,5)
-repkd(10,1,2)
+library("new.dist")
+depkd(0.1,lambda=2,alpha=3)
+pepkd(0.5,lambda=2,alpha=3)
+qepkd(.8,lambda=2,alpha=3)
+repkd(10,lambda=2,alpha=3)
 }
 \references{
 Kohansal, A. ve Bakouch, H. S., 2021,

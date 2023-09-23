@@ -8,59 +8,48 @@
 \alias{rpldd}
 \title{A Power Log Dagum Distribution}
 \usage{
-dpldd(x, alpha, beta, theta)
+dpldd(x, alpha, beta, theta, log = FALSE)
 
-ppldd(x, alpha, beta, theta)
+ppldd(x, alpha, beta, theta, lower.tail = TRUE, log.p = FALSE)
 
-qpldd(p, alpha, beta, theta)
+qpldd(p, alpha, beta, theta, lower.tail = TRUE)
 
 rpldd(n, alpha, beta, theta)
 }
 \arguments{
-\item{x}{new numeric vector of data values.}
+\item{x}{vector of quantiles.}
 
-\item{alpha}{a shape parameter.}
+\item{alpha, beta, theta}{are parameters.}
 
-\item{beta}{shape2}
+\item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
-\item{theta}{shape3}
+\item{lower.tail}{logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
 
-\item{p}{new numeric vector of data values.}
+\item{p}{vector of probabilities.}
 
-\item{n}{new numeric vector of data values.}
+\item{n}{number of observations. If \code{length(n) > 1}, the length is taken to be the number required.}
 }
 \value{
 \code{dpldd} gives the density, \code{ppldd} gives the distribution function, \code{qpldd} gives the quantile function and \code{rpldd} generates random deviates.
 }
 \description{
-Density, distribution function, quantile function and random generation for a Power Log Dagum distribution with parameters shape and scale.
+Density, distribution function, quantile function and random generation for a Power Log Dagum distribution parameters.
 }
 \details{
-A Power Log Dagum Distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-\ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
+A Power Log Dagum Distribution with parameters \eqn{\alpha}, \eqn{\beta}, \eqn{\theta}, has density given by
+\deqn{f\left( x\right) =\alpha \left( \beta +\theta \left\vert x\right\vert^{\beta -1}\right) e^{-\left( \beta x+sign\left( x\right) \left( \theta                                                                                                                                /\beta \right) \left\vert x\right\vert ^{\beta }\right) ~}~\left(                                                                   1+e^{-\left( \beta x+sign\left( x\right) \left( \theta /\beta \right)                                                                                \left\vert x\right\vert ^{\beta }\right) }\right) ^{-\left( \alpha +1\right)                                                                                },}
+where
+\deqn{x\in \mathbb{R},~\beta \in \mathbb{R},~\alpha >0,~\theta \geq 0}
+}
+\note{
+The distributions hazard function
+\deqn{h\left( x\right) =\frac{\alpha \left( \beta +\theta \left\vert x\right\vert^{\beta -1}\right) e^{-\left( \beta x+sign\left( x\right) \left( \theta                                                                 /\beta \right) \left\vert x\right\vert ^{\beta }\right) }\left( 1+e^{-\left(                                                                   \beta x+sign\left( x\right) \left( \theta /\beta \right) \left\vert                                                                   x\right\vert ^{\beta }\right) }\right) ^{-\left( \alpha +1\right) }}{                                                                     1-\left( 1+e^{-\left( \beta x+sign\left( x\right) \left( \theta /\beta                                                                                                                              \right) \left\vert x\right\vert ^{\beta }\right) }\right) ^{-\alpha }} .}
 }
 \examples{
-dpldd(1,2,3,4)
-dpldd(c(1:5),2,3,4)
-dpldd(c(1:5),c(2:6),3,4)
-dpldd(c(1:5),c(2:6),c(3:5),4)
-dpldd(c(1:5),c(2:6),c(3:5),c(4:6))
-dpldd(1,2,3,c(4:6))
-ppldd(-1,2,3,4)
-ppldd(c(1:3),2,3,4)
-ppldd(1,c(1:3),3,4)
-ppldd(1,2,c(1:4),4)
-ppldd(1,2,3,c(1:4))
-ppldd(c(-1:3),c(1:3),3,4)
-ppldd(c(1:5),c(2:6),3,4)
-ppldd(c(1:5),c(2:6),c(3:6),1)
-ppldd(c(1:5),c(2:6),c(3:6),c(1:4))
-qpldd(c(.7,.8),1,2,3)
-qpldd(c(.7,.8),c(1,2),2,3)
-qpldd(.8,1,2,3)
-qpldd(c(.7,.8),c(1,2),c(2:4),3)
-qpldd(.7,1,4,3)
-rpldd(100,1,2,1)
+dpldd(1, alpha=2, beta=3, theta=4)
+ppldd(1,alpha=2,beta=3,theta=4)
+qpldd(.8,alpha=2,beta=3,theta=4)
+rpldd(10,alpha=2,beta=3,theta=4)
 }
 \references{
 Bakouch, H. S., Khan, M. N., Hussain, T. ve Chesneau, C., 2019,

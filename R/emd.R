@@ -1,90 +1,100 @@
 #' Estimation in Maxwell distribution with randomly censored data
 #' @export
 #' @name emd
-#' @param x new numeric vector of data values.
-#' @param theta a shape parameter.
+#' @param x vector of quantiles.
+#' @param theta a scale parameter.
+#' @param p vector of probabilities.
+#' @param n number of observations. If \code{length(n) > 1}, the length is taken to be the number required.
+#' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
+#' @param lower.tail logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
 #' @description
-#' Density, distribution function, quantile function and random generation for Estimation in Maxwell distribution with parameters shape and scale.
+#' Density, distribution function, quantile function and random generation for Estimation in Maxwell distribution with parameter \code{scale}.
 #' @return \code{demd} gives the density, \code{pemd} gives the distribution function, \code{qemd} gives the quantile function and \code{remd} generates random deviates.
 #' @details
-#' Estimation in Maxwell distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{1t<sub>n</sub><sup>(&#952)</sup>}}{\eqn{}}.
+#' Estimation in Maxwell distribution with \code{scale} parameter \eqn{\theta}, has density
+#' \deqn{f\left( x\right) =\frac{4}{\sqrt{\pi }}\frac{1}{\theta ^{3/2}} x^{2}e^{-x^{2}/\theta },}
+#' where
+#' \deqn{0\leq x<\infty ,~~\theta >0.}
 #' @references  Krishna, H., Vivekanand ve Kumar, K., 2015,
 #' *Estimation in Maxwell distribution with randomly censored data*, Journal of statistical computation and simulation, 85 (17), 3560-3578.
 #' @examples
-#' demd(c(1:5),2)
-#' demd(2,c(2:4))
-#' demd(c(1:5),c(2:5))
-#' demd(c(1:5),-2)
-#' demd(-2,c(2:4))
-demd=function(x,theta)
+#' library(new.dist)
+#' demd(1,theta=2)
+demd<-function(x,theta=1,log=FALSE)
 {
-  if(any(x<0)) {stop("x must be (0,inf)")}
-  if(any(theta<0)) {stop("theta must be (0,inf)")}
-  enuzun=max(length(x),length(theta))
-  x=rep(x,enuzun/length(x)+1)[1:enuzun]
-  theta=rep(theta,enuzun/length(theta)+1)[1:enuzun]
-  pdf=NULL
+  if(any(theta<=0)) {stop("theta must be > 0")}
+  enuzun<-max(length(x),length(theta))
+  x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+  theta<-rep(theta,enuzun/length(theta)+1)[1:enuzun]
+  pdf<-NULL
   for (i in 1:enuzun)
   {
-    pdf[i]=(4/pi^(1/2))*(1/theta[i]^(3/2))*x[i]^2*exp((-x[i]^2)/theta[i])
+    if(x[i]<0) {pdf[i]<-0} else
+    {pdf[i]<-(4/pi^(1/2))*(1/theta[i]^(3/2))*x[i]^2*exp((-x[i]^2)/theta[i])}
   }
+  if(log==TRUE) pdf<-log(pdf)
   return(pdf)
 }
-
 #' @export
 #' @rdname emd
 #' @examples
-#' pemd(c(1:5),2)
-pemd=function(x,theta) #x,theta > 0
+#' pemd(1,theta=2)
+pemd<-function(x,theta=1,lower.tail=TRUE,log.p=FALSE)
 {
-  if(any(x<0)) {stop("x must be (0,inf)")}
-  if(any(theta<0)) {stop("theta must be (0,inf)")}
-  enuzun=max(length(x),length(theta))
-  x=rep(x,enuzun/length(x)+1)[1:enuzun]
-  theta=rep(theta,enuzun/length(theta)+1)[1:enuzun]
-  cdf=NULL
+  if(any(theta<=0)) {stop("theta must be > 0")}
+  enuzun<-max(length(x),length(theta))
+  x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+  theta<-rep(theta,enuzun/length(theta)+1)[1:enuzun]
+  cdf<-NULL
   for (i in 1:enuzun)
   {
-    if(x[i]>0) cdf[i]=pracma::gammainc((x[i]^2/theta[i]),3/2)[3] else cdf[i]=0
+    if(x[i]>=0) cdf[i]<-pracma::gammainc((x[i]^2/theta[i]),3/2)[3] else cdf[i]=0
   }
+  if(lower.tail==FALSE) cdf<-1-cdf
+  if(log.p==TRUE) cdf<-log(cdf)
   return(cdf)
 }
-
 #' @export
 #' @rdname emd
-#' @param p new numeric vector of data values.
 #' @examples
-#' qemd(c(.7,.8),2)
-#' qemd(.4,5)
-qemd=function(p,theta) suppressWarnings(
+#' qemd(.4,theta=5)
+qemd<-function(p,theta=1,lower.tail=TRUE)
   {
-    if(any(p<0)) {stop("x must be (0,inf)")}
-    if(any(theta<0)) {stop("theta must be (0,inf)")}
-    enuzun=max(length(p),length(theta))
-    p=rep(p,enuzun/length(p)+1)[1:enuzun]
-    theta=rep(theta,enuzun/length(theta)+1)[1:enuzun]
-    kok=NULL
-    for (i in 1:enuzun)
+  if(any(p<0)|any(p>1)) {stop("p must be between >= 0 and <= 1")}
+  if(any(theta<=0)) {stop("theta must be > 0")}
+  enuzun<-max(length(p),length(theta))
+    p<-rep(p,enuzun/length(p)+1)[1:enuzun]
+    theta<-rep(theta,enuzun/length(theta)+1)[1:enuzun]
+    kok<-NULL
+    for (i in 1:enuzun)suppressWarnings(
     {
-      F=function(x)
+      Ex<-2*(theta[i]/pi)^(1/2)
+      F<-function(x)
       {
-        pracma::gammainc((x^2/theta[i]),3/2)[3]-p[i]
+        abs(pracma::gammainc((x^2/theta[i]),3/2)[3]-p[i])
       }
-      kok[i]=(uniroot(F, c(0,10)))$root
-    }
+      if(lower.tail==FALSE)
+      {
+        F<-function(x)
+        {
+          abs(pracma::gammainc((x^2/theta[i]),3/2)[3]-(1-p[i]))
+        }
+      }
+      kok[i]<-stats::optim(Ex,F)$par
+    })
     return(kok)
-  })
-
+  }
 #' @export
 #' @rdname emd
-#' @param n new numeric vector of data values.
 #' @examples
-#' remd(100,1)
-remd=function(n,theta) suppressWarnings(
+#' remd(10,theta=1)
+remd<-function(n,theta=1)
   {
-    if(any(n<0)) {stop("n must be (0,inf)")}
-    if(any(theta<0)) {stop("theta must be (0,inf)")}
-    rn=qemd(runif(n),theta)
-    return(rn)
-  })
+    n<-floor(n)
+    if(any(n<1)) {stop("n must be >= 1")}
+    if(any(theta<=0)) {stop("theta must be > 0")}
+    suppressWarnings({
+    rn<-qemd(stats::runif(n),theta)
+    return(rn)})
+  }
+

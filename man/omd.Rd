@@ -8,46 +8,44 @@
 \alias{romd}
 \title{on the muth distribution}
 \usage{
-domd(x, alpha)
+domd(x, alpha, log = FALSE)
 
-pomd(x, alpha)
+pomd(x, alpha, lower.tail = TRUE, log.p = FALSE)
 
-qomd(p, alpha)
+qomd(p, alpha, lower.tail = TRUE)
 
 romd(n, alpha)
 }
 \arguments{
-\item{x}{new numeric vector of data values.}
+\item{x}{vector of quantiles.}
 
-\item{alpha}{a shape parameter.}
+\item{alpha}{a parameter.}
 
-\item{p}{new numeric vector of data values.}
+\item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
-\item{n}{new numeric vector of data values.}
+\item{lower.tail}{logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
+
+\item{p}{vector of probabilities.}
+
+\item{n}{number of observations. If \code{length(n) > 1}, the length is taken to be the number required.}
 }
 \value{
 \code{domd} gives the density, \code{pomd} gives the distribution function, \code{qomd} gives the quantile function and \code{romd} generates random deviates.
 }
 \description{
-Density, distribution function, quantile function and random generation for on the muth distribution distribution with parameters shape and scale.
+Density, distribution function, quantile function and random generation for on the muth distribution distribution parameter.
 }
 \details{
-On the muth distribution distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-\ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
+On the muth distribution distribution with a parameter \eqn{\alpha}, has density given by
+\deqn{f\left( x\right) =\left( e^{\alpha x}-\alpha \right) e^{\alpha x-\left(1/\alpha \right) \left( e^{\alpha x}-1\right) },}
+where
+\deqn{x>0,~\alpha \in \left( 0,1\right]. }
 }
 \examples{
-domd(c(1:5),.2)
-domd(2,c(.2,.3,.4))
-domd(c(1:5),c(.2,.3,.4))
-pomd(c(1:5),.2)
-pomd(c(-1,-2,-3),.2)
-pomd(2,c(.2,.3,.4))
-pomd(c(1:5),c(.2,.3,.4))
-pomd(-4,c(.2,.3,.4))
-pomd(.4,c(.2,.3,.4))
-qomd(.8,1)
-qomd(.9,5)
-romd(10,1)
+domd(1,alpha=.2)
+pomd(1,alpha=.2)
+qomd(.8,alpha=.1)
+romd(10,alpha=1)
 }
 \references{
 Jodrá, P., Jiménez-Gamero, M. D. ve Alba-Fernández, M. V., 2015,

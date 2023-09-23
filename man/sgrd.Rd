@@ -8,49 +8,48 @@
 \alias{rsgrd}
 \title{Slashed generalized Rayleigh distribution}
 \usage{
-dsgrd(x, theta, alpha)
+dsgrd(x, theta, alpha, q, log = FALSE)
 
-psgrd(x, theta, alpha)
+psgrd(x, theta, alpha, q, lower.tail = TRUE, log.p = FALSE)
 
-qsgrd(p, theta, alpha)
+qsgrd(p, theta, alpha, q, lower.tail = TRUE)
 
-rsgrd(n, theta, alpha)
+rsgrd(n, theta, alpha, q)
 }
 \arguments{
-\item{x}{new numeric vector of data values.}
+\item{x}{vector of quantiles.}
 
-\item{theta}{a shape parameter.}
+\item{theta}{a scale parameter.}
 
-\item{alpha}{a shape1 parameter.}
+\item{alpha}{a shape parameter.}
 
-\item{p}{new numeric vector of data values.}
+\item{q}{a kurtosis parameter.}
 
-\item{n}{new numeric vector of data values.}
+\item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
+
+\item{lower.tail}{logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
+
+\item{p}{vector of probabilities.}
+
+\item{n}{number of observations. If \code{length(n) > 1}, the length is taken to be the number required.}
 }
 \value{
 \code{dsgrd} gives the density, \code{psgrd} gives the distribution function, \code{qsgrd} gives the quantile function and \code{rsgrd} generates random deviates.
 }
 \description{
-Density, distribution function, quantile function and random generation for the Slashed generalized Rayleigh distribution with parameters shape and scale.
+Density, distribution function, quantile function and random generation for the Slashed generalized Rayleigh distribution with parameters \code{shape}, \code{scale}, \code{kurtosis}.
 }
 \details{
-The Slashed generalized Rayleigh distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-\ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
+The Slashed generalized Rayleigh distribution with \code{shape} parameter \eqn{\alpha}, \code{scale} parameter \eqn{\theta} and \code{kurtosis} parameter \eqn{q}, has density given by
+\deqn{f\left( x\right) =\frac{qx^{-\left( q+1\right) }}{\Gamma \left( \alpha+1\right) \theta ^{q/2}}\Gamma \left( \frac{2\alpha +q+2}{2}\right) F\left(\theta x^{2};\frac{2\alpha +q+2}{2},1\right), }
+where F(.;a,b) is the cdf of the Gamma (a,b) distribution, and
+\deqn{x>0,~\theta >0,~\alpha >-1,~q>0.}
 }
 \examples{
-dsgrd(1,2,3)
-dsgrd(c(1:5),2,3)
-dsgrd(c(1:5),c(2:6),3)
-dsgrd(c(1:5),c(2:6),c(3:5))
-psgrd(1,2,3)
-psgrd(c(1:5),2,3)
-psgrd(c(1:5),c(2:6),3)
-psgrd(c(1:5),c(2:6),c(3:5))
-psgrd(-5,c(2:6),c(3:5))
-psgrd(.1,1,2)
-qsgrd(c(.7,.8),2,3)
-qsgrd(c(.7,.8),c(1,2),2)
-rsgrd(10,1,2)
+dsgrd(2,theta=3,alpha=1,q=4)
+psgrd(5,theta=3,alpha=1,q=4)
+qsgrd(.4,theta=3,alpha=1,q=4)
+rsgrd(10,theta=3,alpha=1,q=4)
 }
 \references{
 Iriarte, Y. A., Vilca, F., Varela, H. ve Gómez, H. W., 2017,

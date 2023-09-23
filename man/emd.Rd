@@ -8,43 +8,45 @@
 \alias{remd}
 \title{Estimation in Maxwell distribution with randomly censored data}
 \usage{
-demd(x, theta)
+demd(x, theta = 1, log = FALSE)
 
-pemd(x, theta)
+pemd(x, theta = 1, lower.tail = TRUE, log.p = FALSE)
 
-qemd(p, theta)
+qemd(p, theta = 1, lower.tail = TRUE)
 
-remd(n, theta)
+remd(n, theta = 1)
 }
 \arguments{
-\item{x}{new numeric vector of data values.}
+\item{x}{vector of quantiles.}
 
-\item{theta}{a shape parameter.}
+\item{theta}{a scale parameter.}
 
-\item{p}{new numeric vector of data values.}
+\item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
-\item{n}{new numeric vector of data values.}
+\item{lower.tail}{logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
+
+\item{p}{vector of probabilities.}
+
+\item{n}{number of observations. If \code{length(n) > 1}, the length is taken to be the number required.}
 }
 \value{
 \code{demd} gives the density, \code{pemd} gives the distribution function, \code{qemd} gives the quantile function and \code{remd} generates random deviates.
 }
 \description{
-Density, distribution function, quantile function and random generation for Estimation in Maxwell distribution with parameters shape and scale.
+Density, distribution function, quantile function and random generation for Estimation in Maxwell distribution with parameter \code{scale}.
 }
 \details{
-Estimation in Maxwell distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-\ifelse{html}{\out{1t<sub>n</sub><sup>(&#952)</sup>}}{\eqn{}}.
+Estimation in Maxwell distribution with \code{scale} parameter \eqn{\theta}, has density
+\deqn{f\left( x\right) =\frac{4}{\sqrt{\pi }}\frac{1}{\theta ^{3/2}} x^{2}e^{-x^{2}/\theta },}
+where
+\deqn{0\leq x<\infty ,~~\theta >0.}
 }
 \examples{
-demd(c(1:5),2)
-demd(2,c(2:4))
-demd(c(1:5),c(2:5))
-demd(c(1:5),-2)
-demd(-2,c(2:4))
-pemd(c(1:5),2)
-qemd(c(.7,.8),2)
-qemd(.4,5)
-remd(100,1)
+library(new.dist)
+demd(1,theta=2)
+pemd(1,theta=2)
+qemd(.4,theta=5)
+remd(10,theta=1)
 }
 \references{
 Krishna, H., Vivekanand ve Kumar, K., 2015,

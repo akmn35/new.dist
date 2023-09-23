@@ -8,45 +8,46 @@
 \alias{rgld}
 \title{The gamma-Lomax distribution}
 \usage{
-dgld(x, a, alpha, beta)
+dgld(x, a, alpha, beta = 1, log = FALSE)
 
-pgld(x, a, alpha, beta)
+pgld(x, a, alpha, beta = 1, lower.tail = TRUE, log.p = FALSE)
 
-qgld(p, a, alpha, beta)
+qgld(p, a, alpha, beta = 1, lower.tail = TRUE)
 
-rgld(n, a, alpha, beta)
+rgld(n, a, alpha, beta = 1)
 }
 \arguments{
-\item{x}{new numeric vector of data values.}
+\item{x}{vector of quantiles.}
 
-\item{a}{a shape parameter.}
+\item{a, alpha}{are shape parameters.}
 
-\item{alpha}{a shape1 parameter.}
+\item{beta}{a scale parameter.}
 
-\item{beta}{a shape2 parameter.}
+\item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
+
+\item{lower.tail}{logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
+
+\item{p}{vector of probabilities.}
+
+\item{n}{number of observations. If \code{length(n) > 1}, the length is taken to be the number required.}
 }
 \value{
 \code{dgld} gives the density, \code{pgld} gives the distribution function, \code{qgld} gives the quantile function and \code{rgld} generates random deviates.
 }
 \description{
-Density, distribution function, quantile function and random generation for the gamma-Lomax distribution with parameters shape and scale.
+Density, distribution function, quantile function and random generation for the gamma-Lomax distribution with parameters \code{shapes}.
 }
 \details{
-The gamma-Lomax distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-\ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
+The gamma-Lomax distribution \code{shape} parameters are  \eqn{a},\eqn{\alpha} and \code{scale} parameter is \eqn{\beta}, has density given by
+\deqn{f\left( x\right) =\frac{\alpha \beta ^{\alpha }}{\Gamma \left( a\right)\left( \beta +x\right) ^{\alpha +1}}\left\{ -\alpha \log \left( \frac{\beta }{\beta +x}\right) \right\} ^{a-1},}
+where
+\deqn{x>0,~a,\alpha ,\beta >0.}
 }
 \examples{
-dgld(1,2,3,4)
-dgld(c(1:5),2,3,4)
-dgld(c(1:5),c(2:6),3,4)
-dgld(c(1:5),c(2:6),c(3:6),4)
-pgld(1,2,3,4)
-pgld(c(1:5),2,3,4)
-pgld(c(1:5),c(2:6),3,4)
-qgld(c(.7,.8),1,2,3)
-qgld(c(.7,.8),c(1,2),2,3)
-qgld(.8,2,2,3)
-rgld(100,1,2,1)
+dgld(1,a=2,alpha=3,beta=4)
+pgld(1,a=2,alpha=3,beta=4)
+qgld(.8,a=2,alpha=3,beta=4)
+rgld(10,a=2,alpha=3,beta=4)
 }
 \references{
 Cordeiro, G. M., Ortega, E. M. ve Popović, B. V., 2015,

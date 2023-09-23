@@ -1,103 +1,97 @@
 #' Two-Parameter Rayleigh Distribution
 #' @export
 #' @name tprd
-#' @param x new numeric vector of data values.
-#' @param lambda a shape1 parameter.
-#' @param mu a shape parameter.
+#' @param x vector of quantiles.
+#' @param lambda a scale parameter.
+#' @param mu a location parameter.
+#' @param p vector of probabilities.
+#' @param n number of observations. If \code{length(n) > 1}, the length is taken to be the number required.
+#' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
+#' @param lower.tail logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
 #' @description
-#' Density, distribution function, quantile function and random generation for the Two-Parameter Rayleigh  distribution with parameters shape and scale.
+#' Density, distribution function, quantile function and random generation for the Two-Parameter Rayleigh  distribution with parameters \code{location} and \code{scale}.
 #' @return \code{dtprd} gives the density, \code{ptprd} gives the distribution function, \code{qtprd} gives the quantile function and \code{rtprd} generates random deviates.
 #' @details
-#' The Two-Parameter Rayleigh distribution with shape parameter \ifelse{html}{\out{alpha}}{\eqn{\alpha}} and shape1 parameter \ifelse{html}{\out{beta}}{\eqn{\beta}}and scale parameter \ifelse{html}{\out{beta}}{\eqn{\beta}} has density
-#'  \ifelse{html}{\out{T<sub>n</sub><sup>(&#8467)</sup>}}{\eqn{T_n^{(\ell)}}}.
+#' The Two-Parameter Rayleigh distribution with \code{scale} parameter \eqn{\lambda} and \code{location} parameter \eqn{\mu}, has density given by
+#'  \deqn{f\left( x\right) =2\lambda \left( x-\mu \right) e^{-\lambda \left( x-\mu\right) ^{2}},}
+#' where
+#'  \deqn{x>\mu ,~\lambda >0.}
 #' @references  Dey, S., Dey, T. ve Kundu, D., 2014,
 #' *Two-parameter Rayleigh distribution: different methods of estimation*, American Journal of Mathematical and Management Sciences, 33 (1), 55-74.
 #' @examples
-#' dtprd(c(5),c(4),5)
-#' dtprd(c(9),c(4:8),5)
-#' dtprd(c(5),c(3,4),c(4:9))
-#' dtprd(c(5),c(4),-5)
-dtprd=function(x,lambda,mu) #x>mu,  mu,lambda>0
+#' dtprd(5, lambda=4, mu=4)
+dtprd<-function(x,lambda=1,mu,log=FALSE)
 {
-  if(any(mu<0)) {stop("mu must be (0,inf)")}
-  if(any(lambda<0)) {stop("beta must be (0,inf)")}
-  if(any(x<mu)) {stop("x must bigger than mu")}
-  enuzun=max(length(x),length(lambda),length(mu))
-  x=rep(x,enuzun/length(x)+1)[1:enuzun]
-  mu=rep(mu, enuzun/length(mu)+1)[1:enuzun]
-  lambda=rep(lambda,enuzun/length(lambda)+1)[1:enuzun]
-  pdf=NULL
+  if(any(lambda<=0)) {stop("lambda must be > 0")}
+  enuzun<-max(length(x),length(lambda),length(mu))
+  x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+  mu<-rep(mu, enuzun/length(mu)+1)[1:enuzun]
+  lambda<-rep(lambda,enuzun/length(lambda)+1)[1:enuzun]
+  pdf<-NULL
   for (i in 1:enuzun)
   {
-    pdf[i]=2*lambda[i]*(x[i]-mu[i])*exp(-lambda[i]*(x[i]-mu[i])^2)
+    if(x[i]<=mu[i]) {pdf[i]<-0} else
+    {pdf[i]<-2*lambda[i]*(x[i]-mu[i])*exp(-lambda[i]*(x[i]-mu[i])^2)}
   }
-
+  if(log==TRUE) pdf<-log(pdf)
   return(pdf)
 }
 #' Two-Parameter Rayleigh Distribution
 #' @export
 #' @rdname tprd
-#' @param p new numeric vector of data values.
-#' @param lambda a shape1 parameter.
-#' @param mu a shape parameter.
 #' @examples
-#' ptprd(c(4:5),c(4),3)
-#' ptprd(c(6),c(4:5),4)
-#' ptprd(4,1,c(1:3))
-#' ptprd(-5,c(4:8),4)
-ptprd=function(x,lambda,mu) #x>mu,  mu,lambda>0
+#' ptprd(2,lambda=2,mu=1)
+ptprd<-function(x,lambda=1,mu,lower.tail=TRUE,log.p=FALSE) #x>mu,  mu,lambda>0
 {
-  if(any(mu<0)) {stop("mu must be (0,inf")}
-  if(any(lambda<0)) {stop("beta must be (0,inf")}
-  #if(any(x<mu)) {stop("x must bigger than mu")}
-  enuzun=max(length(x),length(lambda),length(mu))
-  x=rep(x,enuzun/length(x)+1)[1:enuzun]
+  if(any(lambda<=0)) {stop("lambda must be > 0")}
+  enuzun<-max(length(x),length(lambda),length(mu))
+  x<-rep(x,enuzun/length(x)+1)[1:enuzun]
   lambda=rep(lambda, enuzun/length(lambda)+1)[1:enuzun]
-  mu=rep(mu,enuzun/length(mu)+1)[1:enuzun]
-  cdf=NULL
+  mu<-rep(mu,enuzun/length(mu)+1)[1:enuzun]
+  cdf<-NULL
 
   for (i in 1:enuzun)
   {
-    if(x[i]>0) cdf[i]=1-exp(-lambda[i]*(x[i]-mu[i])^2) else cdf[i]=0
+    if(x[i]>mu[i]) cdf[i]<-1-exp(-lambda[i]*(x[i]-mu[i])^2) else cdf[i]=0
   }
-
+  if(lower.tail==FALSE) cdf<-1-cdf
+  if(log.p==TRUE) cdf<-log(cdf)
   return(cdf)
 }
 #' Two-Parameter Rayleigh Distribution
 #' @export
 #' @rdname tprd
-#' @param p new numeric vector of data values.
-#' @param lambda a shape1 parameter.
-#' @param mu a shape parameter.
 #' @examples
-#' qtprd(.5,1,2)
-#' qtprd(.3,4,2)
-qtprd=function(p,lambda,mu)
+#' qtprd(.5,lambda=2,mu=1)
+qtprd<-function(p,lambda=1,mu,lower.tail=TRUE)
 {
-  enuzun=max(length(p),length(lambda),length(mu))
-  p=rep(p,enuzun/length(p)+1)[1:enuzun]
-  lambda=rep(lambda,enuzun/length(lambda)+1)[1:enuzun]
-  mu=rep(mu,enuzun/length(mu)+1)[1:enuzun]
-  qfonk=NULL
-  for (i in 1:enuzun)
+  if(any(p<0)|any(p>1)) {stop("p must be between >= 0 and <= 1")}
+  if(any(lambda<=0)) {stop("lambda must be > 0")}
+  enuzun<-max(length(p),length(lambda),length(mu))
+  p<-rep(p,enuzun/length(p)+1)[1:enuzun]
+  lambda<-rep(lambda,enuzun/length(lambda)+1)[1:enuzun]
+  mu<-rep(mu,enuzun/length(mu)+1)[1:enuzun]
+  qfonk<-NULL
+  for(i in 1:enuzun)
   {
-    qfonk[i]=-(-lambda[i]*mu[i]+(-lambda[i]*log(1-p[i]))^(1/2))/lambda[i]
+    qfonk[i]<- -(-lambda[i]*mu[i]+(-lambda[i]*log(1-p[i]))^(1/2))/lambda[i]
+  }
+  if(lower.tail==FALSE)
+  {
+    qfonk[i]<- -(-lambda[i]*mu[i]+(-lambda[i]*log(1-(1-p[i])))^(1/2))/lambda[i]
   }
   return(qfonk)
 }
 #' Two-Parameter Rayleigh Distribution
 #' @export
 #' @rdname tprd
-#' @param n new numeric vector of data values.
-#' @param lambda a shape1 parameter.
-#' @param mu a shape parameter.
 #' @examples
-#' rtprd(100,1,2)
-rtprd=function(n,lambda,mu)
+#' rtprd(10,lambda=2,mu=1)
+rtprd<-function(n,lambda=1,mu)
 {
-  if(any(n<0)) {stop("n must be (0,inf)")}
-  if(any(lambda<0)) {stop("theta must be (0,inf)")}
-  if(any(mu<0)) {stop("theta must be (0,inf)")}
-  rn=qtprd(runif(n),lambda,mu)
+  n=floor(n)
+  if(any(n<1)) {stop("n must be >= 1")}
+  if(any(lambda<=0)) {stop("lambda must be > 0")}
+  rn<-qtprd(stats::runif(n),lambda,mu)
   return(rn)
 }
