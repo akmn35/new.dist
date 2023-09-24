@@ -298,6 +298,126 @@ library(new.dist)
   repkd(10,lambda=2,alpha=3)
 ```
 
+```dgld``` Density function for the gamma-Lomax Distribution with parameters shapes and beta parameter.
+```{r}
+library(new.dist)
+dgld(1,a=2,alpha=3,beta=4)
+```
+
+```pgld``` distribution function for the gamma-Lomax Distribution with parameters shapes and beta parameter.
+```{r}
+library(new.dist)
+dgld(1,a=2,alpha=3,beta=4)
+
+```
+
+```qgld``` quantile function for the gamma-Lomax Distribution with parameters shapes and beta parameter.
+```{r}
+library(new.dist)
+qgld(.8,a=2,alpha=3,beta=4)
+```
+
+```rgld``` random generation for the gamma-Lomax Distribution with parameters shapes and beta parameter.
+```{r}
+library(new.dist)
+  rgld(10,a=2,alpha=3,beta=4)
+```
+
+```dndd``` Density function for a new discrete distribution with parameters theta.
+```{r}
+library(new.dist)
+dndd(2,theta=2)
+```
+
+```pndd``` Distribution function for a new discrete distribution with parameters theta.
+```{r}
+library(new.dist)
+pndd(1,theta=2)
+```
+
+```qndd``` quantile function for a new discrete distribution with parameters theta.
+```{r}
+library(new.dist)
+qndd(.5,theta=2)
+```
+
+```rndd``` random generation for a new discrete distribution with parameters theta.
+```{r}
+library(new.dist)
+  rndd(10,theta=1)
+```
+
+```dnld``` Density function for the New Life distribution with lambda and beta parameters.
+```{r}
+library(new.dist)
+dnld(1, lambda=2, beta=3)
+```
+
+```pnld``` Distribution function for the New Life distribution with lambda and beta parameters.
+```{r}
+library(new.dist)
+pnld(1, lambda=2, beta=3)
+```
+
+```qnld``` quantile function for the New Life distribution with lambda and beta parameters.
+```{r}
+library(new.dist)
+qnld(.8,lambda=2,beta=3)
+```
+
+```rnld``` random generation for the New Life distribution with lambda and beta parameters.
+```{r}
+library(new.dist)
+  rnld(10,lambda=2,beta=3)
+```
+
+```dnoPDD``` Density function for a new one parameter discrete distribution with scale parameters.
+```{r}
+library(new.dist)
+dnoPDD(1,theta=2)
+```
+
+```pnoPDD``` Distribution function for a new one parameter discrete distribution with scale parameters.
+```{r}
+library(new.dist)
+pnoPDD(1,theta=2)
+```
+
+```qnoPDD``` quantile function for a new one parameter discrete distribution with scale parameters.
+```{r}
+library(new.dist)
+dnoPDD(.8,theta=2)
+```
+
+```rnoPDD``` random generation for a new one parameter discrete distribution with scale parameters.
+```{r}
+library(new.dist)
+  rnoPDD(10,theta=2)
+```
+
+```domd``` Density function for on the muth distribution with alpha parameters.
+```{r}
+library(new.dist)
+domd(1,alpha=.2)
+```
+
+```pomd``` Distribution function for on the muth distribution with alpha parameters.
+```{r}
+library(new.dist)
+pomd(1,alpha=.2)
+```
+
+```qomd``` quantile function for on the muth distribution with alpha parameters.
+```{r}
+library(new.dist)
+domd(.8,alpha=.2)
+```
+
+```romd``` random generation for on the muth distribution with alpha parameters.
+```{r}
+library(new.dist)
+  domd(10,alpha=.2)
+```
 
 What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
 
