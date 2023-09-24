@@ -419,6 +419,55 @@ library(new.dist)
   domd(10,alpha=.2)
 ```
 
+```dpldd``` Density function for a Power Log Dagum distribution with alpha, beta and theta parameters.
+```{r}
+library(new.dist)
+dpldd(1, alpha=2, beta=3, theta=4)
+```
+
+```ppldd``` Distribution function for a Power Log Dagum distribution with alpha, beta and theta parameters.
+```{r}
+library(new.dist)
+ppldd(1, alpha=2, beta=3, theta=4)
+```
+
+```qpldd``` quantile function for a Power Log Dagum distribution with alpha, beta and theta parameters.
+```{r}
+library(new.dist)
+dpldd(.8, alpha=2, beta=3, theta=4)
+```
+
+```rpldd``` random generation for a Power Log Dagum distribution with alpha, beta and theta parameters.
+```{r}
+library(new.dist)
+  rpldd(10, alpha=2, beta=3, theta=4)
+```
+
+```drld``` Density function for a  lindley distribution with parameters theta.
+```{r}
+library(new.dist)
+drld(1,theta=2)
+```
+
+```prld``` Distribution function for a  lindley distribution with parameters theta.
+```{r}
+library(new.dist)
+prld(1,theta=2)
+```
+
+```qrld``` quantile function for a  lindley distribution with parameters theta.
+```{r}
+library(new.dist)
+drld(.5,theta=2)
+```
+
+```rrld``` random generation for a lindley distribution with parameters theta.
+```{r}
+library(new.dist)
+  drld(10,theta=2)
+```
+
+
 What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
 
 ```{r cars}
