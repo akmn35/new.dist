@@ -67,8 +67,8 @@ parameters shape and scale.
 ``` r
 library(new.dist)
   rbwd(10,alpha=2,beta=3,sigma=4)
-#>  [1] 4.298773 4.183399 2.990612 4.689480 3.867803 2.029471 5.640529 3.698249
-#>  [9] 2.533137 5.604511
+#>  [1] 3.556631 3.942495 4.724352 4.222591 4.044150 4.329472 4.449421 3.001115
+#>  [9] 3.590749 4.468105
 ```
 
 `dsgrd` Density function for a Slashed generalized Rayleigh distribution
@@ -104,8 +104,8 @@ distribution with parameters shape, scale and kurtosis.
 ``` r
 library(new.dist)
   rsgrd(10,theta=3,alpha=1,q=4)
-#>  [1] 0.9203492 2.4723141 0.7989303 0.6566395 0.6125862 0.6113156 0.4430432
-#>  [8] 0.9058998 1.0713998 0.4900961
+#>  [1] 0.5344565 0.4178502 0.9373520 1.8018331 1.5106502 0.9760627 0.7673316
+#>  [8] 1.8239251 0.9779765 0.9727740
 ```
 
 `dsod` Density function for a the standard omega distribution with alpha
@@ -141,8 +141,8 @@ alpha and beta parameters.
 ``` r
 library(new.dist)
   rsod(10, alpha=1, beta=2)
-#>  [1] 0.9941087 0.2520279 0.6373773 0.7549357 0.8710956 0.5776887 0.2792018
-#>  [8] 0.7340732 0.5325430 0.7265048
+#>  [1] 0.8659997 0.9820693 0.9594832 0.9764836 0.6880619 0.9504348 0.8761597
+#>  [8] 0.9904786 0.6507121 0.9213524
 ```
 
 `dugd` Density function for the Uniform-Geometric distribution with
@@ -178,7 +178,7 @@ theta parameters.
 ``` r
 library(new.dist)
   rugd(10,theta=.1)
-#>  [1]  2 11  4  1 12  5  1  2  1  7
+#>  [1]  1  1 17  1  5  8 27  1  1  5
 ```
 
 `dtpmd` Density function for the Power Muth distribution with parameters
@@ -214,8 +214,8 @@ parameters shape and scale.
 ``` r
 library(new.dist)
   rtpmd(10,beta=2,alpha=3)
-#>  [1] 1.980118 2.046296 2.124135 1.430945 2.172992 2.354453 1.890901 2.122240
-#>  [9] 1.774977 1.404877
+#>  [1] 2.270703 1.702117 2.195852 1.934098 2.176211 1.323185 2.072175 1.636168
+#>  [9] 1.580419 2.511136
 ```
 
 `dtprd` Density function for the Two-Parameter Rayleigh distribution
@@ -251,8 +251,8 @@ parameters location and scale.
 ``` r
 library(new.dist)
   rtprd(10,lambda=2,mu=1)
-#>  [1] -0.23578889  0.54663669  0.60313282  0.09307118  0.47993743  0.27173091
-#>  [7] -0.02456226  0.48378494  0.75643752  0.62815471
+#>  [1]  0.33749243  0.64446236  0.46777440  0.17285915  0.01863908  0.58082741
+#>  [7]  0.17991073  0.69898998  0.24593323 -0.16460955
 ```
 
 `duigd` Density function for the unit inverse Gaussian distribution with
@@ -288,8 +288,8 @@ with parameters mean and scale.
 ``` r
 library(new.dist)
   ruigd(10,mu=2,lambda=3)
-#>  [1] 3.4988474 0.9082851 2.7572100 2.5361429 1.4627866 0.9247475 1.1629619
-#>  [8] 1.0125290 6.9564234 0.5050233
+#>  [1] 1.1871321 1.2195230 4.2421390 3.0761611 1.9975585 3.0710332 1.1045603
+#>  [8] 0.5410243 0.7529121 3.0785603
 ```
 
 `dwbgd` Density function for the Weighted Bivariate Geometric
@@ -325,7 +325,7 @@ distribution with alpha and lambda parameters.
 ``` r
 library(new.dist)
   rwbgd(10,alpha=.2,lambda=3)
-#>  [1] 1 2 1 1 1 1 2 1 3 1
+#>  [1] 1 2 1 1 1 1 1 1 2 1
 ```
 
 `ddld` Density function for the discrete Lindley distribution with theta
@@ -361,7 +361,7 @@ theta parameters.
 ``` r
 library(new.dist)
   rdld(10,theta=1)
-#>  [1] 1 1 0 1 0 1 0 1 1 0
+#>  [1] 4 0 1 0 1 0 2 4 3 2
 ```
 
 `demd` Density function for a Maxwell distribution with theta
@@ -397,8 +397,8 @@ parameters.
 ``` r
 library(new.dist)
   remd(10,theta=1)
-#>  [1] 0.4670935 1.1971469 1.2041232 0.8569095 1.3095768 0.9914710 0.4471973
-#>  [8] 1.5491187 1.2789584 1.0713593
+#>  [1]  1.5047413  1.4583991 -0.2332700  0.9335197  1.3471309  2.1800298
+#>  [7]  0.9271051  1.5803587  0.4795913  0.8959904
 ```
 
 `depkd` Density function for kumaraswamy distribution with parameters
@@ -434,8 +434,8 @@ shapes.
 ``` r
 library(new.dist)
   repkd(10,lambda=2,alpha=3)
-#>  [1] 0.47359798 0.50465994 0.64626595 0.35383694 0.28949098 0.37854351
-#>  [7] 0.09985555 0.28325704 0.32230862 0.63235351
+#>  [1] 0.4556622 0.5062146 0.2790975 0.4985802 0.3488225 0.2910350 0.5867159
+#>  [8] 0.4354442 0.6357909 0.6316980
 ```
 
 `dgld` Density function for the gamma-Lomax Distribution with parameters
@@ -471,8 +471,8 @@ parameters shapes and beta parameter.
 ``` r
 library(new.dist)
   rgld(10,a=2,alpha=3,beta=4)
-#>  [1]  0.4329685  4.9293672  7.5059593  3.3468580  8.3451692  2.5873493
-#>  [7] 34.4250637  5.3945951  4.1753783  1.3872202
+#>  [1] 10.3381059  1.8304627  0.5086967  5.2520579  5.1748957  5.2501718
+#>  [7]  2.0986997  3.6670773 15.4788017  2.8833322
 ```
 
 `dndd` Density function for a new discrete distribution with parameters
@@ -508,7 +508,7 @@ theta.
 ``` r
 library(new.dist)
   rndd(10,theta=1)
-#>  [1] 6 2 1 1 3 5 2 1 3 2
+#>  [1] 1 1 1 3 5 1 1 4 1 2
 ```
 
 `dnld` Density function for the New Life distribution with lambda and
@@ -544,8 +544,8 @@ beta parameters.
 ``` r
 library(new.dist)
   rnld(10,lambda=2,beta=3)
-#>  [1] 0.22734173 0.01822124 0.10117586 0.25088958 0.44559302 0.60312710
-#>  [7] 0.29779833 0.11066467 0.07195641 0.14361875
+#>  [1] 0.145442795 0.296101999 0.183661207 0.041985489 0.042901163 0.010156292
+#>  [7] 0.004376590 0.053949906 0.220480600 0.001644139
 ```
 
 `dnoPDD` Density function for a new one parameter discrete distribution
@@ -581,8 +581,8 @@ with scale parameters.
 ``` r
 library(new.dist)
   rnoPDD(10,theta=2)
-#>  [1] 5.54629192 2.41503803 1.99702446 1.62778893 2.66109270 2.99235277
-#>  [7] 2.57307113 2.88640106 3.16558921 0.01850898
+#>  [1] 3.4551776 0.7984437 0.1826862 2.0694180 4.1636841 0.6536828 0.4311746
+#>  [8] 2.5565727 1.3461357 2.5876312
 ```
 
 `domd` Density function for on the muth distribution with alpha
@@ -654,8 +654,8 @@ beta and theta parameters.
 ``` r
 library(new.dist)
   rpldd(10, alpha=2, beta=3, theta=4)
-#>  [1]  0.07536266  0.19234342 -0.22002166 -0.03369647  0.12902747  0.20777094
-#>  [7]  0.79851300  0.19165446  0.75725188  0.01786846
+#>  [1] -0.09267003 -0.22186151  0.27495025  0.50984004  0.39099224 -0.06965141
+#>  [7]  0.57744728  0.42702650  1.00706662  0.18850265
 ```
 
 `drld` Density function for a lindley distribution with parameters
@@ -681,8 +681,8 @@ theta.
 
 ``` r
 library(new.dist)
-drld(.5,theta=2)
-#> [1] 0.7357589
+qrld(.5,theta=2)
+#> [1] 0.4872058
 ```
 
 `rrld` random generation for a lindley distribution with parameters
@@ -690,9 +690,58 @@ theta.
 
 ``` r
 library(new.dist)
-  drld(10,theta=2)
-#> [1] 3.023025e-08
+  rrld(10,theta=1)
+#>  [1] 0.0950403 0.1514223 2.0177562 1.3712109 0.7680451 1.0773763 1.6001150
+#>  [8] 0.1778068 3.6376782 1.0743381
 ```
+
+## Corresponding Author
+
+Department of Statistics, Faculty of Science, Selcuk University, 42250,
+Konya, Turkey <br /> Email:<coskun@selcuk.edu.tr>
+
+## References
+
+Vila, R. ve Niyazi Çankaya, M., 2022, *A bimodal Weibull distribution:
+properties and inference*,Journal of Applied Statistics, 49 (12),
+3044-3062.
+
+Iriarte, Y. A., Vilca, F., Varela, H. ve Gómez, H. W., 2017, *Slashed
+generalized Rayleigh distribution*, Communications in Statistics-Theory
+and Methods, 46 (10), 4686-4699.
+
+Birbiçer, İ. ve Genç, A. İ., 2022, *On parameter estimation of the
+standard omega distribution*. Journal of Applied Statistics, 1-17.
+
+Akdoğan, Y., Kuş, C., Asgharzadeh, A., Kınacı, İ., & Sharafi, F. (2016).
+*Uniform-geometric distribution*. Journal of Statistical Computation and
+Simulation, 86(9), 1754-1770.
+
+Jodra, P., Gomez, H. W., Jimenez-Gamero, M. D., & Alba-Fernandez, M. V.
+(2017). *The power Muth distribution* . Mathematical Modelling and
+Analysis, 22(2), 186-201.
+
+Dey, S., Dey, T. ve Kundu, D., 2014, *Two-parameter Rayleigh
+distribution: different methods of estimation*, American Journal of
+Mathematical and Management Sciences, 33 (1), 55-74.
+
+Ghitany, M., Mazucheli, J., Menezes, A. ve Alqallaf, F., 2019, *The
+unit-inverse Gaussian distribution: A new alternative to two-parameter
+distributions on the unit interval*, Communications in Statistics-Theory
+and Methods, 48 (14), 3423-3438.
+
+Najarzadegan, H., Alamatsaz, M. H., Kazemi, I. ve Kundu, D., 2020,
+*Weighted bivariate geometric distribution: Simulation and estimation*,
+Communications in Statistics-Simulation and Computation, 49 (9),
+2419-2443.
+
+Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011, *The discrete Lindley
+distribution: properties and applications*.Journal of statistical
+computation and simulation, 81 (11), 1405-1416.
+
+Krishna, H., Vivekanand ve Kumar, K., 2015, *Estimation in Maxwell
+distribution with randomly censored data*, Journal of statistical
+computation and simulation, 85 (17), 3560-3578.
 
 What is special about using `README.Rmd` instead of just `README.md`?
 You can include R chunks like so:

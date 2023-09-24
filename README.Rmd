@@ -458,14 +458,51 @@ prld(1,theta=2)
 ```qrld``` quantile function for a  lindley distribution with parameters theta.
 ```{r}
 library(new.dist)
-drld(.5,theta=2)
+qrld(.5,theta=2)
 ```
 
 ```rrld``` random generation for a lindley distribution with parameters theta.
 ```{r}
 library(new.dist)
-  drld(10,theta=2)
+  rrld(10,theta=1)
 ```
+
+## Corresponding Author
+Department of Statistics, Faculty of Science, Selcuk University, 42250, Konya, Turkey  <br />
+Email:coskun@selcuk.edu.tr
+
+## References 
+Vila, R. ve Niyazi Çankaya, M., 2022,
+*A bimodal Weibull distribution: properties and inference*,Journal of Applied Statistics, 49 (12), 3044-3062.
+
+Iriarte, Y. A., Vilca, F., Varela, H. ve Gómez, H. W., 2017,
+*Slashed generalized Rayleigh distribution*, Communications in Statistics-Theory and Methods, 46 (10), 4686-4699.
+
+Birbiçer, İ. ve Genç, A. İ., 2022,
+*On parameter estimation of the standard omega distribution*. Journal of Applied Statistics, 1-17.
+
+Akdoğan, Y., Kuş, C., Asgharzadeh, A., Kınacı, İ., & Sharafi, F. (2016).
+*Uniform-geometric distribution*. Journal of Statistical Computation and Simulation, 86(9), 1754-1770.
+
+Jodra, P., Gomez, H. W., Jimenez-Gamero, M. D., & Alba-Fernandez, M. V. (2017).
+*The power Muth distribution* . Mathematical Modelling and Analysis, 22(2), 186-201.
+
+Dey, S., Dey, T. ve Kundu, D., 2014,
+*Two-parameter Rayleigh distribution: different methods of estimation*, American Journal of Mathematical and Management Sciences, 33 (1), 55-74.
+
+Ghitany, M., Mazucheli, J., Menezes, A. ve Alqallaf, F., 2019,
+*The unit-inverse Gaussian distribution: A new alternative to two-parameter distributions on the unit interval*, Communications in Statistics-Theory and Methods, 48 (14), 3423-3438.
+
+Najarzadegan, H., Alamatsaz, M. H., Kazemi, I. ve Kundu, D., 2020,
+*Weighted bivariate geometric distribution: Simulation and estimation*, Communications in Statistics-Simulation and Computation, 49 (9), 2419-2443.
+
+Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
+*The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
+
+Krishna, H., Vivekanand ve Kumar, K., 2015,
+*Estimation in Maxwell distribution with randomly censored data*, Journal of statistical computation and simulation, 85 (17), 3560-3578.
+
+
 
 
 What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
