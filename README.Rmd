@@ -54,7 +54,7 @@ qbwd(.7,alpha=2,beta=3,sigma=4)
 ```rbwd``` random generation for a Bimodal Weibull Distribution with parameters shape and scale.
 ```{r}
 library(new.dist)
-  rbwd(10,alpha=2,beta=3,sigma=4)
+  rbwd(5,alpha=2,beta=3,sigma=4)
 ```
 
 ```dsgrd``` Density function for a Slashed generalized Rayleigh distribution with parameters shape, scale and kurtosis.
@@ -78,7 +78,7 @@ qsgrd(.4,theta=3,alpha=1,q=4)
 ```rsgrd``` random generation for a Slashed generalized Rayleigh distribution with parameters shape, scale and kurtosis.
 ```{r}
 library(new.dist)
-  rsgrd(10,theta=3,alpha=1,q=4)
+  rsgrd(5,theta=3,alpha=1,q=4)
 ```
 
 ```dsod``` Density function for a the standard omega distribution with alpha and beta parameters.
@@ -102,7 +102,7 @@ qsod(.8, alpha=1, beta=2)
 ```rsod``` random generation for a the standard omega distribution with alpha and beta parameters.
 ```{r}
 library(new.dist)
-  rsod(10, alpha=1, beta=2)
+  rsod(5, alpha=1, beta=2)
 ```
 
 ```dugd``` Density function for the Uniform-Geometric distribution with theta parameters.
@@ -126,7 +126,7 @@ qugd(0.6,theta=.1)
 ```rugd``` random generation for the Uniform-Geometric distribution with theta parameters.
 ```{r}
 library(new.dist)
-  rugd(10,theta=.1)
+  rugd(5,theta=.1)
 ```
 
 ```dtpmd``` Density function for the Power Muth distribution with parameters shape and scale.
@@ -150,7 +150,7 @@ qtpmd(.5,beta=2,alpha=3)
 ```rtpmd``` random generation for the Power Muth distribution with parameters shape and scale.
 ```{r}
 library(new.dist)
-  rtpmd(10,beta=2,alpha=3)
+  rtpmd(5,beta=2,alpha=3)
 ```
 
 ```dtprd``` Density function for the Two-Parameter Rayleigh distribution with parameters location and scale.
@@ -174,7 +174,7 @@ qtprd(.5,lambda=2,mu=1)
 ```rtprd``` random generation for Two-Parameter Rayleigh distribution with parameters location and scale.
 ```{r}
 library(new.dist)
-  rtprd(10,lambda=2,mu=1)
+  rtprd(5,lambda=2,mu=1)
 ```
 
 ```duigd``` Density function for the unit inverse Gaussian distribution with parameters mean and scale.
@@ -198,7 +198,7 @@ quigd(.1,mu=2,lambda=3)
 ```ruigd``` random generation for the unit inverse Gaussian distribution with parameters mean and scale.
 ```{r}
 library(new.dist)
-  ruigd(10,mu=2,lambda=3)
+  ruigd(5,mu=2,lambda=3)
 ```
 
 ```dwgd``` Density function for the Weighted Geometric distribution with alpha and lambda parameters.
@@ -222,7 +222,7 @@ qwgd(.98,alpha=.2,lambda=3)
 ```rwgd``` random generation for the Weighted Geometric distribution with alpha and lambda parameters.
 ```{r}
 library(new.dist)
-  rwgd(10,alpha=.2,lambda=3)
+  rwgd(5,alpha=.2,lambda=3)
 ```
 
 ```ddld``` Density function for the discrete Lindley distribution with theta parameters.
@@ -246,7 +246,7 @@ qdld(.993,theta=2)
 ```rdld``` random generation for the discrete Lindley distribution with theta parameters.
 ```{r}
 library(new.dist)
-  rdld(10,theta=1)
+  rdld(5,theta=1)
 ```
 
 ```demd``` Density function for a Maxwell distribution with theta parameters.
@@ -270,7 +270,7 @@ qemd(.4,theta=5)
 ```remd``` random generation for a Maxwell distribution with theta parameters.
 ```{r}
 library(new.dist)
-  remd(10,theta=1)
+  remd(5,theta=1)
 ```
 
 ```depkd``` Density function for kumaraswamy distribution with parameters shapes.
@@ -294,7 +294,7 @@ pepkd(0.5,lambda=2,alpha=3)
 ```repkd``` random generation for kumaraswamy distribution with parameters shapes.
 ```{r}
 library(new.dist)
-  repkd(10,lambda=2,alpha=3)
+  repkd(5,lambda=2,alpha=3)
 ```
 
 ```dgld``` Density function for the gamma-Lomax Distribution with parameters shapes and beta parameter.
@@ -319,7 +319,7 @@ qgld(.8,a=2,alpha=3,beta=4)
 ```rgld``` random generation for the gamma-Lomax Distribution with parameters shapes and beta parameter.
 ```{r}
 library(new.dist)
-  rgld(10,a=2,alpha=3,beta=4)
+  rgld(5,a=2,alpha=3,beta=4)
 ```
 
 ```dndd``` Density function for a new discrete distribution with parameters theta.
@@ -343,7 +343,7 @@ qndd(.5,theta=2)
 ```rndd``` random generation for a new discrete distribution with parameters theta.
 ```{r}
 library(new.dist)
-  rndd(10,theta=1)
+  rndd(5,theta=1)
 ```
 
 ```dnld``` Density function for the New Life distribution with lambda and beta parameters.
@@ -367,7 +367,7 @@ qnld(.8,lambda=2,beta=3)
 ```rnld``` random generation for the New Life distribution with lambda and beta parameters.
 ```{r}
 library(new.dist)
-  rnld(10,lambda=2,beta=3)
+  rnld(5,lambda=2,beta=3)
 ```
 
 ```dnoPDD``` Density function for a new one parameter discrete distribution with scale parameters.
@@ -391,7 +391,7 @@ dnoPDD(.8,theta=2)
 ```rnoPDD``` random generation for a new one parameter discrete distribution with scale parameters.
 ```{r}
 library(new.dist)
-  rnoPDD(10,theta=2)
+  rnoPDD(5,theta=2)
 ```
 
 ```domd``` Density function for on the muth distribution with alpha parameters.
@@ -409,13 +409,13 @@ pomd(1,alpha=.2)
 ```qomd``` quantile function for on the muth distribution with alpha parameters.
 ```{r}
 library(new.dist)
-domd(.8,alpha=.2)
+qomd(.8,alpha=.2)
 ```
 
 ```romd``` random generation for on the muth distribution with alpha parameters.
 ```{r}
 library(new.dist)
-  domd(10,alpha=.2)
+  domd(5,alpha=.2)
 ```
 
 ```dpldd``` Density function for a Power Log Dagum distribution with alpha, beta and theta parameters.
@@ -433,13 +433,13 @@ ppldd(1, alpha=2, beta=3, theta=4)
 ```qpldd``` quantile function for a Power Log Dagum distribution with alpha, beta and theta parameters.
 ```{r}
 library(new.dist)
-dpldd(.8, alpha=2, beta=3, theta=4)
+qpldd(.8, alpha=2, beta=3, theta=4)
 ```
 
 ```rpldd``` random generation for a Power Log Dagum distribution with alpha, beta and theta parameters.
 ```{r}
 library(new.dist)
-  rpldd(10, alpha=2, beta=3, theta=4)
+  rpldd(5, alpha=2, beta=3, theta=4)
 ```
 
 ```drld``` Density function for a  lindley distribution with parameters theta.
@@ -463,7 +463,7 @@ qrld(.5,theta=2)
 ```rrld``` random generation for a lindley distribution with parameters theta.
 ```{r}
 library(new.dist)
-  rrld(10,theta=1)
+  rrld(5,theta=1)
 ```
 
 ## Corresponding Author

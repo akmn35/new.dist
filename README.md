@@ -67,8 +67,8 @@ parameters shape and scale.
 ``` r
 library(new.dist)
   rbwd(10,alpha=2,beta=3,sigma=4)
-#>  [1] 5.025307 3.839683 2.580488 4.437659 6.335341 2.743757 2.478126 3.975208
-#>  [9] 4.695251 3.509376
+#>  [1] 3.796117 6.579080 5.714308 3.440105 6.003617 3.055369 5.238239 3.701796
+#>  [9] 3.683021 4.649132
 ```
 
 `dsgrd` Density function for a Slashed generalized Rayleigh distribution
@@ -104,8 +104,8 @@ distribution with parameters shape, scale and kurtosis.
 ``` r
 library(new.dist)
   rsgrd(10,theta=3,alpha=1,q=4)
-#>  [1] 0.7576603 0.6940607 1.1360740 1.5902011 0.8264817 1.2336199 0.4428134
-#>  [8] 1.2349213 0.8300324 1.1141973
+#>  [1] 0.6177722 1.2961296 1.0889870 0.2508732 0.9470585 1.1024578 1.4898720
+#>  [8] 1.0740153 1.5746382 0.8161848
 ```
 
 `dsod` Density function for a the standard omega distribution with alpha
@@ -141,8 +141,8 @@ alpha and beta parameters.
 ``` r
 library(new.dist)
   rsod(10, alpha=1, beta=2)
-#>  [1] 0.7389934 0.9805796 0.1417324 0.9998511 0.8728465 0.9648096 0.4146069
-#>  [8] 0.3729119 0.5260014 0.8706523
+#>  [1] 0.4798253 0.5651695 0.9411176 0.4137924 0.1428202 0.5658156 0.7930987
+#>  [8] 0.8602887 0.6275647 0.5410877
 ```
 
 `dugd` Density function for the Uniform-Geometric distribution with
@@ -178,7 +178,7 @@ theta parameters.
 ``` r
 library(new.dist)
   rugd(10,theta=.1)
-#>  [1]  9 13 13  6 12  2 11 11  4 12
+#>  [1]  1  2  1  3 12  1  2  5  6  1
 ```
 
 `dtpmd` Density function for the Power Muth distribution with parameters
@@ -214,8 +214,8 @@ parameters shape and scale.
 ``` r
 library(new.dist)
   rtpmd(10,beta=2,alpha=3)
-#>  [1] 2.473251 2.101968 2.257859 1.857353 1.907574 2.293021 1.664435 2.276348
-#>  [9] 2.038124 2.296818
+#>  [1] 1.846358 2.247434 2.046774 2.313896 1.496182 1.854078 2.059299 2.302771
+#>  [9] 2.153155 1.436214
 ```
 
 `dtprd` Density function for the Two-Parameter Rayleigh distribution
@@ -251,8 +251,8 @@ parameters location and scale.
 ``` r
 library(new.dist)
   rtprd(10,lambda=2,mu=1)
-#>  [1] 0.4760143 0.6686656 0.2552266 0.5805923 0.3104567 0.3076845 0.6329758
-#>  [8] 0.1053616 0.5701758 0.7751106
+#>  [1] -0.01733665  0.50981376  0.96352152  0.36504769 -0.31912773  0.40422721
+#>  [7]  0.55385670  0.35492294  0.63052826  0.65556263
 ```
 
 `duigd` Density function for the unit inverse Gaussian distribution with
@@ -288,8 +288,8 @@ with parameters mean and scale.
 ``` r
 library(new.dist)
   ruigd(10,mu=2,lambda=3)
-#>  [1]  5.0580484  0.9283726  2.0286564  3.0688104  1.0355342  0.3059458
-#>  [7] 16.8236161  2.2086936  3.6296656  0.7731623
+#>  [1] 0.5699842 0.7299695 2.6150822 1.0727680 2.7313575 0.2529364 1.8388565
+#>  [8] 1.0708716 2.4833269 0.6548168
 ```
 
 `dwgd` Density function for the Weighted Geometric distribution with
@@ -325,7 +325,7 @@ alpha and lambda parameters.
 ``` r
 library(new.dist)
   rwgd(10,alpha=.2,lambda=3)
-#>  [1] 1 1 2 2 2 1 1 1 1 1
+#>  [1] 2 1 2 1 2 1 2 1 2 1
 ```
 
 `ddld` Density function for the discrete Lindley distribution with theta
@@ -361,7 +361,7 @@ theta parameters.
 ``` r
 library(new.dist)
   rdld(10,theta=1)
-#>  [1] 0 2 0 1 1 1 1 0 1 3
+#>  [1] 0 2 1 0 0 2 1 1 1 2
 ```
 
 `demd` Density function for a Maxwell distribution with theta
@@ -397,8 +397,8 @@ parameters.
 ``` r
 library(new.dist)
   remd(10,theta=1)
-#>  [1] 0.6384052 1.3673393 2.1795791 1.6351147 0.7063666 1.0559465 1.4515388
-#>  [8] 1.4487345 0.9818157 1.1274932
+#>  [1] 1.7149857 0.7962517 0.4986708 1.4373856 1.2633410 1.4156325 0.5247582
+#>  [8] 1.1986812 0.8868094 0.9174100
 ```
 
 `depkd` Density function for kumaraswamy distribution with parameters
@@ -434,8 +434,8 @@ shapes.
 ``` r
 library(new.dist)
   repkd(10,lambda=2,alpha=3)
-#>  [1] 0.4035235 0.7339014 0.2009289 0.4358268 0.2347851 0.2195903 0.6115409
-#>  [8] 0.1525824 0.3407509 0.5199845
+#>  [1] 0.6806558 0.3722480 0.6480249 0.4030358 0.7647519 0.2580703 0.3332880
+#>  [8] 0.7749986 0.7105427 0.3460552
 ```
 
 `dgld` Density function for the gamma-Lomax Distribution with parameters
@@ -471,8 +471,8 @@ parameters shapes and beta parameter.
 ``` r
 library(new.dist)
   rgld(10,a=2,alpha=3,beta=4)
-#>  [1] 1.8150832 7.5324765 2.8898725 3.4167439 3.3797345 0.8409364 6.6942711
-#>  [8] 3.0626463 0.8579886 4.2483833
+#>  [1] 1.2934667 2.2314249 4.0958092 2.5736111 0.7495226 5.8434936 2.7507981
+#>  [8] 2.9765447 3.9435321 0.2841484
 ```
 
 `dndd` Density function for a new discrete distribution with parameters
@@ -508,7 +508,7 @@ theta.
 ``` r
 library(new.dist)
   rndd(10,theta=1)
-#>  [1] 2 2 2 1 2 3 1 2 1 3
+#>  [1] 1 1 2 3 1 1 2 3 1 1
 ```
 
 `dnld` Density function for the New Life distribution with lambda and
@@ -544,8 +544,8 @@ beta parameters.
 ``` r
 library(new.dist)
   rnld(10,lambda=2,beta=3)
-#>  [1] 0.06407180 0.30998315 0.12727705 0.01894989 0.69477941 0.01357866
-#>  [7] 0.21398856 0.08740686 0.07391181 0.03015152
+#>  [1] 0.08364357 0.08498829 0.12220988 0.25961644 0.36646786 0.14193872
+#>  [7] 0.03354570 0.26276244 0.49606418 0.05594096
 ```
 
 `dnoPDD` Density function for a new one parameter discrete distribution
@@ -581,8 +581,8 @@ with scale parameters.
 ``` r
 library(new.dist)
   rnoPDD(10,theta=2)
-#>  [1] 2.65994411 2.53204983 3.88313804 2.62564032 0.06873501 1.07144041
-#>  [7] 3.03748008 0.10544238 0.49145253 1.02321724
+#>  [1] 4.45053339 0.66906489 1.89799407 0.36443596 3.27188574 0.56513941
+#>  [7] 0.01896082 3.92202008 3.19079387 3.68696985
 ```
 
 `domd` Density function for on the muth distribution with alpha
@@ -654,8 +654,8 @@ beta and theta parameters.
 ``` r
 library(new.dist)
   rpldd(10, alpha=2, beta=3, theta=4)
-#>  [1]  0.30341989  0.30335136 -0.32871613 -0.12928930  0.90685809  0.65969250
-#>  [7]  0.02232659  0.24306016  0.41414254  0.68597035
+#>  [1] 0.33497036 1.03442189 0.02585848 0.27244776 0.95254461 0.45030320
+#>  [7] 0.40984287 0.55202404 0.23564192 0.03694446
 ```
 
 `drld` Density function for a lindley distribution with parameters
@@ -691,8 +691,8 @@ theta.
 ``` r
 library(new.dist)
   rrld(10,theta=1)
-#>  [1] 0.476027 1.935850 1.550986 1.125341 2.239338 2.658039 6.129980 3.711879
-#>  [9] 2.972893 1.066082
+#>  [1] 0.3285491 0.5355072 2.7150766 2.2512503 0.5150700 0.8792752 1.7162890
+#>  [8] 3.1074794 1.4490565 0.6426672
 ```
 
 ## Corresponding Author
