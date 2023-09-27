@@ -46,6 +46,7 @@ where F(.;a,b) is the cdf of the Gamma (a,b) distribution, and
 \deqn{x>0,~\theta >0,~\alpha >-1,~q>0.}
 }
 \examples{
+library(new.dist)
 dsgrd(2,theta=3,alpha=1,q=4)
 psgrd(5,theta=3,alpha=1,q=4)
 qsgrd(.4,theta=3,alpha=1,q=4)

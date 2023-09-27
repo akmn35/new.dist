@@ -20,6 +20,7 @@
 #' @references  Iriarte, Y. A., Vilca, F., Varela, H. ve Gómez, H. W., 2017,
 #' *Slashed generalized Rayleigh distribution*, Communications in Statistics-Theory and Methods, 46 (10), 4686-4699.
 #' @examples
+#' library(new.dist)
 #' dsgrd(2,theta=3,alpha=1,q=4)
 dsgrd <- function(x,theta,alpha,q,log=FALSE)
   {

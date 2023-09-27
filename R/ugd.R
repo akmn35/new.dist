@@ -20,6 +20,7 @@
 #' @references Akdoğan, Y., Kuş, C., Asgharzadeh, A., Kınacı, İ., & Sharafi, F. (2016).
 #' *Uniform-geometric distribution*. Journal of Statistical Computation and Simulation, 86(9), 1754-1770.
 #' @examples
+#' library(new.dist)
 #' dugd(1, theta=0.5)
 dugd<-function(x,theta,log=FALSE)
 {

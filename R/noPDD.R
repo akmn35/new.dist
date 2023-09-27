@@ -18,6 +18,7 @@
 #' @references  Shukla, K. K., Shanker, R. ve Tiwari, M. K., 2022,
 #' *A new one parameter discrete distribution and its applications*, Journal of Statistics and Management Systems, 25 (1), 269-283.
 #' @examples
+#' library(new.dist)
 #' dnoPDD(1,theta=2)
 dnoPDD<-function(x,theta=1,log=FALSE)
 {

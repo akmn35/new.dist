@@ -9,7 +9,7 @@
 #' @param lower.tail logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
 #' @param beta a scale parameter.
 #' @description
-#' Density, distribution function, quantile function and random generation for the gamma-Lomax distribution with parameters \code{shapes}.
+#' Density, distribution function, quantile function and random generation for the gamma-Lomax distribution with parameters \code{shapes} and \code{scale}.
 #' @return \code{dgld} gives the density, \code{pgld} gives the distribution function, \code{qgld} gives the quantile function and \code{rgld} generates random deviates.
 #' @details
 #' The gamma-Lomax distribution \code{shape} parameters are  \eqn{a},\eqn{\alpha} and \code{scale} parameter is \eqn{\beta}, has density given by
@@ -19,6 +19,7 @@
 #' @references  Cordeiro, G. M., Ortega, E. M. ve Popović, B. V., 2015,
 #' *The gamma-Lomax distribution*, Journal of statistical computation and simulation, 85 (2), 305-319.
 #' @examples
+#' library(new.dist)
 #' dgld(1,a=2,alpha=3,beta=4)
 dgld<-function(x,a,alpha,beta=1,log=FALSE)
 {

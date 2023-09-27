@@ -18,6 +18,7 @@
 #' @references  Kuş, C., 2007,
 #' *A new lifetime distribution*, Computational Statistics & Data Analysis, 51 (9), 4497-4509.
 #' @examples
+#' library(new.dist)
 #' dnld(1, lambda=2, beta=3)
 dnld<-function(x,lambda,beta,log=FALSE)
 {

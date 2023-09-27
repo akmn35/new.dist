@@ -35,7 +35,7 @@ rgld(n, a, alpha, beta = 1)
 \code{dgld} gives the density, \code{pgld} gives the distribution function, \code{qgld} gives the quantile function and \code{rgld} generates random deviates.
 }
 \description{
-Density, distribution function, quantile function and random generation for the gamma-Lomax distribution with parameters \code{shapes}.
+Density, distribution function, quantile function and random generation for the gamma-Lomax distribution with parameters \code{shapes} and \code{scale}.
 }
 \details{
 The gamma-Lomax distribution \code{shape} parameters are  \eqn{a},\eqn{\alpha} and \code{scale} parameter is \eqn{\beta}, has density given by
@@ -44,6 +44,7 @@ where
 \deqn{x>0,~a,\alpha ,\beta >0.}
 }
 \examples{
+library(new.dist)
 dgld(1,a=2,alpha=3,beta=4)
 pgld(1,a=2,alpha=3,beta=4)
 qgld(.8,a=2,alpha=3,beta=4)

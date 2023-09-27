@@ -42,6 +42,7 @@ where
 \deqn{x=0,1,2,...~,\lambda =\exp \left( -\theta \right) ,~\theta >0.}
 }
 \examples{
+library(new.dist)
 dndd(2,theta=2)
 pndd(1,theta=2)
 qndd(.5,theta=2)

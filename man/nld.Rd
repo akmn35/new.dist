@@ -42,6 +42,7 @@ where
 \deqn{x>\mathbb{R}_{+},~\beta ,\lambda \in \mathbb{R}_{+}.}
 }
 \examples{
+library(new.dist)
 dnld(1, lambda=2, beta=3)
 pnld(1,lambda=2,beta=3)
 qnld(.8,lambda=2,beta=3)

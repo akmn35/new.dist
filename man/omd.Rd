@@ -42,6 +42,7 @@ where
 \deqn{x>0,~\alpha \in \left( 0,1\right]. }
 }
 \examples{
+library(new.dist)
 domd(1,alpha=.2)
 pomd(1,alpha=.2)
 qomd(.8,alpha=.1)

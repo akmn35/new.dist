@@ -44,6 +44,7 @@ where
 \deqn{x>0,~\mu ,\lambda >0.}
 }
 \examples{
+library(new.dist)
 duigd(1, mu=2, lambda=3)
 puigd(1,mu=2,lambda=3)
 quigd(.1,mu=2,lambda=3)

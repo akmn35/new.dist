@@ -21,6 +21,7 @@
 #' @references  Bakouch, H. S., Khan, M. N., Hussain, T. ve Chesneau, C., 2019,
 #' *A power log-Dagum distribution: estimation and applications*, Journal of Applied Statistics, 46 (5), 874-892.
 #' @examples
+#' library(new.dist)
 #' dpldd(1, alpha=2, beta=3, theta=4)
 dpldd<-function(x,alpha,beta,theta,log=FALSE)
 {

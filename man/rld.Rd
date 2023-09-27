@@ -42,6 +42,7 @@ where
 \deqn{x>0,~\theta >0.}
 }
 \examples{
+library(new.dist)
 drld(1,theta=2)
 prld(1,theta=2)
 qrld(.8,theta=1)

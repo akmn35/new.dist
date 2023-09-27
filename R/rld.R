@@ -18,6 +18,7 @@
 #' @references  Akgül, F. G., Acıtaş, Ş. ve Şenoğlu, B., 2018,
 #' *Inferences on stress–strength reliability based on ranked set sampling data in case of Lindley distribution*, Journal of statistical computation and simulation, 88 (15), 3018-3032.
 #' @examples
+#' library(new.dist)
 #' drld(1,theta=2)
 drld<-function(x,theta,log=FALSE)
 {

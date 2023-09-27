@@ -46,6 +46,7 @@ The distributions hazard function
 \deqn{h\left( x\right) =\frac{\alpha \left( \beta +\theta \left\vert x\right\vert^{\beta -1}\right) e^{-\left( \beta x+sign\left( x\right) \left( \theta                                                                 /\beta \right) \left\vert x\right\vert ^{\beta }\right) }\left( 1+e^{-\left(                                                                   \beta x+sign\left( x\right) \left( \theta /\beta \right) \left\vert                                                                   x\right\vert ^{\beta }\right) }\right) ^{-\left( \alpha +1\right) }}{                                                                     1-\left( 1+e^{-\left( \beta x+sign\left( x\right) \left( \theta /\beta                                                                                                                              \right) \left\vert x\right\vert ^{\beta }\right) }\right) ^{-\alpha }} .}
 }
 \examples{
+library(new.dist)
 dpldd(1, alpha=2, beta=3, theta=4)
 ppldd(1,alpha=2,beta=3,theta=4)
 qpldd(.8,alpha=2,beta=3,theta=4)

@@ -22,6 +22,7 @@
 #' Hazard function;
 #' \deqn{h\left( \beta ,\alpha \right) =\frac{\alpha }{\beta ^{\alpha }}\left(e^{\left( x/\beta \right) ^{\alpha }}-1\right) x^{\alpha -1}}
 #' @examples
+#' library(new.dist)
 #' dtpmd(1, beta=2, alpha=3)
 dtpmd<-function(x,beta=1,alpha,log=FALSE)
 {

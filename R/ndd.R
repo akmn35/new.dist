@@ -18,6 +18,7 @@
 #' @references  Bakouch, H. S., Jazi, M. A. ve Nadarajah, S., 2014,
 #' *A new discrete distribution, Statistics*, 48 (1), 200-240.
 #' @examples
+#' library(new.dist)
 #' dndd(2,theta=2)
 dndd<-function(x,theta,log=FALSE)
 {

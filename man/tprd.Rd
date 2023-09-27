@@ -44,6 +44,7 @@ where
 \deqn{x>\mu ,~\lambda >0.}
 }
 \examples{
+library(new.dist)
 dtprd(5, lambda=4, mu=4)
 ptprd(2,lambda=2,mu=1)
 qtprd(.5,lambda=2,mu=1)

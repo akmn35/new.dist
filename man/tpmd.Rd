@@ -48,6 +48,7 @@ Hazard function;
 \deqn{h\left( \beta ,\alpha \right) =\frac{\alpha }{\beta ^{\alpha }}\left(e^{\left( x/\beta \right) ^{\alpha }}-1\right) x^{\alpha -1}}
 }
 \examples{
+library(new.dist)
 dtpmd(1, beta=2, alpha=3)
 ptpmd(1,beta=2,alpha=3)
 qtpmd(.5,beta=2,alpha=3)

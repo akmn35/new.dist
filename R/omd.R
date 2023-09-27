@@ -18,6 +18,7 @@
 #' @references  Jodrá, P., Jiménez-Gamero, M. D. ve Alba-Fernández, M. V., 2015,
 #' *On the Muth distribution, Mathematical Modelling and Analysis*, 20 (3), 291-310.
 #' @examples
+#' library(new.dist)
 #' domd(1,alpha=.2)
 domd<-function(x,alpha,log=FALSE)
 {

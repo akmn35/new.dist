@@ -19,6 +19,7 @@
 #' @references  Dey, S., Dey, T. ve Kundu, D., 2014,
 #' *Two-parameter Rayleigh distribution: different methods of estimation*, American Journal of Mathematical and Management Sciences, 33 (1), 55-74.
 #' @examples
+#' library(new.dist)
 #' dtprd(5, lambda=4, mu=4)
 dtprd<-function(x,lambda=1,mu,log=FALSE)
 {

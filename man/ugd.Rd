@@ -44,6 +44,7 @@ and
 \deqn{x=1,2,...~,~~0<\theta <1.}
 }
 \examples{
+library(new.dist)
 dugd(1, theta=0.5)
 pugd(1,theta=.5)
 qugd(0.6,theta=.1)

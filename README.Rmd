@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of new.dist is to Density, distribution function, quantile function and random generation for a number of distributions. This package implements the following distributions: The Power Muth Distribution, A bimodal Weibull distribution, The discrete Lindley distribution, The gamma-Lomax distribution, Weighted bivariate geometric distribution, A power log-Dagum distribution, kumaraswamy distribution, Lindley distribution, The unit-inverse Gaussian distribution, A New Life Distribution, A new one parameter discrete distribution, Maxwell distribution, The standard omega distribution, Slashed generalized Rayleigh distribution, Two-Parameter Rayleigh Distribution, On the Muth Distribution, Uniform-Geometric distribution, A new discrete distribution.
+The aim is to develop an R package,which is new.dist package, for the probability (density) function, the distribution function, the quantile function and the associated random number generation function for discrete and continuous distributions, which have recently been proposed in the literature. This package implements the following distributions: The Power Muth Distribution, A bimodal Weibull distribution, The discrete Lindley distribution, The gamma-Lomax distribution, weighted geometric distribution, A power log-Dagum distribution, kumaraswamy distribution, Lindley distribution, The unit-inverse Gaussian distribution, EP Distribution, Akash distribution, Ishita distribution, Maxwell distribution, The standard omega distribution, Slashed generalized Rayleigh distribution, Two-Parameter Rayleigh Distribution, On the Muth Distribution, Uniform-Geometric distribution, discrete Weibull distribution.
 
 ## Installation
 
@@ -30,7 +30,6 @@ devtools::install_github("akmn35/new.dist")
 ```
 
 ```new.dist``` Density, distribution function, quantile function and random generation for parameter estimation of distributions.
-
 ## Example
 
 ```dbwd``` Density function for a Bimodal Weibull Distribution with parameters shape and scale.
@@ -202,28 +201,28 @@ library(new.dist)
   ruigd(10,mu=2,lambda=3)
 ```
 
-```dwbgd``` Density function for the Weighted Bivariate Geometric distribution with alpha and lambda parameters.
+```dwgd``` Density function for the Weighted Geometric distribution with alpha and lambda parameters.
 ```{r}
 library(new.dist)
-dwbgd(1,alpha=.2,lambda=3)
+dwgd(1,alpha=.2,lambda=3)
 ```
 
-```pwbgd``` Distribution function for the Weighted Bivariate Geometric distribution with alpha and lambda parameters.
+```pwgd``` Distribution function for the Weighted Geometric distribution with alpha and lambda parameters.
 ```{r}
 library(new.dist)
-dwbgd(1,alpha=.2,lambda=3)
+dwgd(1,alpha=.2,lambda=3)
 ```
 
-```qwbgd``` quantile function for the Weighted Bivariate Geometric distribution with alpha and lambda parameters.
+```qwgd``` quantile function for the Weighted Geometric distribution with alpha and lambda parameters.
 ```{r}
 library(new.dist)
-qwbgd(.98,alpha=.2,lambda=3)
+qwgd(.98,alpha=.2,lambda=3)
 ```
 
-```rwbgd``` random generation for the Weighted Bivariate Geometric distribution with alpha and lambda parameters.
+```rwgd``` random generation for the Weighted Geometric distribution with alpha and lambda parameters.
 ```{r}
 library(new.dist)
-  rwbgd(10,alpha=.2,lambda=3)
+  rwgd(10,alpha=.2,lambda=3)
 ```
 
 ```ddld``` Density function for the discrete Lindley distribution with theta parameters.
@@ -502,7 +501,29 @@ Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
 Krishna, H., Vivekanand ve Kumar, K., 2015,
 *Estimation in Maxwell distribution with randomly censored data*, Journal of statistical computation and simulation, 85 (17), 3560-3578.
 
+Kohansal, A. ve Bakouch, H. S., 2021,
+*Estimation procedures for Kumaraswamy distribution parameters under adaptive type-II hybrid progressive censoring*, Communications in Statistics-Simulation and Computation, 50 (12), 4059-4078.
 
+Cordeiro, G. M., Ortega, E. M. ve Popović, B. V., 2015,
+*The gamma-Lomax distribution*, Journal of statistical computation and simulation, 85 (2), 305-319.
+
+Bakouch, H. S., Jazi, M. A. ve Nadarajah, S., 2014,
+*A new discrete distribution, Statistics*, 48 (1), 200-240.
+
+Kuş, C., 2007,
+*A new lifetime distribution*, Computational Statistics & Data Analysis, 51 (9), 4497-4509.
+
+Shukla, K. K., Shanker, R. ve Tiwari, M. K., 2022,
+*A new one parameter discrete distribution and its applications*, Journal of Statistics and Management Systems, 25 (1), 269-283.
+
+Jodrá, P., Jiménez-Gamero, M. D. ve Alba-Fernández, M. V., 2015,
+*On the Muth distribution, Mathematical Modelling and Analysis*, 20 (3), 291-310.
+
+Bakouch, H. S., Khan, M. N., Hussain, T. ve Chesneau, C., 2019,
+*A power log-Dagum distribution: estimation and applications*, Journal of Applied Statistics, 46 (5), 874-892.
+
+Akgül, F. G., Acıtaş, Ş. ve Şenoğlu, B., 2018,
+*Inferences on stress–strength reliability based on ranked set sampling data in case of Lindley distribution*, Journal of statistical computation and simulation, 88 (15), 3018-3032.
 
 
 What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:

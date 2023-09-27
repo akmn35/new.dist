@@ -42,6 +42,7 @@ where
 \deqn{x>0,~\theta >0.}
 }
 \examples{
+library(new.dist)
 dnoPDD(1,theta=2)
 pnoPDD(1,theta=2)
 qnoPDD(.1,theta=1)
