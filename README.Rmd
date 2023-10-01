@@ -16,20 +16,23 @@ knitr::opts_chunk$set(
 # new.dist
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/akmn35/new.dist/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/akmn35/new.dist/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The aim is to develop an R package,which is new.dist package, for the probability (density) function, the distribution function, the quantile function and the associated random number generation function for discrete and continuous distributions, which have recently been proposed in the literature. This package implements the following distributions: The Power Muth Distribution, A bimodal Weibull distribution, The discrete Lindley distribution, The gamma-Lomax distribution, weighted geometric distribution, A power log-Dagum distribution, kumaraswamy distribution, Lindley distribution, The unit-inverse Gaussian distribution, EP Distribution, Akash distribution, Ishita distribution, Maxwell distribution, The standard omega distribution, Slashed generalized Rayleigh distribution, Two-Parameter Rayleigh Distribution, On the Muth Distribution, Uniform-Geometric distribution, discrete Weibull distribution.
 
 ## Installation
 
-You can install the development version of new.dist from [GitHub](https://github.com/) with:
+You can install the development version of new.dist from [GitHub][https://github.com/] with:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("akmn35/new.dist")
 ```
+## Details
 
 ```new.dist``` Density, distribution function, quantile function and random generation for parameter estimation of distributions.
+
 ## Example
 
 ```dbwd``` Density function for a Bimodal Weibull Distribution with parameters shape and scale.
@@ -524,13 +527,3 @@ Bakouch, H. S., Khan, M. N., Hussain, T. ve Chesneau, C., 2019,
 
 Akgül, F. G., Acıtaş, Ş. ve Şenoğlu, B., 2018,
 *Inferences on stress–strength reliability based on ranked set sampling data in case of Lindley distribution*, Journal of statistical computation and simulation, 88 (15), 3018-3032.
-
-
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
-

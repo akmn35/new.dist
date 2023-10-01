@@ -4,6 +4,8 @@
 # new.dist
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/akmn35/new.dist/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/akmn35/new.dist/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The aim is to develop an R package,which is new.dist package, for the
@@ -24,15 +26,19 @@ Weibull distribution.
 ## Installation
 
 You can install the development version of new.dist from
-[GitHub](https://github.com/) with:
+\[GitHub\]\[<https://github.com/>\] with:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("akmn35/new.dist")
 ```
 
+## Details
+
 `new.dist` Density, distribution function, quantile function and random
-generation for parameter estimation of distributions. \## Example
+generation for parameter estimation of distributions.
+
+## Example
 
 `dbwd` Density function for a Bimodal Weibull Distribution with
 parameters shape and scale.
@@ -66,9 +72,8 @@ parameters shape and scale.
 
 ``` r
 library(new.dist)
-  rbwd(10,alpha=2,beta=3,sigma=4)
-#>  [1] 3.796117 6.579080 5.714308 3.440105 6.003617 3.055369 5.238239 3.701796
-#>  [9] 3.683021 4.649132
+  rbwd(5,alpha=2,beta=3,sigma=4)
+#> [1] 2.489833 2.959732 3.562598 2.041249 5.188315
 ```
 
 `dsgrd` Density function for a Slashed generalized Rayleigh distribution
@@ -103,9 +108,8 @@ distribution with parameters shape, scale and kurtosis.
 
 ``` r
 library(new.dist)
-  rsgrd(10,theta=3,alpha=1,q=4)
-#>  [1] 0.6177722 1.2961296 1.0889870 0.2508732 0.9470585 1.1024578 1.4898720
-#>  [8] 1.0740153 1.5746382 0.8161848
+  rsgrd(5,theta=3,alpha=1,q=4)
+#> [1] 0.2907891 0.8707151 1.2165461 1.6030632 0.7951811
 ```
 
 `dsod` Density function for a the standard omega distribution with alpha
@@ -140,9 +144,8 @@ alpha and beta parameters.
 
 ``` r
 library(new.dist)
-  rsod(10, alpha=1, beta=2)
-#>  [1] 0.4798253 0.5651695 0.9411176 0.4137924 0.1428202 0.5658156 0.7930987
-#>  [8] 0.8602887 0.6275647 0.5410877
+  rsod(5, alpha=1, beta=2)
+#> [1] 0.3701677 0.2772379 0.9902785 0.9970671 0.3863836
 ```
 
 `dugd` Density function for the Uniform-Geometric distribution with
@@ -177,8 +180,8 @@ theta parameters.
 
 ``` r
 library(new.dist)
-  rugd(10,theta=.1)
-#>  [1]  1  2  1  3 12  1  2  5  6  1
+  rugd(5,theta=.1)
+#> [1] 10  1  1  1 19
 ```
 
 `dtpmd` Density function for the Power Muth distribution with parameters
@@ -213,9 +216,8 @@ parameters shape and scale.
 
 ``` r
 library(new.dist)
-  rtpmd(10,beta=2,alpha=3)
-#>  [1] 1.846358 2.247434 2.046774 2.313896 1.496182 1.854078 2.059299 2.302771
-#>  [9] 2.153155 1.436214
+  rtpmd(5,beta=2,alpha=3)
+#> [1] 2.318124 2.220354 1.488555 1.633373 2.091431
 ```
 
 `dtprd` Density function for the Two-Parameter Rayleigh distribution
@@ -250,9 +252,8 @@ parameters location and scale.
 
 ``` r
 library(new.dist)
-  rtprd(10,lambda=2,mu=1)
-#>  [1] -0.01733665  0.50981376  0.96352152  0.36504769 -0.31912773  0.40422721
-#>  [7]  0.55385670  0.35492294  0.63052826  0.65556263
+  rtprd(5,lambda=2,mu=1)
+#> [1]  0.55390469  0.49077541 -0.08375632  0.28790974  0.52013217
 ```
 
 `duigd` Density function for the unit inverse Gaussian distribution with
@@ -287,9 +288,8 @@ with parameters mean and scale.
 
 ``` r
 library(new.dist)
-  ruigd(10,mu=2,lambda=3)
-#>  [1] 0.5699842 0.7299695 2.6150822 1.0727680 2.7313575 0.2529364 1.8388565
-#>  [8] 1.0708716 2.4833269 0.6548168
+  ruigd(5,mu=2,lambda=3)
+#> [1] 1.6203439 4.3306644 0.7893641 4.0909272 2.5849838
 ```
 
 `dwgd` Density function for the Weighted Geometric distribution with
@@ -324,8 +324,8 @@ alpha and lambda parameters.
 
 ``` r
 library(new.dist)
-  rwgd(10,alpha=.2,lambda=3)
-#>  [1] 2 1 2 1 2 1 2 1 2 1
+  rwgd(5,alpha=.2,lambda=3)
+#> [1] 1 2 2 3 1
 ```
 
 `ddld` Density function for the discrete Lindley distribution with theta
@@ -360,8 +360,8 @@ theta parameters.
 
 ``` r
 library(new.dist)
-  rdld(10,theta=1)
-#>  [1] 0 2 1 0 0 2 1 1 1 2
+  rdld(5,theta=1)
+#> [1] 0 2 0 1 0
 ```
 
 `demd` Density function for a Maxwell distribution with theta
@@ -396,9 +396,8 @@ parameters.
 
 ``` r
 library(new.dist)
-  remd(10,theta=1)
-#>  [1] 1.7149857 0.7962517 0.4986708 1.4373856 1.2633410 1.4156325 0.5247582
-#>  [8] 1.1986812 0.8868094 0.9174100
+  remd(5,theta=1)
+#> [1] 1.5546030 0.6601228 1.7019665 0.3791217 1.5909654
 ```
 
 `depkd` Density function for kumaraswamy distribution with parameters
@@ -433,9 +432,8 @@ shapes.
 
 ``` r
 library(new.dist)
-  repkd(10,lambda=2,alpha=3)
-#>  [1] 0.6806558 0.3722480 0.6480249 0.4030358 0.7647519 0.2580703 0.3332880
-#>  [8] 0.7749986 0.7105427 0.3460552
+  repkd(5,lambda=2,alpha=3)
+#> [1] 0.2855387 0.4181782 0.3634897 0.2424094 0.4016957
 ```
 
 `dgld` Density function for the gamma-Lomax Distribution with parameters
@@ -470,9 +468,8 @@ parameters shapes and beta parameter.
 
 ``` r
 library(new.dist)
-  rgld(10,a=2,alpha=3,beta=4)
-#>  [1] 1.2934667 2.2314249 4.0958092 2.5736111 0.7495226 5.8434936 2.7507981
-#>  [8] 2.9765447 3.9435321 0.2841484
+  rgld(5,a=2,alpha=3,beta=4)
+#> [1]  6.276559 12.930524  2.718903  3.582403  2.577421
 ```
 
 `dndd` Density function for a new discrete distribution with parameters
@@ -507,8 +504,8 @@ theta.
 
 ``` r
 library(new.dist)
-  rndd(10,theta=1)
-#>  [1] 1 1 2 3 1 1 2 3 1 1
+  rndd(5,theta=1)
+#> [1] 4 1 2 7 4
 ```
 
 `dnld` Density function for the New Life distribution with lambda and
@@ -543,9 +540,8 @@ beta parameters.
 
 ``` r
 library(new.dist)
-  rnld(10,lambda=2,beta=3)
-#>  [1] 0.08364357 0.08498829 0.12220988 0.25961644 0.36646786 0.14193872
-#>  [7] 0.03354570 0.26276244 0.49606418 0.05594096
+  rnld(5,lambda=2,beta=3)
+#> [1] 0.02566353 0.10997378 0.02680346 0.39383010 0.23479717
 ```
 
 `dnoPDD` Density function for a new one parameter discrete distribution
@@ -580,9 +576,8 @@ with scale parameters.
 
 ``` r
 library(new.dist)
-  rnoPDD(10,theta=2)
-#>  [1] 4.45053339 0.66906489 1.89799407 0.36443596 3.27188574 0.56513941
-#>  [7] 0.01896082 3.92202008 3.19079387 3.68696985
+  rnoPDD(5,theta=2)
+#> [1] 2.8293350 1.4852916 0.9709789 0.5832720 0.1072342
 ```
 
 `domd` Density function for on the muth distribution with alpha
@@ -608,8 +603,8 @@ parameters.
 
 ``` r
 library(new.dist)
-domd(.8,alpha=.2)
-#> [1] 0.4797929
+qomd(.8,alpha=.2)
+#> [1] 1.637047
 ```
 
 `romd` random generation for on the muth distribution with alpha
@@ -617,8 +612,8 @@ parameters.
 
 ``` r
 library(new.dist)
-  domd(10,alpha=.2)
-#> [1] 7.105617e-13
+  domd(5,alpha=.2)
+#> [1] 0.001271151
 ```
 
 `dpldd` Density function for a Power Log Dagum distribution with alpha,
@@ -644,8 +639,8 @@ beta and theta parameters.
 
 ``` r
 library(new.dist)
-dpldd(.8, alpha=2, beta=3, theta=4)
-#> [1] 0.4455822
+qpldd(.8, alpha=2, beta=3, theta=4)
+#> [1] 0.6109249
 ```
 
 `rpldd` random generation for a Power Log Dagum distribution with alpha,
@@ -653,9 +648,8 @@ beta and theta parameters.
 
 ``` r
 library(new.dist)
-  rpldd(10, alpha=2, beta=3, theta=4)
-#>  [1] 0.33497036 1.03442189 0.02585848 0.27244776 0.95254461 0.45030320
-#>  [7] 0.40984287 0.55202404 0.23564192 0.03694446
+  rpldd(5, alpha=2, beta=3, theta=4)
+#> [1]  0.35848224  0.65534431  0.05604295 -0.09067756  0.41387028
 ```
 
 `drld` Density function for a lindley distribution with parameters
@@ -690,9 +684,8 @@ theta.
 
 ``` r
 library(new.dist)
-  rrld(10,theta=1)
-#>  [1] 0.3285491 0.5355072 2.7150766 2.2512503 0.5150700 0.8792752 1.7162890
-#>  [8] 3.1074794 1.4490565 0.6426672
+  rrld(5,theta=1)
+#> [1] 2.2770162 0.6423422 0.2512880 1.0164644 0.7662143
 ```
 
 ## Corresponding Author
@@ -774,20 +767,3 @@ Akgül, F. G., Acıtaş, Ş. ve Şenoğlu, B., 2018, *Inferences on
 stress–strength reliability based on ranked set sampling data in case of
 Lindley distribution*, Journal of statistical computation and
 simulation, 88 (15), 3018-3032.
-
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
