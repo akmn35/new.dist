@@ -1,29 +1,44 @@
 Package: new.dist
-Title:  Alternative Univariate and Multivariate Distributions
+Title: Alternative Univariate and Multivariate Distributions
 Version: 0.1.0
-Authors@R:c( 
+Authors@R: c(
     person("Ramazan", "Akman", , "ramazanakman12345@gmail.com", role = c("cre", "ctb"),
-        comment = "https://www.researchgate.net/profile/Ramazan-Akman"),
+           comment = "https://www.researchgate.net/profile/Ramazan-Akman"),
     person("Coşkun", "Kuş", , "coskun@selcuk.edu.tr", role = c("aut", "ctb"),
-        comment = "https://www.selcuk.edu.tr/Person/Detail/coskun"),
+           comment = "https://www.selcuk.edu.tr/Person/Detail/coskun"),
     person("Ihab", "Abusaif", , "censtat@gmail.com", role = c("aut", "ctb"),
-        comment = "https://www.researchgate.net/profile/Ihab-Abusaif"))
-Description: The aim is to develop an R package,which is new.dist package, for the probability (density) function, the distribution function, the quantile function and the associated random number generation function for discrete and continuous distributions, which have recently been proposed in the literature. This package implements the following distributions: The Power Muth Distribution, A bimodal Weibull distribution, The discrete Lindley distribution, The gamma-Lomax distribution, weighted geometric distribution, A power log-Dagum distribution, kumaraswamy distribution, Lindley distribution, The unit-inverse Gaussian distribution, EP Distribution, Akash distribution, Ishita distribution, Maxwell distribution, The standard omega distribution, Slashed generalized Rayleigh distribution, Two-Parameter Rayleigh Distribution, On the Muth Distribution, Uniform-Geometric distribution, discrete Weibull distribution.
+           comment = "https://www.researchgate.net/profile/Ihab-Abusaif")
+  )
+Description: The aim is to develop an R package,which is new.dist package,
+    for the probability (density) function, the distribution function, the
+    quantile function and the associated random number generation function
+    for discrete and continuous distributions, which have recently been
+    proposed in the literature. This package implements the following
+    distributions: The Power Muth Distribution, A bimodal Weibull
+    distribution, The discrete Lindley distribution, The gamma-Lomax
+    distribution, weighted geometric distribution, A power log-Dagum
+    distribution, kumaraswamy distribution, Lindley distribution, The
+    unit-inverse Gaussian distribution, EP Distribution, Akash
+    distribution, Ishita distribution, Maxwell distribution, The standard
+    omega distribution, Slashed generalized Rayleigh distribution,
+    Two-Parameter Rayleigh Distribution, On the Muth Distribution,
+    Uniform-Geometric distribution, discrete Weibull distribution.
 License: GPL-3
-Encoding: UTF-8
-LazyData: true
-RoxygenNote: 7.2.3
-Roxygen: list(markdown = TRUE)
-Suggests:
-    expint,
-    pracma,
-    stats,
-    VGAM,
-    knitr,
-    rmarkdown,
-    roxygen2,
-    testthat (>= 3.0.0)
-VignetteBuilder: knitr
-Config/testthat/edition: 3
 URL: https://github.com/akmn35/new.dist
 BugReports: https://github.com/akmn35/new.dist/issues
+Suggests:
+    expint,
+    knitr,
+    pracma,
+    rmarkdown,
+    roxygen2,
+    stats,
+    testthat (>= 3.0.0),
+    VGAM
+VignetteBuilder: 
+    knitr
+Config/testthat/edition: 3
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3

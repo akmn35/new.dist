@@ -131,4 +131,5 @@ rgld<-function(n,a,alpha,beta=1)
     suppressWarnings({
     rn<-qgld(stats::runif(n),a,alpha,beta)})
     return(rn)
-  }
+}
+
