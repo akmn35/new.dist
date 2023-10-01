@@ -4,19 +4,27 @@
 #' @param x vector of quantiles.
 #' @param theta a scale parameter.
 #' @param p vector of probabilities.
-#' @param n number of observations. If \code{length(n) > 1}, the length is taken to be the number required.
+#' @param n number of observations. If \code{length(n) > 1}, the length is taken
+#'  to be the number required.
 #' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
-#' @param lower.tail logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
+#' @param lower.tail logical; if TRUE (default), probabilities are
+#' \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
 #' @description
-#' Density, distribution function, quantile function and random generation for Estimation in Maxwell distribution with parameter \code{scale}.
-#' @return \code{demd} gives the density, \code{pemd} gives the distribution function, \code{qemd} gives the quantile function and \code{remd} generates random deviates.
+#' Density, distribution function, quantile function and random generation for
+#' Estimation in Maxwell distribution with parameter \code{scale}.
+#' @return \code{demd} gives the density, \code{pemd} gives the distribution
+#' function, \code{qemd} gives the quantile function and \code{remd} generates
+#' random deviates.
 #' @details
-#' Estimation in Maxwell distribution with \code{scale} parameter \eqn{\theta}, has density
-#' \deqn{f\left( x\right) =\frac{4}{\sqrt{\pi }}\frac{1}{\theta ^{3/2}} x^{2}e^{-x^{2}/\theta },}
+#' Estimation in Maxwell distribution with \code{scale} parameter \eqn{\theta},
+#' has density
+#' \deqn{f\left( x\right) =\frac{4}{\sqrt{\pi }}
+#' \frac{1}{\theta ^{3/2}}x^{2}e^{-x^{2}/\theta },}
 #' where
 #' \deqn{0\leq x<\infty ,~~\theta >0.}
 #' @references  Krishna, H., Vivekanand ve Kumar, K., 2015,
-#' *Estimation in Maxwell distribution with randomly censored data*, Journal of statistical computation and simulation, 85 (17), 3560-3578.
+#' *Estimation in Maxwell distribution with randomly censored data*, Journal of
+#' statistical computation and simulation, 85 (17), 3560-3578.
 #' @examples
 #' library(new.dist)
 #' demd(1,theta=2)
@@ -48,7 +56,7 @@ pemd<-function(x,theta=1,lower.tail=TRUE,log.p=FALSE)
   cdf<-NULL
   for (i in 1:enuzun)
   {
-    if(x[i]>=0) cdf[i]<-pracma::gammainc((x[i]^2/theta[i]),3/2)[3] else cdf[i]=0
+    if(x[i]>=0)cdf[i]<-pracma::gammainc((x[i]^2/theta[i]),3/2)[3] else cdf[i]<-0
   }
   if(lower.tail==FALSE) cdf<-1-cdf
   if(log.p==TRUE) cdf<-log(cdf)
@@ -69,18 +77,18 @@ qemd<-function(p,theta=1,lower.tail=TRUE)
     for (i in 1:enuzun)suppressWarnings(
     {
       Ex<-2*(theta[i]/pi)^(1/2)
-      F<-function(x)
+      Y<-function(x)
       {
         abs(pracma::gammainc((x^2/theta[i]),3/2)[3]-p[i])
       }
       if(lower.tail==FALSE)
       {
-        F<-function(x)
+        Y<-function(x)
         {
           abs(pracma::gammainc((x^2/theta[i]),3/2)[3]-(1-p[i]))
         }
       }
-      kok[i]<-stats::optim(Ex,F)$par
+      kok[i]<-stats::optim(Ex,Y)$par
     })
     return(kok)
   }

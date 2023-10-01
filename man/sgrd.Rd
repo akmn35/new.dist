@@ -27,21 +27,31 @@ rsgrd(n, theta, alpha, q)
 
 \item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
-\item{lower.tail}{logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
+\item{lower.tail}{logical; if TRUE (default), probabilities are
+\eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
 
 \item{p}{vector of probabilities.}
 
-\item{n}{number of observations. If \code{length(n) > 1}, the length is taken to be the number required.}
+\item{n}{number of observations. If \code{length(n) > 1}, the length is taken
+to be the number required.}
 }
 \value{
-\code{dsgrd} gives the density, \code{psgrd} gives the distribution function, \code{qsgrd} gives the quantile function and \code{rsgrd} generates random deviates.
+\code{dsgrd} gives the density, \code{psgrd} gives the distribution
+function, \code{qsgrd} gives the quantile function and \code{rsgrd} generates
+random deviates.
 }
 \description{
-Density, distribution function, quantile function and random generation for the Slashed generalized Rayleigh distribution with parameters \code{shape}, \code{scale}, \code{kurtosis}.
+Density, distribution function, quantile function and random generation for
+the Slashed generalized Rayleigh distribution with parameters \code{shape},
+\code{scale}, \code{kurtosis}.
 }
 \details{
-The Slashed generalized Rayleigh distribution with \code{shape} parameter \eqn{\alpha}, \code{scale} parameter \eqn{\theta} and \code{kurtosis} parameter \eqn{q}, has density given by
-\deqn{f\left( x\right) =\frac{qx^{-\left( q+1\right) }}{\Gamma \left( \alpha+1\right) \theta ^{q/2}}\Gamma \left( \frac{2\alpha +q+2}{2}\right) F\left(\theta x^{2};\frac{2\alpha +q+2}{2},1\right), }
+The Slashed generalized Rayleigh distribution with \code{shape} parameter
+\eqn{\alpha}, \code{scale} parameter \eqn{\theta} and \code{kurtosis}
+parameter \eqn{q}, has density given by
+\deqn{f\left( x\right) =\frac{q x^{-\left( q+1\right) }}{\Gamma
+\left( \alpha+1\right) \theta ^{q/2}}\Gamma \left( \frac{2\alpha +q+2}{2}
+\right) F\left(\theta x^{2};\frac{2\alpha +q+2}{2},1\right), }
 where F(.;a,b) is the cdf of the Gamma (a,b) distribution, and
 \deqn{x>0,~\theta >0,~\alpha >-1,~q>0.}
 }
@@ -54,5 +64,6 @@ rsgrd(10,theta=3,alpha=1,q=4)
 }
 \references{
 Iriarte, Y. A., Vilca, F., Varela, H. ve Gómez, H. W., 2017,
-\emph{Slashed generalized Rayleigh distribution}, Communications in Statistics-Theory and Methods, 46 (10), 4686-4699.
+\emph{Slashed generalized Rayleigh distribution}, Communications in Statistics-
+Theory and Methods, 46 (10), 4686-4699.
 }

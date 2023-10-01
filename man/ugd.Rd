@@ -23,23 +23,31 @@ rugd(n, theta)
 
 \item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
-\item{lower.tail}{logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
+\item{lower.tail}{logical; if TRUE (default), probabilities are
+\eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
 
 \item{p}{vector of probabilities.}
 
-\item{n}{number of observations. If \code{length(n) > 1}, the length is taken to be the number required.}
+\item{n}{number of observations. If \code{length(n) > 1}, the length is taken
+to be the number required.}
 }
 \value{
-\code{dugd} gives the density, \code{pugd} gives the distribution function, \code{qugd} gives the quantile function and \code{rugd} generates random deviates.
+\code{dugd} gives the density, \code{pugd} gives the distribution
+function, \code{qugd} gives the quantile function and \code{rugd} generates
+random deviates.
 }
 \description{
-Density, distribution function, quantile function and random generation for the Uniform-Geometric distributions parameter.
+Density, distribution function, quantile function and random generation for
+the Uniform-Geometric distributions parameter.
 }
 \details{
-The Uniform-Geometric distribution with shape parameter \eqn{\theta}, has density given by
-\deqn{f\left( x\right) =\theta \left( 1-\theta \right) ^{x-1}LerchPhi\left[ \left(1-\theta \right) ,1,x\right],}
+The Uniform-Geometric distribution with shape parameter \eqn{\theta}, has
+density given by
+\deqn{f\left( x\right) =\theta \left( 1-\theta \right) ^{x-1}LerchPhi
+\left[ \left(1-\theta \right) ,1,x\right],}
 where
-\deqn{LerchPhi\left( z,a,v\right) =\sum_{n=0}^{\infty }\frac{z^{n}}{\left(v+n\right) ^{a}}}
+\deqn{LerchPhi\left( z,a,v\right) =\sum_{n=0}^{\infty }\frac{z^{n}}
+{\left(v+n\right) ^{a}}}
 and
 \deqn{x=1,2,...~,~~0<\theta <1.}
 }
@@ -51,6 +59,8 @@ qugd(0.6,theta=.1)
 rugd(10,theta=.1)
 }
 \references{
-Akdoğan, Y., Kuş, C., Asgharzadeh, A., Kınacı, İ., & Sharafi, F. (2016).
-\emph{Uniform-geometric distribution}. Journal of Statistical Computation and Simulation, 86(9), 1754-1770.
+Akdoğan, Y., Kuş, C., Asgharzadeh, A., Kınacı, İ., & Sharafi,
+F. (2016).
+\emph{Uniform-geometric distribution}. Journal of Statistical Computation and
+Simulation, 86(9), 1754-1770.
 }

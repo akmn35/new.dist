@@ -25,21 +25,30 @@ rgld(n, a, alpha, beta = 1)
 
 \item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
-\item{lower.tail}{logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
+\item{lower.tail}{logical; if TRUE (default), probabilities are
+\eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
 
 \item{p}{vector of probabilities.}
 
-\item{n}{number of observations. If \code{length(n) > 1}, the length is taken to be the number required.}
+\item{n}{number of observations. If \code{length(n) > 1}, the length is taken
+to be the number required.}
 }
 \value{
-\code{dgld} gives the density, \code{pgld} gives the distribution function, \code{qgld} gives the quantile function and \code{rgld} generates random deviates.
+\code{dgld} gives the density, \code{pgld} gives the distribution
+function, \code{qgld} gives the quantile function and \code{rgld} generates
+random deviates.
 }
 \description{
-Density, distribution function, quantile function and random generation for the gamma-Lomax distribution with parameters \code{shapes} and \code{scale}.
+Density, distribution function, quantile function and random generation for
+the gamma-Lomax distribution with parameters \code{shapes} and \code{scale}.
 }
 \details{
-The gamma-Lomax distribution \code{shape} parameters are  \eqn{a},\eqn{\alpha} and \code{scale} parameter is \eqn{\beta}, has density given by
-\deqn{f\left( x\right) =\frac{\alpha \beta ^{\alpha }}{\Gamma \left( a\right)\left( \beta +x\right) ^{\alpha +1}}\left\{ -\alpha \log \left( \frac{\beta }{\beta +x}\right) \right\} ^{a-1},}
+The gamma-Lomax distribution \code{shape} parameters are
+\eqn{a},\eqn{\alpha} and \code{scale} parameter is \eqn{\beta}, has density
+given by
+\deqn{f\left( x\right) =\frac{\alpha \beta ^{\alpha }}
+{\Gamma \left( a\right)\left( \beta +x\right) ^{\alpha +1}}\left\{ -\alpha
+\log \left( \frac{\beta }{\beta +x}\right) \right\} ^{a-1},}
 where
 \deqn{x>0,~a,\alpha ,\beta >0.}
 }
@@ -52,5 +61,6 @@ rgld(10,a=2,alpha=3,beta=4)
 }
 \references{
 Cordeiro, G. M., Ortega, E. M. ve Popović, B. V., 2015,
-\emph{The gamma-Lomax distribution}, Journal of statistical computation and simulation, 85 (2), 305-319.
+\emph{The gamma-Lomax distribution}, Journal of statistical computation and
+simulation, 85 (2), 305-319.
 }

@@ -23,21 +23,28 @@ rsod(n, alpha, beta)
 
 \item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
-\item{lower.tail}{logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
+\item{lower.tail}{logical; if TRUE (default), probabilities are
+\eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
 
 \item{p}{vector of probabilities.}
 
-\item{n}{number of observations. If \code{length(n) > 1}, the length is taken to be the number required.}
+\item{n}{number of observations. If \code{length(n) > 1}, the length is taken
+to be the number required.}
 }
 \value{
-\code{dsod} gives the density, \code{psod} gives the distribution function, \code{qsod} gives the quantile function and \code{rsod} generates random deviates.
+\code{dsod} gives the density, \code{psod} gives the distribution
+function, \code{qsod} gives the quantile function and \code{rsod} generates
+random deviates.
 }
 \description{
-Density, distribution function, quantile function and random generation for On parameter estimation of the standard omega distributions parameters.
+Density, distribution function, quantile function and random generation for
+On parameter estimation of the standard omega distributions parameters.
 }
 \details{
-On parameter estimation of the standard omega distribution with parameters \eqn{\alpha}, \eqn{\beta}, has density given by
-\deqn{f\left( x\right) =\alpha \beta x^{\beta -1}\frac{1}{1-x^{2\beta }}\left( \frac{1+x^{\beta }}{1-x^{\beta }}\right) ^{-\alpha /2},}
+On parameter estimation of the standard omega distribution with parameters
+\eqn{\alpha}, \eqn{\beta}, has density given by
+\deqn{f\left( x\right) =\alpha \beta x^{\beta -1}\frac{1}{1-x^{2\beta }}
+\left( \frac{1+x^{\beta }}{1-x^{\beta }}\right) ^{-\alpha /2},}
 where
 \deqn{0<x<1,~\alpha ,\beta >0.}
 }
@@ -50,5 +57,6 @@ rsod(10, alpha=1, beta=2)
 }
 \references{
 Birbiçer, İ. ve Genç, A. İ., 2022,
-\emph{On parameter estimation of the standard omega distribution}. Journal of Applied Statistics, 1-17.
+\emph{On parameter estimation of the standard omega distribution}. Journal of
+Applied Statistics, 1-17.
 }

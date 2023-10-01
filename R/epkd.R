@@ -1,22 +1,33 @@
-#' Estimation procedures for kumaraswamy distribution parameters under adaptive type-II hybrid progressive censoring
+#' Estimation procedures for kumaraswamy distribution parameters under adaptive
+#' type-II hybrid progressive censoring
 #' @export
 #' @name epkd
 #' @param x vector of quantiles.
 #' @param p vector of probabilities.
-#' @param n number of observations. If \code{length(n) > 1}, the length is taken to be the number required.
+#' @param n number of observations. If \code{length(n) > 1}, the length is taken
+#'  to be the number required.
 #' @param alpha,lambda are non-negative shape parameters.
 #' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
-#' @param lower.tail logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
+#' @param lower.tail logical; if TRUE (default), probabilities are
+#' \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
 #' @description
-#' Density, distribution function, quantile function and random generation for Estimation procedures for kumaraswamy distribution with parameters \code{shapes}.
-#' @return \code{depkd} gives the density, \code{pepkd} gives the distribution function, \code{qepkd} gives the quantile function and \code{repkd} generates random deviates.
+#' Density, distribution function, quantile function and random generation for
+#' Estimation procedures for kumaraswamy distribution with parameters
+#' \code{shapes}.
+#' @return \code{depkd} gives the density, \code{pepkd} gives the distribution
+#' function, \code{qepkd} gives the quantile function and \code{repkd} generates
+#'  random deviates.
 #' @details
-#' Estimation procedures for kumaraswamy distribution with non-negative shape parameters \eqn{\alpha}, \eqn{\lambda} has density given by
-#' \deqn{f\left( x\right) =\alpha \lambda x^{\lambda -1}\left( 1-x^{\lambda }\right)^{\alpha -1},}
+#' Estimation procedures for kumaraswamy distribution with non-negative shape
+#' parameters \eqn{\alpha}, \eqn{\lambda} has density given by
+#' \deqn{f\left( x\right) =\alpha \lambda x^{\lambda -1}\left( 1-x^{\lambda }
+#' \right)^{\alpha -1},}
 #' where
 #' \deqn{0<x<1,~~\alpha ,\lambda >0.}
 #' @references  Kohansal, A. ve Bakouch, H. S., 2021,
-#' *Estimation procedures for Kumaraswamy distribution parameters under adaptive type-II hybrid progressive censoring*, Communications in Statistics-Simulation and Computation, 50 (12), 4059-4078.
+#' *Estimation procedures for Kumaraswamy distribution parameters under
+#' adaptive type-II hybrid progressive censoring*, Communications in
+#' Statistics-Simulation and Computation, 50 (12), 4059-4078.
 #' @examples
 #' library("new.dist")
 #' depkd(0.1,lambda=2,alpha=3)
@@ -32,12 +43,14 @@ depkd<-function(x,lambda,alpha,log=FALSE)
   for (i in 1:enuzun)
   {
     if(x[i]<=0 || x[i]>=1) {pdf[i]<-0} else
-    pdf[i]<-alpha[i]*lambda[i]*(x[i]^(lambda[i]-1))*(1-x[i]^lambda[i])^(alpha[i]-1)
+    pdf[i]<-alpha[i]*lambda[i]*(x[i]^(lambda[i]-1))*
+        (1-x[i]^lambda[i])^(alpha[i]-1)
   }
   if(log==TRUE) pdf<-log(pdf)
   return(pdf)
 }
-#' Estimation procedures for kumaraswamy distribution parameters under adaptive type-II hybrid progressive censoring
+#' Estimation procedures for kumaraswamy distribution parameters under adaptive
+#' type-II hybrid progressive censoring
 #' @export
 #' @rdname epkd
 #' @examples
@@ -53,13 +66,14 @@ pepkd<-function(x,lambda,alpha,lower.tail=TRUE,log.p=FALSE)
     cdf<-NULL
     for (i in 1:enuzun)suppressWarnings(
     {
-      if (x[i]>0 && x[i]<1) cdf[i]<-1-(1-x[i]^lambda[i])^alpha[i] else cdf[i]=0
+      if (x[i]>0 && x[i]<1) cdf[i]<-1-(1-x[i]^lambda[i])^alpha[i] else cdf[i]<-0
     })
     if(lower.tail==FALSE) cdf<-1-cdf
     if(log.p==TRUE) cdf<-log(cdf)
     return(cdf)
   }
-#' Estimation procedures for kumaraswamy distribution parameters under adaptive type-II hybrid progressive censoring
+#' Estimation procedures for kumaraswamy distribution parameters under adaptive
+#' type-II hybrid progressive censoring
 #' @export
 #' @rdname epkd
 #' @examples
@@ -84,7 +98,8 @@ qepkd<-function(p,lambda,alpha,lower.tail=TRUE) # 0<p<1, lambda,alpha>0
   }
   return(qfonk)
 }
-#' Estimation procedures for kumaraswamy distribution parameters under adaptive type-II hybrid progressive censoring
+#' Estimation procedures for kumaraswamy distribution parameters under adaptive
+#' type-II hybrid progressive censoring
 #' @export
 #' @rdname epkd
 #' @examples

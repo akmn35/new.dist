@@ -4,15 +4,23 @@
 #' @param x vector of quantiles.
 #' @param theta a parameter.
 #' @param p vector of probabilities.
-#' @param n number of observations. If \code{length(n) > 1}, the length is taken to be the number required.
+#' @param n number of observations. If \code{length(n) > 1}, the length is taken
+#'  to be the number required.
 #' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
-#' @param lower.tail logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
+#' @param lower.tail logical; if TRUE (default), probabilities are
+#' \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
 #' @description
-#' Density, distribution function, quantile function and random generation for a new discrete distribution parameter.
-#' @return \code{dndd} gives the density, \code{pndd} gives the distribution function, \code{qndd} gives the quantile function and \code{rndd} generates random deviates.
+#' Density, distribution function, quantile function and random generation for a
+#'  new discrete distribution parameter.
+#' @return \code{dndd} gives the density, \code{pndd} gives the distribution
+#' function, \code{qndd} gives the quantile function and \code{rndd} generates
+#' random deviates.
 #' @details
-#' A new discrete distribution with a parameter \eqn{\theta}, has density given by
-#'  \deqn{f\left( x\right) =\frac{\lambda ^{x}}{1+\theta }\left( \theta \left(1-2\lambda \right) +\left( 1-\lambda \right) \left( 1+\theta x\right)\right), }
+#' A new discrete distribution with a parameter \eqn{\theta}, has density given
+#' by
+#'  \deqn{f\left( x\right) =\frac{\lambda ^{x}}{1+\theta }
+#'  \left( \theta \left(1-2\lambda \right) +\left( 1-\lambda \right)
+#'  \left( 1+\theta x\right)\right),}
 #' where
 #'  \deqn{x=0,1,2,...~,\lambda =\exp \left( -\theta \right) ,~\theta >0.}
 #' @references  Bakouch, H. S., Jazi, M. A. ve Nadarajah, S., 2014,
@@ -32,7 +40,8 @@ dndd<-function(x,theta,log=FALSE)
   for (i in 1:enuzun)
   {
     if(x[i]<0) {pdf[i]<-0} else
-    {pdf[i]<-(lambda[i]^x[i]/(1+theta[i]))*(theta[i]*(1-2*lambda[i])+(1-lambda[i])*(1+theta[i]*x[i]))}
+    {pdf[i]<-(lambda[i]^x[i]/(1+theta[i]))*(theta[i]*(1-2*lambda[i])+
+                                              (1-lambda[i])*(1+theta[i]*x[i]))}
   }
   if(log==TRUE) pdf<-log(pdf)
   return(pdf)
@@ -54,7 +63,8 @@ pndd<-function(x,theta,lower.tail=TRUE,log.p=FALSE)
   lambda<-exp(-theta)
   for (i in 1:enuzun)
   {
-    if(x[i]>=0) cdf[i]<-1-((1+theta[i]+theta[i]*x[i])/(1+theta[i]))*lambda[i]^x[i] else cdf[i]=0
+    if(x[i]>=0) cdf[i]<-1-((1+theta[i]+theta[i]*x[i])/(1+theta[i]))*
+        lambda[i]^x[i] else cdf[i]<-0
   }
   if(lower.tail==FALSE) cdf<-1-cdf
   if(log.p==TRUE) cdf<-log(cdf)

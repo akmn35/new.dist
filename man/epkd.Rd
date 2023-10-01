@@ -6,7 +6,8 @@
 \alias{pepkd}
 \alias{qepkd}
 \alias{repkd}
-\title{Estimation procedures for kumaraswamy distribution parameters under adaptive type-II hybrid progressive censoring}
+\title{Estimation procedures for kumaraswamy distribution parameters under adaptive
+type-II hybrid progressive censoring}
 \usage{
 depkd(x, lambda, alpha, log = FALSE)
 
@@ -23,21 +24,29 @@ repkd(n, lambda, alpha)
 
 \item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
-\item{lower.tail}{logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
+\item{lower.tail}{logical; if TRUE (default), probabilities are
+\eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
 
 \item{p}{vector of probabilities.}
 
-\item{n}{number of observations. If \code{length(n) > 1}, the length is taken to be the number required.}
+\item{n}{number of observations. If \code{length(n) > 1}, the length is taken
+to be the number required.}
 }
 \value{
-\code{depkd} gives the density, \code{pepkd} gives the distribution function, \code{qepkd} gives the quantile function and \code{repkd} generates random deviates.
+\code{depkd} gives the density, \code{pepkd} gives the distribution
+function, \code{qepkd} gives the quantile function and \code{repkd} generates
+random deviates.
 }
 \description{
-Density, distribution function, quantile function and random generation for Estimation procedures for kumaraswamy distribution with parameters \code{shapes}.
+Density, distribution function, quantile function and random generation for
+Estimation procedures for kumaraswamy distribution with parameters
+\code{shapes}.
 }
 \details{
-Estimation procedures for kumaraswamy distribution with non-negative shape parameters \eqn{\alpha}, \eqn{\lambda} has density given by
-\deqn{f\left( x\right) =\alpha \lambda x^{\lambda -1}\left( 1-x^{\lambda }\right)^{\alpha -1},}
+Estimation procedures for kumaraswamy distribution with non-negative shape
+parameters \eqn{\alpha}, \eqn{\lambda} has density given by
+\deqn{f\left( x\right) =\alpha \lambda x^{\lambda -1}\left( 1-x^{\lambda }
+\right)^{\alpha -1},}
 where
 \deqn{0<x<1,~~\alpha ,\lambda >0.}
 }
@@ -50,5 +59,7 @@ repkd(10,lambda=2,alpha=3)
 }
 \references{
 Kohansal, A. ve Bakouch, H. S., 2021,
-\emph{Estimation procedures for Kumaraswamy distribution parameters under adaptive type-II hybrid progressive censoring}, Communications in Statistics-Simulation and Computation, 50 (12), 4059-4078.
+\emph{Estimation procedures for Kumaraswamy distribution parameters under
+adaptive type-II hybrid progressive censoring}, Communications in
+Statistics-Simulation and Computation, 50 (12), 4059-4078.
 }

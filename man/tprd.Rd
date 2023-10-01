@@ -25,21 +25,29 @@ rtprd(n, lambda = 1, mu)
 
 \item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
-\item{lower.tail}{logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
+\item{lower.tail}{logical; if TRUE (default), probabilities are
+\eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
 
 \item{p}{vector of probabilities.}
 
-\item{n}{number of observations. If \code{length(n) > 1}, the length is taken to be the number required.}
+\item{n}{number of observations. If \code{length(n) > 1}, the length is taken
+to be the number required.}
 }
 \value{
-\code{dtprd} gives the density, \code{ptprd} gives the distribution function, \code{qtprd} gives the quantile function and \code{rtprd} generates random deviates.
+\code{dtprd} gives the density, \code{ptprd} gives the distribution
+function, \code{qtprd} gives the quantile function and \code{rtprd} generates
+random deviates.
 }
 \description{
-Density, distribution function, quantile function and random generation for the Two-Parameter Rayleigh  distribution with parameters \code{location} and \code{scale}.
+Density, distribution function, quantile function and random generation
+for the Two-Parameter Rayleigh  distribution with parameters \code{location}
+and \code{scale}.
 }
 \details{
-The Two-Parameter Rayleigh distribution with \code{scale} parameter \eqn{\lambda} and \code{location} parameter \eqn{\mu}, has density given by
-\deqn{f\left( x\right) =2\lambda \left( x-\mu \right) e^{-\lambda \left( x-\mu\right) ^{2}},}
+The Two-Parameter Rayleigh distribution with \code{scale} parameter
+\eqn{\lambda} and \code{location} parameter \eqn{\mu}, has density given by
+\deqn{f\left( x\right) =2\lambda \left( x-\mu \right) e^{-\lambda
+ \left( x-\mu\right) ^{2}},}
 where
 \deqn{x>\mu ,~\lambda >0.}
 }
@@ -52,5 +60,6 @@ rtprd(10,lambda=2,mu=1)
 }
 \references{
 Dey, S., Dey, T. ve Kundu, D., 2014,
-\emph{Two-parameter Rayleigh distribution: different methods of estimation}, American Journal of Mathematical and Management Sciences, 33 (1), 55-74.
+\emph{Two-parameter Rayleigh distribution: different methods of estimation},
+American Journal of Mathematical and Management Sciences, 33 (1), 55-74.
 }

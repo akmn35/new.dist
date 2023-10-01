@@ -4,21 +4,31 @@
 #' @param x vector of quantiles.
 #' @param theta a parameter.
 #' @param p vector of probabilities.
-#' @param n number of observations. If \code{length(n) > 1}, the length is taken to be the number required.
+#' @param n number of observations. If \code{length(n) > 1}, the length is taken
+#'  to be the number required.
 #' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
-#' @param lower.tail logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
+#' @param lower.tail logical; if TRUE (default), probabilities are
+#' \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
 #' @description
-#' Density, distribution function, quantile function and random generation for the Uniform-Geometric distributions parameter.
-#' @return \code{dugd} gives the density, \code{pugd} gives the distribution function, \code{qugd} gives the quantile function and \code{rugd} generates random deviates.
+#' Density, distribution function, quantile function and random generation for
+#' the Uniform-Geometric distributions parameter.
+#' @return \code{dugd} gives the density, \code{pugd} gives the distribution
+#' function, \code{qugd} gives the quantile function and \code{rugd} generates
+#' random deviates.
 #' @details
-#' The Uniform-Geometric distribution with shape parameter \eqn{\theta}, has density given by
-#' \deqn{f\left( x\right) =\theta \left( 1-\theta \right) ^{x-1}LerchPhi\left[ \left(1-\theta \right) ,1,x\right],}
+#' The Uniform-Geometric distribution with shape parameter \eqn{\theta}, has
+#' density given by
+#' \deqn{f\left( x\right) =\theta \left( 1-\theta \right) ^{x-1}LerchPhi
+#' \left[ \left(1-\theta \right) ,1,x\right],}
 #' where
-#' \deqn{LerchPhi\left( z,a,v\right) =\sum_{n=0}^{\infty }\frac{z^{n}}{\left(v+n\right) ^{a}}}
+#' \deqn{LerchPhi\left( z,a,v\right) =\sum_{n=0}^{\infty }\frac{z^{n}}
+#' {\left(v+n\right) ^{a}}}
 #' and
 #' \deqn{x=1,2,...~,~~0<\theta <1.}
-#' @references Akdoğan, Y., Kuş, C., Asgharzadeh, A., Kınacı, İ., & Sharafi, F. (2016).
-#' *Uniform-geometric distribution*. Journal of Statistical Computation and Simulation, 86(9), 1754-1770.
+#' @references Akdoğan, Y., Kuş, C., Asgharzadeh, A., Kınacı, İ., & Sharafi,
+#'  F. (2016).
+#' *Uniform-geometric distribution*. Journal of Statistical Computation and
+#' Simulation, 86(9), 1754-1770.
 #' @examples
 #' library(new.dist)
 #' dugd(1, theta=0.5)
@@ -53,7 +63,8 @@ pugd<-function(x,theta,lower.tail=TRUE,log.p=FALSE)
   cdf<-NULL
   for (i in 1:enuzun)
   {
-    if(x[i]>=1) cdf[i]<-1-theta[i]*(1-theta[i])^x[i]*((1/theta[i])-x[i]*VGAM::lerch(1-theta[i],1,x[i]+1)) else cdf[i]=0
+    if(x[i]>=1) cdf[i]<-1-theta[i]*(1-theta[i])^x[i]*((1/theta[i])-x[i]*
+                              VGAM::lerch(1-theta[i],1,x[i]+1)) else cdf[i]<-0
   }
   if(lower.tail==FALSE) cdf<-1-cdf
   if(log.p==TRUE) cdf<-log(cdf)

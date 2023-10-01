@@ -25,27 +25,37 @@ rtpmd(n, beta = 1, alpha)
 
 \item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
-\item{lower.tail}{logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
+\item{lower.tail}{logical; if TRUE (default), probabilities are
+\eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
 
 \item{p}{vector of probabilities.}
 
-\item{n}{number of observations. If \code{length(n) > 1}, the length is taken to be the number required.}
+\item{n}{number of observations. If \code{length(n) > 1}, the length is taken
+to be the number required.}
 }
 \value{
-\code{dtpmd} gives the density, \code{ptpmd} gives the distribution function, \code{qtpmd} gives the quantile function and \code{rtpmd} generates random deviates.
+\code{dtpmd} gives the density, \code{ptpmd} gives the distribution
+function, \code{qtpmd} gives the quantile function and \code{rtpmd} generates
+random deviates.
 }
 \description{
-Density, distribution function, quantile function and random generation for the Power Muth distribution with parameters \code{shape} and \code{scale}.
+Density, distribution function, quantile function and random generation for
+the Power Muth distribution with parameters \code{shape} and \code{scale}.
 }
 \details{
-The Power Muth Distribution with \code{shape} parameter \eqn{\alpha} and \code{scale} parameter \eqn{\beta} has density given by
-\deqn{f\left( x\right) =\frac{\alpha }{\beta ^\alpha }x^{\alpha -1}\left( e^{\left(x/\beta \right) ^{\alpha }}-1\right) \left( e^{\left( x/\beta \right)  ^{\alpha }-\left( e^{\left( x/\beta \right) ^{\alpha }}-1\right) }\right), }
+The Power Muth Distribution with \code{shape} parameter \eqn{\alpha} and
+\code{scale} parameter \eqn{\beta} has density given by
+\deqn{f\left( x\right) =\frac{\alpha }{\beta ^\alpha }x^{\alpha -1}
+\left( e^{\left(x/\beta \right) ^{\alpha }}-1\right)
+\left( e^{\left( x/\beta \right)  ^{\alpha }-
+\left( e^{\left( x/\beta \right) ^{\alpha }}-1\right) }\right), }
 where
 \deqn{x>0,~\alpha ,\beta>0.}
 }
 \note{
 Hazard function;
-\deqn{h\left( \beta ,\alpha \right) =\frac{\alpha }{\beta ^{\alpha }}\left(e^{\left( x/\beta \right) ^{\alpha }}-1\right) x^{\alpha -1}}
+\deqn{h\left( \beta ,\alpha \right) =\frac{\alpha }{\beta ^{\alpha }}
+\left(e^{\left( x/\beta \right) ^{\alpha }}-1\right) x^{\alpha -1}}
 }
 \examples{
 library(new.dist)
@@ -55,6 +65,8 @@ qtpmd(.5,beta=2,alpha=3)
 rtpmd(10,beta=2,alpha=3)
 }
 \references{
-Jodra, P., Gomez, H. W., Jimenez-Gamero, M. D., & Alba-Fernandez, M. V. (2017).
-\emph{The power Muth distribution} . Mathematical Modelling and Analysis, 22(2), 186-201.
+Jodra, P., Gomez, H. W., Jimenez-Gamero,
+M. D., & Alba-Fernandez, M. V. (2017).
+\emph{The power Muth distribution} . Mathematical Modelling and Analysis, 22(2),
+186-201.
 }

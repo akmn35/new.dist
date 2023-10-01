@@ -23,38 +23,52 @@ rbwd(n, alpha, beta = 1, sigma)
 
 \item{beta}{a scale parameter.}
 
-\item{sigma}{the parameter that controls the uni- or bimodality of the distribution.}
+\item{sigma}{the parameter that controls the uni- or bimodality of the
+distribution.}
 
 \item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
-\item{lower.tail}{logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
+\item{lower.tail}{logical; if TRUE (default), probabilities are
+\eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
 
 \item{p}{vector of probabilities.}
 
-\item{n}{number of observations. If \code{length(n) > 1}, the length is taken to be the number required.}
+\item{n}{number of observations. If \code{length(n) > 1}, the length is taken
+to be the number required.}
 }
 \value{
-\code{dbwd} gives the density, \code{pbwd} gives the distribution function, \code{qbwd} gives the quantile function and \code{rbwd} generates random deviates.
+\code{dbwd} gives the density, \code{pbwd} gives the distribution
+function, \code{qbwd} gives the quantile function and \code{rbwd} generates
+random deviates.
 }
 \description{
-Density, distribution function, quantile function and random generation for a Bimodal Weibull Distribution with parameters \code{shape} and \code{scale}.
+Density, distribution function, quantile function and random generation for
+a Bimodal Weibull Distribution with parameters \code{shape} and \code{scale}.
 }
 \details{
-A Bimodal Weibull distribution with \code{shape} parameter \eqn{\alpha}, \code{scale} parameter \eqn{\beta} and the parameter that \code{controls} the uni- or bimodality of the distribution \eqn{\sigma}, has density given by
-\deqn{f\left( x\right) =\frac{\alpha }{\beta Z_{\theta }}\left[ 1+\left( 1-\sigma~x\right) ^{2}\right] \left( \frac{x}{\beta }\right) ^{\alpha -1}\exp \left( -\left( \frac{x}{\beta }\right) ^{\alpha }\right), }
+A Bimodal Weibull distribution with \code{shape} parameter \eqn{\alpha},
+\code{scale} parameter \eqn{\beta} and the parameter that \code{controls} the
+uni- or bimodality of the distribution \eqn{\sigma}, has density given by
+\deqn{f\left( x\right) =\frac{\alpha }{\beta Z_{\theta }}
+\left[ 1+\left( 1-\sigma~x\right) ^{2}\right] \left( \frac{x}{\beta }
+\right) ^{\alpha -1}\exp \left( -\left( \frac{x}{\beta }\right) ^{\alpha }
+\right),}
 where
-\deqn{Z_{\theta }=2+\sigma ^{2}\beta ^{2}\Gamma \left( 1+\left( 2/\alpha \right)\right) -2\sigma \beta \Gamma \left( 1+\left( 1/\alpha \right) \right) }
+\deqn{Z_{\theta }=2+\sigma ^{2}\beta ^{2}\Gamma
+\left( 1+\left( 2/\alpha \right)\right) -2\sigma \beta \Gamma
+\left( 1+\left( 1/\alpha \right) \right) }
 and
 \deqn{x\geq 0,~\alpha ,\beta >0,~\sigma \in\mathbb{R}.}
 }
 \examples{
 library(new.dist)
-dbwd(1,alpha=2,beta=3,sigma=4)
+dbwd(1,alpha=2,beta=3,sigma=4,log=TRUE)
 pbwd(1,alpha=2,beta=3,sigma=4)
 qbwd(.7,alpha=2,beta=3,sigma=4)
 rbwd(10,alpha=2,beta=3,sigma=4)
 }
 \references{
 Vila, R. ve Niyazi Çankaya, M., 2022,
-\emph{A bimodal Weibull distribution: properties and inference},Journal of Applied Statistics, 49 (12), 3044-3062.
+\emph{A bimodal Weibull distribution: properties and inference},
+Journal of Applied Statistics, 49 (12), 3044-3062.
 }

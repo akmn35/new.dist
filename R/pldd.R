@@ -4,22 +4,44 @@
 #' @param x vector of quantiles.
 #' @param alpha,beta,theta are parameters.
 #' @param p vector of probabilities.
-#' @param n number of observations. If \code{length(n) > 1}, the length is taken to be the number required.
+#' @param n number of observations. If \code{length(n) > 1}, the length is taken
+#'  to be the number required.
 #' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
-#' @param lower.tail logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
+#' @param lower.tail logical; if TRUE (default), probabilities are
+#' \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
 #' @description
-#' Density, distribution function, quantile function and random generation for a Power Log Dagum distribution parameters.
-#' @return \code{dpldd} gives the density, \code{ppldd} gives the distribution function, \code{qpldd} gives the quantile function and \code{rpldd} generates random deviates.
+#' Density, distribution function, quantile function and random generation for
+#' a Power Log Dagum distribution parameters.
+#' @return \code{dpldd} gives the density, \code{ppldd} gives the distribution
+#' function, \code{qpldd} gives the quantile function and \code{rpldd} generates
+#'  random deviates.
 #' @details
-#' A Power Log Dagum Distribution with parameters \eqn{\alpha}, \eqn{\beta}, \eqn{\theta}, has density given by
-#'  \deqn{f\left( x\right) =\alpha \left( \beta +\theta \left\vert x\right\vert^{\beta -1}\right) e^{-\left( \beta x+sign\left( x\right) \left( \theta                                                                                                                                /\beta \right) \left\vert x\right\vert ^{\beta }\right) ~}~\left(                                                                   1+e^{-\left( \beta x+sign\left( x\right) \left( \theta /\beta \right)                                                                                \left\vert x\right\vert ^{\beta }\right) }\right) ^{-\left( \alpha +1\right)                                                                                },}
+#' A Power Log Dagum Distribution with parameters \eqn{\alpha}, \eqn{\beta},
+#' \eqn{\theta}, has density given by
+#'  \deqn{f\left( x\right) =\alpha
+#'  \left( \beta +\theta \left\vert x\right\vert^{\beta -1}
+#'  \right) e^{-\left( \beta x+sign\left( x\right)
+#'  \left( \theta/\beta \right) \left\vert
+#'    x\right\vert ^{\beta }\right) ~}~\left(1+e^{-\left( \beta x+sign
+#'    \left( x\right)\left( \theta /\beta \right)
+#'    \left\vert x\right\vert ^{\beta }\right) }
+#'    \right) ^{-\left( \alpha +1\right)},}
 #' where
 #' \deqn{x\in \mathbb{R},~\beta \in \mathbb{R},~\alpha >0,~\theta \geq 0}
 #' @note
 #' The distributions hazard function
-#' \deqn{h\left( x\right) =\frac{\alpha \left( \beta +\theta \left\vert x\right\vert^{\beta -1}\right) e^{-\left( \beta x+sign\left( x\right) \left( \theta                                                                 /\beta \right) \left\vert x\right\vert ^{\beta }\right) }\left( 1+e^{-\left(                                                                   \beta x+sign\left( x\right) \left( \theta /\beta \right) \left\vert                                                                   x\right\vert ^{\beta }\right) }\right) ^{-\left( \alpha +1\right) }}{                                                                     1-\left( 1+e^{-\left( \beta x+sign\left( x\right) \left( \theta /\beta                                                                                                                              \right) \left\vert x\right\vert ^{\beta }\right) }\right) ^{-\alpha }} .}
+#' \deqn{h\left( x\right) =\frac{\alpha
+#' \left( \beta +\theta \left\vert x\right\vert^{\beta -1}
+#' \right) e^{-\left( \beta x+sign\left( x\right) \left( \theta/\beta \right)
+#' \left\vert x\right\vert ^{\beta }\right) }\left( 1+e^{-\left(\beta x+sign
+#' \left( x\right) \left( \theta /\beta \right) \left\vert x
+#' \right\vert ^{\beta }\right) }\right) ^{-\left(\alpha +1\right) }}
+#'         {1-\left( 1+e^{-\left( \beta x+sign\left( x\right) \left( \theta /
+#' \beta \right) \left\vert x\right\vert ^{\beta }\right) }
+#' \right) ^{-\alpha }} .}
 #' @references  Bakouch, H. S., Khan, M. N., Hussain, T. ve Chesneau, C., 2019,
-#' *A power log-Dagum distribution: estimation and applications*, Journal of Applied Statistics, 46 (5), 874-892.
+#' *A power log-Dagum distribution: estimation and applications*, Journal of
+#' Applied Statistics, 46 (5), 874-892.
 #' @examples
 #' library(new.dist)
 #' dpldd(1, alpha=2, beta=3, theta=4)
@@ -35,8 +57,10 @@ dpldd<-function(x,alpha,beta,theta,log=FALSE)
     pdf<-NULL
     for (i in 1:enuzun)
     {suppressWarnings({
-      pdf[i]<-alpha[i]*(beta[i]+theta[i]*abs(x[i])^(beta[i]-1))*(exp(-(beta[i]*x[i]+(sign(x[i]))*(theta[i]/beta[i])*abs(x[i])^beta[i])))*
-        (1+exp(-(beta[i]*x[i]+(sign(x[i]))*(theta[i]/beta[i])*abs(x[i])^beta[i])))^(-(alpha[i]+1))})
+      pdf[i]<-alpha[i]*(beta[i]+theta[i]*abs(x[i])^(beta[i]-1))*(exp(-(beta[i]*
+                    x[i]+(sign(x[i]))*(theta[i]/beta[i])*abs(x[i])^beta[i])))*
+      (1+exp(-(beta[i]*x[i]+(sign(x[i]))*(theta[i]/beta[i])*
+                 abs(x[i])^beta[i])))^(-(alpha[i]+1))})
     }
     if(log==TRUE) pdf<-log(pdf)
     return(pdf)
@@ -58,7 +82,8 @@ ppldd<-function(x,alpha,beta,theta,lower.tail=TRUE,log.p=FALSE)
     cdf<-NULL
     for (i in 1:enuzun) suppressWarnings(
     {
-      cdf[i]<-(1+exp(-(beta[i]*x[i]+(sign(x[i]))*(theta[i]/beta[i])*abs(x[i])^beta[i])))^(-alpha[i])
+      cdf[i]<-(1+exp(-(beta[i]*x[i]+(sign(x[i]))*(theta[i]/beta[i])*
+                         abs(x[i])^beta[i])))^(-alpha[i])
     })
     if(lower.tail==FALSE) cdf<-1-cdf
     if(log.p==TRUE) cdf<-log(cdf)
@@ -79,21 +104,23 @@ qpldd<-function(p,alpha,beta,theta,lower.tail=TRUE)
     alpha<-rep(alpha,enuzun/length(alpha)+1)[1:enuzun]
     beta<-rep(beta,enuzun/length(beta)+1)[1:enuzun]
     theta<-rep(theta,enuzun/length(theta)+1)[1:enuzun]
-    kok=NULL
+    kok<-NULL
     for (i in 1:enuzun) suppressWarnings(
     {
-      F<-function(x)
+      Y<-function(x)
       {
-        (1+exp(-(beta[i]*x+(sign(x))*(theta[i]/beta[i])*abs(x)^beta[i])))^(-alpha[i])-p[i]
+        (1+exp(-(beta[i]*x+(sign(x))*(theta[i]/beta[i])*
+                   abs(x)^beta[i])))^(-alpha[i])-p[i]
       }
       if(lower.tail==FALSE)
       {
-        F<-function(x)
+        Y<-function(x)
         {
-          (1+exp(-(beta[i]*x+(sign(x))*(theta[i]/beta[i])*abs(x)^beta[i])))^(-alpha[i])-(1-p[i])
+          (1+exp(-(beta[i]*x+(sign(x))*(theta[i]/beta[i])*
+                     abs(x)^beta[i])))^(-alpha[i])-(1-p[i])
         }
       }
-      kok[i]<-(stats::uniroot(F,c(-10,10)))$root
+      kok[i]<-(stats::uniroot(Y,c(-10,10)))$root
     })
     return(kok)
   }

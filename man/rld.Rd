@@ -6,7 +6,8 @@
 \alias{prld}
 \alias{qrld}
 \alias{rrld}
-\title{Inferences on stress–strength reliability based on ranked set sampling data incase of Lindley distribution}
+\title{Inferences on stress–strength reliability based on ranked set sampling data
+incase of Lindley distribution}
 \usage{
 drld(x, theta, log = FALSE)
 
@@ -23,21 +24,30 @@ rrld(n, theta)
 
 \item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
-\item{lower.tail}{logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
+\item{lower.tail}{logical; if TRUE (default), probabilities are
+\eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
 
 \item{p}{vector of probabilities.}
 
-\item{n}{number of observations. If \code{length(n) > 1}, the length is taken to be the number required.}
+\item{n}{number of observations. If \code{length(n) > 1}, the length is taken
+to be the number required.}
 }
 \value{
-\code{drld} gives the density, \code{prld} gives the distribution function, \code{qrld} gives the quantile function and \code{rrld} generates random deviates.
+\code{drld} gives the density, \code{prld} gives the distribution
+function, \code{qrld} gives the quantile function and \code{rrld} generates
+random deviates.
 }
 \description{
-Density, distribution function, quantile function and random generation for Inferences on stress–strength reliability based on ranked set sampling data incase of Lindley distributions parameter.
+Density, distribution function, quantile function and random generation for
+Inferences on stress–strength reliability based on ranked set sampling data
+incase of Lindley distributions parameter.
 }
 \details{
-Inferences on stress–strength reliability based on ranked set sampling data incase of Lindley distribution with a parameter \eqn{\theta}, has density given by
-\deqn{f\left( x\right) =\frac{\theta ^{2}}{1+\theta }\left( 1+x\right) e^{-\theta~x},}
+Inferences on stress–strength reliability based on ranked set sampling data
+incase of Lindley distribution with a parameter \eqn{\theta}, has density
+given by
+\deqn{f\left( x\right) =\frac{\theta ^{2}}{1+\theta }\left( 1+x\right)
+e^{-\theta~x},}
 where
 \deqn{x>0,~\theta >0.}
 }
@@ -50,5 +60,7 @@ rrld(10,theta=1)
 }
 \references{
 Akgül, F. G., Acıtaş, Ş. ve Şenoğlu, B., 2018,
-\emph{Inferences on stress–strength reliability based on ranked set sampling data in case of Lindley distribution}, Journal of statistical computation and simulation, 88 (15), 3018-3032.
+\emph{Inferences on stress–strength reliability based on ranked set sampling data
+in case of Lindley distribution}, Journal of statistical computation and
+simulation, 88 (15), 3018-3032.
 }

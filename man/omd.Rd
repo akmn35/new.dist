@@ -23,21 +23,29 @@ romd(n, alpha)
 
 \item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
-\item{lower.tail}{logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
+\item{lower.tail}{logical; if TRUE (default), probabilities are
+\eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
 
 \item{p}{vector of probabilities.}
 
-\item{n}{number of observations. If \code{length(n) > 1}, the length is taken to be the number required.}
+\item{n}{number of observations. If \code{length(n) > 1}, the length is taken
+to be the number required.}
 }
 \value{
-\code{domd} gives the density, \code{pomd} gives the distribution function, \code{qomd} gives the quantile function and \code{romd} generates random deviates.
+\code{domd} gives the density, \code{pomd} gives the distribution
+function, \code{qomd} gives the quantile function and \code{romd} generates
+random deviates.
 }
 \description{
-Density, distribution function, quantile function and random generation for on the muth distribution distribution parameter.
+Density, distribution function, quantile function and random generation for
+on the muth distribution distribution parameter.
 }
 \details{
-On the muth distribution distribution with a parameter \eqn{\alpha}, has density given by
-\deqn{f\left( x\right) =\left( e^{\alpha x}-\alpha \right) e^{\alpha x-\left(1/\alpha \right) \left( e^{\alpha x}-1\right) },}
+On the muth distribution distribution with a parameter \eqn{\alpha}, has
+density given by
+\deqn{f\left( x\right) =\left( e^{\alpha x}-
+\alpha \right) e^{\alpha x-\left(1/\alpha \right) \left( e^{\alpha x}-
+1\right) },}
 where
 \deqn{x>0,~\alpha \in \left( 0,1\right]. }
 }
@@ -50,5 +58,6 @@ romd(10,alpha=1)
 }
 \references{
 Jodrá, P., Jiménez-Gamero, M. D. ve Alba-Fernández, M. V., 2015,
-\emph{On the Muth distribution, Mathematical Modelling and Analysis}, 20 (3), 291-310.
+\emph{On the Muth distribution, Mathematical Modelling and Analysis}, 20 (3),
+291-310.
 }

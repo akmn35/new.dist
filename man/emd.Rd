@@ -23,21 +23,28 @@ remd(n, theta = 1)
 
 \item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
-\item{lower.tail}{logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
+\item{lower.tail}{logical; if TRUE (default), probabilities are
+\eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.}
 
 \item{p}{vector of probabilities.}
 
-\item{n}{number of observations. If \code{length(n) > 1}, the length is taken to be the number required.}
+\item{n}{number of observations. If \code{length(n) > 1}, the length is taken
+to be the number required.}
 }
 \value{
-\code{demd} gives the density, \code{pemd} gives the distribution function, \code{qemd} gives the quantile function and \code{remd} generates random deviates.
+\code{demd} gives the density, \code{pemd} gives the distribution
+function, \code{qemd} gives the quantile function and \code{remd} generates
+random deviates.
 }
 \description{
-Density, distribution function, quantile function and random generation for Estimation in Maxwell distribution with parameter \code{scale}.
+Density, distribution function, quantile function and random generation for
+Estimation in Maxwell distribution with parameter \code{scale}.
 }
 \details{
-Estimation in Maxwell distribution with \code{scale} parameter \eqn{\theta}, has density
-\deqn{f\left( x\right) =\frac{4}{\sqrt{\pi }}\frac{1}{\theta ^{3/2}} x^{2}e^{-x^{2}/\theta },}
+Estimation in Maxwell distribution with \code{scale} parameter \eqn{\theta},
+has density
+\deqn{f\left( x\right) =\frac{4}{\sqrt{\pi }}
+\frac{1}{\theta ^{3/2}}x^{2}e^{-x^{2}/\theta },}
 where
 \deqn{0\leq x<\infty ,~~\theta >0.}
 }
@@ -50,5 +57,6 @@ remd(10,theta=1)
 }
 \references{
 Krishna, H., Vivekanand ve Kumar, K., 2015,
-\emph{Estimation in Maxwell distribution with randomly censored data}, Journal of statistical computation and simulation, 85 (17), 3560-3578.
+\emph{Estimation in Maxwell distribution with randomly censored data}, Journal of
+statistical computation and simulation, 85 (17), 3560-3578.
 }

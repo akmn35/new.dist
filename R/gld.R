@@ -4,20 +4,30 @@
 #' @param x vector of quantiles.
 #' @param a,alpha are shape parameters.
 #' @param p vector of probabilities.
-#' @param n number of observations. If \code{length(n) > 1}, the length is taken to be the number required.
+#' @param n number of observations. If \code{length(n) > 1}, the length is taken
+#'  to be the number required.
 #' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
-#' @param lower.tail logical; if TRUE (default), probabilities are \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
+#' @param lower.tail logical; if TRUE (default), probabilities are
+#' \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
 #' @param beta a scale parameter.
 #' @description
-#' Density, distribution function, quantile function and random generation for the gamma-Lomax distribution with parameters \code{shapes} and \code{scale}.
-#' @return \code{dgld} gives the density, \code{pgld} gives the distribution function, \code{qgld} gives the quantile function and \code{rgld} generates random deviates.
+#' Density, distribution function, quantile function and random generation for
+#' the gamma-Lomax distribution with parameters \code{shapes} and \code{scale}.
+#' @return \code{dgld} gives the density, \code{pgld} gives the distribution
+#' function, \code{qgld} gives the quantile function and \code{rgld} generates
+#' random deviates.
 #' @details
-#' The gamma-Lomax distribution \code{shape} parameters are  \eqn{a},\eqn{\alpha} and \code{scale} parameter is \eqn{\beta}, has density given by
-#' \deqn{f\left( x\right) =\frac{\alpha \beta ^{\alpha }}{\Gamma \left( a\right)\left( \beta +x\right) ^{\alpha +1}}\left\{ -\alpha \log \left( \frac{\beta }{\beta +x}\right) \right\} ^{a-1},}
+#' The gamma-Lomax distribution \code{shape} parameters are
+#' \eqn{a},\eqn{\alpha} and \code{scale} parameter is \eqn{\beta}, has density
+#' given by
+#' \deqn{f\left( x\right) =\frac{\alpha \beta ^{\alpha }}
+#' {\Gamma \left( a\right)\left( \beta +x\right) ^{\alpha +1}}\left\{ -\alpha
+#' \log \left( \frac{\beta }{\beta +x}\right) \right\} ^{a-1},}
 #' where
 #' \deqn{x>0,~a,\alpha ,\beta >0.}
 #' @references  Cordeiro, G. M., Ortega, E. M. ve Popović, B. V., 2015,
-#' *The gamma-Lomax distribution*, Journal of statistical computation and simulation, 85 (2), 305-319.
+#' *The gamma-Lomax distribution*, Journal of statistical computation and
+#' simulation, 85 (2), 305-319.
 #' @examples
 #' library(new.dist)
 #' dgld(1,a=2,alpha=3,beta=4)
@@ -36,7 +46,9 @@ dgld<-function(x,a,alpha,beta=1,log=FALSE)
   {
     suppressWarnings({
     if(x[i]<=0) {pdf[i]<-0} else
-    {pdf[i]<-(alpha[i]*beta[i]^alpha[i])/(gamma(a[i])*(beta[i]+x[i])^(alpha[i]+1))*(-alpha[i]*log(beta[i]/(beta[i]+x[i])))^(a[i]-1)}})
+    {pdf[i]<-(alpha[i]*beta[i]^alpha[i])/(gamma(a[i])*
+        (beta[i]+x[i])^(alpha[i]+1))*(-alpha[i]*log(beta[i]/
+                                                  (beta[i]+x[i])))^(a[i]-1)}})
   }
   if(log==TRUE) pdf<-log(pdf)
   return(pdf)
@@ -59,7 +71,8 @@ pgld<-function(x,a,alpha,beta=1,lower.tail=TRUE,log.p=FALSE)
   cdf<-NULL
   for (i in 1:enuzun)
   {
-    if (x[i]>0) cdf[i]<-(gamma(a[i])-(expint::gammainc(a[i],(-alpha[i]*log(beta[i]/(beta[i]+x[i]))))))/gamma(a[i]) else cdf[i]=0
+    if (x[i]>0) cdf[i]<-(gamma(a[i])-(expint::gammainc(a[i],(-alpha[i]*
+                    log(beta[i]/(beta[i]+x[i]))))))/gamma(a[i]) else cdf[i]<-0
   }
   if(lower.tail==FALSE) cdf<-1-cdf
   if(log.p==TRUE) cdf<-log(cdf)
@@ -84,21 +97,25 @@ qgld<-function(p,a,alpha,beta=1,lower.tail=TRUE)
   kok<-NULL
   for (i in 1:enuzun)
   {
-    F<-function(x)
+    Y<-function(x)
     {
-      (gamma(a[i])-(expint::gammainc(a[i],(-alpha[i]*log(beta[i]/(beta[i]+x)))))/gamma(a[i]))-p[i]
+      (gamma(a[i])-(expint::gammainc(a[i],(-alpha[i]*log(beta[i]/(beta[i]+x)))))
+       /gamma(a[i]))-p[i]
     }
     if(lower.tail==FALSE)
     {
-      F<-function(x)
+      Y<-function(x)
       {
-        (gamma(a[i])-(expint::gammainc(a[i],(-alpha[i]*log(beta[i]/(beta[i]+x)))))/gamma(a[i]))-(1-p[i])
+        (gamma(a[i])-(expint::gammainc(a[i],(-alpha[i]*
+                              log(beta[i]/(beta[i]+x)))))/gamma(a[i]))-(1-p[i])
       }
     }
-    kok[i]<-(stats::uniroot(F, c(0, 1000000)))$root
+    kok[i]<- stats::uniroot(Y, c(0,1000000))$root
+
   }
   return(kok)
 }
+qgld(.8,a=2,alpha=3,beta=4)
 #' The gamma-Lomax distribution
 #' @export
 #' @rdname gld
