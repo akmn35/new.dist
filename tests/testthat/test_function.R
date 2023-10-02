@@ -388,6 +388,8 @@ test_that("functions returns a  vector with the expected size", {
   expect_vector(qgld(.1, a=2, alpha=3, beta=4), ptype = double(), size = 1)
   expect_vector(qgld(.1, a=2, alpha=3, beta=4, lower.tail = F),
                 ptype = double(), size = 1)
+  expect_vector(qgld(.1, a=2, alpha=3, beta=4, lower.tail = T),
+                ptype = double(), size = 1)
   expect_vector(rgld(20, a=2, alpha=3, beta=4), ptype = double(), size = 20)
   expect_vector(dndd(.5,theta=2), ptype = double(), size = 1)
   expect_vector(pndd(.5,theta=2), ptype = double(), size = 1)

@@ -110,12 +110,11 @@ qgld<-function(p,a,alpha,beta=1,lower.tail=TRUE)
                               log(beta[i]/(beta[i]+x)))))/gamma(a[i]))-(1-p[i])
       }
     }
-    kok[i]<- stats::uniroot(Y, c(0,1000000))$root
+    kok[i]<- stats::uniroot(Y, c(0,2000))$root
 
   }
   return(kok)
 }
-qgld(.8,a=2,alpha=3,beta=4)
 #' The gamma-Lomax distribution
 #' @export
 #' @rdname gld
@@ -131,5 +130,4 @@ rgld<-function(n,a,alpha,beta=1)
     suppressWarnings({
     rn<-qgld(stats::runif(n),a,alpha,beta)})
     return(rn)
-}
-
+  }
