@@ -310,8 +310,8 @@ dgld(1,a=2,alpha=3,beta=4)
 ```{r}
 library(new.dist)
 dgld(1,a=2,alpha=3,beta=4)
-
 ```
+
 
 ```qgld``` quantile function for the gamma-Lomax Distribution with parameters shapes and beta parameter.
 ```{r}
@@ -527,3 +527,5 @@ Bakouch, H. S., Khan, M. N., Hussain, T. ve Chesneau, C., 2019,
 
 Akgül, F. G., Acıtaş, Ş. ve Şenoğlu, B., 2018,
 *Inferences on stress–strength reliability based on ranked set sampling data in case of Lindley distribution*, Journal of statistical computation and simulation, 88 (15), 3018-3032.
+
+Ristić, M. M., & Balakrishnan, N. (2012), *The gamma-exponentiated exponential distribution. Journal of statistical computation and simulation*, 82(8), 1191-1206.

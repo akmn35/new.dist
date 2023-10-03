@@ -63,4 +63,8 @@ rgld(10,a=2,alpha=3,beta=4)
 Cordeiro, G. M., Ortega, E. M. ve Popović, B. V., 2015,
 \emph{The gamma-Lomax distribution}, Journal of statistical computation and
 simulation, 85 (2), 305-319.
+
+Ristić, M. M., & Balakrishnan, N. (2012), \emph{The gamma-exponentiated}
+\emph{exponential distribution. Journal of statistical computation and simulation}
+, 82(8), 1191-1206.
 }

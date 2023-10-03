@@ -28,6 +28,10 @@
 #' @references  Cordeiro, G. M., Ortega, E. M. ve Popović, B. V., 2015,
 #' *The gamma-Lomax distribution*, Journal of statistical computation and
 #' simulation, 85 (2), 305-319.
+#'
+#' Ristić, M. M., & Balakrishnan, N. (2012), *The gamma-exponentiated*
+#' *exponential distribution. Journal of statistical computation and simulation*
+#' , 82(8), 1191-1206.
 #' @examples
 #' library(new.dist)
 #' dgld(1,a=2,alpha=3,beta=4)
@@ -95,25 +99,10 @@ qgld<-function(p,a,alpha,beta=1,lower.tail=TRUE)
   alpha<-rep(alpha,enuzun/length(alpha)+1)[1:enuzun]
   beta<-rep(beta,enuzun/length(beta)+1)[1:enuzun]
   kok<-NULL
+  quant=NULL
   for (i in 1:enuzun)
-  {
-    Y<-function(x)
-    {
-      (gamma(a[i])-(expint::gammainc(a[i],(-alpha[i]*log(beta[i]/(beta[i]+x)))))
-       /gamma(a[i]))-p[i]
-    }
-    if(lower.tail==FALSE)
-    {
-      Y<-function(x)
-      {
-        (gamma(a[i])-(expint::gammainc(a[i],(-alpha[i]*
-                              log(beta[i]/(beta[i]+x)))))/gamma(a[i]))-(1-p[i])
-      }
-    }
-    kok[i]<- stats::uniroot(Y, c(0,2000))$root
-
-  }
-  return(kok)
+  {quant[i]=VGAM::qlomax(1-exp(-(stats::qgamma(p[i],a[i],1))),beta[i],alpha[i])}
+  return(quant)
 }
 #' The gamma-Lomax distribution
 #' @export
