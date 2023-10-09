@@ -73,7 +73,7 @@ parameters shape and scale.
 ``` r
 library(new.dist)
   rbwd(5,alpha=2,beta=3,sigma=4)
-#> [1] 4.700366 3.889196 3.295889 3.080850 5.234339
+#> [1] 3.905493 3.001962 6.259000 6.121764 4.584076
 ```
 
 `dsgrd` Density function for a Slashed generalized Rayleigh distribution
@@ -109,7 +109,7 @@ distribution with parameters shape, scale and kurtosis.
 ``` r
 library(new.dist)
   rsgrd(5,theta=3,alpha=1,q=4)
-#> [1] 0.6143062 0.6149388 2.7933798 1.3342360 0.9277454
+#> [1] 1.4418580 2.4759935 1.1684703 0.7898696 0.7937125
 ```
 
 `dsod` Density function for a the standard omega distribution with alpha
@@ -145,7 +145,7 @@ alpha and beta parameters.
 ``` r
 library(new.dist)
   rsod(5, alpha=1, beta=2)
-#> [1] 0.90573720 0.05399778 0.99424875 0.97780565 0.99396231
+#> [1] 0.5915609 0.7330861 0.5520498 0.5315386 0.7058930
 ```
 
 `dugd` Density function for the Uniform-Geometric distribution with
@@ -181,7 +181,7 @@ theta parameters.
 ``` r
 library(new.dist)
   rugd(5,theta=.1)
-#> [1]  3 16  5  9 18
+#> [1]  1  4 11  5 15
 ```
 
 `dtpmd` Density function for the Power Muth distribution with parameters
@@ -217,7 +217,7 @@ parameters shape and scale.
 ``` r
 library(new.dist)
   rtpmd(5,beta=2,alpha=3)
-#> [1] 1.478622 1.338712 2.194100 1.779924 1.955140
+#> [1] 1.559063 2.411646 1.586124 2.192405 2.249963
 ```
 
 `dtprd` Density function for the Two-Parameter Rayleigh distribution
@@ -253,7 +253,7 @@ parameters location and scale.
 ``` r
 library(new.dist)
   rtprd(5,lambda=2,mu=1)
-#> [1] 0.6415168 0.1338523 0.3613350 0.4590809 0.7286947
+#> [1] -0.9053447  0.6065108  0.4306854  0.2697551  0.1530036
 ```
 
 `duigd` Density function for the unit inverse Gaussian distribution with
@@ -289,7 +289,7 @@ with parameters mean and scale.
 ``` r
 library(new.dist)
   ruigd(5,mu=2,lambda=3)
-#> [1] 4.0164700 1.2317632 1.7800356 0.3819306 2.3237558
+#> [1] 1.494007 3.217122 1.319941 3.874962 1.716331
 ```
 
 `dwgd` Density function for the Weighted Geometric distribution with
@@ -325,7 +325,7 @@ alpha and lambda parameters.
 ``` r
 library(new.dist)
   rwgd(5,alpha=.2,lambda=3)
-#> [1] 1 1 1 1 3
+#> [1] 2 1 2 2 1
 ```
 
 `ddld` Density function for the discrete Lindley distribution with theta
@@ -361,7 +361,7 @@ theta parameters.
 ``` r
 library(new.dist)
   rdld(5,theta=1)
-#> [1] 0 0 0 0 0
+#> [1] 0 0 0 0 2
 ```
 
 `demd` Density function for a Maxwell distribution with theta
@@ -397,7 +397,7 @@ parameters.
 ``` r
 library(new.dist)
   remd(5,theta=1)
-#> [1]  0.7026378  0.9085183  0.6801059 -0.2791286  1.4176098
+#> [1] 1.1008183 0.6653162 2.0581575 1.4298726 1.7112853
 ```
 
 `depkd` Density function for kumaraswamy distribution with parameters
@@ -433,7 +433,7 @@ shapes.
 ``` r
 library(new.dist)
   repkd(5,lambda=2,alpha=3)
-#> [1] 0.70610339 0.07275484 0.21621489 0.79629303 0.30113928
+#> [1] 0.2899858 0.6929429 0.6620609 0.7772155 0.1363925
 ```
 
 `dgld` Density function for the gamma-Lomax Distribution with parameters
@@ -469,7 +469,7 @@ parameters shapes and beta parameter.
 ``` r
 library(new.dist)
   rgld(5,a=2,alpha=3,beta=4)
-#> [1] 0.3309858 5.7563614 5.6886647 3.2473635 4.4462224
+#> [1] 3.4956318 6.0897930 0.3175856 0.8926760 2.1250313
 ```
 
 `dndd` Density function for a new discrete distribution with parameters
@@ -505,7 +505,7 @@ theta.
 ``` r
 library(new.dist)
   rndd(5,theta=1)
-#> [1] 1 1 2 3 2
+#> [1] 2 2 1 2 1
 ```
 
 `dnld` Density function for the New Life distribution with lambda and
@@ -541,7 +541,7 @@ beta parameters.
 ``` r
 library(new.dist)
   rnld(5,lambda=2,beta=3)
-#> [1] 0.21438053 0.01094183 0.02835202 0.12825465 0.10117141
+#> [1] 0.03301855 0.31126805 0.10775516 0.01546849 0.04822834
 ```
 
 `dnoPDD` Density function for a new one parameter discrete distribution
@@ -577,7 +577,7 @@ with scale parameters.
 ``` r
 library(new.dist)
   rnoPDD(5,theta=2)
-#> [1] 4.1880587 1.2816139 3.5397925 0.5895039 3.7902674
+#> [1] 3.78109761 0.07479821 2.76150266 5.92108473 1.00753952
 ```
 
 `domd` Density function for on the muth distribution with alpha
@@ -649,7 +649,7 @@ beta and theta parameters.
 ``` r
 library(new.dist)
   rpldd(5, alpha=2, beta=3, theta=4)
-#> [1]  0.96012640  0.02457214  0.17939806  0.77032806 -0.11521852
+#> [1]  0.14020837  0.28977635 -0.18723997  0.79468664 -0.04439635
 ```
 
 `drld` Density function for a lindley distribution with parameters
@@ -685,7 +685,7 @@ theta.
 ``` r
 library(new.dist)
   rrld(5,theta=1)
-#> [1] 1.300636 1.181785 3.216372 1.459218 5.799393
+#> [1] 1.0011197 0.8945317 0.8175289 1.4143814 2.5928754
 ```
 
 ## Corresponding Author
