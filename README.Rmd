@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/akmn35/new.dist/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/akmn35/new.dist/actions/workflows/R-CMD-check.yaml)
-[![codecov](https://codecov.io/gh/akmn35/new.dist /branch/master/graph/badge.svg)](https://codecov.io/gh/akmn35/new.dist )
+[![codecov](https://codecov.io/gh/akmn35/new.dist/branch/master/graph/badge.svg)](https://codecov.io/gh/akmn35/new.dist )
 <!-- badges: end -->
 
 The aim is to develop an R package,which is new.dist package, for the probability (density) function, the distribution function, the quantile function and the associated random number generation function for discrete and continuous distributions, which have recently been proposed in the literature. This package implements the following distributions: The Power Muth Distribution, A bimodal Weibull distribution, The discrete Lindley distribution, The gamma-Lomax distribution, weighted geometric distribution, A power log-Dagum distribution, kumaraswamy distribution, Lindley distribution, The unit-inverse Gaussian distribution, EP Distribution, Akash distribution, Ishita distribution, Maxwell distribution, The standard omega distribution, Slashed generalized Rayleigh distribution, Two-Parameter Rayleigh Distribution, On the Muth Distribution, Uniform-Geometric distribution, discrete Weibull distribution.
