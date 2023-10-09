@@ -1,7 +1,7 @@
 #' A Bimodal Weibull Distribution
 #' @export
 #' @name bwd
-#' @param x vector of quantiles.
+#' @param x,q vector of quantiles.
 #' @param alpha a shape parameter.
 #' @param beta a scale parameter.
 #' @param sigma the parameter that controls the uni- or bimodality of the
@@ -37,7 +37,7 @@
 #' Journal of Applied Statistics, 49 (12), 3044-3062.
 #' @examples
 #' library(new.dist)
-#' dbwd(1,alpha=2,beta=3,sigma=4,log=TRUE)
+#' dbwd(1,alpha=2,beta=3,sigma=4)
 dbwd<-function(x,alpha,beta=1,sigma, log = FALSE)
 {
   if(any(alpha<=0)) {stop("alpha must be > 0")}
@@ -66,22 +66,22 @@ dbwd<-function(x,alpha,beta=1,sigma, log = FALSE)
 #' @rdname bwd
 #' @examples
 #' pbwd(1,alpha=2,beta=3,sigma=4)
-pbwd<-function(x,alpha,beta=1,sigma,lower.tail=TRUE,log.p=FALSE)
+pbwd<-function(q,alpha,beta=1,sigma,lower.tail=TRUE,log.p=FALSE)
 {
   if(any(alpha<=0)) {stop("alpha must be > 0")}
   if(any(beta<=0)) {stop("beta must be > 0")}
-  enuzun<-max(length(x),length(alpha),length(beta),length(sigma))
-  x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+  enuzun<-max(length(q),length(alpha),length(beta),length(sigma))
+  q<-rep(q,enuzun/length(q)+1)[1:enuzun]
   alpha<-rep(alpha,enuzun/length(alpha)+1)[1:enuzun]
   beta<-rep(beta,enuzun/length(beta)+1)[1:enuzun]
   sigma<-rep(sigma,enuzun/length(sigma)+1)[1:enuzun]
   cdf<-NULL
   for (i in 1:enuzun)suppressWarnings(
     {
-      if(x[i]>=0) (cdf[i]<-(2-(1+(1-sigma[i]*x[i])^2)*
-            exp(-(x[i]/beta[i])^alpha[i])-((2*sigma[i]*beta[i])/alpha[i])*
-        (pracma::gammainc(x[i]^alpha[i]/beta[i]^alpha[i],1/alpha[i])[1]-sigma[i]
-                        *beta[i]*pracma::gammainc(x[i]^alpha[i]/beta[i]^
+      if(q[i]>=0) (cdf[i]<-(2-(1+(1-sigma[i]*q[i])^2)*
+            exp(-(q[i]/beta[i])^alpha[i])-((2*sigma[i]*beta[i])/alpha[i])*
+        (pracma::gammainc(q[i]^alpha[i]/beta[i]^alpha[i],1/alpha[i])[1]-sigma[i]
+                        *beta[i]*pracma::gammainc(q[i]^alpha[i]/beta[i]^
         alpha[i],2/alpha[i])[1]))/(2+sigma[i]^2*beta[i]^2*gamma(1+(2/alpha[i]))
                     -2*sigma[i]*beta[i]*gamma(1+(1/alpha[i])))) else cdf[i]<-0
     })

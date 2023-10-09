@@ -1,14 +1,14 @@
 Package: new.dist
 Title: Alternative Univariate and Multivariate Distributions
 Version: 0.1.0
-Authors@R: c(
-    person("Ramazan", "Akman", , "ramazanakman12345@gmail.com", role = c("cre", "ctb"),
-           comment = "https://www.researchgate.net/profile/Ramazan-Akman"),
-    person("Coşkun", "Kuş", , "coskun@selcuk.edu.tr", role = c("aut", "ctb"),
-           comment = "https://www.selcuk.edu.tr/Person/Detail/coskun"),
-    person("Ihab", "Abusaif", , "censtat@gmail.com", role = c("aut", "ctb"),
-           comment = "https://www.researchgate.net/profile/Ihab-Abusaif")
-  )
+Author: 
+    Ramazan Akman [cre,ctb] <ramazanakman12345@gmail.com>
+        (<https://www.researchgate.net/profile/Ramazan-Akman>),
+    Coşkun Kuş [aut,ctb] <coskunkus@gmail.com>
+        (<https://www.selcuk.edu.tr/Person/Detail/coskun>),
+    Ihab Abusaif [aut,ctb] <censtat@gmail.com>
+        (<https://www.researchgate.net/profile/Ihab-Abusaif>)
+Maintainer:Ramazan Akman <ramazanakman12345@gmail.com>
 Description: The aim is to develop an R package,which is new.dist package,
     for the probability (density) function, the distribution function, the
     quantile function and the associated random number generation function
@@ -26,17 +26,19 @@ Description: The aim is to develop an R package,which is new.dist package,
 License: GPL-3
 URL: https://github.com/akmn35/new.dist
 BugReports: https://github.com/akmn35/new.dist/issues
-Suggests:
+Imports:
     VGAM,
     expint,
+    pracma
+Suggests:
     knitr,
-    pracma,
     rmarkdown,
     roxygen2,
     stats,
     testthat (>= 3.0.0)
 VignetteBuilder: 
     knitr
+RdMacros: 
 Config/testthat/edition: 3
 Encoding: UTF-8
 LazyData: true

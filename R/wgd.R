@@ -63,8 +63,8 @@ pwgd<-function(x,alpha,lambda,lower.tail=TRUE,log.p=FALSE)
   cdf<-NULL
   for (i in 1:enuzun)
   {
-    if(x[i]>0) cdf[i]<-1-(1-alpha[i]^(lambda[i]+1)-alpha[i]^(lambda[i]*
-                (floor(x[i])+1))*(1-alpha[i]))/(1-alpha[i]^lambda[i])*
+    if(x[i]>0) cdf[i]<-1-((1-alpha[i]^(lambda[i]+1)-alpha[i]^(lambda[i]*
+                (floor(x[i])+1))*(1-alpha[i]))/(1-alpha[i]^lambda[i]))*
         alpha[i]^(floor(x[i])) else cdf[i]<-0
   }
   if(lower.tail==FALSE) cdf<-1-cdf

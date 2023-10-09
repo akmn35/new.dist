@@ -34,7 +34,7 @@
 #' , 82(8), 1191-1206.
 #' @examples
 #' library(new.dist)
-#' dgld(1,a=2,alpha=3,beta=4)
+#' dgld(1, a=2, alpha=3, beta=4)
 dgld<-function(x,a,alpha,beta=1,log=FALSE)
 {
   if(any(a<=0)) {stop("a must be > 0")}

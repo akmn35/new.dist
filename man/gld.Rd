@@ -54,7 +54,7 @@ where
 }
 \examples{
 library(new.dist)
-dgld(1,a=2,alpha=3,beta=4)
+dgld(1, a=2, alpha=3, beta=4)
 pgld(1,a=2,alpha=3,beta=4)
 qgld(.8,a=2,alpha=3,beta=4)
 rgld(10,a=2,alpha=3,beta=4)

@@ -84,11 +84,11 @@ qtprd<-function(p,lambda=1,mu,lower.tail=TRUE)
   qfonk<-NULL
   for(i in 1:enuzun)
   {
-    qfonk[i]<- -(-lambda[i]*mu[i]+(-lambda[i]*log(1-p[i]))^(1/2))/lambda[i]
+    qfonk[i]<- (lambda[i]*mu[i]+(-lambda[i]*log(1-p[i]))^(1/2))/lambda[i]
   }
   if(lower.tail==FALSE)
   {
-    qfonk[i]<- -(-lambda[i]*mu[i]+(-lambda[i]*log(1-(1-p[i])))^(1/2))/lambda[i]
+    qfonk[i]<- (lambda[i]*mu[i]+(-lambda[i]*log(1-(1-p[i])))^(1/2))/lambda[i]
   }
   return(qfonk)
 }

@@ -9,9 +9,9 @@
 \title{The unit inverse Gaussian distribution A new alternative to two parameter
 distributions on the unit interval}
 \usage{
-duigd(x, mu, lambda = 1, log = "FALSE")
+duigd(x, mu, lambda = 1, log = FALSE)
 
-puigd(x, mu, lambda = 1, lower.tail = "TRUE", log.p = "FALSE")
+puigd(x, mu, lambda = 1, lower.tail = TRUE, log.p = FALSE)
 
 quigd(p, mu, lambda = 1, lower.tail = c("TRUE"))
 

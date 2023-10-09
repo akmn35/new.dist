@@ -10,14 +10,14 @@
 \usage{
 dbwd(x, alpha, beta = 1, sigma, log = FALSE)
 
-pbwd(x, alpha, beta = 1, sigma, lower.tail = TRUE, log.p = FALSE)
+pbwd(q, alpha, beta = 1, sigma, lower.tail = TRUE, log.p = FALSE)
 
 qbwd(p, alpha, beta = 1, sigma, lower.tail = TRUE)
 
 rbwd(n, alpha, beta = 1, sigma)
 }
 \arguments{
-\item{x}{vector of quantiles.}
+\item{x, q}{vector of quantiles.}
 
 \item{alpha}{a shape parameter.}
 
@@ -62,7 +62,7 @@ and
 }
 \examples{
 library(new.dist)
-dbwd(1,alpha=2,beta=3,sigma=4,log=TRUE)
+dbwd(1,alpha=2,beta=3,sigma=4)
 pbwd(1,alpha=2,beta=3,sigma=4)
 qbwd(.7,alpha=2,beta=3,sigma=4)
 rbwd(10,alpha=2,beta=3,sigma=4)

@@ -40,13 +40,13 @@ dsod<-function(x,alpha,beta,log=FALSE)
     for (i in 1:enuzun)
     {
       suppressWarnings(
-      if(x<=0 || x>=1) {pdf[i]<-0} else
+      if(x[i]<=0 | x[i]>=1) {pdf[i]<-0} else
       {pdf[i]<-(alpha[i]*beta[i]*x[i]^(beta[i]-1))*(1/(1-x[i]^(2*beta[i])))*
         ((1+x[i]^beta[i])/(1-x[i]^beta[i]))^(-alpha[i]/2)})
     }
     if(log==TRUE) pdf<-log(pdf)
     return(pdf)
-  }
+}
 #' On parameter estimation of the standard omega distribution
 #' @export
 #' @rdname sod

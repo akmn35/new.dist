@@ -45,7 +45,6 @@ first and second moment does not exist!"))}
     q<-rep(q,enuzun/length(q)+1)[1:enuzun]
     theta<-rep(theta,enuzun/length(theta)+1)[1:enuzun]
     pdf<-NULL
-    if(log==FALSE){
     for (i in 1:enuzun)suppressWarnings(
     {
       if(x[i]<=0) {pdf[i]<-0} else
@@ -53,19 +52,9 @@ first and second moment does not exist!"))}
         gamma((2*alpha[i]+q[i]+2)/2)*stats::pgamma(theta[i]*x[i]^2,(2*
                                                         alpha[i]+q[i]+2)/2,1)}
     })
-    return(pdf)} else
-    if(log==TRUE)
-    {
-      for (i in 1:enuzun)suppressWarnings(
-        {
-          if(x[i]<=0) {pdf[i]<-0} else
-          {pdf[i]<-log(q[i]*x[i]^(-(q[i]+1))/(gamma(alpha[i]+1)*
-                                                theta[i]^(q[i]/2))*
-            gamma((2*alpha[i]+q[i]+2)/2)*stats::pgamma(theta[i]*x[i]^2,(2*
-                                                        alpha[i]+q[i]+2)/2,1))}
-        })
-      return(pdf)}
-  }
+    if(log==TRUE) pdf<-log(pdf)
+      return(pdf)
+}
 #' Slashed generalized Rayleigh distribution
 #' @export
 #' @rdname sgrd
@@ -78,6 +67,7 @@ psgrd<-function(x,theta,alpha,q,lower.tail=TRUE,log.p=FALSE)
   if(any(q<=2)) {(stop("the function may not work when q<2 since the
 first and second moment does not exist!"))}
     enuzun <- max(length(x),length(theta),length(alpha),length(q))
+    x<-rep(x,enuzun/length(x)+1)[1:enuzun]
     theta<-rep(theta,enuzun/length(theta)+1)[1:enuzun]
     alpha<-rep(alpha, enuzun/length(alpha)+1)[1:enuzun]
     q<-rep(q,enuzun/length(q)+1)[1:enuzun]

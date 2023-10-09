@@ -33,7 +33,7 @@
 #' @examples
 #' library(new.dist)
 #' duigd(1, mu=2, lambda=3)
-duigd<-function(x,mu,lambda=1,log='FALSE')
+duigd<-function(x,mu,lambda=1,log=FALSE)
 {
   if(any(mu<=0)) {stop("mu must be > 0")}
   if(any(lambda<=0)) {stop("lambda must be > 0")}
@@ -57,7 +57,7 @@ duigd<-function(x,mu,lambda=1,log='FALSE')
 #' @rdname uigd
 #' @examples
 #' puigd(1,mu=2,lambda=3)
-puigd<-function(x,mu,lambda=1,lower.tail='TRUE',log.p='FALSE')
+puigd<-function(x,mu,lambda=1,lower.tail=TRUE,log.p=FALSE)
 {
   if(any(mu<=0)) {stop("mu must be > 0")}
   if(any(lambda<=0)) {stop("lambda must be > 0")}
