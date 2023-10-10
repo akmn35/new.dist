@@ -8,7 +8,7 @@ Author:
         (<https://www.selcuk.edu.tr/Person/Detail/coskun>),
     Ihab Abusaif [aut,ctb] <censtat@gmail.com>
         (<https://www.researchgate.net/profile/Ihab-Abusaif>)
-Maintainer:Ramazan Akman <ramazanakman12345@gmail.com>
+Maintainer: Ramazan Akman <ramazanakman12345@gmail.com>
 Description: The aim is to develop an R package,which is new.dist package,
     for the probability (density) function, the distribution function, the
     quantile function and the associated random number generation function
@@ -24,7 +24,7 @@ Description: The aim is to develop an R package,which is new.dist package,
     Two-Parameter Rayleigh Distribution, On the Muth Distribution,
     Uniform-Geometric distribution, discrete Weibull distribution.
 License: GPL-3
-URL: https://github.com/akmn35/new.dist
+URL: https://github.com/akmn35/new.dist, https://akmn35.github.io/new.dist/
 BugReports: https://github.com/akmn35/new.dist/issues
 Imports:
     VGAM,
