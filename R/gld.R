@@ -99,9 +99,9 @@ qgld<-function(p,a,alpha,beta=1,lower.tail=TRUE)
   alpha<-rep(alpha,enuzun/length(alpha)+1)[1:enuzun]
   beta<-rep(beta,enuzun/length(beta)+1)[1:enuzun]
   kok<-NULL
-  quant=NULL
-  for (i in 1:enuzun)
-  {quant[i]=VGAM::qlomax(1-exp(-(stats::qgamma(p[i],a[i],1))),beta[i],alpha[i])}
+  quant<-NULL
+  for (i in 1:enuzun){
+  quant[i]<-VGAM::qlomax(1-exp(-(stats::qgamma(p[i],a[i],1))),beta[i],alpha[i])}
   return(quant)
 }
 #' The gamma-Lomax distribution
