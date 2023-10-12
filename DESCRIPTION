@@ -21,7 +21,7 @@ Description: The aim is to develop an R package,which is new.dist package,
     unit-inverse Gaussian distribution, EP Distribution, Akash
     distribution, Ishita distribution, Maxwell distribution, The standard
     omega distribution, Slashed generalized Rayleigh distribution,
-    Two-Parameter Rayleigh Distribution, On the Muth Distribution,
+    Two-Parameter Rayleigh Distribution, Muth Distribution,
     Uniform-Geometric distribution, discrete Weibull distribution.
 License: GPL-3
 URL: https://github.com/akmn35/new.dist, https://akmn35.github.io/new.dist/
