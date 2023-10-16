@@ -13,7 +13,7 @@ duigd(x, mu, lambda = 1, log = FALSE)
 
 puigd(x, mu, lambda = 1, lower.tail = TRUE, log.p = FALSE)
 
-quigd(p, mu, lambda = 1, lower.tail = c("TRUE"))
+quigd(p, mu, lambda = 1, lower.tail = TRUE)
 
 ruigd(n, mu, lambda = 1)
 }

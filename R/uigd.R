@@ -82,7 +82,7 @@ puigd<-function(x,mu,lambda=1,lower.tail=TRUE,log.p=FALSE)
 #' @rdname uigd
 #' @examples
 #' quigd(.1,mu=2,lambda=3)
-quigd<-function(p,mu,lambda=1,lower.tail=c("TRUE"))
+quigd<-function(p,mu,lambda=1,lower.tail=TRUE)
 {
   if(any(p<0)|any(p>1)) {stop("p must be between >= 0 and <= 1")}
   if(any(mu<=0)) {stop("mu must be > 0")}
@@ -95,8 +95,6 @@ quigd<-function(p,mu,lambda=1,lower.tail=c("TRUE"))
   for (i in 1:enuzun)
   {
     if (lower.tail==TRUE) {
-
-
     Y<-function(x)
     {
       stats::pnorm((lambda[i]/x)^(1/2)*(x/mu[i]-1))+exp(2*lambda[i]/mu[i])*
