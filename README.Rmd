@@ -255,13 +255,13 @@ library(new.dist)
   rdld(5,theta=1)
 ```
 
-```demd``` Density function for Maxwell distribution with scale (theta) paramete.
+```demd``` Density function for Maxwell distribution with scale (theta) parameter.
 ```{r}
 library(new.dist)
 demd(1,theta=2)
 ```
 
-```pemd``` Distribution function for a Maxwell Distribution with scale (theta) paramete.
+```pemd``` Distribution function for a Maxwell Distribution with scale (theta) parameter.
 ```{r}
 library(new.dist)
 pemd(1,theta=2)
@@ -376,25 +376,25 @@ library(new.dist)
   rnld(5,lambda=2,beta=3)
 ```
 
-```dnoPDD``` Density function for a New One Parameter Discrete Distribution with scale (theta) parameters.
+```dnoPDD``` Density function for a New One Parameter Discrete Distribution with scale (theta) parameter.
 ```{r}
 library(new.dist)
 dnoPDD(1,theta=2)
 ```
 
-```pnoPDD``` Distribution function for a New One Parameter Discrete Distribution with scale (theta) parameters.
+```pnoPDD``` Distribution function for a New One Parameter Discrete Distribution with scale (theta) parameter.
 ```{r}
 library(new.dist)
 pnoPDD(1,theta=2)
 ```
 
-```qnoPDD``` Quantile function for a New One Parameter Discrete Distribution with scale (theta) parameters.
+```qnoPDD``` Quantile function for a New One Parameter Discrete Distribution with scale (theta) parameter.
 ```{r}
 library(new.dist)
 dnoPDD(.8,theta=2)
 ```
 
-```rnoPDD``` Random generation for a New One Parameter Discrete Distribution with scale (theta) parameters.
+```rnoPDD``` Random generation for a New One Parameter Discrete Distribution with scale (theta) parameter.
 ```{r}
 library(new.dist)
   rnoPDD(5,theta=2)
