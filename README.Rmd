@@ -38,435 +38,435 @@ devtools::install_github("akmn35/new.dist")
 
 ## Example
 
-```dbwd``` Density function for Bimodal Weibull Distribution with shape(alpha) and scale(beta) parameters.
+```dbwd``` Density function for Bimodal Weibull Distribution with shape (alpha) and scale (beta) parameters.
 ```{r}
 library(new.dist)
 dbwd(1,alpha=2,beta=3,sigma=4)
 ```
 
-```pbwd``` Distribution function for Bimodal Weibull Distribution with shape(alpha) and scale(beta) parameters.
+```pbwd``` Distribution function for Bimodal Weibull Distribution with shape (alpha) and scale (beta) parameters.
 ```{r}
 library(new.dist)
 pbwd(1,alpha=2,beta=3,sigma=4)
 
 ```
 
-```qbwd``` quantile function for Bimodal Weibull Distribution with shape(alpha) and scale(beta) parameters.
+```qbwd``` Quantile function for Bimodal Weibull Distribution with shape (alpha) and scale (beta) parameters.
 ```{r}
 library(new.dist)
 qbwd(.7,alpha=2,beta=3,sigma=4)
 ```
 
-```rbwd``` random generation for a Bimodal Weibull Distribution with shape(alpha) and scale(beta) parameters.
+```rbwd``` Random generation for a Bimodal Weibull Distribution with shape (alpha) and scale (beta) parameters.
 ```{r}
 library(new.dist)
   rbwd(5,alpha=2,beta=3,sigma=4)
 ```
 
-```dsgrd``` Density function for a Slashed generalized Rayleigh distribution with shape(alpha), scale(theta) and kurtosis(q) parameters.
+```dsgrd``` Density function for a Slashed Generalized Rayleigh Distribution with shape (alpha), scale (theta) and kurtosis(q) parameters.
 ```{r}
 library(new.dist)
 dsgrd(2,theta=3,alpha=1,q=4)
 ```
 
-```psgrd``` Distribution function for a Slashed generalized Rayleigh distribution with shape(alpha), scale(theta) and kurtosis(q) parameters.
+```psgrd``` Distribution function for a Slashed Generalized Rayleigh Distribution with shape (alpha), scale (theta) and kurtosis (q) parameters.
 ```{r}
 library(new.dist)
 psgrd(5,theta=3,alpha=1,q=4)
 ```
 
-```qsgrd``` quantile function for a Slashed generalized Rayleigh distribution with shape(alpha), scale(theta) and kurtosis(q) parameters.
+```qsgrd``` Quantile function for a Slashed Generalized Rayleigh Distribution with shape (alpha), scale (theta) and kurtosis (q) parameters.
 ```{r}
 library(new.dist)
 qsgrd(.4,theta=3,alpha=1,q=4)
 ```
 
-```rsgrd``` random generation for a Slashed generalized Rayleigh distribution with shape(alpha), scale(theta) and kurtosis(q) parameters.
+```rsgrd``` Random generation for a Slashed Generalized Rayleigh Distribution with shape (alpha), scale (theta) and kurtosis (q) parameters.
 ```{r}
 library(new.dist)
   rsgrd(5,theta=3,alpha=1,q=4)
 ```
 
-```dsod``` Density function for a the standard omega distribution with alpha and beta parameters.
+```dsod``` Density function for a the Standard Omega Distribution with alpha and beta parameters.
 ```{r}
 library(new.dist)
 dsod(0.4, alpha=1, beta=2)
 ```
 
-```psod``` Distribution function for a the standard omega distribution with alpha and beta parameters.
+```psod``` Distribution function for a the Standard Omega Distribution with alpha and beta parameters.
 ```{r}
 library(new.dist)
 psod(0.4, alpha=1, beta=2)
 ```
 
-```qsod``` quantile function for a the standard omega distribution with alpha and beta parameters.
+```qsod``` Quantile function for a the Standard Omega Distribution with alpha and beta parameters.
 ```{r}
 library(new.dist)
 qsod(.8, alpha=1, beta=2)
 ```
 
-```rsod``` random generation for a the standard omega distribution with alpha and beta parameters.
+```rsod``` Random generation for a the Standard Omega Distribution with alpha and beta parameters.
 ```{r}
 library(new.dist)
   rsod(5, alpha=1, beta=2)
 ```
 
-```dugd``` Density function for the Uniform-Geometric distribution with theta parameters.
+```dugd``` Density function for the Uniform-Geometric Distribution with theta parameter.
 ```{r}
 library(new.dist)
 dugd(1, theta=0.5)
 ```
 
-```pugd``` Distribution function for the Uniform-Geometric distribution with theta parameters.
+```pugd``` Distribution function for the Uniform-Geometric Distribution with theta parameter.
 ```{r}
 library(new.dist)
 pugd(1,theta=.5)
 ```
 
-```qugd``` quantile function for the Uniform-Geometric distribution with theta parameters.
+```qugd``` Quantile function for the Uniform-Geometric Distribution with theta parameter.
 ```{r}
 library(new.dist)
 qugd(0.6,theta=.1)
 ```
 
-```rugd``` random generation for the Uniform-Geometric distribution with theta parameters.
+```rugd``` Random generation for the Uniform-Geometric Distribution with theta parameter.
 ```{r}
 library(new.dist)
   rugd(5,theta=.1)
 ```
 
-```dtpmd``` Density function for the Power Muth distribution with shape(beta) and scale(alpha) parameters.
+```dtpmd``` Density function for the Power Muth Distribution with shape (beta) and scale (alpha) parameters.
 ```{r}
 library(new.dist)
 dtpmd(1, beta=2, alpha=3)
 ```
 
-```ptpmd``` Distribution function for the Power Muth distribution shape(beta) and scale(alpha) parameters.
+```ptpmd``` Distribution function for the Power Muth Distribution shape (beta) and scale (alpha) parameters.
 ```{r}
 library(new.dist)
 ptpmd(1,beta=2,alpha=3)
 ```
 
-```qtpmd``` quantile function for the Power Muth distribution with shape(beta) and scale(alpha) parameters.
+```qtpmd``` Quantile function for the Power Muth Distribution with shape (beta) and scale (alpha) parameters.
 ```{r}
 library(new.dist)
 qtpmd(.5,beta=2,alpha=3)
 ```
 
-```rtpmd``` random generation for the Power Muth distribution with shape(beta) and scale(alpha) parameters.
+```rtpmd``` Random generation for the Power Muth Distribution with shape (beta) and scale (alpha) parameters.
 ```{r}
 library(new.dist)
   rtpmd(5,beta=2,alpha=3)
 ```
 
-```dtprd``` Density function for the Two-Parameter Rayleigh distribution with location(mu) and scale(lambda) parameters.
+```dtprd``` Density function for the Two-Parameter Rayleigh Distribution with location (mu) and scale (lambda) parameters.
 ```{r}
 library(new.dist)
 dtprd(5, lambda=4, mu=4)
 ```
 
-```ptprd``` Distribution function for Two-Parameter Rayleigh distribution with location(mu) and scale(lambda) parameters.
+```ptprd``` Distribution function for Two-Parameter Rayleigh Distribution with location (mu) and scale (lambda) parameters.
 ```{r}
 library(new.dist)
 ptprd(2,lambda=2,mu=1)
 ```
 
-```qtprd``` quantile function for Two-Parameter Rayleigh distribution with location(mu) and scale(lambda) parameters.
+```qtprd``` Quantile function for Two-Parameter Rayleigh Distribution with location (mu) and scale (lambda) parameters.
 ```{r}
 library(new.dist)
 qtprd(.5,lambda=2,mu=1)
 ```
 
-```rtprd``` random generation for Two-Parameter Rayleigh distribution with location(mu) and scale(lambda) parameters.
+```rtprd``` Random generation for Two-Parameter Rayleigh Distribution with location (mu) and scale (lambda) parameters.
 ```{r}
 library(new.dist)
   rtprd(5,lambda=2,mu=1)
 ```
 
-```duigd``` Density function for the unit inverse Gaussian distribution with mean(mu) and scale(lambda) parameters.
+```duigd``` Density function for the Unit Inverse Gaussian Distribution with mean (mu) and scale (lambda) parameters.
 ```{r}
 library(new.dist)
 duigd(1, mu=2, lambda=3)
 ```
 
-```puigd``` Distribution function for the unit inverse Gaussian distribution with mean(mu) and scale(lambda) parameters.
+```puigd``` Distribution function for the Unit Inverse Gaussian Distribution with mean (mu) and scale (lambda) parameters.
 ```{r}
 library(new.dist)
 puigd(1,mu=2,lambda=3)
 ```
 
-```quigd``` quantile function for the unit inverse Gaussian distribution with mean(mu) and scale(lambda) parameters.
+```quigd``` Quantile function for the Unit Inverse Gaussian distribution with mean (mu) and scale (lambda) parameters.
 ```{r}
 library(new.dist)
 quigd(.1,mu=2,lambda=3)
 ```
 
-```ruigd``` random generation for the unit inverse Gaussian distribution with mean(mu) and scale(lambda) parameters.
+```ruigd``` Random generation for the Unit Inverse Gaussian Distribution with mean (mu) and scale (lambda) parameters.
 ```{r}
 library(new.dist)
   ruigd(5,mu=2,lambda=3)
 ```
 
-```dwgd``` Density function for the Weighted Geometric distribution with alpha and lambda parameters.
+```dwgd``` Density function for the Weighted Geometric Distribution with alpha and lambda parameters.
 ```{r}
 library(new.dist)
 dwgd(1,alpha=.2,lambda=3)
 ```
 
-```pwgd``` Distribution function for the Weighted Geometric distribution with alpha and lambda parameters.
+```pwgd``` Distribution function for the Weighted Geometric Distribution with alpha and lambda parameters.
 ```{r}
 library(new.dist)
 dwgd(1,alpha=.2,lambda=3)
 ```
 
-```qwgd``` quantile function for the Weighted Geometric distribution with alpha and lambda parameters.
+```qwgd``` Quantile function for the Weighted Geometric Distribution with alpha and lambda parameters.
 ```{r}
 library(new.dist)
 qwgd(.98,alpha=.2,lambda=3)
 ```
 
-```rwgd``` random generation for the Weighted Geometric distribution with alpha and lambda parameters.
+```rwgd``` Random generation for the Weighted Geometric Distribution with alpha and lambda parameters.
 ```{r}
 library(new.dist)
   rwgd(5,alpha=.2,lambda=3)
 ```
 
-```ddld``` Density function for the discrete Lindley distribution with theta parameters.
+```ddld``` Density function for the Discrete Lindley Distribution with theta parameter.
 ```{r}
 library(new.dist)
 ddld(1,theta=2)
 ```
 
-```pdld``` Distribution function for the discrete Lindley distribution with theta parameters.
+```pdld``` Distribution function for the Discrete Lindley Distribution with theta parameter.
 ```{r}
 library(new.dist)
 ddld(1,theta=2)
 ```
 
-```qdld``` quantile function for the discrete Lindley distribution with theta parameters.
+```qdld``` Quantile function for the Discrete Lindley Distribution with theta parameter.
 ```{r}
 library(new.dist)
 qdld(.993,theta=2)
 ```
 
-```rdld``` random generation for the discrete Lindley distribution with theta parameters.
+```rdld``` Random generation for the Discrete Lindley Distribution with theta parameter.
 ```{r}
 library(new.dist)
   rdld(5,theta=1)
 ```
 
-```demd``` Density function for Maxwell distribution with scale(theta) parameter.
+```demd``` Density function for Maxwell distribution with scale (theta) paramete.
 ```{r}
 library(new.dist)
 demd(1,theta=2)
 ```
 
-```pemd``` Distribution function for a Maxwell distribution with scale(theta) parameter.
+```pemd``` Distribution function for a Maxwell Distribution with scale (theta) paramete.
 ```{r}
 library(new.dist)
 pemd(1,theta=2)
 ```
 
-```qemd``` quantile function for a Maxwell distribution with scale(theta) parameter.
+```qemd``` Quantile function for a Maxwell Distribution with scale (theta) parameter.
 ```{r}
 library(new.dist)
 qemd(.4,theta=5)
 ```
 
-```remd``` random generation for a Maxwell distribution with scale(theta) parameter.
+```remd``` Random generation for a Maxwell Distribution with scale (theta) parameter.
 ```{r}
 library(new.dist)
   remd(5,theta=1)
 ```
 
-```depkd``` Density function for kumaraswamy distribution with shape (alpha, lambda) parameters.
+```depkd``` Density function for Kumaraswamy Distribution with shape (alpha, lambda) parameters.
 ```{r}
 library(new.dist)
 depkd(0.1,lambda=2,alpha=3)
 ```
 
-```pepkd``` Distribution function for kumaraswamy distribution with shape (alpha, lambda) parameters.
+```pepkd``` Distribution function for Kumaraswamy distribution with shape (alpha, lambda) parameters.
 ```{r}
 library(new.dist)
 depkd(0.1,lambda=2,alpha=3)
 ```
 
-```qepkd``` quantile function for kumaraswamy distribution with shape (alpha, lambda) parameters.
+```qepkd``` Quantile function for Kumaraswamy distribution with shape (alpha, lambda) parameters.
 ```{r}
 library(new.dist)
 pepkd(0.5,lambda=2,alpha=3)
 ```
 
-```repkd``` random generation for kumaraswamy distribution with shape (alpha, lambda) parameters.
+```repkd``` Random generation for Kumaraswamy distribution with shape (alpha, lambda) parameters.
 ```{r}
 library(new.dist)
   repkd(5,lambda=2,alpha=3)
 ```
 
-```dgld``` Density function for the gamma-Lomax Distribution with shape(a, alpha) and scale(beta) parameters.
+```dgld``` Density function for the Gamma-Lomax Distribution with shape (a, alpha) and scale (beta) parameters.
 ```{r}
 library(new.dist)
 dgld(1,a=2,alpha=3,beta=4)
 ```
 
-```pgld``` distribution function for the gamma-Lomax Distribution with shape(a, alpha) and scale(beta) parameters.
+```pgld``` Distribution function for the Gamma-Lomax Distribution with shape (a, alpha) and scale (beta) parameters.
 ```{r}
 library(new.dist)
 dgld(1,a=2,alpha=3,beta=4)
 ```
 
 
-```qgld``` quantile function for the gamma-Lomax Distribution with shape(a, alpha) and scale(beta) parameters.
+```qgld``` Quantile function for the Gamma-Lomax Distribution with shape (a, alpha) and scale (beta) parameters.
 ```{r}
 library(new.dist)
 qgld(.8,a=2,alpha=3,beta=4)
 ```
 
-```rgld``` random generation for the gamma-Lomax Distribution with shape(a, alpha) and scale(beta) parameters.
+```rgld``` Random generation for the Gamma-Lomax Distribution with shape (a, alpha) and scale (beta) parameters.
 ```{r}
 library(new.dist)
   rgld(5,a=2,alpha=3,beta=4)
 ```
 
-```dndd``` Density function for a new discrete distribution with theta parameters.
+```dndd``` Density function for a New Discrete Distribution with theta parameter.
 ```{r}
 library(new.dist)
 dndd(2,theta=2)
 ```
 
-```pndd``` Distribution function for a new discrete distribution with theta parameters.
+```pndd``` Distribution function for a New Discrete Distribution with theta parameter.
 ```{r}
 library(new.dist)
 pndd(1,theta=2)
 ```
 
-```qndd``` quantile function for a new discrete distribution with theta parameters.
+```qndd``` Quantile function for a New Discrete Distribution with theta parameter.
 ```{r}
 library(new.dist)
 qndd(.5,theta=2)
 ```
 
-```rndd``` random generation for a new discrete distribution with theta parameters.
+```rndd``` Random generation for a New Discrete Distribution with theta parameter.
 ```{r}
 library(new.dist)
   rndd(5,theta=1)
 ```
 
-```dnld``` Density function for the New Life distribution with lambda and beta parameters.
+```dnld``` Density function for the New Life Distribution with lambda and beta parameters.
 ```{r}
 library(new.dist)
 dnld(1, lambda=2, beta=3)
 ```
 
-```pnld``` Distribution function for the New Life distribution with lambda and beta parameters.
+```pnld``` Distribution function for the New Life Distribution with lambda and beta parameters.
 ```{r}
 library(new.dist)
 pnld(1, lambda=2, beta=3)
 ```
 
-```qnld``` quantile function for the New Life distribution with lambda and beta parameters.
+```qnld``` Quantile function for the New Life Distribution with lambda and beta parameters.
 ```{r}
 library(new.dist)
 qnld(.8,lambda=2,beta=3)
 ```
 
-```rnld``` random generation for the New Life distribution with lambda and beta parameters.
+```rnld``` Random generation for the New Life Distribution with lambda and beta parameters.
 ```{r}
 library(new.dist)
   rnld(5,lambda=2,beta=3)
 ```
 
-```dnoPDD``` Density function for a new one parameter discrete distribution with scale(theta) parameters.
+```dnoPDD``` Density function for a New One Parameter Discrete Distribution with scale (theta) parameters.
 ```{r}
 library(new.dist)
 dnoPDD(1,theta=2)
 ```
 
-```pnoPDD``` Distribution function for a new one parameter discrete distribution with scale(theta) parameters.
+```pnoPDD``` Distribution function for a New One Parameter Discrete Distribution with scale (theta) parameters.
 ```{r}
 library(new.dist)
 pnoPDD(1,theta=2)
 ```
 
-```qnoPDD``` quantile function for a new one parameter discrete distribution with scale(theta) parameters.
+```qnoPDD``` Quantile function for a New One Parameter Discrete Distribution with scale (theta) parameters.
 ```{r}
 library(new.dist)
 dnoPDD(.8,theta=2)
 ```
 
-```rnoPDD``` random generation for a new one parameter discrete distribution with scale(theta) parameters.
+```rnoPDD``` Random generation for a New One Parameter Discrete Distribution with scale (theta) parameters.
 ```{r}
 library(new.dist)
   rnoPDD(5,theta=2)
 ```
 
-```domd``` Density function for the muth distribution with alpha parameters.
+```domd``` Density function for the Muth Distribution with alpha parameter.
 ```{r}
 library(new.dist)
 domd(1,alpha=.2)
 ```
 
-```pomd``` Distribution function for the muth distribution with alpha parameters.
+```pomd``` Distribution function for the Muth Distribution with alpha parameter.
 ```{r}
 library(new.dist)
 pomd(1,alpha=.2)
 ```
 
-```qomd``` quantile function for the muth distribution with alpha parameters.
+```qomd``` Quantile function for the Muth Distribution with alpha parameter.
 ```{r}
 library(new.dist)
 qomd(.8,alpha=.2)
 ```
 
-```romd``` random generation for the muth distribution with alpha parameters.
+```romd``` Random generation for the Muth Distribution with alpha parameter.
 ```{r}
 library(new.dist)
   domd(5,alpha=.2)
 ```
 
-```dpldd``` Density function for a Power Log Dagum distribution with alpha, beta and theta parameters.
+```dpldd``` Density function for a Power Log Dagum Distribution with alpha, beta and theta parameters.
 ```{r}
 library(new.dist)
 dpldd(1, alpha=2, beta=3, theta=4)
 ```
 
-```ppldd``` Distribution function for a Power Log Dagum distribution with alpha, beta and theta parameters.
+```ppldd``` Distribution function for a Power Log Dagum Distribution with alpha, beta and theta parameters.
 ```{r}
 library(new.dist)
 ppldd(1, alpha=2, beta=3, theta=4)
 ```
 
-```qpldd``` quantile function for a Power Log Dagum distribution with alpha, beta and theta parameters.
+```qpldd``` Quantile function for a Power Log Dagum Distribution with alpha, beta and theta parameters.
 ```{r}
 library(new.dist)
 qpldd(.8, alpha=2, beta=3, theta=4)
 ```
 
-```rpldd``` random generation for a Power Log Dagum distribution with alpha, beta and theta parameters.
+```rpldd``` Random generation for a Power Log Dagum Distribution with alpha, beta and theta parameters.
 ```{r}
 library(new.dist)
   rpldd(5, alpha=2, beta=3, theta=4)
 ```
 
-```drld``` Density function for lindley distribution with theta parameters.
+```drld``` Density function for Lindley Distribution with theta parameter.
 ```{r}
 library(new.dist)
 drld(1,theta=2)
 ```
 
-```prld``` Distribution function for lindley distribution with theta parameters.
+```prld``` Distribution function for Lindley Distribution with theta parameter.
 ```{r}
 library(new.dist)
 prld(1,theta=2)
 ```
 
-```qrld``` quantile function for lindley distribution with theta parameters.
+```qrld``` Quantile function for Lindley Distribution with theta parameter.
 ```{r}
 library(new.dist)
 qrld(.5,theta=2)
 ```
 
-```rrld``` random generation for lindley distribution with theta parameters.
+```rrld``` Random generation for Lindley Distribution with theta parameter.
 ```{r}
 library(new.dist)
   rrld(5,theta=1)
@@ -477,20 +477,23 @@ Department of Statistics, Faculty of Science, Selcuk University, 42250, Konya, T
 Email:coskun@selcuk.edu.tr
 
 ## References 
-Vila, R. ve Niyazi Çankaya, M., 2022,
-*A bimodal Weibull distribution: properties and inference*,Journal of Applied Statistics, 49 (12), 3044-3062.
+Akdoğan, Y., Kuş, C., Asgharzadeh, A., Kınacı, İ., & Sharafi, F. (2016).
+*Uniform-geometric distribution*. Journal of Statistical Computation and Simulation, 86(9), 1754-1770.
 
-Iriarte, Y. A., Vilca, F., Varela, H. ve Gómez, H. W., 2017,
-*Slashed generalized Rayleigh distribution*, Communications in Statistics-Theory and Methods, 46 (10), 4686-4699.
+Akgül, F. G., Acıtaş, Ş. ve Şenoğlu, B., 2018,
+*Inferences on stress–strength reliability based on ranked set sampling data in case of Lindley distribution*, Journal of statistical computation and simulation, 88 (15), 3018-3032.
+
+Bakouch, H. S., Khan, M. N., Hussain, T. ve Chesneau, C., 2019,
+*A power log-Dagum distribution: estimation and applications*, Journal of Applied Statistics, 46 (5), 874-892.
+
+Bakouch, H. S., Jazi, M. A. ve Nadarajah, S., 2014,
+*A new discrete distribution, Statistics*, 48 (1), 200-240.
 
 Birbiçer, İ. ve Genç, A. İ., 2022,
 *On parameter estimation of the standard omega distribution*. Journal of Applied Statistics, 1-17.
 
-Akdoğan, Y., Kuş, C., Asgharzadeh, A., Kınacı, İ., & Sharafi, F. (2016).
-*Uniform-geometric distribution*. Journal of Statistical Computation and Simulation, 86(9), 1754-1770.
-
-Jodra, P., Gomez, H. W., Jimenez-Gamero, M. D., & Alba-Fernandez, M. V. (2017).
-*The power Muth distribution* . Mathematical Modelling and Analysis, 22(2), 186-201.
+Cordeiro, G. M., Ortega, E. M. ve Popović, B. V., 2015,
+*The gamma-Lomax distribution*, Journal of statistical computation and simulation, 85 (2), 305-319.
 
 Dey, S., Dey, T. ve Kundu, D., 2014,
 *Two-parameter Rayleigh distribution: different methods of estimation*, American Journal of Mathematical and Management Sciences, 33 (1), 55-74.
@@ -498,37 +501,34 @@ Dey, S., Dey, T. ve Kundu, D., 2014,
 Ghitany, M., Mazucheli, J., Menezes, A. ve Alqallaf, F., 2019,
 *The unit-inverse Gaussian distribution: A new alternative to two-parameter distributions on the unit interval*, Communications in Statistics-Theory and Methods, 48 (14), 3423-3438.
 
-Najarzadegan, H., Alamatsaz, M. H., Kazemi, I. ve Kundu, D., 2020,
-*Weighted bivariate geometric distribution: Simulation and estimation*, Communications in Statistics-Simulation and Computation, 49 (9), 2419-2443.
-
 Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
 *The discrete Lindley distribution: properties and applications*.Journal of statistical computation and simulation, 81 (11), 1405-1416.
 
-Krishna, H., Vivekanand ve Kumar, K., 2015,
-*Estimation in Maxwell distribution with randomly censored data*, Journal of statistical computation and simulation, 85 (17), 3560-3578.
+Iriarte, Y. A., Vilca, F., Varela, H. ve Gómez, H. W., 2017,
+*Slashed generalized Rayleigh distribution*, Communications in Statistics-Theory and Methods, 46 (10), 4686-4699.
 
-Kohansal, A. ve Bakouch, H. S., 2021,
-*Estimation procedures for Kumaraswamy distribution parameters under adaptive type-II hybrid progressive censoring*, Communications in Statistics-Simulation and Computation, 50 (12), 4059-4078.
-
-Cordeiro, G. M., Ortega, E. M. ve Popović, B. V., 2015,
-*The gamma-Lomax distribution*, Journal of statistical computation and simulation, 85 (2), 305-319.
-
-Bakouch, H. S., Jazi, M. A. ve Nadarajah, S., 2014,
-*A new discrete distribution, Statistics*, 48 (1), 200-240.
-
-Kuş, C., 2007,
-*A new lifetime distribution*, Computational Statistics & Data Analysis, 51 (9), 4497-4509.
-
-Shukla, K. K., Shanker, R. ve Tiwari, M. K., 2022,
-*A new one parameter discrete distribution and its applications*, Journal of Statistics and Management Systems, 25 (1), 269-283.
+Jodra, P., Gomez, H. W., Jimenez-Gamero, M. D., & Alba-Fernandez, M. V. (2017).
+*The power Muth distribution* . Mathematical Modelling and Analysis, 22(2), 186-201.
 
 Jodrá, P., Jiménez-Gamero, M. D. ve Alba-Fernández, M. V., 2015,
 *On the Muth distribution, Mathematical Modelling and Analysis*, 20 (3), 291-310.
 
-Bakouch, H. S., Khan, M. N., Hussain, T. ve Chesneau, C., 2019,
-*A power log-Dagum distribution: estimation and applications*, Journal of Applied Statistics, 46 (5), 874-892.
+Kohansal, A. ve Bakouch, H. S., 2021,
+*Estimation procedures for Kumaraswamy distribution parameters under adaptive type-II hybrid progressive censoring*, Communications in Statistics-Simulation and Computation, 50 (12), 4059-4078.
 
-Akgül, F. G., Acıtaş, Ş. ve Şenoğlu, B., 2018,
-*Inferences on stress–strength reliability based on ranked set sampling data in case of Lindley distribution*, Journal of statistical computation and simulation, 88 (15), 3018-3032.
+Krishna, H., Vivekanand ve Kumar, K., 2015,
+*Estimation in Maxwell distribution with randomly censored data*, Journal of statistical computation and simulation, 85 (17), 3560-3578.
+
+Kuş, C., 2007,
+*A new lifetime distribution*, Computational Statistics & Data Analysis, 51 (9), 4497-4509.
+
+Najarzadegan, H., Alamatsaz, M. H., Kazemi, I. ve Kundu, D., 2020,
+*Weighted bivariate geometric distribution: Simulation and estimation*, Communications in Statistics-Simulation and Computation, 49 (9), 2419-2443.
 
 Ristić, M. M., & Balakrishnan, N. (2012), *The gamma-exponentiated exponential distribution. Journal of statistical computation and simulation*, 82(8), 1191-1206.
+
+Shukla, K. K., Shanker, R. ve Tiwari, M. K., 2022,
+*A new one parameter discrete distribution and its applications*, Journal of Statistics and Management Systems, 25 (1), 269-283.
+
+Vila, R. ve Niyazi Çankaya, M., 2022,
+*A bimodal Weibull distribution: properties and inference*,Journal of Applied Statistics, 49 (12), 3044-3062.
