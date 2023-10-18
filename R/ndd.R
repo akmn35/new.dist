@@ -54,7 +54,7 @@ dndd<-function(x,theta,log=FALSE)
 #' pndd(1,theta=2)
 pndd<-function(x,theta,lower.tail=TRUE,log.p=FALSE)
 {
-  x<-floor(x)
+
   if(any(theta<=0)) {stop("theta must be > 0")}
   enuzun <- max(length(x),length(theta))
   x<-rep(x,enuzun/length(x)+1)[1:enuzun]
@@ -63,8 +63,10 @@ pndd<-function(x,theta,lower.tail=TRUE,log.p=FALSE)
   lambda<-exp(-theta)
   for (i in 1:enuzun)
   {
-    if(x[i]>=0) cdf[i]<-1-((1+theta[i]+theta[i]*x[i])/(1+theta[i]))*
-        lambda[i]^x[i] else cdf[i]<-0
+    x[i]<-floor(x[i])
+    x[i]<-x[i]+1
+    if(x[i]>=0) cdf[i]<-1-((1+theta[i]+theta[i]*(x[i]))/(1+theta[i]))*
+        lambda[i]^(x[i]) else cdf[i]<-0
   }
   if(lower.tail==FALSE) cdf<-1-cdf
   if(log.p==TRUE) cdf<-log(cdf)
