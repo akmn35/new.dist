@@ -9,7 +9,7 @@ Author:
     Ihab Abusaif [aut,ctb] <censtat@gmail.com>
         (<https://www.researchgate.net/profile/Ihab-Abusaif>)
 Maintainer: Ramazan Akman <ramazanakman12345@gmail.com>
-Description: The aim is to develop an R package,which is new.dist package,
+Description: The aim is to develop an R package, which is new.dist package,
     for the probability (density) function, the distribution function, the
     quantile function and the associated random number generation function
     for discrete and continuous distributions, which have recently been
