@@ -62,7 +62,7 @@ Estimation in Maxwell distribution with parameter <code>scale</code>.</p>
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">demd</span><span class="op">(</span><span class="va">x</span>, theta <span class="op">=</span> <span class="fl">1</span>, log <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">pemd</span><span class="op">(</span><span class="va">x</span>, theta <span class="op">=</span> <span class="fl">1</span>, lower.tail <span class="op">=</span> <span class="cn">TRUE</span>, log.p <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="fu">pemd</span><span class="op">(</span><span class="va">q</span>, theta <span class="op">=</span> <span class="fl">1</span>, lower.tail <span class="op">=</span> <span class="cn">TRUE</span>, log.p <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">qemd</span><span class="op">(</span><span class="va">p</span>, theta <span class="op">=</span> <span class="fl">1</span>, lower.tail <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
@@ -71,7 +71,7 @@ Estimation in Maxwell distribution with parameter <code>scale</code>.</p>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
-    <dl><dt>x</dt>
+    <dl><dt>x, q</dt>
 <dd><p>vector of quantiles.</p></dd>
 
 
@@ -131,8 +131,8 @@ statistical computation and simulation, 85 (17), 3560-3578.</p>
 <span class="r-in"><span><span class="fu">qemd</span><span class="op">(</span><span class="fl">.4</span>,theta<span class="op">=</span><span class="fl">5</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 2.161694</span>
 <span class="r-in"><span><span class="fu">remd</span><span class="op">(</span><span class="fl">10</span>,theta<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 1.5086220 1.1104150 1.0355305 0.7853669 1.4062241 1.3309507 1.4497945</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [8] 1.5247166 0.3648847 0.5334388</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 1.0220216 0.8292642 1.3185642 0.9692507 0.7987611 1.0963625 2.3195595</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [8] 1.9793037 0.8834412 0.9561309</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

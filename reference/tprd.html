@@ -65,7 +65,7 @@ and <code>scale</code>.</p>
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">dtprd</span><span class="op">(</span><span class="va">x</span>, lambda <span class="op">=</span> <span class="fl">1</span>, <span class="va">mu</span>, log <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">ptprd</span><span class="op">(</span><span class="va">x</span>, lambda <span class="op">=</span> <span class="fl">1</span>, <span class="va">mu</span>, lower.tail <span class="op">=</span> <span class="cn">TRUE</span>, log.p <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="fu">ptprd</span><span class="op">(</span><span class="va">q</span>, lambda <span class="op">=</span> <span class="fl">1</span>, <span class="va">mu</span>, lower.tail <span class="op">=</span> <span class="cn">TRUE</span>, log.p <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">qtprd</span><span class="op">(</span><span class="va">p</span>, lambda <span class="op">=</span> <span class="fl">1</span>, <span class="va">mu</span>, lower.tail <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
@@ -74,7 +74,7 @@ and <code>scale</code>.</p>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
-    <dl><dt>x</dt>
+    <dl><dt>x, q</dt>
 <dd><p>vector of quantiles.</p></dd>
 
 
@@ -138,8 +138,8 @@ American Journal of Mathematical and Management Sciences, 33 (1), 55-74.</p>
 <span class="r-in"><span><span class="fu">qtprd</span><span class="op">(</span><span class="fl">.5</span>,lambda<span class="op">=</span><span class="fl">2</span>,mu<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1.588705</span>
 <span class="r-in"><span><span class="fu">rtprd</span><span class="op">(</span><span class="fl">10</span>,lambda<span class="op">=</span><span class="fl">2</span>,mu<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 1.843477 1.218846 1.409740 1.692762 1.966338 2.854903 1.331894 2.258021</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] 1.633144 1.661188</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 1.301680 2.133895 1.370152 1.508696 1.295156 1.935310 1.518813 1.774556</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] 1.576772 1.351421</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

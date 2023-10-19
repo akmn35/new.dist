@@ -62,7 +62,7 @@ on the muth distribution distribution parameter.</p>
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">domd</span><span class="op">(</span><span class="va">x</span>, <span class="va">alpha</span>, log <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">pomd</span><span class="op">(</span><span class="va">x</span>, <span class="va">alpha</span>, lower.tail <span class="op">=</span> <span class="cn">TRUE</span>, log.p <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="fu">pomd</span><span class="op">(</span><span class="va">q</span>, <span class="va">alpha</span>, lower.tail <span class="op">=</span> <span class="cn">TRUE</span>, log.p <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">qomd</span><span class="op">(</span><span class="va">p</span>, <span class="va">alpha</span>, lower.tail <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
@@ -71,7 +71,7 @@ on the muth distribution distribution parameter.</p>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
-    <dl><dt>x</dt>
+    <dl><dt>x, q</dt>
 <dd><p>vector of quantiles.</p></dd>
 
 
@@ -132,8 +132,8 @@ $$x&gt;0,~\alpha \in \left( 0,1\right]. $$</p>
 <span class="r-in"><span><span class="fu">qomd</span><span class="op">(</span><span class="fl">.8</span>,alpha<span class="op">=</span><span class="fl">.1</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1.631923</span>
 <span class="r-in"><span><span class="fu">romd</span><span class="op">(</span><span class="fl">10</span>,alpha<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 0.08222001 0.65368030 1.19824861 1.15993016 0.43916407 1.31095213</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] 0.73807985 0.20618463 0.74543847 0.93984272</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 1.7159728 1.1558795 0.9088401 0.4840796 0.5047585 0.9300307 0.8486889</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [8] 1.1055544 0.7564318 0.5509107</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
