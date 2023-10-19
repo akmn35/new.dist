@@ -1,7 +1,7 @@
 #' A new one parameter discrete distribution and its applications
 #' @export
 #' @name noPDD
-#' @param x vector of quantiles.
+#' @param x,q vector of quantiles.
 #' @param theta a scale parameter.
 #' @param p vector of probabilities.
 #' @param n number of observations. If \code{length(n) > 1}, the length is taken
@@ -49,18 +49,18 @@ dnoPDD<-function(x,theta=1,log=FALSE)
 #' @rdname noPDD
 #' @examples
 #' pnoPDD(1,theta=2)
-pnoPDD<-function(x,theta=1,lower.tail=TRUE,log.p=FALSE)
+pnoPDD<-function(q,theta=1,lower.tail=TRUE,log.p=FALSE)
 {
   if(any(theta<=0)) {stop("theta must be > 0")}
-  enuzun<-max(length(x),length(theta))
-  x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+  enuzun<-max(length(q),length(theta))
+  q<-rep(q,enuzun/length(q)+1)[1:enuzun]
   theta<-rep(theta,enuzun/length(theta)+1)[1:enuzun]
   cdf<-NULL
   for (i in 1:enuzun)
   {
-    if(x[i]>0) cdf[i]<-1-(1+((theta[i]*x[i]*(theta[i]^4*x[i]^4+5*theta[i]^3*
-          x[i]^3+20*theta[i]^2*x[i]^2+60*theta[i]*x[i]+120)/(theta[i]^6+120))))*
-        exp(-theta[i]*x[i]) else cdf[i]<-0
+    if(q[i]>0) cdf[i]<-1-(1+((theta[i]*q[i]*(theta[i]^4*q[i]^4+5*theta[i]^3*
+          q[i]^3+20*theta[i]^2*q[i]^2+60*theta[i]*q[i]+120)/(theta[i]^6+120))))*
+        exp(-theta[i]*q[i]) else cdf[i]<-0
   }
   if(lower.tail==FALSE) cdf<-1-cdf
   if(log.p==TRUE) cdf<-log(cdf)

@@ -10,14 +10,14 @@
 \usage{
 dwgd(x, alpha, lambda, log = FALSE)
 
-pwgd(x, alpha, lambda, lower.tail = TRUE, log.p = FALSE)
+pwgd(q, alpha, lambda, lower.tail = TRUE, log.p = FALSE)
 
 qwgd(p, alpha, lambda, lower.tail = TRUE)
 
 rwgd(n, alpha, lambda)
 }
 \arguments{
-\item{x}{vector of quantiles.}
+\item{x, q}{vector of quantiles.}
 
 \item{alpha, lambda}{are parameters.}
 

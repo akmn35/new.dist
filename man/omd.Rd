@@ -10,14 +10,14 @@
 \usage{
 domd(x, alpha, log = FALSE)
 
-pomd(x, alpha, lower.tail = TRUE, log.p = FALSE)
+pomd(q, alpha, lower.tail = TRUE, log.p = FALSE)
 
 qomd(p, alpha, lower.tail = TRUE)
 
 romd(n, alpha)
 }
 \arguments{
-\item{x}{vector of quantiles.}
+\item{x, q}{vector of quantiles.}
 
 \item{alpha}{a parameter.}
 

@@ -11,14 +11,14 @@ type-II hybrid progressive censoring}
 \usage{
 depkd(x, lambda, alpha, log = FALSE)
 
-pepkd(x, lambda, alpha, lower.tail = TRUE, log.p = FALSE)
+pepkd(q, lambda, alpha, lower.tail = TRUE, log.p = FALSE)
 
 qepkd(p, lambda, alpha, lower.tail = TRUE)
 
 repkd(n, lambda, alpha)
 }
 \arguments{
-\item{x}{vector of quantiles.}
+\item{x, q}{vector of quantiles.}
 
 \item{alpha, lambda}{are non-negative shape parameters.}
 

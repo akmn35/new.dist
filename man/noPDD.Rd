@@ -10,14 +10,14 @@
 \usage{
 dnoPDD(x, theta = 1, log = FALSE)
 
-pnoPDD(x, theta = 1, lower.tail = TRUE, log.p = FALSE)
+pnoPDD(q, theta = 1, lower.tail = TRUE, log.p = FALSE)
 
 qnoPDD(p, theta = 1, lower.tail = TRUE)
 
 rnoPDD(n, theta = 1)
 }
 \arguments{
-\item{x}{vector of quantiles.}
+\item{x, q}{vector of quantiles.}
 
 \item{theta}{a scale parameter.}
 

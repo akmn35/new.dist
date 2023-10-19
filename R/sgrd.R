@@ -1,10 +1,10 @@
 #' Slashed generalized Rayleigh distribution
 #' @export
 #' @name sgrd
-#' @param x vector of quantiles.
+#' @param x,q vector of quantiles.
 #' @param theta a scale parameter.
 #' @param alpha a shape parameter.
-#' @param q a kurtosis parameter.
+#' @param beta a kurtosis parameter.
 #' @param p vector of probabilities.
 #' @param n number of observations. If \code{length(n) > 1}, the length is taken
 #'  to be the number required.
@@ -21,36 +21,36 @@
 #' @details
 #' The Slashed generalized Rayleigh distribution with \code{shape} parameter
 #' \eqn{\alpha}, \code{scale} parameter \eqn{\theta} and \code{kurtosis}
-#' parameter \eqn{q}, has density given by
-#' \deqn{f\left( x\right) =\frac{q x^{-\left( q+1\right) }}{\Gamma
-#' \left( \alpha+1\right) \theta ^{q/2}}\Gamma \left( \frac{2\alpha +q+2}{2}
-#' \right) F\left(\theta x^{2};\frac{2\alpha +q+2}{2},1\right), }
+#' parameter \eqn{\beta}, has density given by
+#' \deqn{f\left( x\right) =\frac{\beta x^{-\left( \beta+1\right)}}{\Gamma \left(
+#' \alpha+1\right) \theta ^{\beta/2}}\Gamma \left( \frac{2\alpha +\beta +2}{2}
+#' \right)F\left( \theta x^{2};\frac{2\alpha +\beta +2}{2},1\right), }
 #' where F(.;a,b) is the cdf of the Gamma (a,b) distribution, and
-#' \deqn{x>0,~\theta >0,~\alpha >-1,~q>0.}
+#' \deqn{x>0,~\theta >0,~\alpha >-1,~\beta >0}
 #' @references  Iriarte, Y. A., Vilca, F., Varela, H. ve Gómez, H. W., 2017,
 #' *Slashed generalized Rayleigh distribution*, Communications in Statistics-
 #' Theory and Methods, 46 (10), 4686-4699.
 #' @examples
 #' library(new.dist)
-#' dsgrd(2,theta=3,alpha=1,q=4)
-dsgrd <- function(x,theta,alpha,q,log=FALSE)
+#' dsgrd(2,theta=3,alpha=1,beta=4)
+dsgrd <- function(x,theta,alpha,beta,log=FALSE)
   {
     if(any(alpha<=-1)) {stop("alpha must be > -1")}
     if(any(theta<=0)) {stop("theta must be > 0")}
-    if(any(q<=2)) {(stop("the function may not work when q<2 since the
+    if(any(beta<=2)) {(stop("the function may not work when beta<2 since the
 first and second moment does not exist!"))}
-    enuzun<-max(length(x),length(theta),length(alpha),length(q))
+    enuzun<-max(length(x),length(theta),length(alpha),length(beta))
     x<-rep(x,enuzun/length(x)+1)[1:enuzun]
     alpha<-rep(alpha,enuzun/length(alpha)+1)[1:enuzun]
-    q<-rep(q,enuzun/length(q)+1)[1:enuzun]
+    beta<-rep(beta,enuzun/length(beta)+1)[1:enuzun]
     theta<-rep(theta,enuzun/length(theta)+1)[1:enuzun]
     pdf<-NULL
     for (i in 1:enuzun)suppressWarnings(
     {
       if(x[i]<=0) {pdf[i]<-0} else
-      {pdf[i]<-q[i]*x[i]^(-(q[i]+1))/(gamma(alpha[i]+1)*theta[i]^(q[i]/2))*
-        gamma((2*alpha[i]+q[i]+2)/2)*stats::pgamma(theta[i]*x[i]^2,(2*
-                                                        alpha[i]+q[i]+2)/2,1)}
+      {pdf[i]<-beta[i]*x[i]^(-(beta[i]+1))/(gamma(alpha[i]+1)*
+      theta[i]^(beta[i]/2))*gamma((2*alpha[i]+beta[i]+2)/2)*
+        stats::pgamma(theta[i]*x[i]^2,(2*alpha[i]+beta[i]+2)/2,1)}
     })
     if(log==TRUE) pdf<-log(pdf)
       return(pdf)
@@ -59,25 +59,26 @@ first and second moment does not exist!"))}
 #' @export
 #' @rdname sgrd
 #' @examples
-#' psgrd(5,theta=3,alpha=1,q=4)
-psgrd<-function(x,theta,alpha,q,lower.tail=TRUE,log.p=FALSE)
+#' psgrd(5,theta=3,alpha=1,beta=4)
+psgrd<-function(q,theta,alpha,beta,lower.tail=TRUE,log.p=FALSE)
   {
   if(any(alpha<=-1)) {stop("alpha must be > -1")}
   if(any(theta<=0)) {stop("theta must be > 0")}
-  if(any(q<=2)) {(stop("the function may not work when q<2 since the
+  if(any(beta<=2)) {(stop("the function may not work when beta<2 since the
 first and second moment does not exist!"))}
-    enuzun <- max(length(x),length(theta),length(alpha),length(q))
-    x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+    enuzun <- max(length(q),length(theta),length(alpha),length(beta))
+    q<-rep(q,enuzun/length(q)+1)[1:enuzun]
     theta<-rep(theta,enuzun/length(theta)+1)[1:enuzun]
     alpha<-rep(alpha, enuzun/length(alpha)+1)[1:enuzun]
-    q<-rep(q,enuzun/length(q)+1)[1:enuzun]
+    beta<-rep(beta,enuzun/length(beta)+1)[1:enuzun]
     integral<-NULL
     for (i in 1:enuzun)suppressWarnings(
     {
-      if(x[i]>0){integral[i] <- stats::integrate(function(t){q[i]*t^(-(q[i]+1))/
-          (gamma(alpha[i]+1)*theta[i]^(q[i]/2))*gamma((2*alpha[i]+q[i]+2)/2)*
-          stats::pgamma(theta[i]*t^2,(2*alpha[i]+q[i]+2)/2,1)
-      },0,x[i])$value} else {integral[i]<-0}
+      if(q[i]>0){integral[i] <- stats::integrate(function(t){beta[i]*
+          t^(-(beta[i]+1))/(gamma(alpha[i]+1)*theta[i]^(beta[i]/2))*
+          gamma((2*alpha[i]+beta[i]+2)/2)*
+          stats::pgamma(theta[i]*t^2,(2*alpha[i]+beta[i]+2)/2,1)
+      },0,q[i])$value} else {integral[i]<-0}
     })
     if(lower.tail==FALSE) integral <- 1-integral
     if(log.p==TRUE) integral <- log(integral)
@@ -87,31 +88,32 @@ first and second moment does not exist!"))}
 #' @export
 #' @rdname sgrd
 #' @examples
-#' qsgrd(.4,theta=3,alpha=1,q=4)
-qsgrd<-function(p,theta,alpha,q,lower.tail=TRUE)
+#' qsgrd(.4,theta=3,alpha=1,beta=4)
+qsgrd<-function(p,theta,alpha,beta,lower.tail=TRUE)
 {
   if(any(p<0)|any(p>1)) {stop("p must be between >= 0 and <= 1")}
   if(any(alpha<=-1)) {stop("alpha must be > -1")}
   if(any(theta<=0)) {stop("theta must be > 0")}
-  if(any(q<=2)) {(stop("the function may not work when q<2 since
+  if(any(beta<=2)) {(stop("the function may not work when beta<2 since
 the first and second moment does not exist!"))}
-  enuzun <- max(length(p),length(theta),length(alpha),length(q))
+  enuzun <- max(length(p),length(theta),length(alpha),length(beta))
   theta<-rep(theta,enuzun/length(theta)+1)[1:enuzun]
   alpha<-rep(alpha, enuzun/length(alpha)+1)[1:enuzun]
-  q<-rep(q,enuzun/length(q)+1)[1:enuzun]
+  beta<-rep(beta,enuzun/length(beta)+1)[1:enuzun]
   kok<-NULL
   for (i in 1:enuzun)suppressWarnings(
   {
-    Ex<-(gamma(1/2+alpha[i]+1)*q[i])/(gamma(alpha[i]+1)*theta[i]^(1/2)*(q[i]-1))
+    Ex<-(gamma(1/2+alpha[i]+1)*beta[i])/(gamma(alpha[i]+1)*theta[i]^(1/2)*
+                                           (beta[i]-1))
     Y<-function(t)
     {
-      abs(psgrd(t,theta[i],alpha[i],q[i])-p[i])
+      abs(psgrd(t,theta[i],alpha[i],beta[i])-p[i])
     }
     if(lower.tail==FALSE)
     {
       Y<-function(t)
       {
-        abs(psgrd(t,theta[i],alpha[i],q[i])-(1-p[i]))
+        abs(psgrd(t,theta[i],alpha[i],beta[i])-(1-p[i]))
       }
     }
     kok[i]<-(stats::optim(Ex,Y,method="Brent",lower=0,upper=20))$par
@@ -122,15 +124,15 @@ the first and second moment does not exist!"))}
 #' @export
 #' @rdname sgrd
 #' @examples
-#' rsgrd(10,theta=3,alpha=1,q=4)
-rsgrd<-function(n,theta,alpha,q)
+#' rsgrd(10,theta=3,alpha=1,beta=4)
+rsgrd<-function(n,theta,alpha,beta)
 {
   n<-floor(n)
   if(any(n<1)) {stop("n must be >= 1")}
   if(any(alpha<=-1)) {stop("alpha must be > -1")}
   if(any(theta<=0)) {stop("theta must be > 0")}
-  if(any(q<=2)) {(stop("the function may not work when q<2 since
+  if(any(beta<=2)) {(stop("the function may not work when beta<2 since
 the first and second moment does not exist!"))}
-  rn<-qsgrd(stats::runif(n),theta,alpha,q)
+  rn<-qsgrd(stats::runif(n),theta,alpha,beta)
   return(rn)
 }

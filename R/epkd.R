@@ -2,7 +2,7 @@
 #' type-II hybrid progressive censoring
 #' @export
 #' @name epkd
-#' @param x vector of quantiles.
+#' @param x,q vector of quantiles.
 #' @param p vector of probabilities.
 #' @param n number of observations. If \code{length(n) > 1}, the length is taken
 #'  to be the number required.
@@ -55,18 +55,18 @@ depkd<-function(x,lambda,alpha,log=FALSE)
 #' @rdname epkd
 #' @examples
 #' pepkd(0.5,lambda=2,alpha=3)
-pepkd<-function(x,lambda,alpha,lower.tail=TRUE,log.p=FALSE)
+pepkd<-function(q,lambda,alpha,lower.tail=TRUE,log.p=FALSE)
   {
   if(any(lambda<=0)) {stop("lambda must be > 0")}
   if(any(alpha<=0)) {stop("alpha must be > 0")}
-    enuzun <- max(length(x),length(lambda),length(alpha))
-    x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+    enuzun <- max(length(q),length(lambda),length(alpha))
+    q<-rep(q,enuzun/length(q)+1)[1:enuzun]
     lambda<-rep(lambda, enuzun/length(lambda)+1)[1:enuzun]
     alpha<-rep(alpha,enuzun/length(alpha)+1)[1:enuzun]
     cdf<-NULL
     for (i in 1:enuzun)suppressWarnings(
     {
-      if (x[i]>0 && x[i]<1) cdf[i]<-1-(1-x[i]^lambda[i])^alpha[i] else cdf[i]<-0
+      if (q[i]>0 && q[i]<1) cdf[i]<-1-(1-q[i]^lambda[i])^alpha[i] else cdf[i]<-0
     })
     if(lower.tail==FALSE) cdf<-1-cdf
     if(log.p==TRUE) cdf<-log(cdf)

@@ -1,7 +1,7 @@
 #' Two-Parameter Rayleigh Distribution
 #' @export
 #' @name tprd
-#' @param x vector of quantiles.
+#' @param x,q vector of quantiles.
 #' @param lambda a scale parameter.
 #' @param mu a location parameter.
 #' @param p vector of probabilities.
@@ -51,18 +51,18 @@ dtprd<-function(x,lambda=1,mu,log=FALSE)
 #' @rdname tprd
 #' @examples
 #' ptprd(2,lambda=2,mu=1)
-ptprd<-function(x,lambda=1,mu,lower.tail=TRUE,log.p=FALSE) #x>mu,  mu,lambda>0
+ptprd<-function(q,lambda=1,mu,lower.tail=TRUE,log.p=FALSE)
 {
   if(any(lambda<=0)) {stop("lambda must be > 0")}
-  enuzun<-max(length(x),length(lambda),length(mu))
-  x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+  enuzun<-max(length(q),length(lambda),length(mu))
+  q<-rep(q,enuzun/length(q)+1)[1:enuzun]
   lambda<-rep(lambda, enuzun/length(lambda)+1)[1:enuzun]
   mu<-rep(mu,enuzun/length(mu)+1)[1:enuzun]
   cdf<-NULL
 
   for (i in 1:enuzun)
   {
-    if(x[i]>mu[i]) cdf[i]<-1-exp(-lambda[i]*(x[i]-mu[i])^2) else cdf[i]<-0
+    if(q[i]>mu[i]) cdf[i]<-1-exp(-lambda[i]*(q[i]-mu[i])^2) else cdf[i]<-0
   }
   if(lower.tail==FALSE) cdf<-1-cdf
   if(log.p==TRUE) cdf<-log(cdf)

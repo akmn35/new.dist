@@ -1,7 +1,7 @@
 #' The gamma-Lomax distribution
 #' @export
 #' @name gld
-#' @param x vector of quantiles.
+#' @param x,q vector of quantiles.
 #' @param a,alpha are shape parameters.
 #' @param p vector of probabilities.
 #' @param n number of observations. If \code{length(n) > 1}, the length is taken
@@ -62,21 +62,21 @@ dgld<-function(x,a,alpha,beta=1,log=FALSE)
 #' @rdname gld
 #' @examples
 #' pgld(1,a=2,alpha=3,beta=4)
-pgld<-function(x,a,alpha,beta=1,lower.tail=TRUE,log.p=FALSE)
+pgld<-function(q,a,alpha,beta=1,lower.tail=TRUE,log.p=FALSE)
 {
   if(any(a<=0)) {stop("a must be > 0")}
   if(any(alpha<=0)) {stop("alpha must be > 0")}
   if(any(beta<=0)) {stop("beta must be > 0")}
-  enuzun <- max(length(x),length(a),length(alpha),length(beta))
-  x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+  enuzun <- max(length(q),length(a),length(alpha),length(beta))
+  q<-rep(q,enuzun/length(q)+1)[1:enuzun]
   a<-rep(a,enuzun/length(a)+1)[1:enuzun]
   alpha<-rep(alpha, enuzun/length(alpha)+1)[1:enuzun]
   beta<-rep(beta,enuzun/length(beta)+1)[1:enuzun]
   cdf<-NULL
   for (i in 1:enuzun)
   {
-    if (x[i]>0) cdf[i]<-(gamma(a[i])-(expint::gammainc(a[i],(-alpha[i]*
-                    log(beta[i]/(beta[i]+x[i]))))))/gamma(a[i]) else cdf[i]<-0
+    if (q[i]>0) cdf[i]<-(gamma(a[i])-(expint::gammainc(a[i],(-alpha[i]*
+                    log(beta[i]/(beta[i]+q[i]))))))/gamma(a[i]) else cdf[i]<-0
   }
   if(lower.tail==FALSE) cdf<-1-cdf
   if(log.p==TRUE) cdf<-log(cdf)

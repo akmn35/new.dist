@@ -1,7 +1,7 @@
 #' Weighted Geometric Distribution
 #' @export
 #' @name wgd
-#' @param x vector of quantiles.
+#' @param x,q vector of quantiles.
 #' @param alpha,lambda are parameters.
 #' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
 #' @param lower.tail logical; if TRUE (default), probabilities are
@@ -51,21 +51,21 @@ dwgd<-function(x,alpha,lambda,log=FALSE)
 #' @rdname wgd
 #' @examples
 #' pwgd(1,alpha=.2,lambda=3)
-pwgd<-function(x,alpha,lambda,lower.tail=TRUE,log.p=FALSE)
+pwgd<-function(q,alpha,lambda,lower.tail=TRUE,log.p=FALSE)
 {
-  x<-floor(x)
+  q<-floor(q)
   if(any(alpha<=0)|any(alpha>=1)) {stop("alpha must be between >= 0 and <= 1")}
   if(any(lambda<=0)) {stop("lambda must be > 0")}
-  enuzun<-max(length(x),length(alpha),length(lambda))
-  x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+  enuzun<-max(length(q),length(alpha),length(lambda))
+  q<-rep(q,enuzun/length(q)+1)[1:enuzun]
   alpha<-rep(alpha, enuzun/length(alpha)+1)[1:enuzun]
   lambda<-rep(lambda,enuzun/length(lambda)+1)[1:enuzun]
   cdf<-NULL
   for (i in 1:enuzun)
   {
-    if(x[i]>0) cdf[i]<-1-((1-alpha[i]^(lambda[i]+1)-alpha[i]^(lambda[i]*
-                (floor(x[i])+1))*(1-alpha[i]))/(1-alpha[i]^lambda[i]))*
-        alpha[i]^(floor(x[i])) else cdf[i]<-0
+    if(q[i]>0) cdf[i]<-1-((1-alpha[i]^(lambda[i]+1)-alpha[i]^(lambda[i]*
+                (floor(q[i])+1))*(1-alpha[i]))/(1-alpha[i]^lambda[i]))*
+        alpha[i]^(floor(q[i])) else cdf[i]<-0
   }
   if(lower.tail==FALSE) cdf<-1-cdf
   if(log.p==TRUE) cdf<-log(cdf)

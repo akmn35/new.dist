@@ -2,7 +2,7 @@
 #' distributions on the unit interval
 #' @export
 #' @name uigd
-#' @param x vector of quantiles.
+#' @param x,q vector of quantiles.
 #' @param mu a mean parameter.
 #' @param p vector of probabilities.
 #' @param n number of observations. If \code{length(n) > 1}, the length is taken
@@ -57,20 +57,20 @@ duigd<-function(x,mu,lambda=1,log=FALSE)
 #' @rdname uigd
 #' @examples
 #' puigd(1,mu=2,lambda=3)
-puigd<-function(x,mu,lambda=1,lower.tail=TRUE,log.p=FALSE)
+puigd<-function(q,mu,lambda=1,lower.tail=TRUE,log.p=FALSE)
 {
   if(any(mu<=0)) {stop("mu must be > 0")}
   if(any(lambda<=0)) {stop("lambda must be > 0")}
-  enuzun <- max(length(x),length(mu),length(lambda))
-  x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+  enuzun <- max(length(q),length(mu),length(lambda))
+  q<-rep(q,enuzun/length(q)+1)[1:enuzun]
   mu<-rep(mu, enuzun/length(mu)+1)[1:enuzun]
   lambda<-rep(lambda,enuzun/length(lambda)+1)[1:enuzun]
   cdf<-NULL
   for (i in 1:enuzun)
   {
-    if (x[i]>0) (cdf[i]<-stats::pnorm((lambda[i]/x[i])^(1/2)*(x[i]/mu[i]-1))
-    +exp(2*lambda[i]/mu[i])*stats::pnorm(-(lambda[i]/x[i])^(1/2)*
-                                           (x[i]/mu[i]+1))) else cdf[i]<-0
+    if (q[i]>0) (cdf[i]<-stats::pnorm((lambda[i]/q[i])^(1/2)*(q[i]/mu[i]-1))
+    +exp(2*lambda[i]/mu[i])*stats::pnorm(-(lambda[i]/q[i])^(1/2)*
+                                           (q[i]/mu[i]+1))) else cdf[i]<-0
   }
   if(lower.tail==FALSE) cdf<-1-cdf
   if(log.p==TRUE) cdf<-log(cdf)

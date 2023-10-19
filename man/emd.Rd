@@ -10,14 +10,14 @@
 \usage{
 demd(x, theta = 1, log = FALSE)
 
-pemd(x, theta = 1, lower.tail = TRUE, log.p = FALSE)
+pemd(q, theta = 1, lower.tail = TRUE, log.p = FALSE)
 
 qemd(p, theta = 1, lower.tail = TRUE)
 
 remd(n, theta = 1)
 }
 \arguments{
-\item{x}{vector of quantiles.}
+\item{x, q}{vector of quantiles.}
 
 \item{theta}{a scale parameter.}
 

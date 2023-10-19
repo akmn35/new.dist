@@ -1,7 +1,7 @@
 #' A new discrete distribution
 #' @export
 #' @name ndd
-#' @param x vector of quantiles.
+#' @param x,q vector of quantiles.
 #' @param theta a parameter.
 #' @param p vector of probabilities.
 #' @param n number of observations. If \code{length(n) > 1}, the length is taken
@@ -49,24 +49,22 @@ dndd<-function(x,theta,log=FALSE)
 #' A new discrete distribution
 #' @export
 #' @rdname ndd
-#' @param x vector of quantiles.
 #' @examples
 #' pndd(1,theta=2)
-pndd<-function(x,theta,lower.tail=TRUE,log.p=FALSE)
+pndd<-function(q,theta,lower.tail=TRUE,log.p=FALSE)
 {
-
+  q<-floor(q)+1
   if(any(theta<=0)) {stop("theta must be > 0")}
-  enuzun <- max(length(x),length(theta))
-  x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+  enuzun <- max(length(q),length(theta))
+  q<-rep(q,enuzun/length(q)+1)[1:enuzun]
   theta<-rep(theta,enuzun/length(theta)+1)[1:enuzun]
   cdf<-NULL
   lambda<-exp(-theta)
   for (i in 1:enuzun)
   {
-    x[i]<-floor(x[i])
-    x[i]<-x[i]+1
-    if(x[i]>=0) cdf[i]<-1-((1+theta[i]+theta[i]*(x[i]))/(1+theta[i]))*
-        lambda[i]^(x[i]) else cdf[i]<-0
+
+    if(q[i]>=0) cdf[i]<-1-((1+theta[i]+theta[i]*(q[i]))/(1+theta[i]))*
+        lambda[i]^(q[i]) else cdf[i]<-0
   }
   if(lower.tail==FALSE) cdf<-1-cdf
   if(log.p==TRUE) cdf<-log(cdf)

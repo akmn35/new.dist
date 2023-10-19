@@ -8,22 +8,22 @@
 \alias{rsgrd}
 \title{Slashed generalized Rayleigh distribution}
 \usage{
-dsgrd(x, theta, alpha, q, log = FALSE)
+dsgrd(x, theta, alpha, beta, log = FALSE)
 
-psgrd(x, theta, alpha, q, lower.tail = TRUE, log.p = FALSE)
+psgrd(q, theta, alpha, beta, lower.tail = TRUE, log.p = FALSE)
 
-qsgrd(p, theta, alpha, q, lower.tail = TRUE)
+qsgrd(p, theta, alpha, beta, lower.tail = TRUE)
 
-rsgrd(n, theta, alpha, q)
+rsgrd(n, theta, alpha, beta)
 }
 \arguments{
-\item{x}{vector of quantiles.}
+\item{x, q}{vector of quantiles.}
 
 \item{theta}{a scale parameter.}
 
 \item{alpha}{a shape parameter.}
 
-\item{q}{a kurtosis parameter.}
+\item{beta}{a kurtosis parameter.}
 
 \item{log, log.p}{logical; if TRUE, probabilities p are given as log(p).}
 
@@ -48,19 +48,19 @@ the Slashed generalized Rayleigh distribution with parameters \code{shape},
 \details{
 The Slashed generalized Rayleigh distribution with \code{shape} parameter
 \eqn{\alpha}, \code{scale} parameter \eqn{\theta} and \code{kurtosis}
-parameter \eqn{q}, has density given by
-\deqn{f\left( x\right) =\frac{q x^{-\left( q+1\right) }}{\Gamma
-\left( \alpha+1\right) \theta ^{q/2}}\Gamma \left( \frac{2\alpha +q+2}{2}
-\right) F\left(\theta x^{2};\frac{2\alpha +q+2}{2},1\right), }
+parameter \eqn{\beta}, has density given by
+\deqn{f\left( x\right) =\frac{\beta x^{-\left( \beta+1\right)}}{\Gamma \left(
+\alpha+1\right) \theta ^{\beta/2}}\Gamma \left( \frac{2\alpha +\beta +2}{2}
+\right)F\left( \theta x^{2};\frac{2\alpha +\beta +2}{2},1\right), }
 where F(.;a,b) is the cdf of the Gamma (a,b) distribution, and
-\deqn{x>0,~\theta >0,~\alpha >-1,~q>0.}
+\deqn{x>0,~\theta >0,~\alpha >-1,~\beta >0}
 }
 \examples{
 library(new.dist)
-dsgrd(2,theta=3,alpha=1,q=4)
-psgrd(5,theta=3,alpha=1,q=4)
-qsgrd(.4,theta=3,alpha=1,q=4)
-rsgrd(10,theta=3,alpha=1,q=4)
+dsgrd(2,theta=3,alpha=1,beta=4)
+psgrd(5,theta=3,alpha=1,beta=4)
+qsgrd(.4,theta=3,alpha=1,beta=4)
+rsgrd(10,theta=3,alpha=1,beta=4)
 }
 \references{
 Iriarte, Y. A., Vilca, F., Varela, H. ve Gómez, H. W., 2017,

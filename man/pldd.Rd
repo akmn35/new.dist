@@ -10,14 +10,14 @@
 \usage{
 dpldd(x, alpha, beta, theta, log = FALSE)
 
-ppldd(x, alpha, beta, theta, lower.tail = TRUE, log.p = FALSE)
+ppldd(q, alpha, beta, theta, lower.tail = TRUE, log.p = FALSE)
 
 qpldd(p, alpha, beta, theta, lower.tail = TRUE)
 
 rpldd(n, alpha, beta, theta)
 }
 \arguments{
-\item{x}{vector of quantiles.}
+\item{x, q}{vector of quantiles.}
 
 \item{alpha, beta, theta}{are parameters.}
 

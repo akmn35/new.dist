@@ -1,7 +1,7 @@
 #' The discrete Lindley distribution
 #' @export
 #' @name dld
-#' @param x vector of quantiles.
+#' @param x,q vector of quantiles.
 #' @param theta a parameter.
 #' @param p vector of probabilities.
 #' @param n number of observations. If \code{length(n) > 1}, the length is taken
@@ -52,19 +52,19 @@ ddld<-function(x,theta,log=FALSE)
 #' @rdname dld
 #' @examples
 #' pdld(2,theta=1)
-pdld<-function(x,theta,lower.tail=TRUE,log.p=FALSE)
+pdld<-function(q,theta,lower.tail=TRUE,log.p=FALSE)
 {
-  x<-floor(x)
+  q<-floor(q)
   if(any(theta<=0)) {stop("theta must be > 0")}
-  enuzun <- max(length(x),length(theta))
-  x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+  enuzun <- max(length(q),length(theta))
+  q<-rep(q,enuzun/length(q)+1)[1:enuzun]
   theta<-rep(theta,enuzun/length(theta)+1)[1:enuzun]
   cdf<-NULL
   lambda<-exp(-theta)
   for (i in 1:enuzun)
   {
-    if (x[i]>=0) cdf[i]<-(1-(lambda[i]^(x[i]+1))+(((2+x[i])*
-        lambda[i]^(x[i]+1))-1)*log(lambda[i]))/(1-log(lambda[i])) else cdf[i]<-0
+    if (q[i]>=0) cdf[i]<-(1-(lambda[i]^(q[i]+1))+(((2+q[i])*
+        lambda[i]^(q[i]+1))-1)*log(lambda[i]))/(1-log(lambda[i])) else cdf[i]<-0
   }
   if(lower.tail==FALSE) cdf<-1-cdf
   if(log.p==TRUE) cdf<-log(cdf)

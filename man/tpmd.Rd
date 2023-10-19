@@ -10,14 +10,14 @@
 \usage{
 dtpmd(x, beta = 1, alpha, log = FALSE)
 
-ptpmd(x, beta = 1, alpha, lower.tail = TRUE, log.p = FALSE)
+ptpmd(q, beta = 1, alpha, lower.tail = TRUE, log.p = FALSE)
 
 qtpmd(p, beta = 1, alpha, lower.tail = TRUE)
 
 rtpmd(n, beta = 1, alpha)
 }
 \arguments{
-\item{x}{vector of quantiles.}
+\item{x, q}{vector of quantiles.}
 
 \item{beta}{a scale parameter.}
 

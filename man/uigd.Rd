@@ -11,14 +11,14 @@ distributions on the unit interval}
 \usage{
 duigd(x, mu, lambda = 1, log = FALSE)
 
-puigd(x, mu, lambda = 1, lower.tail = TRUE, log.p = FALSE)
+puigd(q, mu, lambda = 1, lower.tail = TRUE, log.p = FALSE)
 
 quigd(p, mu, lambda = 1, lower.tail = TRUE)
 
 ruigd(n, mu, lambda = 1)
 }
 \arguments{
-\item{x}{vector of quantiles.}
+\item{x, q}{vector of quantiles.}
 
 \item{mu}{a mean parameter.}
 

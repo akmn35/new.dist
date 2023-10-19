@@ -10,14 +10,14 @@
 \usage{
 dsod(x, alpha, beta, log = FALSE)
 
-psod(x, alpha, beta, lower.tail = TRUE, log.p = FALSE)
+psod(q, alpha, beta, lower.tail = TRUE, log.p = FALSE)
 
 qsod(p, alpha, beta, lower.tail = TRUE)
 
 rsod(n, alpha, beta)
 }
 \arguments{
-\item{x}{vector of quantiles.}
+\item{x, q}{vector of quantiles.}
 
 \item{alpha, beta}{are parameters.}
 

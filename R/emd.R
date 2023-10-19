@@ -1,7 +1,7 @@
 #' Estimation in Maxwell distribution with randomly censored data
 #' @export
 #' @name emd
-#' @param x vector of quantiles.
+#' @param x,q vector of quantiles.
 #' @param theta a scale parameter.
 #' @param p vector of probabilities.
 #' @param n number of observations. If \code{length(n) > 1}, the length is taken
@@ -47,16 +47,16 @@ demd<-function(x,theta=1,log=FALSE)
 #' @rdname emd
 #' @examples
 #' pemd(1,theta=2)
-pemd<-function(x,theta=1,lower.tail=TRUE,log.p=FALSE)
+pemd<-function(q,theta=1,lower.tail=TRUE,log.p=FALSE)
 {
   if(any(theta<=0)) {stop("theta must be > 0")}
-  enuzun<-max(length(x),length(theta))
-  x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+  enuzun<-max(length(q),length(theta))
+  q<-rep(q,enuzun/length(q)+1)[1:enuzun]
   theta<-rep(theta,enuzun/length(theta)+1)[1:enuzun]
   cdf<-NULL
   for (i in 1:enuzun)
   {
-    if(x[i]>=0)cdf[i]<-pracma::gammainc((x[i]^2/theta[i]),3/2)[3] else cdf[i]<-0
+    if(q[i]>=0)cdf[i]<-pracma::gammainc((q[i]^2/theta[i]),3/2)[3] else cdf[i]<-0
   }
   if(lower.tail==FALSE) cdf<-1-cdf
   if(log.p==TRUE) cdf<-log(cdf)

@@ -1,7 +1,7 @@
-#' A new lifetime distribution
+#' The EP distribution
 #' @export
-#' @name nld
-#' @param x vector of quantiles.
+#' @name EPd
+#' @param x,q vector of quantiles.
 #' @param lambda,beta are parameters.
 #' @param p vector of probabilities.
 #' @param n number of observations. If \code{length(n) > 1}, the length is taken
@@ -11,12 +11,12 @@
 #' \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
 #' @description
 #' Density, distribution function, quantile function and random generation for
-#' a new lifetime distribution parameters.
-#' @return \code{dnld} gives the density, \code{pnld} gives the distribution
-#' function, \code{qnld} gives the quantile function and \code{rnld} generates
+#' the EP distribution parameters.
+#' @return \code{dEPd} gives the density, \code{pEPd} gives the distribution
+#' function, \code{qEPd} gives the quantile function and \code{rEPd} generates
 #' random deviates.
 #' @details
-#' A new lifetime distribution with parameters are \eqn{\lambda}, \eqn{\beta},
+#' The EP distribution with parameters are \eqn{\lambda}, \eqn{\beta},
 #' has density given by
 #'  \deqn{f\left( x\right) =\frac{\lambda \beta }
 #' {\left( 1-e^{-\lambda }\right) } e^{-\lambda -\beta x+\lambda e^{-\beta x}},}
@@ -27,8 +27,8 @@
 #' 51 (9), 4497-4509.
 #' @examples
 #' library(new.dist)
-#' dnld(1, lambda=2, beta=3)
-dnld<-function(x,lambda,beta,log=FALSE)
+#' dEPd(1, lambda=2, beta=3)
+dEPd<-function(x,lambda,beta,log=FALSE)
 {
   if(any(lambda<=0)) {stop("lambda must be > 0")}
   if(any(beta<=0)) {stop("beta must be > 0")}
@@ -46,35 +46,35 @@ dnld<-function(x,lambda,beta,log=FALSE)
   if(log==TRUE) pdf<-log(pdf)
   return(pdf)
 }
-#' A new lifetime distribution
+#' The EP distribution
 #' @export
-#' @rdname nld
+#' @rdname EPd
 #' @examples
-#' pnld(1,lambda=2,beta=3)
-pnld<-function(x,lambda,beta,lower.tail=TRUE,log.p=FALSE)
+#' pEPd(1,lambda=2,beta=3)
+pEPd<-function(q,lambda,beta,lower.tail=TRUE,log.p=FALSE)
 {
   if(any(lambda<=0)) {stop("lambda must be > 0")}
   if(any(beta<=0)) {stop("beta must be > 0")}
-  enuzun<-max(length(x),length(lambda),length(beta))
-  x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+  enuzun<-max(length(q),length(lambda),length(beta))
+  q<-rep(q,enuzun/length(q)+1)[1:enuzun]
   lambda<-rep(lambda, enuzun/length(lambda)+1)[1:enuzun]
   beta<-rep(beta,enuzun/length(beta)+1)[1:enuzun]
   cdf<-NULL
   for (i in 1:enuzun)
   {
-    if(x[i]>0) cdf[i]<-((exp(lambda[i]*exp(-beta[i]*x[i]))-exp(lambda[i]))*
+    if(q[i]>0) cdf[i]<-((exp(lambda[i]*exp(-beta[i]*q[i]))-exp(lambda[i]))*
                           (1-exp(lambda[i]))^(-1)) else cdf[i]<-0
   }
   if(lower.tail==FALSE) cdf<-1-cdf
   if(log.p==TRUE) cdf<-log(cdf)
   return(cdf)
 }
-#' A new lifetime distribution
+#' The EP distribution
 #' @export
-#' @rdname nld
+#' @rdname EPd
 #' @examples
-#' qnld(.8,lambda=2,beta=3)
-qnld<-function(p,lambda,beta,lower.tail=TRUE)
+#' qEPd(.8,lambda=2,beta=3)
+qEPd<-function(p,lambda,beta,lower.tail=TRUE)
 {
   if(any(p<0)|any(p>1)) {stop("p must be between >= 0 and <= 1")}
   if(any(lambda<=0)) {stop("lambda must be > 0")}
@@ -96,17 +96,17 @@ qnld<-function(p,lambda,beta,lower.tail=TRUE)
   }
   return(qfonk)
 }
-#' A new lifetime distribution
+#' The EP distribution
 #' @export
-#' @rdname nld
+#' @rdname EPd
 #' @examples
-#' rnld(10,lambda=2,beta=3)
-rnld<-function(n,lambda,beta)
+#' rEPd(10,lambda=2,beta=3)
+rEPd<-function(n,lambda,beta)
 {
   n<-floor(n)
   if(any(n<1)) {stop("n must be >= 1")}
   if(any(lambda<=0)) {stop("lambda must be > 0")}
   if(any(beta<=0)) {stop("beta must be > 0")}
-  rn<-qnld(stats::runif(n),lambda,beta)
+  rn<-qEPd(stats::runif(n),lambda,beta)
   return(rn)
 }

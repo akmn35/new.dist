@@ -5,10 +5,10 @@ test_that("functions returns a list", {
   expect_type(pbwd(1,alpha=2,beta=1, sigma=2), "double")
   expect_type(qbwd(.1,alpha=2,beta=1, sigma=2), "double")
   expect_type(rbwd(1,alpha=2,beta=1, sigma=2), "double")
-  expect_type(dsgrd(1,theta=2,alpha=1, q=3), "double")
-  expect_type(psgrd(1,theta=2,alpha=1, q=3), "double")
-  expect_type(qsgrd(.1,theta=2,alpha=1, q=3), "double")
-  expect_type(rsgrd(1,theta=2,alpha=1, q=3), "double")
+  expect_type(dsgrd(1,theta=2,alpha=1, beta=3), "double")
+  expect_type(psgrd(1,theta=2,alpha=1, beta=3), "double")
+  expect_type(qsgrd(.1,theta=2,alpha=1, beta=3), "double")
+  expect_type(rsgrd(1,theta=2,alpha=1, beta=3), "double")
   expect_type(dsod(1,alpha=1, beta=2), "double")
   expect_type(psod(.2,alpha=1, beta=2), "double")
   expect_type(qsod(.1,alpha=1, beta=3), "double")
@@ -56,10 +56,10 @@ test_that("functions returns a list", {
   expect_type(pndd(-1, theta=1), "double")
   expect_type(qndd(.1, theta=1), "double")
   expect_type(rndd(1, theta=1), "double")
-  expect_type(dnld(1, lambda=1,beta=1), "double")
-  expect_type(pnld(1, lambda=1,beta=1), "double")
-  expect_type(qnld(.1, lambda=1,beta=1), "double")
-  expect_type(rnld(1, lambda=1,beta=1), "double")
+  expect_type(dEPd(1, lambda=1,beta=1), "double")
+  expect_type(pEPd(1, lambda=1,beta=1), "double")
+  expect_type(qEPd(.1, lambda=1,beta=1), "double")
+  expect_type(rEPd(1, lambda=1,beta=1), "double")
   expect_type(dnoPDD(1, theta=1), "double")
   expect_type(pnoPDD(1, theta=1), "double")
   expect_type(qnoPDD(.1, theta=1), "double")
@@ -91,21 +91,21 @@ test_that("functions returns errors", {
   expect_error(rbwd(5,2,-3,4), "beta must be > 0")
   expect_error(dsgrd(2,3,-2,4), "alpha must be > -1")
   expect_error(dsgrd(2,-3,1,4), "theta must be > 0")
-  expect_error(dsgrd(2,3,1,-4),"the function may not work when q<2 since the
+  expect_error(dsgrd(2,3,1,-4),"the function may not work when beta<2 since the
 first and second moment does not exist!")
   expect_error(psgrd(2,3,-2,4), "alpha must be > -1")
   expect_error(psgrd(2,-3,1,4), "theta must be > 0")
-  expect_error(psgrd(2,3,1,-4),"the function may not work when q<2 since the
+  expect_error(psgrd(2,3,1,-4),"the function may not work when beta<2 since the
 first and second moment does not exist!")
   expect_error(qsgrd(-0.5,2,3,4), "p must be between >= 0 and <= 1")
   expect_error(qsgrd(0.5,3,-2,4), "alpha must be > -1")
   expect_error(qsgrd(0.5,-3,1,4), "theta must be > 0")
-  expect_error(qsgrd(.2,3,1,-4),"the function may not work when q<2 since
+  expect_error(qsgrd(.2,3,1,-4),"the function may not work when beta<2 since
 the first and second moment does not exist!")
   expect_error(rsgrd(-5,2,3,4),"n must be >= 1")
   expect_error(rsgrd(2,3,-2,4), "alpha must be > -1")
   expect_error(rsgrd(2,-3,1,4), "theta must be > 0")
-  expect_error(rsgrd(2,3,1,-4),"the function may not work when q<2 since
+  expect_error(rsgrd(2,3,1,-4),"the function may not work when beta<2 since
 the first and second moment does not exist!")
   expect_error(dsod(0.4, alpha=-1, beta=2), "alpha must be > 0")
   expect_error(dsod(0.4, alpha=1, beta=-2), "beta must be > 0")
@@ -201,16 +201,16 @@ the first and second moment does not exist!")
   expect_error(qndd(.1, theta = -1), "theta must be > 0")
   expect_error(rndd(-1, theta = 1), "n must be >= 1")
   expect_error(rndd(10, theta = -1), "theta must be > 0")
-  expect_error(dnld(1, lambda=-2, beta=3), "lambda must be > 0")
-  expect_error(dnld(1, lambda=2, beta=-3), "beta must be > 0")
-  expect_error(pnld(1, lambda=-2, beta=3), "lambda must be > 0")
-  expect_error(pnld(1, lambda=2, beta=-3), "beta must be > 0")
-  expect_error(qnld(2, lambda=2, beta=-3), "p must be between >= 0 and <= 1")
-  expect_error(qnld(.1, lambda=-2, beta=3), "lambda must be > 0")
-  expect_error(qnld(.1, lambda=2, beta=-3), "beta must be > 0")
-  expect_error(rnld(-1, lambda=2, beta=3), "n must be >= 1")
-  expect_error(rnld(1, lambda=-2, beta=3), "lambda must be > 0")
-  expect_error(rnld(1, lambda=2, beta=-3), "beta must be > 0")
+  expect_error(dEPd(1, lambda=-2, beta=3), "lambda must be > 0")
+  expect_error(dEPd(1, lambda=2, beta=-3), "beta must be > 0")
+  expect_error(pEPd(1, lambda=-2, beta=3), "lambda must be > 0")
+  expect_error(pEPd(1, lambda=2, beta=-3), "beta must be > 0")
+  expect_error(qEPd(2, lambda=2, beta=-3), "p must be between >= 0 and <= 1")
+  expect_error(qEPd(.1, lambda=-2, beta=3), "lambda must be > 0")
+  expect_error(qEPd(.1, lambda=2, beta=-3), "beta must be > 0")
+  expect_error(rEPd(-1, lambda=2, beta=3), "n must be >= 1")
+  expect_error(rEPd(1, lambda=-2, beta=3), "lambda must be > 0")
+  expect_error(rEPd(1, lambda=2, beta=-3), "beta must be > 0")
   expect_error(dnoPDD(1, theta = -1), "theta must be > 0")
   expect_error(pnoPDD(1, theta = -1), "theta must be > 0")
   expect_error(qnoPDD(10, theta = 1), "p must be between >= 0 and <= 1")
@@ -256,22 +256,22 @@ test_that("functions returns a  vector with the expected size", {
                 ptype = double(),size = 1)
   expect_vector(qbwd(.10, alpha=2, sigma=2), ptype = double(), size = 1)
   expect_vector(rbwd(10, alpha=2, sigma=2), ptype = double(), size = 10)
-  expect_vector(dsgrd(2, theta=3, alpha=1, q=4), ptype = double(), size = 1)
-  expect_vector(dsgrd(-2, theta=3, alpha=1, q=4), ptype = double(), size = 1)
-  expect_vector(dsgrd(2, theta=3, alpha=1, q=4, log = T), ptype = double(),
+  expect_vector(dsgrd(2, theta=3, alpha=1, beta=4), ptype = double(), size = 1)
+  expect_vector(dsgrd(-2, theta=3, alpha=1, beta=4), ptype = double(), size = 1)
+  expect_vector(dsgrd(2, theta=3, alpha=1, beta=4, log = T), ptype = double(),
                 size = 1)
-  expect_vector(dsgrd(-2, theta=3, alpha=1, q=4, log = T), ptype = double(),
+  expect_vector(dsgrd(-2, theta=3, alpha=1, beta=4, log = T), ptype = double(),
                 size = 1)
-  expect_vector(psgrd(2, theta=3, alpha=1,q =4), ptype = double(), size = 1)
-  expect_vector(psgrd(-2, theta=3, alpha=1,q =4), ptype = double(), size = 1)
-  expect_vector(psgrd(2, theta=3, alpha=1, q =4, log.p = T), ptype = double(),
+  expect_vector(psgrd(2, theta=3, alpha=1,beta =4), ptype = double(), size = 1)
+  expect_vector(psgrd(-2, theta=3, alpha=1,beta =4), ptype = double(), size = 1)
+  expect_vector(psgrd(2, theta=3, alpha=1,beta =4, log.p = T), ptype = double(),
                 size = 1)
-  expect_vector(psgrd(2, theta=3, alpha=1, q=4, lower.tail = F),
+  expect_vector(psgrd(2, theta=3, alpha=1, beta=4, lower.tail = F),
                 ptype = double(), size = 1)
-  expect_vector(qsgrd(.2,theta=3,alpha=1,q=4), ptype = double(), size = 1)
-  expect_vector(qsgrd(.2, theta=3, alpha=1, q=4, lower.tail = F),
+  expect_vector(qsgrd(.2,theta=3,alpha=1,beta=4), ptype = double(), size = 1)
+  expect_vector(qsgrd(.2, theta=3, alpha=1, beta=4, lower.tail = F),
                 ptype = double(), size = 1)
-  expect_vector(rsgrd(20, theta=3, alpha=1, q=4), ptype = double(), size = 20)
+  expect_vector(rsgrd(20, theta=3, alpha=1,beta=4), ptype = double(), size = 20)
   expect_vector(dsod(0.4, alpha=1, beta=2), ptype = double(), size = 1)
   expect_vector(dsod(0.4, alpha=1, beta=2, log = T), ptype = double(), size = 1)
   expect_vector(psod(0.4, alpha=1, beta=2), ptype = double(), size = 1)
@@ -395,23 +395,24 @@ test_that("functions returns a  vector with the expected size", {
   expect_vector(pndd(.5,theta=2), ptype = double(), size = 1)
   expect_vector(pndd(.5,theta=2,lower.tail=F), ptype = double(), size = 1)
   expect_vector(pndd(.5,theta=2,log.p=T), ptype = double(), size = 1)
+  expect_vector(pndd(-5,theta=2,log.p=F), ptype = double(), size = 1)
   expect_vector(qndd(.5,theta=2), ptype = double(), size = 1)
   expect_vector(qndd(c(.5,.2),theta=c(2,3),lower.tail=F),
                 ptype = double(), size = 2)
   expect_vector(rndd(20,theta=2), ptype = double(), size = 20)
-  expect_vector(dnld(1, lambda=2, beta=3), ptype = double(), size = 1)
-  expect_vector(dnld(-1, lambda=2, beta=3), ptype = double(), size = 1)
-  expect_vector(dnld(1, lambda=2, beta=3, log = T), ptype = double(), size = 1)
-  expect_vector(pnld(1, lambda=2, beta=3), ptype = double(), size = 1)
-  expect_vector(pnld(-1, lambda=2, beta=3), ptype = double(), size = 1)
-  expect_vector(pnld(1, lambda=2, beta=3, log.p = T),
+  expect_vector(dEPd(1, lambda=2, beta=3), ptype = double(), size = 1)
+  expect_vector(dEPd(-1, lambda=2, beta=3), ptype = double(), size = 1)
+  expect_vector(dEPd(1, lambda=2, beta=3, log = T), ptype = double(), size = 1)
+  expect_vector(pEPd(1, lambda=2, beta=3), ptype = double(), size = 1)
+  expect_vector(pEPd(-1, lambda=2, beta=3), ptype = double(), size = 1)
+  expect_vector(pEPd(1, lambda=2, beta=3, log.p = T),
                 ptype = double(), size = 1)
-  expect_vector(pnld(1, lambda=2, beta=3, lower.tail = F),
+  expect_vector(pEPd(1, lambda=2, beta=3, lower.tail = F),
                 ptype = double(), size = 1)
-  expect_vector(qnld(.1, lambda=2, beta=3), ptype = double(), size = 1)
-  expect_vector(qnld(.1, lambda=2, beta=3, lower.tail = F),
+  expect_vector(qEPd(.1, lambda=2, beta=3), ptype = double(), size = 1)
+  expect_vector(qEPd(.1, lambda=2, beta=3, lower.tail = F),
                 ptype = double(), size = 1)
-  expect_vector(rnld(20, lambda=2, beta=3), ptype = double(), size = 20)
+  expect_vector(rEPd(20, lambda=2, beta=3), ptype = double(), size = 20)
   expect_vector(dnoPDD(1,theta=2), ptype = double(), size = 1)
   expect_vector(dnoPDD(-1,theta=2), ptype = double(), size = 1)
   expect_vector(dnoPDD(1, theta=2, log = T), ptype = double(), size = 1)

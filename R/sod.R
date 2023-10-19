@@ -1,7 +1,7 @@
 #' On parameter estimation of the standard omega distribution
 #' @export
 #' @name sod
-#' @param x vector of quantiles.
+#' @param x,q vector of quantiles.
 #' @param alpha,beta are parameters.
 #' @param p vector of probabilities.
 #' @param n number of observations. If \code{length(n) > 1}, the length is taken
@@ -52,19 +52,19 @@ dsod<-function(x,alpha,beta,log=FALSE)
 #' @rdname sod
 #' @examples
 #' psod(0.4, alpha=1, beta=2)
-psod<-function(x,alpha,beta,lower.tail=TRUE,log.p=FALSE)
+psod<-function(q,alpha,beta,lower.tail=TRUE,log.p=FALSE)
 {
   if(any(alpha<=0)) {stop("alpha must be > 0")}
   if(any(beta<=0)) {stop("beta must be > 0")}
-  enuzun <- max(length(x),length(alpha),length(beta))
-  x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+  enuzun <- max(length(q),length(alpha),length(beta))
+  q<-rep(q,enuzun/length(q)+1)[1:enuzun]
   alpha<-rep(alpha, enuzun/length(alpha)+1)[1:enuzun]
   beta<-rep(beta,enuzun/length(beta)+1)[1:enuzun]
   cdf<-NULL
   for (i in 1:enuzun)
   {
-    if (x[i] > 0 && x[i] < 1) {cdf[i]<-1-((1+x[i]^beta[i])/
-                              (1-x[i]^beta[i]))^(-alpha[i]/2)} else (cdf[i] <-0)
+    if (q[i] > 0 && q[i] < 1) {cdf[i]<-1-((1+q[i]^beta[i])/
+                              (1-q[i]^beta[i]))^(-alpha[i]/2)} else (cdf[i] <-0)
   }
   if(lower.tail==FALSE) cdf<-1-cdf
   if(log.p==TRUE) cdf<-log(cdf)

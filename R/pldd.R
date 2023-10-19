@@ -1,7 +1,7 @@
 #' A Power Log Dagum Distribution
 #' @export
 #' @name pldd
-#' @param x vector of quantiles.
+#' @param x,q vector of quantiles.
 #' @param alpha,beta,theta are parameters.
 #' @param p vector of probabilities.
 #' @param n number of observations. If \code{length(n) > 1}, the length is taken
@@ -70,20 +70,20 @@ dpldd<-function(x,alpha,beta,theta,log=FALSE)
 #' @rdname pldd
 #' @examples
 #' ppldd(1,alpha=2,beta=3,theta=4)
-ppldd<-function(x,alpha,beta,theta,lower.tail=TRUE,log.p=FALSE)
+ppldd<-function(q,alpha,beta,theta,lower.tail=TRUE,log.p=FALSE)
   {
   if(any(alpha<=0)) {stop("alpha must be > 0")}
   if(any(theta<0)) {stop("theta must be >= 0")}
-    enuzun<-max(length(x),length(alpha),length(beta),length(theta))
-    x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+    enuzun<-max(length(q),length(alpha),length(beta),length(theta))
+    q<-rep(q,enuzun/length(q)+1)[1:enuzun]
     alpha<-rep(alpha,enuzun/length(alpha)+1)[1:enuzun]
     beta<-rep(beta,enuzun/length(beta)+1)[1:enuzun]
     theta<-rep(theta,enuzun/length(theta)+1)[1:enuzun]
     cdf<-NULL
     for (i in 1:enuzun) suppressWarnings(
     {
-      cdf[i]<-(1+exp(-(beta[i]*x[i]+(sign(x[i]))*(theta[i]/beta[i])*
-                         abs(x[i])^beta[i])))^(-alpha[i])
+      cdf[i]<-(1+exp(-(beta[i]*q[i]+(sign(q[i]))*(theta[i]/beta[i])*
+                         abs(q[i])^beta[i])))^(-alpha[i])
     })
     if(lower.tail==FALSE) cdf<-1-cdf
     if(log.p==TRUE) cdf<-log(cdf)

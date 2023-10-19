@@ -10,14 +10,14 @@
 \usage{
 dgld(x, a, alpha, beta = 1, log = FALSE)
 
-pgld(x, a, alpha, beta = 1, lower.tail = TRUE, log.p = FALSE)
+pgld(q, a, alpha, beta = 1, lower.tail = TRUE, log.p = FALSE)
 
 qgld(p, a, alpha, beta = 1, lower.tail = TRUE)
 
 rgld(n, a, alpha, beta = 1)
 }
 \arguments{
-\item{x}{vector of quantiles.}
+\item{x, q}{vector of quantiles.}
 
 \item{a, alpha}{are shape parameters.}
 

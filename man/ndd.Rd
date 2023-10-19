@@ -10,14 +10,14 @@
 \usage{
 dndd(x, theta, log = FALSE)
 
-pndd(x, theta, lower.tail = TRUE, log.p = FALSE)
+pndd(q, theta, lower.tail = TRUE, log.p = FALSE)
 
 qndd(p, theta, lower.tail = TRUE)
 
 rndd(n, theta)
 }
 \arguments{
-\item{x}{vector of quantiles.}
+\item{x, q}{vector of quantiles.}
 
 \item{theta}{a parameter.}
 

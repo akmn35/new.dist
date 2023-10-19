@@ -1,7 +1,7 @@
 #' The Power Muth Distribution
 #' @export
 #' @name tpmd
-#' @param x vector of quantiles.
+#' @param x,q vector of quantiles.
 #' @param beta a scale parameter.
 #' @param p vector of probabilities.
 #' @param n number of observations. If \code{length(n) > 1}, the length is taken
@@ -62,18 +62,18 @@ dtpmd<-function(x,beta=1,alpha,log=FALSE)
 #' @rdname tpmd
 #' @examples
 #' ptpmd(1,beta=2,alpha=3)
-ptpmd<-function(x,beta=1,alpha,lower.tail=TRUE,log.p=FALSE)
+ptpmd<-function(q,beta=1,alpha,lower.tail=TRUE,log.p=FALSE)
 {
   if(any(beta<=0)) {stop("beta must be > 0")}
   if(any(alpha<=0)) {stop("alpha must be > 0")}
-  enuzun<-max(length(x), length(alpha), length(beta))
-  x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+  enuzun<-max(length(q), length(alpha), length(beta))
+  q<-rep(q,enuzun/length(q)+1)[1:enuzun]
   alpha<-rep(alpha, enuzun/length(alpha)+1)[1:enuzun]
   beta<-rep(beta,enuzun/length(beta)+1)[1:enuzun]
   cdf<-NULL
   for (i in 1:enuzun)
   {
-    if(x[i]>0) cdf[i]<-1-exp(((x[i]/beta[i])^alpha[i])-(exp((x[i]/
+    if(q[i]>0) cdf[i]<-1-exp(((q[i]/beta[i])^alpha[i])-(exp((q[i]/
                                         beta[i])^alpha[i])-1)) else cdf[i]<-0
   }
   if(lower.tail==FALSE) cdf<-1-cdf

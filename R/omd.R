@@ -1,7 +1,7 @@
 #' on the muth distribution
 #' @export
 #' @name omd
-#' @param x vector of quantiles.
+#' @param x,q vector of quantiles.
 #' @param alpha a parameter.
 #' @param p vector of probabilities.
 #' @param n number of observations. If \code{length(n) > 1}, the length is taken
@@ -50,16 +50,16 @@ domd<-function(x,alpha,log=FALSE)
 #' @rdname omd
 #' @examples
 #' pomd(1,alpha=.2)
-pomd<-function(x,alpha,lower.tail=TRUE,log.p=FALSE)
+pomd<-function(q,alpha,lower.tail=TRUE,log.p=FALSE)
 {
   if(any(alpha<=0)|any(alpha>1)) {stop("alpha must be > 0 and <= 1")}
-  enuzun <- max(length(x),length(alpha))
-  x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+  enuzun <- max(length(q),length(alpha))
+  q<-rep(q,enuzun/length(q)+1)[1:enuzun]
   alpha<-rep(alpha,enuzun/length(alpha)+1)[1:enuzun]
   cdf<-NULL
   for (i in 1:enuzun)
   {
-    if(x[i]>0) cdf[i]<-1-exp(alpha[i]*x[i]-(1/alpha[i])*(exp(alpha[i]*x[i])-1))
+    if(q[i]>0) cdf[i]<-1-exp(alpha[i]*q[i]-(1/alpha[i])*(exp(alpha[i]*q[i])-1))
     else cdf[i]<-0
   }
   if(lower.tail==FALSE) cdf<-1-cdf

@@ -1,7 +1,7 @@
 #' Uniform-Geometric distribution
 #' @export
 #' @name ugd
-#' @param x vector of quantiles.
+#' @param x,q vector of quantiles.
 #' @param theta a parameter.
 #' @param p vector of probabilities.
 #' @param n number of observations. If \code{length(n) > 1}, the length is taken
@@ -53,18 +53,18 @@ dugd<-function(x,theta,log=FALSE)
 #' @rdname ugd
 #' @examples
 #' pugd(1,theta=.5)
-pugd<-function(x,theta,lower.tail=TRUE,log.p=FALSE)
+pugd<-function(q,theta,lower.tail=TRUE,log.p=FALSE)
 {
-  x<-floor(x)
+  q<-floor(q)
   if(any(theta<=0)|any(theta>=1)) {stop("theta must be between  0 > and < 1")}
-  enuzun <- max(length(x),length(theta))
-  x<-rep(x,enuzun/length(x)+1)[1:enuzun]
+  enuzun <- max(length(q),length(theta))
+  q<-rep(q,enuzun/length(q)+1)[1:enuzun]
   theta<-rep(theta,enuzun/length(theta)+1)[1:enuzun]
   cdf<-NULL
   for (i in 1:enuzun)
   {
-    if(x[i]>=1) cdf[i]<-1-theta[i]*(1-theta[i])^x[i]*((1/theta[i])-x[i]*
-                              VGAM::lerch(1-theta[i],1,x[i]+1)) else cdf[i]<-0
+    if(q[i]>=1) cdf[i]<-1-theta[i]*(1-theta[i])^q[i]*((1/theta[i])-q[i]*
+                              VGAM::lerch(1-theta[i],1,q[i]+1)) else cdf[i]<-0
   }
   if(lower.tail==FALSE) cdf<-1-cdf
   if(log.p==TRUE) cdf<-log(cdf)

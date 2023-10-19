@@ -10,14 +10,14 @@
 \usage{
 dtprd(x, lambda = 1, mu, log = FALSE)
 
-ptprd(x, lambda = 1, mu, lower.tail = TRUE, log.p = FALSE)
+ptprd(q, lambda = 1, mu, lower.tail = TRUE, log.p = FALSE)
 
 qtprd(p, lambda = 1, mu, lower.tail = TRUE)
 
 rtprd(n, lambda = 1, mu)
 }
 \arguments{
-\item{x}{vector of quantiles.}
+\item{x, q}{vector of quantiles.}
 
 \item{lambda}{a scale parameter.}
 
