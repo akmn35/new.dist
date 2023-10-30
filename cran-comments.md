@@ -100,20 +100,8 @@
 
 0 errors ✔ | 0 warnings ✔ | 6 notes ✖
 
-* This is a new release.
-* using log directory 'd:/RCompile/CRANincoming/R-devel/new.dist.Rcheck'
-* using R Under development (unstable) (2023-10-29 r85433 ucrt)
-* using platform: x86_64-w64-mingw32
-* R was compiled by
-    gcc.exe (GCC) 12.3.0
-    GNU Fortran (GCC) 12.3.0
-* running under: Windows Server 2022 x64 (build 20348)
-* using session charset: UTF-8
-* checking for file 'new.dist/DESCRIPTION' ... OK
-* this is package 'new.dist' version '0.1.0'
-* package encoding: UTF-8
-* checking CRAN incoming feasibility ... NOTE
-Maintainer: 'Ramazan Akman <ramazanakman12345@gmail.com>'
+* checking CRAN incoming feasibility ... [3s/4s] NOTE
+Maintainer: ‘Ramazan Akman <ramazanakman12345@gmail.com>’
 
 New submission
 
@@ -126,9 +114,6 @@ Possibly misspelled words in DESCRIPTION:
   Lindley (18:32, 20:45)
   Lomax (18:64)
   Muth (17:30, 24:42)
-  Univariate (2:20)
-  Weibull (17:59, 25:46)
-  quantile (14:5)
 
 Found the following (possibly) invalid URLs:
   URL: https://codecov.io/gh/akmn35/new.dist (moved to https://app.codecov.io/gh/akmn35/new.dist)
@@ -136,5 +121,4 @@ Found the following (possibly) invalid URLs:
     Status: 301
     Message: Moved Permanently
   For content that is 'Moved Permanently', please change http to https,
-  add trailing slashes, or replace the old by the new URL.
-Status: 2 NOTEs
+  add trailing slashes, or replace the old by the new URL.Status: 2 NOTEs
