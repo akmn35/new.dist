@@ -11,18 +11,18 @@ Author:
 Maintainer: Ramazan Akman <ramazanakman12345@gmail.com>
 Description: The aim is to develop an R package, which is new.dist package,
     for the probability (density) function, the distribution function, the
-    quantile function and the associated random number generation function
+    "quantile" function and the associated random number generation function
     for discrete and continuous distributions, which have recently been
     proposed in the literature. This package implements the following
-    distributions: The Power Muth Distribution, A Bimodal Weibull
-    Distribution, The Discrete Lindley Distribution, The Gamma-Lomax
-    Distribution, Weighted Geometric Distribution, A Power Log-Dagum
-    Distribution, Kumaraswamy Distribution, Lindley Distribution, The
-    Unit-Inverse Gaussian Distribution, EP Distribution, Akash
+    distributions: The Power "Muth" Distribution, A Bimodal Weibull
+    Distribution, The Discrete "Lindley" Distribution, The Gamma-"Lomax"
+    Distribution, Weighted Geometric Distribution, A Power Log-"Dagum"
+    Distribution, "Kumaraswamy" Distribution, "Lindley" Distribution, The
+    Unit-Inverse Gaussian Distribution, "EP" Distribution, "Akash"
     Distribution, Ishita Distribution, Maxwell Distribution, The Standard
     Omega Distribution, Slashed Generalized Rayleigh Distribution,
-    Two-Parameter Rayleigh Distribution, Muth Distribution,
-    Uniform-Geometric Distribution, Discrete Weibull Distribution.
+    Two-Parameter Rayleigh Distribution, "Muth" Distribution,
+    Uniform-Geometric Distribution, Discrete "Weibull" Distribution.
 License: GPL-3
 URL: https://github.com/akmn35/new.dist, https://akmn35.github.io/new.dist/
 BugReports: https://github.com/akmn35/new.dist/issues
