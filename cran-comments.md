@@ -5,6 +5,29 @@
 - R-hub fedora-clang-devel (r-devel)
 
 ## R CMD check results
+* checking CRAN incoming feasibility ... [3s/4s] NOTE
+Maintainer: ‘Ramazan Akman <ramazanakman12345@gmail.com>’
+
+New submission
+
+Possibly misspelled words in DESCRIPTION:
+  Akash (21:58)
+  Dagum (19:64)
+  EP (21:41)
+  Ishita (22:19)
+  Kumaraswamy (20:19)
+  Lindley (18:32, 20:45)
+  Lomax (18:64)
+  Muth (17:30, 24:42)
+
+Found the following (possibly) invalid URLs:
+  URL: https://codecov.io/gh/akmn35/new.dist (moved to https://app.codecov.io/gh/akmn35/new.dist)
+    From: README.md
+    Status: 301
+    Message: Moved Permanently
+  For content that is 'Moved Permanently', please change http to https,
+  add trailing slashes, or replace the old by the new URL.Status: 2 NOTEs
+  
 ❯ On windows-x86_64-devel (r-devel)
   checking CRAN incoming feasibility ... NOTE
   Maintainer: 'Ramazan Akman <ramazanakman12345@gmail.com>'
@@ -100,25 +123,4 @@
 
 0 errors ✔ | 0 warnings ✔ | 6 notes ✖
 
-* checking CRAN incoming feasibility ... [3s/4s] NOTE
-Maintainer: ‘Ramazan Akman <ramazanakman12345@gmail.com>’
 
-New submission
-
-Possibly misspelled words in DESCRIPTION:
-  Akash (21:58)
-  Dagum (19:64)
-  EP (21:41)
-  Ishita (22:19)
-  Kumaraswamy (20:19)
-  Lindley (18:32, 20:45)
-  Lomax (18:64)
-  Muth (17:30, 24:42)
-
-Found the following (possibly) invalid URLs:
-  URL: https://codecov.io/gh/akmn35/new.dist (moved to https://app.codecov.io/gh/akmn35/new.dist)
-    From: README.md
-    Status: 301
-    Message: Moved Permanently
-  For content that is 'Moved Permanently', please change http to https,
-  add trailing slashes, or replace the old by the new URL.Status: 2 NOTEs
