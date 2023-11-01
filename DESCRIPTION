@@ -14,7 +14,7 @@ Description: The aim is to develop an R package, which is new.dist package,
     'quantile' function and the associated random number generation function
     for discrete and continuous distributions, which have recently been
     proposed in the literature. This package implements the following
-    distributions: The Power 'Muth' Distribution, A Bimodal Weibull
+    distributions: The Power 'Muth' Distribution, A Bimodal 'Weibull'
     Distribution, The Discrete 'Lindley' Distribution, The Gamma-'Lomax'
     Distribution, Weighted Geometric Distribution, A Power Log-'Dagum'
     Distribution, 'Kumaraswamy' Distribution, 'Lindley' Distribution, The
