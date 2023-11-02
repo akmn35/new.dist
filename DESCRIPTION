@@ -1,4 +1,4 @@
-Package: 'new.dist'
+Package: new.dist
 Title: Alternative Continuous and Discrete Distributions
 Version: 0.1.0
 Authors@R:c( 
