@@ -6,7 +6,7 @@ Authors@R:c(
         comment = "https://www.researchgate.net/profile/Ramazan-Akman"),
     person("Coşkun", "Kuş",,"coskunkus@gmail.com",role=c("aut","ctb"),
         comment = "https://www.selcuk.edu.tr/Person/Detail/coskun"),
-    person("Igab", "Abusaif",,"censtat@gmail.com",role=c("aut","ctb"),
+    person("Ihab", "Abusaif",,"censtat@gmail.com",role=c("aut","ctb"),
         comment = "https://www.researchgate.net/profile/Ihab-Abusaif"))
 Maintainer: Ramazan Akman <ramazanakman12345@gmail.com>
 Description:The aim is to develop an R package, which is the 'new.dist'
