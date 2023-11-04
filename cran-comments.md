@@ -35,6 +35,6 @@ On fedora-clang-devel (r-devel)
   New submission
 
 
-0 errors ✔ | 0 warnings ✔ | 6 notes ✖
+0 errors ✔ | 0 warnings ✔ | 4 notes ✖
 
 
