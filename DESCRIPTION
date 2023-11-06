@@ -10,12 +10,12 @@ Authors@R:c(
         comment = "https://www.researchgate.net/profile/Ihab-Abusaif"))
 Maintainer: Ramazan Akman <ramazanakman12345@gmail.com>
 Description:The aim is to develop an R package, which is the 'new.dist'
-   package, for the probability (density) function, the
-   distribution function, the 'quantile' function and the
-   associated random number generation function for discrete and
-   continuous distributions, which have recently been proposed
-   in the literature. This package implements the following
-   distributions: The Power Muth Distribution, a Bimodal Weibull
+    package, for the probability (density) function, the
+    distribution function, the quantile function and the
+    associated random number generation function for discrete and
+    continuous distributions, which have recently been proposed
+    in the literature. This package implements the following
+    distributions: The Power Muth Distribution, a Bimodal Weibull
     Distribution, the Discrete Lindley Distribution, The
     Gamma-Lomax Distribution, Weighted Geometric Distribution, a
     Power Log-Dagum Distribution, Kumaraswamy Distribution,
