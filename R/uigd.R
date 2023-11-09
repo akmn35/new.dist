@@ -1,5 +1,4 @@
-#' The unit inverse Gaussian distribution A new alternative to two parameter
-#' distributions on the unit interval
+#' Unit Inverse Gaussian Distribution
 #' @export
 #' @name uigd
 #' @param x,q vector of quantiles.
@@ -50,8 +49,7 @@ duigd<-function(x,mu,lambda=1,log=FALSE)
   if(log==TRUE) pdf<-log(pdf)
   return(pdf)
 }
-#' The unit inverse Gaussian distribution A new alternative to two parameter
-#' distributions on the unit interval
+#' Unit Inverse Gaussian Distribution
 #' @export
 #' @rdname uigd
 #' @examples
@@ -75,8 +73,7 @@ puigd<-function(q,mu,lambda=1,lower.tail=TRUE,log.p=FALSE)
   if(log.p==TRUE) cdf<-log(cdf)
   return(cdf)
 }
-#' The unit inverse Gaussian distribution A new alternative to two parameter
-#' distributions on the unit interval
+#' Unit Inverse Gaussian Distribution
 #' @export
 #' @rdname uigd
 #' @examples
@@ -111,8 +108,7 @@ quigd<-function(p,mu,lambda=1,lower.tail=TRUE)
   }
   return(kok)
 }
-#' The unit inverse Gaussian distribution A new alternative to two parameter
-#' distributions on the unit interval
+#' Unit Inverse Gaussian Distribution
 #' @export
 #' @rdname uigd
 #' @examples

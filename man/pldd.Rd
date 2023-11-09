@@ -6,7 +6,7 @@
 \alias{ppldd}
 \alias{qpldd}
 \alias{rpldd}
-\title{A Power Log Dagum Distribution}
+\title{Power Log Dagum Distribution}
 \usage{
 dpldd(x, alpha, beta, theta, log = FALSE)
 

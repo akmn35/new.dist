@@ -6,7 +6,7 @@
 \alias{pgld}
 \alias{qgld}
 \alias{rgld}
-\title{The gamma-Lomax distribution}
+\title{Gamma-Lomax Distribution}
 \usage{
 dgld(x, a, alpha, beta = 1, log = FALSE)
 

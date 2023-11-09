@@ -6,7 +6,7 @@
 \alias{pnoPDD}
 \alias{qnoPDD}
 \alias{rnoPDD}
-\title{A new one parameter discrete distribution and its applications}
+\title{Ram Awadh Distribution}
 \usage{
 dnoPDD(x, theta = 1, log = FALSE)
 

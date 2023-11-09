@@ -1,4 +1,4 @@
-#' Uniform-Geometric distribution
+#' Uniform-Geometric Distribution
 #' @export
 #' @name ugd
 #' @param x,q vector of quantiles.
@@ -48,7 +48,7 @@ dugd<-function(x,theta,log=FALSE)
   if(log==TRUE) pdf<-log(pdf)
   return(pdf)
 }
-#' Uniform-Geometric distribution
+#' Uniform-Geometric Distribution
 #' @export
 #' @rdname ugd
 #' @examples
@@ -70,7 +70,7 @@ pugd<-function(q,theta,lower.tail=TRUE,log.p=FALSE)
   if(log.p==TRUE) cdf<-log(cdf)
   return(cdf)
 }
-#' Uniform-Geometric distribution
+#' Uniform-Geometric Distribution
 #' @export
 #' @rdname ugd
 #' @examples
@@ -107,7 +107,7 @@ qugd<-function(p,theta,lower.tail=TRUE)
     return(quant)
   }
 }
-#' Uniform-Geometric distribution
+#' Uniform-Geometric Distribution
 #' @export
 #' @rdname ugd
 #' @examples

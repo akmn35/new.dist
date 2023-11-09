@@ -6,7 +6,7 @@
 \alias{psod}
 \alias{qsod}
 \alias{rsod}
-\title{On parameter estimation of the standard omega distribution}
+\title{Standard Omega Distribution}
 \usage{
 dsod(x, alpha, beta, log = FALSE)
 

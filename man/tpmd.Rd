@@ -6,7 +6,7 @@
 \alias{ptpmd}
 \alias{qtpmd}
 \alias{rtpmd}
-\title{The Power Muth Distribution}
+\title{Power Muth Distribution}
 \usage{
 dtpmd(x, beta = 1, alpha, log = FALSE)
 

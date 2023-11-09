@@ -6,7 +6,7 @@
 \alias{pndd}
 \alias{qndd}
 \alias{rndd}
-\title{A new discrete distribution}
+\title{Discrete Lindley Distribution}
 \usage{
 dndd(x, theta, log = FALSE)
 

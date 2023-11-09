@@ -6,8 +6,7 @@
 \alias{prld}
 \alias{qrld}
 \alias{rrld}
-\title{Inferences on stress–strength reliability based on ranked set sampling data
-incase of Lindley distribution}
+\title{Lindley Distribution}
 \usage{
 drld(x, theta, log = FALSE)
 

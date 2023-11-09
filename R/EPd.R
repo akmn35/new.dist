@@ -1,4 +1,4 @@
-#' The EP distribution
+#' EP distribution
 #' @export
 #' @name EPd
 #' @param x,q vector of quantiles.
@@ -46,7 +46,7 @@ dEPd<-function(x,lambda,beta,log=FALSE)
   if(log==TRUE) pdf<-log(pdf)
   return(pdf)
 }
-#' The EP distribution
+#' EP distribution
 #' @export
 #' @rdname EPd
 #' @examples
@@ -69,7 +69,7 @@ pEPd<-function(q,lambda,beta,lower.tail=TRUE,log.p=FALSE)
   if(log.p==TRUE) cdf<-log(cdf)
   return(cdf)
 }
-#' The EP distribution
+#' EP distribution
 #' @export
 #' @rdname EPd
 #' @examples
@@ -96,7 +96,7 @@ qEPd<-function(p,lambda,beta,lower.tail=TRUE)
   }
   return(qfonk)
 }
-#' The EP distribution
+#' EP distribution
 #' @export
 #' @rdname EPd
 #' @examples

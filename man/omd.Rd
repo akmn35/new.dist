@@ -6,7 +6,7 @@
 \alias{pomd}
 \alias{qomd}
 \alias{romd}
-\title{on the muth distribution}
+\title{Muth Distribution}
 \usage{
 domd(x, alpha, log = FALSE)
 

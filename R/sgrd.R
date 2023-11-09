@@ -1,4 +1,4 @@
-#' Slashed generalized Rayleigh distribution
+#' Slashed Generalized Rayleigh Distribution
 #' @export
 #' @name sgrd
 #' @param x,q vector of quantiles.
@@ -55,7 +55,7 @@ first and second moment does not exist!"))}
     if(log==TRUE) pdf<-log(pdf)
       return(pdf)
 }
-#' Slashed generalized Rayleigh distribution
+#' Slashed Generalized Rayleigh Distribution
 #' @export
 #' @rdname sgrd
 #' @examples
@@ -84,7 +84,7 @@ first and second moment does not exist!"))}
     if(log.p==TRUE) integral <- log(integral)
     return(integral)
   }
-#' Slashed generalized Rayleigh distribution
+#' Slashed Generalized Rayleigh Distribution
 #' @export
 #' @rdname sgrd
 #' @examples
@@ -120,7 +120,7 @@ the first and second moment does not exist!"))}
   })
   return(kok)
 }
-#' Slashed generalized Rayleigh distribution
+#' Slashed Generalized Rayleigh Distribution
 #' @export
 #' @rdname sgrd
 #' @examples

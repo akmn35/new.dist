@@ -1,4 +1,4 @@
-#' A new one parameter discrete distribution and its applications
+#' Ram Awadh Distribution
 #' @export
 #' @name noPDD
 #' @param x,q vector of quantiles.
@@ -44,7 +44,7 @@ dnoPDD<-function(x,theta=1,log=FALSE)
   if(log==TRUE) pdf<-log(pdf)
   return(pdf)
 }
-#' A new one parameter discrete distribution and its applications
+#' Ram Awadh Distribution
 #' @export
 #' @rdname noPDD
 #' @examples
@@ -66,7 +66,7 @@ pnoPDD<-function(q,theta=1,lower.tail=TRUE,log.p=FALSE)
   if(log.p==TRUE) cdf<-log(cdf)
   return(cdf)
 }
-#' A new one parameter discrete distribution and its applications
+#' Ram Awadh Distribution
 #' @export
 #' @rdname noPDD
 #' @examples
@@ -99,7 +99,7 @@ qnoPDD<-function(p,theta=1,lower.tail=TRUE)
   })
   return(kok)
 }
-#' A new one parameter discrete distribution and its applications
+#' Ram Awadh Distribution
 #' @export
 #' @rdname noPDD
 #' @examples

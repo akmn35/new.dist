@@ -1,4 +1,4 @@
-#' Estimation in Maxwell distribution with randomly censored data
+#' Maxwell Distribution
 #' @export
 #' @name emd
 #' @param x,q vector of quantiles.

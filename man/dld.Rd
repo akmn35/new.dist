@@ -6,7 +6,7 @@
 \alias{pdld}
 \alias{qdld}
 \alias{rdld}
-\title{The discrete Lindley distribution}
+\title{Discrete Lindley Distribution}
 \usage{
 ddld(x, theta, log = FALSE)
 

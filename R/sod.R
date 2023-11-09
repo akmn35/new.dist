@@ -1,4 +1,4 @@
-#' On parameter estimation of the standard omega distribution
+#' Standard Omega Distribution
 #' @export
 #' @name sod
 #' @param x,q vector of quantiles.
@@ -47,7 +47,7 @@ dsod<-function(x,alpha,beta,log=FALSE)
     if(log==TRUE) pdf<-log(pdf)
     return(pdf)
 }
-#' On parameter estimation of the standard omega distribution
+#' Standard Omega Distribution
 #' @export
 #' @rdname sod
 #' @examples
@@ -70,7 +70,7 @@ psod<-function(q,alpha,beta,lower.tail=TRUE,log.p=FALSE)
   if(log.p==TRUE) cdf<-log(cdf)
   return(cdf)
 }
-#' On parameter estimation of the standard omega distribution
+#' Standard Omega Distribution
 #' @export
 #' @rdname sod
 #' @examples
@@ -97,7 +97,7 @@ qsod<-function(p,alpha,beta,lower.tail=TRUE)
   }
   return(qfonk)
 }
-#' On parameter estimation of the standard omega distribution
+#' Standard Omega Distribution
 #' @export
 #' @rdname sod
 #' @examples

@@ -6,7 +6,7 @@
 \alias{pbwd}
 \alias{qbwd}
 \alias{rbwd}
-\title{A Bimodal Weibull Distribution}
+\title{Bimodal Weibull Distribution}
 \usage{
 dbwd(x, alpha, beta = 1, sigma, log = FALSE)
 

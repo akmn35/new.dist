@@ -1,4 +1,4 @@
-#' The gamma-Lomax distribution
+#' Gamma-Lomax Distribution
 #' @export
 #' @name gld
 #' @param x,q vector of quantiles.
@@ -57,7 +57,7 @@ dgld<-function(x,a,alpha,beta=1,log=FALSE)
   if(log==TRUE) pdf<-log(pdf)
   return(pdf)
 }
-#' The gamma-Lomax distribution
+#' Gamma-Lomax Distribution
 #' @export
 #' @rdname gld
 #' @examples
@@ -82,7 +82,7 @@ pgld<-function(q,a,alpha,beta=1,lower.tail=TRUE,log.p=FALSE)
   if(log.p==TRUE) cdf<-log(cdf)
   return(cdf)
 }
-#' The gamma-Lomax distribution
+#' Gamma-Lomax Distribution
 #' @export
 #' @rdname gld
 #' @examples
@@ -104,7 +104,7 @@ qgld<-function(p,a,alpha,beta=1,lower.tail=TRUE)
   quant[i]<-VGAM::qlomax(1-exp(-(stats::qgamma(p[i],a[i],1))),beta[i],alpha[i])}
   return(quant)
 }
-#' The gamma-Lomax distribution
+#' Gamma-Lomax Distribution
 #' @export
 #' @rdname gld
 #' @examples

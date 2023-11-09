@@ -6,8 +6,7 @@
 \alias{pepkd}
 \alias{qepkd}
 \alias{repkd}
-\title{Estimation procedures for kumaraswamy distribution parameters under adaptive
-type-II hybrid progressive censoring}
+\title{Kumaraswamy Distribution}
 \usage{
 depkd(x, lambda, alpha, log = FALSE)
 

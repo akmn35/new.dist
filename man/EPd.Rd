@@ -6,7 +6,7 @@
 \alias{pEPd}
 \alias{qEPd}
 \alias{rEPd}
-\title{The EP distribution}
+\title{EP distribution}
 \usage{
 dEPd(x, lambda, beta, log = FALSE)
 

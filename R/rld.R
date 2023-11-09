@@ -1,5 +1,4 @@
-#' Inferences on stress–strength reliability based on ranked set sampling data
-#' incase of Lindley distribution
+#' Lindley Distribution
 #' @export
 #' @name rld
 #' @param x,q vector of quantiles.
@@ -45,8 +44,7 @@ drld<-function(x,theta,log=FALSE)
   if(log==TRUE) pdf<-log(pdf)
   return(pdf)
 }
-#' Inferences on stress–strength reliability based on ranked set sampling data
-#' incase of Lindley distribution
+#' Lindley Distribution
 #' @export
 #' @rdname rld
 #' @examples
@@ -67,8 +65,7 @@ prld<-function(q,theta,lower.tail=TRUE,log.p=FALSE)
   if(log.p==TRUE) cdf<-log(cdf)
   return(cdf)
 }
-#' Inferences on stress–strength reliability based on ranked set sampling data
-#' incase of Lindley distribution
+#' Lindley Distribution
 #' @export
 #' @rdname rld
 #' @examples
@@ -93,8 +90,7 @@ qrld<-function(p,theta,lower.tail=TRUE)
   }
   return(qfonk)
 }
-#' Inferences on stress–strength reliability based on ranked set sampling data
-#' incase of Lindley distribution
+#' Lindley Distribution
 #' @export
 #' @rdname rld
 #' @examples

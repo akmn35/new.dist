@@ -1,4 +1,4 @@
-#' The discrete Lindley distribution
+#' Discrete Lindley Distribution
 #' @export
 #' @name dld
 #' @param x,q vector of quantiles.
@@ -47,7 +47,7 @@ ddld<-function(x,theta,log=FALSE)
   if(log==TRUE) pdf<-log(pdf)
   return(pdf)
 }
-#' The discrete Lindley distribution
+#' Discrete Lindley Distribution
 #' @export
 #' @rdname dld
 #' @examples
@@ -70,7 +70,7 @@ pdld<-function(q,theta,lower.tail=TRUE,log.p=FALSE)
   if(log.p==TRUE) cdf<-log(cdf)
   return(cdf)
 }
-#' The discrete Lindley distribution
+#' Discrete Lindley Distribution
 #' @export
 #' @rdname dld
 #' @examples
@@ -111,7 +111,7 @@ qdld<-function(p,theta,lower.tail=TRUE)
     return(quant)
   }
 }
-#' The discrete Lindley distribution
+#' Discrete Lindley Distribution
 #' @export
 #' @rdname dld
 #' @examples

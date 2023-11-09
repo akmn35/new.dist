@@ -1,4 +1,4 @@
-#' on the muth distribution
+#' Muth Distribution
 #' @export
 #' @name omd
 #' @param x,q vector of quantiles.
@@ -45,7 +45,7 @@ domd<-function(x,alpha,log=FALSE)
   if(log==TRUE) pdf<-log(pdf)
   return(pdf)
 }
-#' on the muth distribution
+#' Muth Distribution
 #' @export
 #' @rdname omd
 #' @examples
@@ -66,7 +66,7 @@ pomd<-function(q,alpha,lower.tail=TRUE,log.p=FALSE)
   if(log.p==TRUE) cdf<-log(cdf)
   return(cdf)
 }
-#' on the muth distribution
+#' Muth Distribution
 #' @export
 #' @rdname omd
 #' @examples
@@ -91,7 +91,7 @@ qomd<-function(p,alpha,lower.tail=TRUE)
   }
   return(qfonk)
 }
-#' on the muth distribution
+#' Muth Distribution
 #' @export
 #' @rdname omd
 #' @examples

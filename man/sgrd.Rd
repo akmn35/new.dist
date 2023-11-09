@@ -6,7 +6,7 @@
 \alias{psgrd}
 \alias{qsgrd}
 \alias{rsgrd}
-\title{Slashed generalized Rayleigh distribution}
+\title{Slashed Generalized Rayleigh Distribution}
 \usage{
 dsgrd(x, theta, alpha, beta, log = FALSE)
 

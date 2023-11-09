@@ -6,7 +6,7 @@
 \alias{pugd}
 \alias{qugd}
 \alias{rugd}
-\title{Uniform-Geometric distribution}
+\title{Uniform-Geometric Distribution}
 \usage{
 dugd(x, theta, log = FALSE)
 

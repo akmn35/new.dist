@@ -1,4 +1,4 @@
-#' The Power Muth Distribution
+#' Power Muth Distribution
 #' @export
 #' @name tpmd
 #' @param x,q vector of quantiles.
@@ -57,7 +57,7 @@ dtpmd<-function(x,beta=1,alpha,log=FALSE)
   if(log==TRUE) pdf<-log(pdf)
   return(pdf)
 }
-#' The Power Muth Distribution
+#' Power Muth Distribution
 #' @export
 #' @rdname tpmd
 #' @examples
@@ -80,7 +80,7 @@ ptpmd<-function(q,beta=1,alpha,lower.tail=TRUE,log.p=FALSE)
   if(log.p==TRUE) cdf<-log(cdf)
   return(cdf)
 }
-#' The Power Muth Distribution
+#' Power Muth Distribution
 #' @export
 #' @rdname tpmd
 #' @examples
@@ -109,7 +109,7 @@ qtpmd<-function(p,beta=1,alpha,lower.tail=TRUE)
     return(quant)
   }
 }
-#' The Power Muth Distribution
+#' Power Muth Distribution
 #' @export
 #' @rdname tpmd
 #' @examples

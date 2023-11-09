@@ -6,7 +6,7 @@
 \alias{pemd}
 \alias{qemd}
 \alias{remd}
-\title{Estimation in Maxwell distribution with randomly censored data}
+\title{Maxwell Distribution}
 \usage{
 demd(x, theta = 1, log = FALSE)
 
@@ -42,7 +42,7 @@ Maxwell distribution with parameter \code{scale}.
 }
 \details{
 Maxwell distribution with \code{scale} parameter \eqn{\theta},
-has density
+has density given by
 \deqn{f\left( x\right) =\frac{4}{\sqrt{\pi }}
 \frac{1}{\theta ^{3/2}}x^{2}e^{-x^{2}/\theta },}
 where

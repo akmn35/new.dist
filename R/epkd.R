@@ -1,5 +1,4 @@
-#' Estimation procedures for kumaraswamy distribution parameters under adaptive
-#' type-II hybrid progressive censoring
+#' Kumaraswamy Distribution
 #' @export
 #' @name epkd
 #' @param x,q vector of quantiles.
@@ -18,7 +17,7 @@
 #' function, \code{qepkd} gives the quantile function and \code{repkd} generates
 #'  random deviates.
 #' @details
-#' Estimation procedures for kumaraswamy distribution with non-negative shape
+#' Kumaraswamy distribution with non-negative shape
 #' parameters \eqn{\alpha}, \eqn{\lambda} has density given by
 #' \deqn{f\left( x\right) =\alpha \lambda x^{\lambda -1}\left( 1-x^{\lambda }
 #' \right)^{\alpha -1},}
@@ -49,8 +48,7 @@ depkd<-function(x,lambda,alpha,log=FALSE)
   if(log==TRUE) pdf<-log(pdf)
   return(pdf)
 }
-#' Estimation procedures for kumaraswamy distribution parameters under adaptive
-#' type-II hybrid progressive censoring
+#' Kumaraswamy Distribution
 #' @export
 #' @rdname epkd
 #' @examples
@@ -72,8 +70,7 @@ pepkd<-function(q,lambda,alpha,lower.tail=TRUE,log.p=FALSE)
     if(log.p==TRUE) cdf<-log(cdf)
     return(cdf)
   }
-#' Estimation procedures for kumaraswamy distribution parameters under adaptive
-#' type-II hybrid progressive censoring
+#' Kumaraswamy Distribution
 #' @export
 #' @rdname epkd
 #' @examples
@@ -98,8 +95,7 @@ qepkd<-function(p,lambda,alpha,lower.tail=TRUE) # 0<p<1, lambda,alpha>0
   }
   return(qfonk)
 }
-#' Estimation procedures for kumaraswamy distribution parameters under adaptive
-#' type-II hybrid progressive censoring
+#' Kumaraswamy Distribution
 #' @export
 #' @rdname epkd
 #' @examples

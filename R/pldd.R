@@ -1,4 +1,4 @@
-#' A Power Log Dagum Distribution
+#' Power Log Dagum Distribution
 #' @export
 #' @name pldd
 #' @param x,q vector of quantiles.
@@ -65,7 +65,7 @@ dpldd<-function(x,alpha,beta,theta,log=FALSE)
     if(log==TRUE) pdf<-log(pdf)
     return(pdf)
   }
-#' A Power Log Dagum Distribution
+#' Power Log Dagum Distribution
 #' @export
 #' @rdname pldd
 #' @examples
@@ -89,7 +89,7 @@ ppldd<-function(q,alpha,beta,theta,lower.tail=TRUE,log.p=FALSE)
     if(log.p==TRUE) cdf<-log(cdf)
     return(cdf)
 }
-#' A Power Log Dagum Distribution
+#' Power Log Dagum Distribution
 #' @export
 #' @rdname pldd
 #' @examples
@@ -124,7 +124,7 @@ qpldd<-function(p,alpha,beta,theta,lower.tail=TRUE)
     })
     return(kok)
   }
-#' A Power Log Dagum Distribution
+#' Power Log Dagum Distribution
 #' @export
 #' @rdname pldd
 #' @examples

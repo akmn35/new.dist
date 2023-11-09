@@ -1,4 +1,4 @@
-#' A Bimodal Weibull Distribution
+#' Bimodal Weibull Distribution
 #' @export
 #' @name bwd
 #' @param x,q vector of quantiles.
@@ -61,7 +61,7 @@ dbwd<-function(x,alpha,beta=1,sigma, log = FALSE)
   if(log) {pdf<-log(pdf)}
   return(pdf)
 }
-#' A Bimodal Weibull Distribution
+#' Bimodal Weibull Distribution
 #' @export
 #' @rdname bwd
 #' @examples
@@ -89,7 +89,7 @@ pbwd<-function(q,alpha,beta=1,sigma,lower.tail=TRUE,log.p=FALSE)
   if(log.p) cdf<-log(cdf)
   return(cdf)
 }
-#' A Bimodal Weibull Distribution
+#' Bimodal Weibull Distribution
 #' @export
 #' @rdname bwd
 #' @examples
@@ -138,7 +138,7 @@ qbwd<-function(p,alpha,beta=1,sigma,lower.tail=TRUE)
     })
   return(kok)
 }
-#' A Bimodal Weibull Distribution
+#' Bimodal Weibull Distribution
 #' @export
 #' @rdname bwd
 #' @examples
