@@ -17,7 +17,7 @@
 #' random deviates.
 #' @details
 #' Maxwell distribution with \code{scale} parameter \eqn{\theta},
-#' has density
+#' has density given by
 #' \deqn{f\left( x\right) =\frac{4}{\sqrt{\pi }}
 #' \frac{1}{\theta ^{3/2}}x^{2}e^{-x^{2}/\theta },}
 #' where
