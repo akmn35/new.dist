@@ -39,7 +39,7 @@ random deviates.
 }
 \description{
 Density, distribution function, quantile function and random generation for
-Estimation procedures for kumaraswamy distribution with parameters
+kumaraswamy distribution with parameters
 \code{shapes}.
 }
 \details{

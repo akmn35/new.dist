@@ -13,14 +13,12 @@
 #' \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
 #' @description
 #' Density, distribution function, quantile function and random generation for
-#' the unit inverse Gaussian distribution A new alternative to two parameter
-#' distribution with parameters \code{mean} and \code{scale}.
+#' the unit inverse Gaussian distribution \code{mean} and \code{scale}.
 #' @return \code{duigd} gives the density, \code{puigd} gives the distribution
 #' function, \code{quigd} gives the quantile function and \code{ruigd} generates
 #'  random deviates.
 #' @details
-#' The unit inverse Gaussian distribution A new alternative to two parameter
-#' distribution with \code{scale} parameter \eqn{\lambda} and \code{mean}
+#' The unit inverse Gaussian distribution \code{scale} parameter \eqn{\lambda} and \code{mean}
 #' parameter \eqn{\mu}, has density given by
 #' \deqn{f\left( x\right) =\sqrt{\frac{\lambda }{2\pi }}
 #' \frac{1}{x^{3/2}}e^{-\frac{ \lambda }{2\mu ^{2}x}\left( x-\mu \right) ^{2}},}

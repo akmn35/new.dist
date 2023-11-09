@@ -38,10 +38,10 @@ generates random deviates.
 }
 \description{
 Density, distribution function, quantile function and random generation for
-a new one parameter discrete distribution with parameter \code{scale}.
+a Ram Awadh distribution with parameter \code{scale}.
 }
 \details{
-A new one parameter discrete distribution with \code{scale} parameter
+Ram Awadh distribution with \code{scale} parameter
 \eqn{\theta}, has density given by
 \deqn{f\left( x\right) =\frac{\theta ^{6}}{\theta ^{6}+120}
  \left( \theta+x^{5}\right) e^{-\theta x},}

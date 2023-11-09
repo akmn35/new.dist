@@ -12,7 +12,7 @@
 #' \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
 #' @description
 #' Density, distribution function, quantile function and random generation for
-#' Estimation procedures for kumaraswamy distribution with parameters
+#' kumaraswamy distribution with parameters
 #' \code{shapes}.
 #' @return \code{depkd} gives the density, \code{pepkd} gives the distribution
 #' function, \code{qepkd} gives the quantile function and \code{repkd} generates

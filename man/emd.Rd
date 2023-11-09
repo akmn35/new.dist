@@ -38,10 +38,10 @@ random deviates.
 }
 \description{
 Density, distribution function, quantile function and random generation for
-Estimation in Maxwell distribution with parameter \code{scale}.
+Maxwell distribution with parameter \code{scale}.
 }
 \details{
-Estimation in Maxwell distribution with \code{scale} parameter \eqn{\theta},
+Maxwell distribution with \code{scale} parameter \eqn{\theta},
 has density
 \deqn{f\left( x\right) =\frac{4}{\sqrt{\pi }}
 \frac{1}{\theta ^{3/2}}x^{2}e^{-x^{2}/\theta },}

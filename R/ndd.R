@@ -10,14 +10,14 @@
 #' @param lower.tail logical; if TRUE (default), probabilities are
 #' \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
 #' @description
-#' Density, distribution function, quantile function and random generation for a
-#'  new discrete distribution parameter.
+#' Density, distribution function, quantile function and random generation for
+#' the discrete Lindley distribution parameter.
 #' @return \code{dndd} gives the density, \code{pndd} gives the distribution
 #' function, \code{qndd} gives the quantile function and \code{rndd} generates
 #' random deviates.
 #' @details
-#' A new discrete distribution with a parameter \eqn{\theta}, has density given
-#' by
+#' the discrete Lindley distribution with a parameter \eqn{\theta},
+#' has density given by
 #'  \deqn{f\left( x\right) =\frac{\lambda ^{x}}{1+\theta }
 #'  \left( \theta \left(1-2\lambda \right) +\left( 1-\lambda \right)
 #'  \left( 1+\theta x\right)\right),}

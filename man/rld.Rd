@@ -39,12 +39,10 @@ random deviates.
 }
 \description{
 Density, distribution function, quantile function and random generation for
-Inferences on stress–strength reliability based on ranked set sampling data
-incase of Lindley distributions parameter.
+the Lindley distributions parameter.
 }
 \details{
-Inferences on stress–strength reliability based on ranked set sampling data
-incase of Lindley distribution with a parameter \eqn{\theta}, has density
+The Lindley distribution with a parameter \eqn{\theta}, has density
 given by
 \deqn{f\left( x\right) =\frac{\theta ^{2}}{1+\theta }\left( 1+x\right)
 e^{-\theta~x},}

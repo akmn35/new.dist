@@ -11,12 +11,12 @@
 #' \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
 #' @description
 #' Density, distribution function, quantile function and random generation for
-#' On parameter estimation of the standard omega distributions parameters.
+#' the standard omega distributions parameters.
 #' @return \code{dsod} gives the density, \code{psod} gives the distribution
 #' function, \code{qsod} gives the quantile function and \code{rsod} generates
 #' random deviates.
 #' @details
-#' On parameter estimation of the standard omega distribution with parameters
+#' The standard omega distribution with parameters
 #' \eqn{\alpha}, \eqn{\beta}, has density given by
 #' \deqn{f\left( x\right) =\alpha \beta x^{\beta -1}\frac{1}{1-x^{2\beta }}
 #' \left( \frac{1+x^{\beta }}{1-x^{\beta }}\right) ^{-\alpha /2},}
