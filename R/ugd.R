@@ -8,16 +8,16 @@
 #'  to be the number required.
 #' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
 #' @param lower.tail logical; if TRUE (default), probabilities are
-#' \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
+#' \eqn{P\left[ X\leq x\right]}, otherwise, \eqn{P\left[ X>x\right] }.
 #' @description
 #' Density, distribution function, quantile function and random generation for
-#' the Uniform-Geometric distributions parameter.
+#' the Uniform-Geometric distribution.
 #' @return \code{dugd} gives the density, \code{pugd} gives the distribution
 #' function, \code{qugd} gives the quantile function and \code{rugd} generates
 #' random deviates.
 #' @details
 #' The Uniform-Geometric distribution with shape parameter \eqn{\theta}, has
-#' density given by
+#' density
 #' \deqn{f\left( x\right) =\theta \left( 1-\theta \right) ^{x-1}LerchPhi
 #' \left[ \left(1-\theta \right) ,1,x\right],}
 #' where

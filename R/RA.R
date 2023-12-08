@@ -1,6 +1,6 @@
 #' Ram Awadh Distribution
 #' @export
-#' @name noPDD
+#' @name RA
 #' @param x,q vector of quantiles.
 #' @param theta a scale parameter.
 #' @param p vector of probabilities.
@@ -8,7 +8,7 @@
 #'  to be the number required.
 #' @param log,log.p logical; if TRUE, probabilities p are given as log(p).
 #' @param lower.tail logical; if TRUE (default), probabilities are
-#' \eqn{P\left[ X\leq x\right]}, otherwise,\eqn{P\left[ X>x\right] }.
+#' \eqn{P\left[ X\leq x\right]}, otherwise, \eqn{P\left[ X>x\right] }.
 #' @description
 #' Density, distribution function, quantile function and random generation for
 #' a Ram Awadh distribution with parameter \code{scale}.
@@ -17,7 +17,7 @@
 #'  generates random deviates.
 #' @details
 #' Ram Awadh distribution with \code{scale} parameter
-#' \eqn{\theta}, has density given by
+#' \eqn{\theta}, has density
 #'  \deqn{f\left( x\right) =\frac{\theta ^{6}}{\theta ^{6}+120}
 #'  \left( \theta+x^{5}\right) e^{-\theta x},}
 #' where
@@ -27,8 +27,8 @@
 #' of Statistics and Management Systems, 25 (1), 269-283.
 #' @examples
 #' library(new.dist)
-#' dnoPDD(1,theta=2)
-dnoPDD<-function(x,theta=1,log=FALSE)
+#' dRA(1,theta=2)
+dRA<-function(x,theta=1,log=FALSE)
 {
   if(any(theta<=0)) {stop("theta must be > 0")}
   enuzun <- max(length(x),length(theta))
@@ -46,10 +46,10 @@ dnoPDD<-function(x,theta=1,log=FALSE)
 }
 #' Ram Awadh Distribution
 #' @export
-#' @rdname noPDD
+#' @rdname RA
 #' @examples
-#' pnoPDD(1,theta=2)
-pnoPDD<-function(q,theta=1,lower.tail=TRUE,log.p=FALSE)
+#' pRA(1,theta=2)
+pRA<-function(q,theta=1,lower.tail=TRUE,log.p=FALSE)
 {
   if(any(theta<=0)) {stop("theta must be > 0")}
   enuzun<-max(length(q),length(theta))
@@ -68,10 +68,10 @@ pnoPDD<-function(q,theta=1,lower.tail=TRUE,log.p=FALSE)
 }
 #' Ram Awadh Distribution
 #' @export
-#' @rdname noPDD
+#' @rdname RA
 #' @examples
-#' qnoPDD(.1,theta=1)
-qnoPDD<-function(p,theta=1,lower.tail=TRUE)
+#' qRA(.1,theta=1)
+qRA<-function(p,theta=1,lower.tail=TRUE)
 {
   if(any(p<0)|any(p>1)) {stop("p must be between >= 0 and <= 1")}
   if(any(theta<=0)) {stop("theta must be > 0")}
@@ -101,14 +101,14 @@ qnoPDD<-function(p,theta=1,lower.tail=TRUE)
 }
 #' Ram Awadh Distribution
 #' @export
-#' @rdname noPDD
+#' @rdname RA
 #' @examples
-#' rnoPDD(10,theta=1)
-rnoPDD<-function(n,theta=1)
+#' rRA(10,theta=1)
+rRA<-function(n,theta=1)
 {
   n<-floor(n)
   if(any(n<1)) {stop("n must be >= 1")}
   if(any(theta<=0)) {stop("theta must be > 0")}
-  rn<-qnoPDD(stats::runif(n),theta)
+  rn<-qRA(stats::runif(n),theta)
   return(rn)
 }
