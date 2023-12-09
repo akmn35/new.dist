@@ -1,6 +1,6 @@
 Package: new.dist
 Title: Alternative Continuous and Discrete Distributions
-Version: 0.1.0
+Version: 0.1.1
 Authors@R:c( 
     person("Ramazan", "Akman",,"ramazanakman12345@gmail.com",role=c("cre","ctb"),
         comment = "https://www.researchgate.net/profile/Ramazan-Akman"),
