@@ -12,8 +12,8 @@
 #' @description
 #' Density, distribution function, quantile function and random generation for
 #' a Ram Awadh distribution with parameter \code{scale}.
-#' @return \code{dnoPDD} gives the density, \code{pnoPDD} gives the distribution
-#'  function, \code{qnoPDD} gives the quantile function and \code{rnoPDD}
+#' @return \code{dRA} gives the density, \code{pRA} gives the distribution
+#'  function, \code{qRA} gives the quantile function and \code{rRA}
 #'  generates random deviates.
 #' @details
 #' Ram Awadh distribution with \code{scale} parameter
