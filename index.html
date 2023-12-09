@@ -110,7 +110,7 @@
 </div>
 <!-- badges: start -->
 
-<p>The aim is to develop an R package, which is new.dist package, for the probability (density) function, the distribution function, the quantile function and the associated random number generation function for discrete and continuous distributions, which have recently been proposed in the literature. This package implements the following distributions: The Power Muth Distribution, A bimodal Weibull Distribution, The Discrete Lindley Distribution, The Gamma-Lomax Distribution, Weighted Geometric Distribution, A Power Log-Dagum Distribution, Kumaraswamy Distribution, Lindley Distribution, The Unit-Inverse Gaussian Distribution, EP Distribution, Akash Distribution, Ishita Distribution, Maxwell Distribution, The Standard Omega Distribution, Slashed Generalized Rayleigh Distribution, Two-Parameter Rayleigh Distribution, Muth Distribution, Uniform-Geometric Distribution, Discrete Weibull Distribution.</p>
+<p>The aim is to develop an R package, which is new.dist package, for the probability (density) function, the distribution function, the quantile function and the associated random number generation function for discrete and continuous distributions, which have recently been proposed in the literature. This package implements the following distributions: The Power Muth Distribution, A bimodal Weibull Distribution, The Discrete Lindley Distribution 1, The Discrete Lindley Distribution 2, The Gamma-Lomax Distribution, Weighted Geometric Distribution, A Power Log-Dagum Distribution, Kumaraswamy Distribution, Lindley Distribution, Ram Awadh distribution, The Unit-Inverse Gaussian Distribution, EP Distribution, Akash Distribution, Ishita Distribution, Maxwell Distribution, The Standard Omega Distribution, Slashed Generalized Rayleigh Distribution, Two-Parameter Rayleigh Distribution, Muth Distribution, Uniform-Geometric Distribution, Discrete Weibull Distribution.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -146,7 +146,7 @@
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/bwd.html">rbwd</a></span><span class="op">(</span><span class="fl">5</span>,alpha<span class="op">=</span><span class="fl">2</span>,beta<span class="op">=</span><span class="fl">3</span>,sigma<span class="op">=</span><span class="fl">4</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 3.432626 2.030858 2.252918 3.764117 4.762715</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 3.664845 5.360822 2.990105 4.481485 5.048183</span></span></code></pre></div>
 <p><code>dsgrd</code> Density function for a Slashed Generalized Rayleigh distribution with shape (alpha), scale (theta) and kurtosis(beta) parameters.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
@@ -166,7 +166,7 @@
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/sgrd.html">rsgrd</a></span><span class="op">(</span><span class="fl">5</span>,theta<span class="op">=</span><span class="fl">3</span>,alpha<span class="op">=</span><span class="fl">1</span>,beta<span class="op">=</span><span class="fl">4</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 0.9641649 0.6280363 0.3856982 0.8547346 0.7316044</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 0.3863484 2.5092187 1.2686196 1.2403029 1.3235700</span></span></code></pre></div>
 <p><code>dsod</code> Density function for a the Standard Omega distribution with alpha and beta parameters.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
@@ -186,7 +186,7 @@
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/sod.html">rsod</a></span><span class="op">(</span><span class="fl">5</span>, alpha<span class="op">=</span><span class="fl">1</span>, beta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 0.3292905 0.8697407 0.9020607 0.7494376 0.8683983</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 0.8427112 0.9129416 0.6219982 0.9100745 0.4723296</span></span></code></pre></div>
 <p><code>dugd</code> Density function for the Uniform-Geometric distribution with theta parameter.</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
@@ -206,7 +206,7 @@
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/ugd.html">rugd</a></span><span class="op">(</span><span class="fl">5</span>,theta<span class="op">=</span><span class="fl">.1</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1]  2  6  5  2 14</span></span></code></pre></div>
+<span><span class="co">#&gt; [1]  1  1  5  1 31</span></span></code></pre></div>
 <p><code>dtpmd</code> Density function for the Power Muth distribution with shape (beta) and scale (alpha) parameters.</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
@@ -226,7 +226,7 @@
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/tpmd.html">rtpmd</a></span><span class="op">(</span><span class="fl">5</span>,beta<span class="op">=</span><span class="fl">2</span>,alpha<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 1.741799 2.054245 1.690090 1.718731 1.171386</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 1.756016 1.764679 2.056520 2.345543 1.742426</span></span></code></pre></div>
 <p><code>dtprd</code> Density function for the Two-Parameter Rayleigh distribution with location (mu) and scale (lambda) parameters.</p>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
@@ -246,7 +246,7 @@
 <div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/tprd.html">rtprd</a></span><span class="op">(</span><span class="fl">5</span>,lambda<span class="op">=</span><span class="fl">2</span>,mu<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 2.023360 1.948241 2.650781 1.600043 1.413885</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 1.220879 1.372845 1.396953 1.186881 1.178497</span></span></code></pre></div>
 <p><code>duigd</code> Density function for the Unit Inverse Gaussian distribution with mean (mu) and scale (lambda) parameters.</p>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
@@ -266,7 +266,7 @@
 <div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/uigd.html">ruigd</a></span><span class="op">(</span><span class="fl">5</span>,mu<span class="op">=</span><span class="fl">2</span>,lambda<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 3.4431360 5.3324129 0.8574964 0.8465562 1.6292667</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 1.1143091 1.9358974 0.9908742 1.9361458 4.1511506</span></span></code></pre></div>
 <p><code>dwgd</code> Density function for the Weighted Geometric distribution with alpha and lambda parameters.</p>
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
@@ -286,67 +286,67 @@
 <div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/wgd.html">rwgd</a></span><span class="op">(</span><span class="fl">5</span>,alpha<span class="op">=</span><span class="fl">.2</span>,lambda<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 1 1 2 1 1</span></span></code></pre></div>
-<p><code>ddld</code> Density function for the Discrete Lindley distribution with theta parameter.</p>
+<span><span class="co">#&gt; [1] 1 1 1 1 1</span></span></code></pre></div>
+<p><code>ddLd1</code> Density function for the Discrete Lindley distribution 1 with theta parameter.</p>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
-<span><span class="fu">ddld</span><span class="op">(</span><span class="fl">1</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/dLd1.html">ddLd1</a></span><span class="op">(</span><span class="fl">1</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.1828223</span></span></code></pre></div>
-<p><code>pdld</code> Distribution function for the Discrete Lindley distribution with theta parameter.</p>
+<p><code>pdLd1</code> Distribution function for the Discrete Lindley distribution 1 with theta parameter.</p>
 <div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
-<span><span class="fu">ddld</span><span class="op">(</span><span class="fl">1</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/dLd1.html">ddLd1</a></span><span class="op">(</span><span class="fl">1</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.1828223</span></span></code></pre></div>
-<p><code>qdld</code> Quantile function for the Discrete Lindley distribution with theta parameter.</p>
+<p><code>qdLd1</code> Quantile function for the Discrete Lindley distribution 1 with theta parameter.</p>
 <div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
-<span><span class="fu">qdld</span><span class="op">(</span><span class="fl">.993</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/dLd1.html">qdLd1</a></span><span class="op">(</span><span class="fl">.993</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 3</span></span></code></pre></div>
-<p><code>rdld</code> Random generation for the Discrete Lindley distribution with theta parameter.</p>
+<p><code>rdLd1</code> Random generation for the Discrete Lindley distribution 1 with theta parameter.</p>
 <div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
-<span><span class="fu">rdld</span><span class="op">(</span><span class="fl">5</span>,theta<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 1 5 0 2 1</span></span></code></pre></div>
-<p><code>demd</code> Density function for Maxwell distribution with scale (theta) parameter.</p>
+<span><span class="fu"><a href="reference/dLd1.html">rdLd1</a></span><span class="op">(</span><span class="fl">5</span>,theta<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 0 3 0 1 0</span></span></code></pre></div>
+<p><code>dmd</code> Density function for Maxwell distribution with scale (theta) parameter.</p>
 <div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
-<span><span class="fu">demd</span><span class="op">(</span><span class="fl">1</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/md.html">dmd</a></span><span class="op">(</span><span class="fl">1</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.4839414</span></span></code></pre></div>
-<p><code>pemd</code> Distribution function for a Maxwell distribution with scale (theta) parameter.</p>
+<p><code>pmd</code> Distribution function for a Maxwell distribution with scale (theta) parameter.</p>
 <div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
-<span><span class="fu">pemd</span><span class="op">(</span><span class="fl">1</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/md.html">pmd</a></span><span class="op">(</span><span class="fl">1</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.198748</span></span></code></pre></div>
-<p><code>qemd</code> Quantile function for a Maxwell distribution with scale (theta) parameter.</p>
+<p><code>qmd</code> Quantile function for a Maxwell distribution with scale (theta) parameter.</p>
 <div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
-<span><span class="fu">qemd</span><span class="op">(</span><span class="fl">.4</span>,theta<span class="op">=</span><span class="fl">5</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/md.html">qmd</a></span><span class="op">(</span><span class="fl">.4</span>,theta<span class="op">=</span><span class="fl">5</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 2.161694</span></span></code></pre></div>
-<p><code>remd</code> Random generation for a Maxwell distribution with scale (theta) parameter.</p>
+<p><code>rmd</code> Random generation for a Maxwell distribution with scale (theta) parameter.</p>
 <div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
-<span><span class="fu">remd</span><span class="op">(</span><span class="fl">5</span>,theta<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 1.1710144 1.3907487 0.9700592 2.0583140 0.8225282</span></span></code></pre></div>
-<p><code>depkd</code> Density function for Kumaraswamy distribution with shape (alpha, lambda) parameters.</p>
+<span><span class="fu"><a href="reference/md.html">rmd</a></span><span class="op">(</span><span class="fl">5</span>,theta<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 1.0089490 0.5365065 1.6936789 1.6637683 0.6974195</span></span></code></pre></div>
+<p><code>dkd</code> Density function for Kumaraswamy distribution with shape (alpha, lambda) parameters.</p>
 <div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
-<span><span class="fu">depkd</span><span class="op">(</span><span class="fl">0.1</span>,lambda<span class="op">=</span><span class="fl">2</span>,alpha<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/kd.html">dkd</a></span><span class="op">(</span><span class="fl">0.1</span>,lambda<span class="op">=</span><span class="fl">2</span>,alpha<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.58806</span></span></code></pre></div>
-<p><code>pepkd</code> Distribution function for Kumaraswamy distribution with shape (alpha, lambda) parameters.</p>
+<p><code>pkd</code> Distribution function for Kumaraswamy distribution with shape (alpha, lambda) parameters.</p>
 <div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
-<span><span class="fu">depkd</span><span class="op">(</span><span class="fl">0.1</span>,lambda<span class="op">=</span><span class="fl">2</span>,alpha<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/kd.html">dkd</a></span><span class="op">(</span><span class="fl">0.1</span>,lambda<span class="op">=</span><span class="fl">2</span>,alpha<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.58806</span></span></code></pre></div>
-<p><code>qepkd</code> Quantile function for Kumaraswamy distribution with shape (alpha, lambda) parameters.</p>
+<p><code>qkd</code> Quantile function for Kumaraswamy distribution with shape (alpha, lambda) parameters.</p>
 <div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
-<span><span class="fu">pepkd</span><span class="op">(</span><span class="fl">0.5</span>,lambda<span class="op">=</span><span class="fl">2</span>,alpha<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/kd.html">pkd</a></span><span class="op">(</span><span class="fl">0.5</span>,lambda<span class="op">=</span><span class="fl">2</span>,alpha<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.578125</span></span></code></pre></div>
-<p><code>repkd</code> Random generation for Kumaraswamy distribution with shape (alpha, lambda) parameters.</p>
+<p><code>rkd</code> Random generation for Kumaraswamy distribution with shape (alpha, lambda) parameters.</p>
 <div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
-<span><span class="fu">repkd</span><span class="op">(</span><span class="fl">5</span>,lambda<span class="op">=</span><span class="fl">2</span>,alpha<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 0.68299746 0.23383112 0.63678392 0.07878292 0.36318421</span></span></code></pre></div>
+<span><span class="fu"><a href="reference/kd.html">rkd</a></span><span class="op">(</span><span class="fl">5</span>,lambda<span class="op">=</span><span class="fl">2</span>,alpha<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 0.3561777 0.8089768 0.5023644 0.5976999 0.2989784</span></span></code></pre></div>
 <p><code>dgld</code> Density function for the Gamma-Lomax distribution with shape (a, alpha) and scale (beta) parameters.</p>
 <div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
@@ -366,27 +366,27 @@
 <div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/gld.html">rgld</a></span><span class="op">(</span><span class="fl">5</span>,a<span class="op">=</span><span class="fl">2</span>,alpha<span class="op">=</span><span class="fl">3</span>,beta<span class="op">=</span><span class="fl">4</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 1.8746427 0.4407325 0.5293730 4.5829224 2.5667956</span></span></code></pre></div>
-<p><code>dndd</code> Density function for a Discrete Lindley distribution with theta parameter.</p>
+<span><span class="co">#&gt; [1]  2.059543  5.963640  7.954032 11.352291  4.832939</span></span></code></pre></div>
+<p><code>ddLd2</code> Density function for a Discrete Lindley distribution 2 with theta parameter.</p>
 <div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
-<span><span class="fu">dndd</span><span class="op">(</span><span class="fl">2</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/dLd2.html">ddLd2</a></span><span class="op">(</span><span class="fl">2</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.03530023</span></span></code></pre></div>
-<p><code>pndd</code> Distribution function for a Discrete Lindley distribution with theta parameter.</p>
+<p><code>pdLd2</code> Distribution function for a Discrete Lindley distribution 2 with theta parameter.</p>
 <div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
-<span><span class="fu">pndd</span><span class="op">(</span><span class="fl">1</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/dLd2.html">pdLd2</a></span><span class="op">(</span><span class="fl">1</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.9572635</span></span></code></pre></div>
-<p><code>qndd</code> Quantile function for a Discrete Lindley distribution with theta parameter.</p>
+<p><code>qdLd2</code> Quantile function for a Discrete Lindley distribution 2 with theta parameter.</p>
 <div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
-<span><span class="fu">qndd</span><span class="op">(</span><span class="fl">.5</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/dLd2.html">qdLd2</a></span><span class="op">(</span><span class="fl">.5</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0</span></span></code></pre></div>
-<p><code>rndd</code> Random generation for a Discrete Lindley distribution with theta parameter.</p>
+<p><code>rdLd2</code> Random generation for a Discrete Lindley distribution 2 with theta parameter.</p>
 <div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
-<span><span class="fu">rndd</span><span class="op">(</span><span class="fl">5</span>,theta<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 2 0 0 0 0</span></span></code></pre></div>
+<span><span class="fu"><a href="reference/dLd2.html">rdLd2</a></span><span class="op">(</span><span class="fl">5</span>,theta<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 0 1 1 0 0</span></span></code></pre></div>
 <p><code>dEPd</code> Density function for the EP distribution with lambda and beta parameters.</p>
 <div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
@@ -406,27 +406,27 @@
 <div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/EPd.html">rEPd</a></span><span class="op">(</span><span class="fl">5</span>,lambda<span class="op">=</span><span class="fl">2</span>,beta<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 0.22869822 0.08933564 0.07013980 0.13998623 0.06069968</span></span></code></pre></div>
-<p><code>dnoPDD</code> Density function for a New One Parameter Discrete distribution with scale (theta) parameter.</p>
+<span><span class="co">#&gt; [1] 0.07587301 0.24853086 0.15903216 0.01355832 1.18363532</span></span></code></pre></div>
+<p><code>dRA</code> Density function for a Ram Awadh distribution with scale (theta) parameter.</p>
 <div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
-<span><span class="fu">dnoPDD</span><span class="op">(</span><span class="fl">1</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/RA.html">dRA</a></span><span class="op">(</span><span class="fl">1</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.1412194</span></span></code></pre></div>
-<p><code>pnoPDD</code> Distribution function for a New One Parameter Discrete distribution with scale (theta) parameter.</p>
+<p><code>pRA</code> Distribution function for a Ram Awadh distribution with scale (theta) parameter.</p>
 <div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
-<span><span class="fu">pnoPDD</span><span class="op">(</span><span class="fl">1</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/RA.html">pRA</a></span><span class="op">(</span><span class="fl">1</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.3115553</span></span></code></pre></div>
-<p><code>qnoPDD</code> Quantile function for a New One Parameter Discrete distribution with scale (theta) parameter.</p>
+<p><code>qRA</code> Quantile function for a Ram Awadh distribution with scale (theta) parameter.</p>
 <div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
-<span><span class="fu">dnoPDD</span><span class="op">(</span><span class="fl">.8</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/RA.html">dRA</a></span><span class="op">(</span><span class="fl">.8</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.163461</span></span></code></pre></div>
-<p><code>rnoPDD</code> Random generation for a New One Parameter Discrete distribution with scale (theta) parameter.</p>
+<p><code>rRA</code> Random generation for a Ram Awadh distribution with scale (theta) parameter.</p>
 <div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
-<span><span class="fu">rnoPDD</span><span class="op">(</span><span class="fl">5</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 3.2444444 3.9488218 0.6175893 3.1373168 1.1447230</span></span></code></pre></div>
+<span><span class="fu"><a href="reference/RA.html">rRA</a></span><span class="op">(</span><span class="fl">5</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 1.024437 3.727622 2.863204 2.677814 3.019885</span></span></code></pre></div>
 <p><code>domd</code> Density function for the Muth distribution with alpha parameter.</p>
 <div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
@@ -446,7 +446,7 @@
 <div class="sourceCode" id="cb65"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/omd.html">romd</a></span><span class="op">(</span><span class="fl">5</span>,alpha<span class="op">=</span><span class="fl">.2</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 0.44608581 0.54848460 0.31469417 0.05677103 3.22702703</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 0.4886359 2.1506724 0.3837403 1.4267883 1.8242038</span></span></code></pre></div>
 <p><code>dpldd</code> Density function for a Power Log Dagum distribution with alpha, beta and theta parameters.</p>
 <div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
@@ -466,27 +466,27 @@
 <div class="sourceCode" id="cb69"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/pldd.html">rpldd</a></span><span class="op">(</span><span class="fl">5</span>, alpha<span class="op">=</span><span class="fl">2</span>, beta<span class="op">=</span><span class="fl">3</span>, theta<span class="op">=</span><span class="fl">4</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1]  0.09253436  0.45868484  0.35045470 -0.27018048  0.08795876</span></span></code></pre></div>
-<p><code>drld</code> Density function for Lindley distribution with theta parameter.</p>
+<span><span class="co">#&gt; [1]  0.20437978  0.13255536 -0.06912443  0.29303026  0.33152951</span></span></code></pre></div>
+<p><code>dLd</code> Density function for Lindley distribution with theta parameter.</p>
 <div class="sourceCode" id="cb70"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
-<span><span class="fu">drld</span><span class="op">(</span><span class="fl">1</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/Ld.html">dLd</a></span><span class="op">(</span><span class="fl">1</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.3608941</span></span></code></pre></div>
-<p><code>prld</code> Distribution function for Lindley distribution with theta parameter.</p>
+<p><code>pLd</code> Distribution function for Lindley distribution with theta parameter.</p>
 <div class="sourceCode" id="cb71"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
-<span><span class="fu">prld</span><span class="op">(</span><span class="fl">1</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/Ld.html">pLd</a></span><span class="op">(</span><span class="fl">1</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.7744412</span></span></code></pre></div>
-<p><code>qrld</code> Quantile function for Lindley distribution with theta parameter.</p>
+<p><code>qLd</code> Quantile function for Lindley distribution with theta parameter.</p>
 <div class="sourceCode" id="cb72"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
-<span><span class="fu">qrld</span><span class="op">(</span><span class="fl">.5</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/Ld.html">qLd</a></span><span class="op">(</span><span class="fl">.5</span>,theta<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0.4872058</span></span></code></pre></div>
-<p><code>rrld</code> Random generation for Lindley distribution with theta parameter.</p>
+<p><code>rLd</code> Random generation for Lindley distribution with theta parameter.</p>
 <div class="sourceCode" id="cb73"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/akmn35/new.dist" class="external-link">new.dist</a></span><span class="op">)</span></span>
-<span><span class="fu">rrld</span><span class="op">(</span><span class="fl">5</span>,theta<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 2.089914 1.030002 2.866408 4.609620 1.606816</span></span></code></pre></div>
+<span><span class="fu"><a href="reference/Ld.html">rLd</a></span><span class="op">(</span><span class="fl">5</span>,theta<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 0.9922135 1.8368468 0.1235970 4.9254887 1.8944292</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="corresponding-author">Corresponding Author<a class="anchor" aria-label="anchor" href="#corresponding-author"></a>
