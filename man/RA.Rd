@@ -32,8 +32,8 @@ rRA(n, theta = 1)
 to be the number required.}
 }
 \value{
-\code{dnoPDD} gives the density, \code{pnoPDD} gives the distribution
-function, \code{qnoPDD} gives the quantile function and \code{rnoPDD}
+\code{dRA} gives the density, \code{pRA} gives the distribution
+function, \code{qRA} gives the quantile function and \code{rRA}
 generates random deviates.
 }
 \description{
