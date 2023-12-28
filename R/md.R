@@ -22,7 +22,7 @@
 #' \frac{1}{\theta ^{3/2}}x^{2}e^{-x^{2}/\theta },}
 #' where
 #' \deqn{0\leq x<\infty ,~~\theta >0.}
-#' @references  Krishna, H., Vivekanand ve Kumar, K., 2015,
+#' @references  Krishna, H., Vivekanand and Kumar, K., 2015,
 #' *Estimation in Maxwell distribution with randomly censored data*, Journal of
 #' statistical computation and simulation, 85 (17), 3560-3578.
 #' @examples

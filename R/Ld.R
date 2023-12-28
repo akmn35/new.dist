@@ -21,7 +21,7 @@
 #' e^{-\theta~x},}
 #' where
 #' \deqn{x>0,~\theta >0.}
-#' @references  Akgül, F. G., Acıtaş, Ş. ve Şenoğlu, B., 2018,
+#' @references  Akgül, F. G., Acıtaş, Ş. and Şenoğlu, B., 2018,
 #' *Inferences on stress–strength reliability based on ranked set sampling data
 #' in case of Lindley distribution*, Journal of statistical computation and
 #' simulation, 88 (15), 3018-3032.

@@ -20,7 +20,7 @@
 #' \left( 1-\alpha ^{\lambda x}\right),}
 #' where
 #' \deqn{x\in \mathbb {N} =1,2,...~,~\lambda >0~and~0<\alpha <1.}
-#' @references  Najarzadegan, H., Alamatsaz, M. H., Kazemi, I. ve Kundu, D.,
+#' @references  Najarzadegan, H., Alamatsaz, M. H., Kazemi, I. and Kundu, D.,
 #' 2020,
 #' *Weighted bivariate geometric distribution: Simulation and estimation*,
 #' Communications in Statistics-Simulation and Computation, 49 (9), 2419-2443.

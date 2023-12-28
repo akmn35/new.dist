@@ -24,7 +24,7 @@
 #'  \left( x-\mu\right) ^{2}},}
 #' where
 #'  \deqn{x>\mu ,~\lambda >0.}
-#' @references  Dey, S., Dey, T. ve Kundu, D., 2014,
+#' @references  Dey, S., Dey, T. and Kundu, D., 2014,
 #' *Two-parameter Rayleigh distribution: different methods of estimation*,
 #' American Journal of Mathematical and Management Sciences, 33 (1), 55-74.
 #' @examples

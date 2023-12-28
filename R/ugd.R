@@ -25,7 +25,7 @@
 #' {\left(v+n\right) ^{a}}}
 #' and
 #' \deqn{x=1,2,...~,~~0<\theta <1.}
-#' @references Akdoğan, Y., Kuş, C., Asgharzadeh, A., Kınacı, İ., & Sharafi,
+#' @references Akdoğan, Y., Kuş, C., Asgharzadeh, A., Kınacı, İ., and Sharafi,
 #'  F. (2016).
 #' *Uniform-geometric distribution*. Journal of Statistical Computation and
 #' Simulation, 86(9), 1754-1770.

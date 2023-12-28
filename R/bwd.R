@@ -33,7 +33,7 @@
 #' \left( 1+\left( 1/\alpha \right) \right) }
 #' and
 #' \deqn{x\geq 0,~\alpha ,\beta >0~ and ~\sigma \in\mathbb{R}.}
-#' @references  Vila, R. ve Niyazi Çankaya, M., 2022,
+#' @references  Vila, R. and Niyazi Çankaya, M., 2022,
 #' *A bimodal Weibull distribution: properties and inference*,
 #' Journal of Applied Statistics, 49 (12), 3044-3062.
 #' @examples

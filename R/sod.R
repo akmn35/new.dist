@@ -22,7 +22,7 @@
 #' \left( \frac{1+x^{\beta }}{1-x^{\beta }}\right) ^{-\alpha /2},}
 #' where
 #' \deqn{0<x<1,~\alpha ,\beta >0.}
-#' @references  Birbiçer, İ. ve Genç, A. İ., 2022,
+#' @references  Birbiçer, İ. and Genç, A. İ., 2022,
 #' *On parameter estimation of the standard omega distribution*. Journal of
 #' Applied Statistics, 1-17.
 #' @examples

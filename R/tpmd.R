@@ -26,7 +26,7 @@
 #' where
 #' \deqn{x>0,~\alpha ,\beta>0.}
 #' @references  Jodra, P., Gomez, H. W., Jimenez-Gamero,
-#'  M. D., & Alba-Fernandez, M. V. (2017).
+#'  M. D., and Alba-Fernandez, M. V. (2017).
 #' *The power Muth distribution* . Mathematical Modelling and Analysis, 22(2),
 #'  186-201.
 #' @note

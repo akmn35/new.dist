@@ -25,7 +25,7 @@
 #' \log \left( \frac{\beta }{\beta +x}\right) \right\} ^{a-1},}
 #' where
 #' \deqn{x>0,~a,\alpha ,\beta >0.}
-#' @references  Cordeiro, G. M., Ortega, E. M. ve Popović, B. V., 2015,
+#' @references  Cordeiro, G. M., Ortega, E. M. and Popović, B. V., 2015,
 #' *The gamma-Lomax distribution*, Journal of statistical computation and
 #' simulation, 85 (2), 305-319.
 #'

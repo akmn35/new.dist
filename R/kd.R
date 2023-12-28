@@ -22,7 +22,7 @@
 #' \right)^{\alpha -1},}
 #' where
 #' \deqn{0<x<1,~~\alpha ,\lambda >0.}
-#' @references  Kohansal, A. ve Bakouch, H. S., 2021,
+#' @references  Kohansal, A. and Bakouch, H. S., 2021,
 #' *Estimation procedures for Kumaraswamy distribution parameters under
 #' adaptive type-II hybrid progressive censoring*, Communications in
 #' Statistics-Simulation and Computation, 50 (12), 4059-4078.

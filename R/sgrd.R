@@ -27,7 +27,7 @@
 #' \right)F\left( \theta x^{2};\frac{2\alpha +\beta +2}{2},1\right), }
 #' where F(.;a,b) is the cdf of the Gamma (a,b) distribution, and
 #' \deqn{x>0,~\theta >0,~\alpha >-1~and~\beta >0}
-#' @references  Iriarte, Y. A., Vilca, F., Varela, H. ve Gómez, H. W., 2017,
+#' @references  Iriarte, Y. A., Vilca, F., Varela, H. and Gómez, H. W., 2017,
 #' *Slashed generalized Rayleigh distribution*, Communications in Statistics-
 #' Theory and Methods, 46 (10), 4686-4699.
 #' @examples

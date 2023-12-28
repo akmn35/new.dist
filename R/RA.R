@@ -22,7 +22,7 @@
 #'  \left( \theta+x^{5}\right) e^{-\theta x},}
 #' where
 #'  \deqn{x>0,~\theta >0.}
-#' @references  Shukla, K. K., Shanker, R. ve Tiwari, M. K., 2022,
+#' @references  Shukla, K. K., Shanker, R. and Tiwari, M. K., 2022,
 #' *A new one parameter discrete distribution and its applications*, Journal
 #' of Statistics and Management Systems, 25 (1), 269-283.
 #' @examples

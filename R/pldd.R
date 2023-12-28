@@ -39,7 +39,7 @@
 #'         {1-\left( 1+e^{-\left( \beta x+sign\left( x\right) \left( \theta /
 #' \beta \right) \left\vert x\right\vert ^{\beta }\right) }
 #' \right) ^{-\alpha }} .}
-#' @references  Bakouch, H. S., Khan, M. N., Hussain, T. ve Chesneau, C., 2019,
+#' @references  Bakouch, H. S., Khan, M. N., Hussain, T. and Chesneau, C., 2019,
 #' *A power log-Dagum distribution: estimation and applications*, Journal of
 #' Applied Statistics, 46 (5), 874-892.
 #' @examples

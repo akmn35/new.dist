@@ -22,7 +22,7 @@
 #' \left( 1-\log \lambda^{x+1}\right)\right), }
 #' where
 #' \deqn{x=0,1,...,~\theta >0~and~\lambda =e^{-\theta }.}
-#' @references  Gómez-Déniz, E. ve Calderín-Ojeda, E., 2011,
+#' @references  Gómez-Déniz, E. and Calderín-Ojeda, E., 2011,
 #' *The discrete Lindley distribution: properties and applications*.Journal of
 #' statistical computation and simulation, 81 (11), 1405-1416.
 #' @examples

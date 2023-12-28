@@ -23,7 +23,7 @@
 #'  \left( 1+\theta x\right)\right),}
 #' where
 #'  \deqn{x=0,1,2,...~,\lambda =\exp \left( -\theta \right) ~and~\theta >0.}
-#' @references  Bakouch, H. S., Jazi, M. A. ve Nadarajah, S., 2014,
+#' @references  Bakouch, H. S., Jazi, M. A. and Nadarajah, S., 2014,
 #' *A new discrete distribution, Statistics*, 48 (1), 200-240.
 #' @examples
 #' library(new.dist)

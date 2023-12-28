@@ -23,7 +23,7 @@
 #' 1\right) },}
 #' where
 #' \deqn{x>0,~\alpha \in \left( 0,1\right]. }
-#' @references  Jodrá, P., Jiménez-Gamero, M. D. ve Alba-Fernández, M. V., 2015,
+#' @references  Jodrá, P., Jiménez-Gamero, M. D. and Alba-Fernández, M. V., 2015,
 #' *On the Muth distribution, Mathematical Modelling and Analysis*, 20 (3),
 #' 291-310.
 #' @examples

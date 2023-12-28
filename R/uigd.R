@@ -24,7 +24,7 @@
 #' \frac{1}{x^{3/2}}e^{-\frac{ \lambda }{2\mu ^{2}x}\left( x-\mu \right) ^{2}},}
 #' where
 #' \deqn{x>0,~\mu ,\lambda >0.}
-#' @references  Ghitany, M., Mazucheli, J., Menezes, A. ve Alqallaf, F., 2019,
+#' @references  Ghitany, M., Mazucheli, J., Menezes, A. and Alqallaf, F., 2019,
 #' *The unit-inverse Gaussian distribution: A new alternative to two-parameter*
 #' *distributions on the unit interval, Communications in Statistics-Theory and*
 #'  *Methods*, 48 (14), 3423-3438.
